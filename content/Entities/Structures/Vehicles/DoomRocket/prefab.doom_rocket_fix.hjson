@@ -1,0 +1,158 @@
+$name: "Rocket of Doom"
+$desc: "Fly me to the moon."
+$tags: []
+
+body:
+{
+	fall_damage_multiplier: 12.5
+	@shape.polygon:
+	{
+		points:
+		[
+			[1.000, 2.000]
+			[-1.000, 2.000]
+			[-0.625, -2.000]
+			[0.625, -2.000]
+		]
+		mass: 40.000
+		friction: 0.950
+		elasticity: 0.050
+		material: wood
+		layer: entity, solid, flammable
+		mask: world
+	}
+}
+
+health:
+{
+	max: 500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "doom_rocket_fix"
+	}
+	z: 91.000
+}
+
+control:
+{
+
+}
+
+transform:
+{
+
+}
+
+vehicle:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing
+}
+
+interactable:
+{
+	window_size: [280.000, 144.000]
+}
+
++seat|instance:
+{
+	$tags: []
+	
+	seat:
+	{
+		offset: [0.000, -0.875]
+		flags: has_seatbelt, enclosed, crouch
+	}
+}
+
+sound.emitter:
+{
+	file: "balloon.burner.loop.00"
+	flags: start_muted
+	volume: 0.500
+	pitch: 1.000
+	size: 0.800
+}
+
+rocketrotatable:
+{
+	mass: 900.000
+	force: 5000.000
+	fuel_time: 30.000
+	flip: true
+	x:-1
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 4.000]
+		offset: [0.000, 5.000]
+		scale: [12.000, 8.000]
+		intensity: 0.600
+		rotation:-1.57079632679
+		texture: "light.cone.00"
+	}
+}
+
+explosive:
+{
+	radius: 5.000
+	power: 2.400
+	damage_entity: 9500.000
+	damage_terrain: 13000.000
+	health_threshold: 0.763
+	
+	damage_type: explosion
+	damage_type_secondary: shockwave
+	flags: explode_when_primed, primed_when_destroyed
+	
+	detonate_chance: 0.998
+	detonate_damage_filter: bullet_lc, bullet_hc, bullet_mg, bullet_ac, bullet_sg, bullet_kn, bullet_hw, bullet_musket, rivet, impact, crush, pickaxe, sledgehammer, explosion, deflagration, motion_impulse, fire, electricity, shockwave, corrosion, heat, phlogiston
+	
+	shake_multiplier: 3.650
+	force_multiplier: 1.500
+	stun_multiplier: 1.640
+	
+	smoke_amount: 4.900
+	smoke_lifetime_multiplier: 2.500
+	smoke_velocity_multiplier: 5.500
+	
+	flash_duration_multiplier: 0.150
+	flash_intensity_multiplier: 1.500
+	
+	fire_amount: 0.900
+	sparks_amount: 0.500
+	
+	volume: 2.000
+	pitch: 1.800
+}
+
+// projectile:
+// {
+// 	damage_base: 200.000
+// 	damage_bonus: 500.000
+// 	lifetime: 15.000
+// 	ignore_time: 0.100
+// 	damage_type: bullet_musket
+// 	size: 0.500
+// 	ricochet_count: 0
+// 	speed_modifier_min: 0.300
+// 	speed_modifier_max: 1.300
+// }
+
+doomrocketfix:
+{
+	rot_speed: 12.800
+}
+
+doomrocketfix.state:
+{
+
+}

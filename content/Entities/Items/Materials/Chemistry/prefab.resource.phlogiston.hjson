@@ -1,0 +1,155 @@
+$tags: []
+
+body:
+{
+	type: dynamic
+	flags: none
+	tags: hollow, solid, round, angular, complex
+	
+	fall_damage_multiplier: 5.500
+	buoyancy: 0.480
+
+	@shape.line:
+	{
+		material: metal
+		miss_chance: 0.153
+		flags: none
+		tags: heavy, medium, solid, hard
+		
+		layer: entity, solid, resource, conductive, magnetic
+		mask: world
+		exclude: none
+		
+		mass: 1.000
+		radius: 0.625
+		friction: 0.650
+		elasticity: 0.400
+		
+		fall_damage_mult: 1.430
+		// cog_offset: [0.000, 0.1875]
+		
+		a: [0.000, -0.200]
+		b: [0.000, 0.200]
+		offset: [0.000, 0.000]
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "resource.phlogiston"
+		count: 4
+		size: [16, 16]
+	}
+	scale: [0.850, 0.850]
+	z: -20.000
+}
+
+transform:
+{
+
+}
+
+resource:
+{
+	material: "phlogiston"
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.000, 1.500]
+		offset: [0.000, 0.000]
+		scale: [12.000, 12.000]
+		intensity: 1.000
+		texture: "light.circle.00"
+	}
+}
+
+holdable:
+{
+	offset: [0.000, 0.750]
+	force_multiplier: 1.400
+	torque_multiplier: 1.250
+	stress_multiplier: 0.650
+	hints: materials, dangerous, explosive, advanced, powerful, destructive, chemical, expensive, civilian, military, industrial, arcane, imperial, propulsion, unstable, clumsy
+}
+
+norotate:
+{
+	bias: 0.001
+	speed: 3.000
+	multiplier: 1.000
+	mass_multiplier: 8.000
+}
+
+health:
+{
+	max: 8000.000
+}
+
+explosive:
+{
+	radius: 7.000
+	power: 3.100
+	damage_entity: 4000.000
+	damage_terrain: 6000.000
+	health_threshold: 0.850
+	
+	damage_type: phlogiston
+	damage_type_secondary: shockwave
+	flags: explode_when_primed, primed_when_destroyed, quantity_modifier_linear
+	
+	detonate_chance: 1.000
+	detonate_damage_filter: bullet_hc, bullet_mg, bullet_ac, bullet_sg, bullet_kn, bullet_hw, bullet_musket, rivet, impact, crush, axe, pickaxe, club, sledgehammer, explosion, motion_impulse, ram, saw, handsaw, shockwave, fracture, corrosion, stress, phlogiston, failure, disintegration
+	
+	shake_multiplier: 0.400
+	force_multiplier: 0.200
+	stun_multiplier: 0.400
+	
+	smoke_amount: 1.780
+	smoke_lifetime_multiplier: 0.750
+	smoke_velocity_multiplier: 0.400
+	smoke_color: "0xffd8d8d8"
+	
+	flash_duration_multiplier: 1.450
+	flash_intensity_multiplier: 0.100
+	
+	fire_amount: 1.750
+	sparks_amount: 3.000
+	
+	volume: 2.100
+	pitch: 0.500
+	
+	modifier_min: 0.080
+}
+
+cluster:
+{
+	offset: [0.000, -0.800]
+	velocity: [0.000, -20.000]
+	radius: 0.480
+	prefab: projectile.phlogiston
+	spread: 2.000
+	speed: 4.000
+	speed_modifier_min: 0.000
+	speed_modifier_max: 0.800
+	lifetime_modifier_min: 0.000
+	lifetime_modifier_max: 0.400
+	min_explode_lifetime: 0.020
+	count: 8
+	flags: align_normal
+}
+
+despawn:
+{
+	sleep_count_max: 50
+	flags: no_despawn
+	
+	interval: 7.000
+	interval_extra: 14.000
+	threshold_delete: 0.000
+	threshold_despawning: 0.500
+
+	amount_ratio: 0.000
+	amount_ratio_extra: 0.000
+}

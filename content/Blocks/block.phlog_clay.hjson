@@ -1,0 +1,55 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Phlog Limebrick"
+	desc:
+		'''
+		Clay bricks infused with levels of phlog and lime that'd make a safety committee smile.
+		'''
+	
+	material_type: brick
+	tile_flags: non_empty
+	flags: raw, soil, aluminosilicate
+	
+	max_health: 14800.000
+	smoothing: 0.134
+	stability: 3.660
+	strength_tensile: 8.500
+	strength_compressive: 2.800
+	
+	mass: 3.330
+	density: 0.000
+	friction: 0.840
+	elasticity: 0.690
+	fall_damage_mult: 1.150
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.phlog_clay
+	pattern: pattern.stone
+	texture_scale: 1.254
+	texture_overshoot: -0.150
+	texture_offset: 0.125
+	
+	color_preview: "0xffb63798"
+	color_fill: "0xff140e80"
+	
+	resources:
+	[
+		{
+			material: brick.clay
+			quantity: 0.180576
+		}
+		{
+			material: phlog_gas
+			quantity: 1.493242
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffb637898"
+			tile_flags: solid, non_empty, no_replace
+		}
+	]
+}

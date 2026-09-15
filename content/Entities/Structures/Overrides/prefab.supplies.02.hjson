@@ -1,0 +1,90 @@
+$name: "Swaps in gen - Colonization Box"
+$desc:
+	'''
+	Standard-issue colonization box designed to facilitate territorial expansion.
+	
+	Contains a standard allocation of construction materials, chemical compounds, and defensive munitions.
+
+	The container is also certified for use as a provisional field workbench.
+	'''
+$tags: []
+
+body:
+{
+	tags: complex, irregular
+	buoyancy: 0.700
+	fall_damage_multiplier: 0.800
+	inventory_weight_multiplier: 0.900
+
+	@shape.polygon:
+	{
+		material: building_wood
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, solid, crate, storage, flammable, ignore_melee, ignore_bullet
+		mask: world
+		exclude: held, attached
+		
+		mass: 90.000
+		radius: 0.500
+		friction: 0.850
+		elasticity: 0.200
+		
+		cog_offset: [0.000, 0.375]
+		
+		points:
+		[
+			[-0.625, -0.375]
+			[0.625, -0.625]
+			[0.750, 0.625]
+			[-0.750, 0.625]
+		]
+	}
+
+	@shape.line:
+	{
+		a: [-1.125, 1.125]
+		b: [1.125, 1.125]
+		
+		mass: 30.000
+		radius: 0.300
+		friction: 0.700
+		elasticity: 0.400
+		
+		material: wood
+		
+		layer: entity, solid, platform, ignore_bullet, ignore_melee, ignore_hover, flammable
+		exclude: held, attached
+		// mask: solid
+
+		flags: no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 17000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.supplies.00
+		size: [24, 24]
+		frame: [2, 0]
+	}
+	z: -130.000
+}
+swapprefab:
+{
+	flags: none
+	prefab: "supplies.06"
+}

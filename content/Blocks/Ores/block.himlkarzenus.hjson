@@ -1,0 +1,57 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Himlkarzenus"
+	desc:
+		'''
+		Stunningly beautiful crystalline mineral with a charming garlicky fragrance.
+
+		Makes you drop dead, but not before you admire its beauty.
+		'''
+	
+	material_type: crystal
+	tile_flags: non_empty
+	flags: raw, ore, rare, mineral
+	
+	max_health: 7800.000
+	smoothing: 0.134
+	stability: 3.660
+	strength_tensile: 8.500
+	strength_compressive: 2.800
+	
+	mass: 3.330
+	density: 0.000
+	friction: 0.840
+	elasticity: 0.690
+	fall_damage_mult: 1.150
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.himlkarzenus
+	pattern: pattern.stone
+	texture_scale: 1.254
+	texture_overshoot: -0.150
+	texture_offset: 0.125
+	
+	color_preview: "0xffb63789"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: himlkarzenus
+			quantity: 2.035004
+		}
+		{
+			material: arsine
+			quantity: 5.180576
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffb63789"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+}

@@ -1,0 +1,294 @@
+$name: "Essence Engine"
+$desc:
+	'''
+	An advanced machine that brings phlogiston up from ancient pipelines.
+
+	Can be claimed for your own use.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[-1.000, -5.375]
+			[1.000, -5.375]
+			[0.875, 5.250]
+			[-0.875, 5.250]
+		]
+		
+		mass: 25000.000
+		radius: 1.000
+		friction: 0.500
+		elasticity: 0.500
+		
+		material: metal
+		miss_chance: 0.000
+		
+		layer: entity, building, ignore_melee
+		mask: world
+		exclude: none
+	}
+}
+
+health:
+{
+	max: 395000.000
+}
+
+armor:
+{
+	toughness: 900.000
+	protection: 0.750
+	
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "essence_rig.00"
+	}
+	z: -280.000
+}
+
+/* steamengine:
+{
+	piston_offset: [-1.000, 0.125]
+	steam_offset: [-2.875, -2.875]
+	burst_offset: [0.750, 0.250]
+	smoke_direction: [0.95505, -0.296445]
+	steam_interval: 0.200
+	crank_radius: 0.700
+	speed_modifier: 0.750
+	force: 25000.000
+	volume_multiplier: 0.200
+	pitch_multiplier: 0.400
+	max_acceleration: 0.100
+	speed_max: 20.000
+	efficiency: 0.300
+	bore_diameter: 0.150
+	bore_depth: 0.350
+	condenser: 0.900
+	
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "steam_engine_piston"
+		}
+		z: -290.000
+	}
+
+	@sound.emitter:
+	{
+		file: "steam_engine_loop"
+		volume: 1.000
+		pitch: 1.000
+		size: 2.000
+		size_max_modifier: 0.800
+	}
+} */
+
+/* steamengine.state:
+{
+	
+} */
+
+/* burner:
+{
+	smoke_offset: [-2.250, -1.375]
+	smoke_direction: [0.580275, -0.814421]
+	capacity: 8.000
+	energy_loss: 100000.000
+	efficiency: 0.400
+	air_intake_area: 0.007
+	drain_multiplier: 8.000
+	volume_modifier: 1.000
+	pitch_modifier: 0.600
+
+	air_capacity: 1.000
+	air_intake: 0.200
+	
+	@inventory1:
+	{
+		name: "Fuel"
+		stack_size_multiplier: 4.000
+		filter_flags: fuel
+		type: fuel
+		flags: allow_ducts, ignore_mass
+		offset: [-1.000, 1.500]
+	}
+	
+	@sound.emitter:
+	{
+		file: "furnace_loop"
+		volume: 1.000
+		pitch: 0.500
+		size: 0.700
+		size_max_modifier: 0.600
+	}
+} */
+
+/* burner.state:
+{
+	current_temperature: 300.000
+} */
+
+/* axle:
+{
+	offset: [0.000, -2.000]
+	mass: 1000.000
+	friction: 0.200
+	radius_a: 1.000
+	radius_b: 1.000
+	radius_inner: 0.750
+	radius_outer: 1.000
+	z: 100.000
+	
+	// @animated.renderer:
+	// {
+	// 	sprite: 
+	// 	{
+	// 		texture: "flywheel.smirglum.00"
+	// 	}
+	// }
+} */
+
+transform:
+{
+
+}
+
+interactable:
+{
+	window_size: [24.000, 24.000]
+	window_size_misc: [96.000, 96.000]
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim, allow_enemy_unclaim
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [3, 0]
+	}
+
+	flags: faction, spawner
+}
+
+sound.emitter:
+{
+		file: "furnace_loop"
+		volume: 1.000
+		pitch: 0.500
+		size: 0.700
+		size_max_modifier: 0.600
+}
+
+vibrate:
+{
+	frequency: 5.000
+	modifier: 1.000
+	rotation_mult: 0.009
+	position_mult: [0.010, 0.020]
+}
+
+lamp:
+{
+	@light:
+	{
+		color: [1.000, 0.850, 0.400, 2.000]
+		offset: [-1.350, -1.800]
+		scale: [64.000, 128.000]
+		intensity: 1.000
+		texture: "light_invsqr"
+	}
+}
+
+/* boiler:
+{
+	pressure_max: 2000000.000
+
+	exhaust_offset: [-1.500, -0.125]
+
+	tank_volume: 1.000
+	mass_tank: 40.000
+	area_surface: 3.900
+	area_heater: 0.800
+	h_material_surface: "copper.ingot"
+	h_material_heater: "steel.ingot"
+
+	@light:
+	{
+		color: [1.000, 0.700, 0.000, 2.000]
+		offset: [0.000, 1.000]
+		scale: [26.000, 19.000]
+		intensity: 1.000
+		texture: "light.circle.04"
+		rotation: 0.000
+	}
+} */
+
+/* boiler.state:
+{
+	water_moles: 1000.000
+
+	@sound.emitter:
+	{
+		file: "tractor.steam.loop.00"
+		volume: 1.000
+		pitch: 1.000
+		size: 1.000
+		size_max_modifier: 0.870
+	}
+} */
+
+essence_rig:
+{
+	produce_interval: 30.000
+	amount: 0.129
+	amount_extra: 0.231
+
+	@inventory1:
+	{
+		type: output
+		flags: standalone, allow_ducts, ignore_mass, no_auto_pickup, no_drop
+		stack_size_multiplier: 1.000
+		offset: [-1.750, 0.625]
+	}
+}
+// steamboiler:
+// {
+// 	capacity: 1.000
+
+// 	@inventory1:
+// 	{
+// 		name: "Boiler"
+// 		stack_size_multiplier: 4.000
+// 		filter_flags: none
+// 		//filter_type: liquid
+// 		type: input
+// 		flags: ignore_mass
+// 	}
+// }
+
+// steamboiler.state:
+// {
+	
+// }

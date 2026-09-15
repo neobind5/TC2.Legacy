@@ -1,0 +1,625 @@
+$name: "Bred Zabar"
+$desc: "Predatory lizard that mostly lives within swamps. Its slimy, smooth carapace allows it to pass through obstacles with ease."
+$export: false
+$tags: 
+[
+	"zabar"
+]
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 125.000
+		radius: 0.625
+		friction: 0.200
+		elasticity: 0.050
+		material: flesh
+		layer: entity, solid, creature, flammable
+		mask: world, vehicle
+		exclude: barbed
+	}
+}
+
+organic:
+{
+	h_species: "zabar"
+	tags: heart, torso, legs, lungs
+	pain_base: 2000.000
+}
+
+organic.state:
+{
+
+}
+
+health:
+{
+	max: 11000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "zabar.body.a"
+		size: [16, 16]
+	}
+	z: -30.000
+	flags: has_damage
+}
+
+damage.effects:
+{
+
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+facing:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing, disable_rotation, disable_control, full_rotate
+}
+
+animal:
+{
+	flags: none
+
+	attack_cooldown: 10.000
+
+	attack_distance_melee: 4.000
+	attack_cooldown_melee: 2.000
+
+	attack_distance_ranged: 10.000
+	attack_cooldown_ranged: 10.000
+
+	charge_distance: 6.000
+	retreat_distance: 9.000
+	growl_cooldown: 0.000
+}
+
+animal.state:
+{
+
+}
+
+npc:
+{
+	avoid_distance_base: [0.500, 0.000]
+	idle_distance_base: [2.000, 2.000]
+
+	wander_radius: 24.000
+	wander_interval: 6.000
+	wander_interval_extra: 20.000
+
+	pain_modifier: 0.200
+	min_consciousness: 0.300
+}
+
+npc.emotions:
+{
+	hostility: 0.100
+	courage: 6.000
+	cruelty: 0.800
+	irritability: 0.100
+	apathy: 1.100
+}
+
+npc.emotions.state:
+{
+
+}
+
+ai:
+{
+	stance: friendly
+}
+
+ai.movement:
+{
+
+}
+
+ai.behavior:
+{
+	
+}
+
+ai.search:
+{
+	radius: 16.000
+}
+
+pathfinding:
+{
+	flags: land
+}
+
+pathfinding.state:
+{
+	
+}
+
+commandable:
+{
+	
+}
+
+runner:
+{
+	walk_force: 200000.000
+	jump_force: 50000.000
+	max_speed: 11.000
+}
+
+runner.state:
+{
+	
+}
+
+threat:
+{
+	priority: 18.000
+}
+
+// dive:
+// {
+// 	sound: "zabar_pounce"
+// 	cooldown: 2.000
+// 	speed: 40.000
+// }
+
+zabar:
+{
+
+}
+
+norotate:
+{
+	bias: 0.500
+	multiplier: 2.000
+	mass_multiplier: 10.000
+}
+
+// interactable:
+// {
+// 	window_size: [192.000, 232.000]
+// }
+
+legs:
+{
+	sound_interval_multiplier: 0.350
+	sound_volume: 0.100
+	sound_pitch: 0.700
+	frame_count: 5
+}
+
+headbob:
+{
+	multiplier: [-0.050, -0.150]
+	speed: -30.000
+}
+
+lootable:
+{
+	items:
+	[
+		{
+			material: "meat"
+			min: 40.000
+			max: 60.000
+		}
+		{
+			material: "leather"
+			min: 20.000
+			max: 40.000
+		}
+	]
+}
+
+faction:
+{
+	id: zabar
+}
+
++tail|instance:
+{
+	$tags: []
+	
+	joint.base:
+	{
+		offset_a: [-0.750, 0.000]
+		max_force: 100000.000
+		max_torque: 4500.000
+		flags: organic, control_write, force_facing
+
+		@animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.gore.stub"
+				size: [16, 16]
+				frame: [0, 0]
+			}
+			offset: [0.000, 0.000]
+			z: -29.000
+		}
+	}
+	
+	joint.pivot:
+	{
+		max_bias: 20.000
+	}
+	
+	joint.rotaryspring:
+	{
+		stiffness: 400.000
+		damping: 10.000
+	}
+	
+	joint.rotarylimit:
+	{
+		max_torque: 8000.000
+		max_bias: 1.000
+		min: -1.500
+		max: 1.500
+	}
+	
+	+butt|child:
+	{
+		$tags: []
+		
+		body:
+		{
+			@shape.line:
+			{
+				a: [-0.500, 0.000]
+				b: [0.500, 0.000]
+				mass: 200.000
+				radius: 0.500
+				friction: 0.400
+				elasticity: 0.050
+				material: flesh
+				layer: entity, solid, creature, flammable
+				mask: world, vehicle
+				exclude: barbed
+			}
+		}
+		
+		norotate:
+		{
+			bias: 0.300
+			multiplier: 1.000
+			mass_multiplier: 40.000
+		}
+		
+		organic:
+		{
+			h_species: "zabar"
+			pain_base: 2000.000
+
+			@animated.renderer:
+			{
+				sprite:
+				{
+					texture: "human.gore.stub"
+					size: [16, 16]
+					frame: [1, 0]
+				}
+				offset: [0.000, 0.000]
+				z: -39.000
+			}
+		}
+		
+		organic.state:
+		{
+		
+		}
+		
+		health:
+		{
+			max: 10000.000
+		}
+		
+		holdable:
+		{
+			offset: [0.750, 0.000]
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "zabar.body.b"
+				count: 1
+				size: [24, 16]
+			}
+			z: -40.000
+			flags: has_damage
+		}
+
+		damage.effects:
+		{
+
+		}
+		
+		// runner:
+		// {
+		// 	walk_force: 6000.000
+		// 	jump_force: 1000.000
+		// 	max_speed: 10.000
+		// }
+		
+		// runner.state:
+		// {
+			
+		// }
+		
+		transform:
+		{
+		
+		}
+		
+		// control:
+		// {
+		
+		// }
+
+		// legs:
+		// {
+		// 	sound_interval_multiplier: 1.100
+		// 	frame_count: 5
+		// }
+
+		lootable:
+		{
+			items:
+			[
+				{
+					material: "meat"
+					min: 40.000
+					max: 60.000
+				}
+				{
+					material: "leather"
+					min: 15.000
+					max: 30.000
+				}
+			]
+		}
+	}
+}
+
++head|instance:
+{
+	$tags: []
+	
+	joint.base:
+	{
+		offset_a: [0.500, 0.000]
+		max_force: 100000.000
+		max_torque: 10000.000
+		flags: organic, control_write, force_facing, no_sync
+
+		@animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.gore.stub"
+				size: [16, 16]
+				frame: [3, 0]
+			}
+			offset: [0.000, 0.000]
+			z: -29.000
+		}
+	}
+	
+	joint.pivot:
+	{
+		max_bias: 20.000
+	}
+	
+	joint.rotaryspring:
+	{
+		stiffness: 800.000
+		damping: 100.000
+	}
+	
+	joint.rotarylimit:
+	{
+		max_torque: 8000.000
+		max_bias: 8.000
+		min: -1.000
+		max: 1.000
+	}
+	
+	+head|child:
+	{
+		$tags: []
+		
+		body:
+		{
+			@shape.circle:
+			{
+				mass: 30.000
+				radius: 0.500
+				friction: 0.100
+				elasticity: 0.050
+				material: flesh
+				layer: entity, solid, creature, flammable
+				mask: world, vehicle
+				exclude: barbed
+			}
+		}
+		
+		lookat:
+		{
+
+		}
+		
+		// biter:
+		// {
+		// 	sound: "zabar_attack"
+		// 	damage_base: 40.000
+		// 	damage_bonus: 150.000
+
+		// 	cooldown: 0.800
+		// 	max_distance: 1.500
+		// 	aoe: 0.250
+		// 	damage_type: bite
+		// 	hit_mask: destructible
+		// }
+
+		// +tongue_slot|instance:
+		// {
+			spitter:
+			{
+				jitter_multiplier: 0.500
+				velocity_multiplier: 40.000
+
+				sound: "zabar.tongue.shoot.00"
+				prefab_projectile: "projectile.zabar.tongue"
+			}
+
+			// grapple:
+			// {
+			// 	offset: [0.400, 0.000]
+			// 	max_length: 4.000
+			// }
+
+			joint.base:
+			{
+				offset_a: [0.400, 0.000]
+				max_force: 40000.000
+				max_torque: 1000.000
+				flags: no_wrap, no_stress
+			}
+
+			joint.rope2:
+			{
+				distance: 6.000
+				max_bias: 10.000
+				max_force: 40000.000
+			}
+
+			rope.renderer:
+			{
+				texture: "zabar.tongue"
+				thickness: 0.150
+				scale: 1.000
+				z: 150.000
+			}
+		// }
+		
+		organic:
+		{
+			h_species: "zabar"
+			tags: brain, head, eyes, mouth
+			pain_base: 2000.000
+
+			@animated.renderer:
+			{
+				sprite:
+				{
+					texture: "human.gore.stub"
+					size: [16, 16]
+					frame: [2, 0]
+				}
+				offset: [0.000, 0.000]
+				z: -39.000
+			}
+		}
+		
+		organic.state:
+		{
+		
+		}
+		
+		health:
+		{
+			max: 7500.000
+		}
+		
+		holdable:
+		{
+			offset: [-0.250, 0.125]
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "zabar.head"
+				count: 1
+				size: [16, 16]
+			}
+			z: -30.000
+			flags: has_damage
+		}
+
+		damage.effects:
+		{
+
+		}
+		
+		transform:
+		{
+		
+		}
+		
+		head:
+		{
+			voice_pitch: 1.000
+
+			// sound_pain: "zabar.pain.01"
+			// sound_death: "zabar.death.00"
+
+			offset_mouth: [0.500, 0.150]
+
+			frame_pain: 1
+			frame_dead: 2
+
+			flags: displacement_rigidity
+			displacement_mult: 2.000
+			displacement_rigidity: 0.600
+		}
+		
+		control:
+		{
+			
+		}
+
+		lootable:
+		{
+			items:
+			[
+				{
+					material: "meat"
+					min: 20.000
+					max: 35.000
+				}
+				{
+					material: "leather"
+					min: 15.000
+					max: 25.000
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.67.2"
+	name: "Soil"
+	desc:
+		'''
+		Regular soil, fairly fertile.
+		'''
+	
+	material_type: soil
+	tile_flags: non_empty
+	flags: raw, porous, soil
+	
+	max_health: 800.000
+	smoothing: 0.200
+	stability: 0.700
+	strength_tensile: 0.200
+	strength_compressive: 11.000
+	
+	mass: 2.200
+	density: 0.000
+	friction: 0.800
+	elasticity: 0.340
+	fall_damage_mult: 1.000
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.soil
+	pattern: pattern.soil
+	texture_scale: 1.563
+	texture_overshoot: -1.410
+	texture_offset: 0.044
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: soil
+			quantity: 2.936111
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff965635"
+			tile_flags: solid, non_empty, ground
+		}
+	]
+}

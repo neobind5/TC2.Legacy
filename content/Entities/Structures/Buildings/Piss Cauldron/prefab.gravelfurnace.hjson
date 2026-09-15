@@ -1,0 +1,246 @@
+$name: "Gravel Furnace"
+$desc:
+	'''
+	Piece of shit furnace you cobbled together with some mortar and gravel. 
+	
+	Looks nice, and it works, I suppose, but it's held together by hopes and dreams.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[-1.000, -0.625]
+			[1.125, -0.625]
+			[1.000, 1.625]
+			[-0.875, 1.625]
+		]
+		
+		mass: 220.000
+		radius: 0.375
+		friction: 0.650
+		elasticity: 0.200
+		
+		material: stone_slab
+		miss_chance: 0.702
+		
+		layer: entity, solid, building, support, ignore_melee, background, crafter
+		mask: world, building
+		exclude: none
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "gravelfurnace"
+		size: [32, 48]
+	}
+	z: -280.000
+}
+
+control:
+{
+
+}
+
+health:
+{
+	max: 6500.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	priority: 1.800
+	window_size: [616.000, 616.000]
+	window_size_min: [192.000, 96.000]
+	window_size_misc: [144.000, 0.000]
+	window_offset: [-192.000, 0.000]
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: metalworking, metallurgy, cooking, drying, heating, processing, dangerous
+		exclude: crafting, complex, advanced, large, huge, assembling, construction, fermenting
+	}
+	
+	tools: hammer, cutters, saw, hand_drill, bucket, axe, shovel, tongs, pick
+	infrastructure: oven, rack, shaping_mould, surface, hard_surface, heater, burner, stove, kiln, smokestack, form, structure
+	environment: container, stationary, dirty, scary, fireproof, durable, sturdy, enclosed, cramped, waterproof, small
+	connotations: none
+	
+	flags: embed_gui
+	menu_columns: 3
+	recipe_type: workshop
+	
+	offset_spawn: [-0.375, -0.125]
+	
+	name: "Gravel Furnace"
+}
+
+crafter:
+{
+	flags: no_gui
+	
+	temperature_max: 949.000
+	pressure_max: 3.000
+	
+	offset: [-0.375, -0.125]
+
+	@inventory4:
+	{		
+		type: workshop
+		flags: standalone, allow_ducts, ignore_mass, no_auto_pickup, vertical
+		stack_size_multiplier: 1.000
+		
+		filter:
+		{
+			include: soft, malleable, granular, viscous, small, gravel, powder, bottled
+			exclude: gas
+		}
+		offset: [-0.500, -0.125]
+	}
+}
+
+workshop:
+{
+	orders_capacity: 1
+	
+	gui_info_size_x: 252.000
+	max_order_mass: 250.000
+	
+	h_sound_order_complete: computer.bell.00
+}
+
+// animated.renderer|"intake":
+// {
+// 	sprite:
+// 	{
+// 		texture: "burner.parts.00"
+// 		size: [8, 8]
+// 		frame: [0, 1]
+// 	}
+// 	z: -275.000
+// }
+
+sound.emitter|"aux":
+{
+	file: truck_engine_loop
+	flags: start_muted
+	volume: 0.800
+	pitch: 0.400
+	size: 0.700
+	size_max_modifier: 0.400
+}
+
+air.vent|"exhaust":
+{
+	offset: [-0.125, -1.750]
+	rotation: -1.571
+	cross_section: 0.150
+	leak_ratio: 0.001
+	flags: no_gui
+	type: exhaust
+}
+
+air.vent|"intake":
+{
+	offset: [0.750, 0.625]
+	rotation: 0.000
+	cross_section: 0.100
+	leak_ratio: 0.117
+	flags: no_gui
+	type: intake
+}
+
+air.container:
+{
+	volume: 0.240
+}
+
+burner:
+{
+	flags: show_misc
+	type: liquid
+	area_fuel: 0.250
+	area_aux: 0.008854
+	temperature_max: 1249.000
+	pressure_max: 3.000
+	insulation: 0.710
+
+	// @inventory1:
+	// {
+	// 	stack_size_multiplier: 0.500
+	// 	type: fuel
+	// 	flags: allow_ducts, ignore_mass
+	// 	offset: [-0.250, 1.125]
+	// 	filter:
+	// 	{
+	// 		require: fuel, flammable, solid
+	// 		include: granular, small, powder, volatile
+	// 		exclude: long, gas, large, bottled
+	// 	}
+	// }
+
+	@sound.emitter:
+	{
+		file: burner.burn.solid.loop.01
+		flags: start_muted
+		volume: 0.900
+		pitch: 0.900
+		size: 0.475
+		size_max_modifier: 0.460
+		offset: [-0.500, 0.375]
+	}
+
+	@light:
+	{
+		color: [1.000, 0.500, 0.000, 2.000]
+		offset: [0.750, 0.625]
+		scale: [14.000, 13.000]
+		intensity: 0.000
+		texture: "light.circle.04"
+	}
+}
+
+burner.state:
+{
+	current_temperature: 300.000
+
+	@inventory1:
+	{
+		type: fuel
+		flags: ignore_mass, no_auto_pickup
+		stack_size_multiplier: 0.500
+		
+		filter:
+		{
+			require: fuel, flammable, liquid
+			include: liquid
+			exclude: solid, gas
+		}
+		offset: [0.875, 0.625]
+	}
+}
+
+shipment:
+{
+	type: crafting
+	layout: square
+	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting, no_body_mass
+	color: "0xfff0c63e"
+}

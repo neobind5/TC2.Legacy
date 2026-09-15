@@ -1,0 +1,169 @@
+$name: "Mining Goods"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.200
+	fall_damage_multiplier: 1.700
+	inventory_weight_multiplier: 0.650
+
+	@shape.polygon:
+	{
+		points:
+		[
+			[-0.750, -0.125]
+			[0.000, -0.375]
+			[0.875, 0.625]
+			[-1.000, 0.625]
+		]
+		
+		mass: 110.000
+		radius: 0.500
+		friction: 0.450
+		elasticity: 0.100
+		
+		material: rubble
+		miss_chance: 0.000
+		
+		layer: entity, solid, crate, storage, ignore_melee, ignore_bullet
+		mask: world
+		exclude: held, attached
+	}
+
+	@shape.line:
+	{
+		a: [-1.125, 1.125]
+		b: [1.125, 1.125]
+		
+		mass: 30.000
+		radius: 0.300
+		friction: 0.950
+		elasticity: 0.400
+		
+		material: wood
+		
+		layer: entity, solid, crate, platform, ignore_bullet, ignore_melee, ignore_hover, flammable
+		exclude: held, attached
+		// mask: solid
+
+		flags: no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 13000.000
+}
+
+interactable:
+{
+	flags: centered_inventory, no_tab
+	priority: 1.100
+	window_size: [192.000, 192.000]
+	window_size_misc: [96.000, 0.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.supplies.00
+		size: [24, 24]
+		frame: [6, 0]
+	}
+	z: -130.000
+}
+
+holdable:
+{
+	force_multiplier: 1.500
+	torque_multiplier: 0.500
+	stress_multiplier: 0.100
+	radius: 0.000
+	hints: materials, heavy, storage
+	flags: disable_parent_facing, disable_rotation, disable_control, force_edge_pickup
+	priority: -2.000
+}
+
+// attachment:
+// {
+// 	force_multiplier: 1.000
+// 	torque_multiplier: 4.000
+// 	offset: [0.000, 1.500]
+// 	flags: none
+// 	tags: large, fixed
+// }
+
+norotate:
+{
+	rotation: 0.000
+	bias: 0.000
+	speed: 2.000
+	multiplier: 4.000
+	mass_multiplier: 3.000
+	flags: no_share, disable_attached
+}
+
+shipment:
+{
+	type: supplies
+	flags: keep_items, allow_withdraw, allow_deposit, use_misc, public
+	layout: large
+}
+
+loot.container:
+{
+	rarity_mid: 3.000
+	rarity_max: 6.000
+	amount_multiplier: 2.000
+	merge_flags: skip_resources
+	rolls: 2
+	rolls_extra: 4
+	tables:
+	[
+		mining.tools.00
+	]
+}
+
+storage:
+{
+	@loot.container:
+	{
+		rolls: 6
+		rolls_extra: 2
+		amount_multiplier: 3.400
+		merge_flags: skip_prefabs
+		flags: shuffle_inventory
+
+		tables:
+		[
+			mining.ores.00
+		]
+	}
+
+	@inventory8:
+	{
+		type: storage
+		flags: public, no_auto_pickup
+		stack_size_multiplier: 8.000
+		
+		offset: [0.000, 0.000]
+	}
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+faction:
+{
+}

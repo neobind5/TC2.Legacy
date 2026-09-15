@@ -1,0 +1,59 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Formwork (Empty)"
+	desc:
+		'''
+		Reinforced nickelsteel formwork, acting as a base to be filled with other construction materials.
+		'''
+	
+	material_type: metal_frame
+	tile_flags: non_empty
+	flags: artificial, magnetic, metal, construction
+	
+	max_health: 33000.000
+	smoothing: 0.200
+	stability: 8.750
+	strength_tensile: 30.000
+	strength_compressive: 14.740
+	
+	mass: 0.165234
+	density: 0.000
+	friction: 0.920
+	elasticity: 0.670
+	fall_damage_mult: 0.940
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.framework.phlog_clay
+	pattern: pattern.framework
+	texture_scale: 1.375
+	texture_overshoot: -0.030
+	texture_offset: -0.875
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: steel.rod
+			quantity: 0.022266
+		}
+		{
+			material: phlog_gas
+			quantity: 1.493242
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff808399"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff505133"
+			tile_flags: non_empty, transparent
+		}
+	]
+}

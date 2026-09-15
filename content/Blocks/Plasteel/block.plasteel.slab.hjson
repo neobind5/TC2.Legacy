@@ -1,0 +1,56 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Plasteel Slabs"
+	desc:
+		'''
+		Nearly indestructible slab made of pure plasteel.
+		'''
+	
+	material_type: metal_solid
+	tile_flags: non_empty
+	flags: artificial, magnetic, metal, masonry, construction
+	
+	max_health: 425000.000
+	smoothing: 0.150
+	stability: 27.700
+	strength_tensile: 63.000
+	strength_compressive: 85.410
+	
+	mass: 16.700
+	density: 0.000
+	friction: 0.400
+	elasticity: 0.600
+	fall_damage_mult: 1.080
+	collision_layer: none
+	collision_mask: essence
+	
+	texture: terrain.plasteel.slab
+	pattern: pattern.smirglum.slab
+	texture_scale: 1.500
+	texture_overshoot: -0.125
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: plasteel
+			quantity: 0.373291
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff4e3663"
+			tile_flags: solid, non_empty, become_background_on_break, no_replace
+		}
+		{
+			color: "0xff261b07"
+			tile_flags: non_empty, no_replace
+		}
+	]
+}

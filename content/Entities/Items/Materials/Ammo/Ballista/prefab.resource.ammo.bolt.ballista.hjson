@@ -1,0 +1,50 @@
+$tags: []
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 1.000
+		radius: 0.750
+		friction: 0.650
+		elasticity: 0.500
+		layer: entity, solid, resource, ignore_melee, ignore_bullet, flammable
+		mask: world
+		material: bramble
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "resource.ammo.bolt.ballista"
+		count: 4
+		size: [16, 16]
+	}
+}
+
+transform:
+{
+
+}
+
+resource:
+{
+	material: "ammo.bolt.ballista"
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+}
+
+norotate:
+{
+
+}
+
+despawn:
+{
+
+}

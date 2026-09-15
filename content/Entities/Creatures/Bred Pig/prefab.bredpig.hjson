@@ -1,0 +1,352 @@
+$name: "Bred Pig"
+$desc: 
+	'''
+	Cute, pink creature that toils in mud and eats their own faeces. Some would call them unclean.
+	'''
+$export: false
+$tags: []
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 60.000
+		offset: [0.000, -0.125]
+		radius: 0.625
+		friction: 0.700
+		elasticity: 0.250
+		material: flesh
+		layer: entity, solid, creature, flammable
+		mask: world
+	}
+}
+
+organic:
+{
+	h_species: "pig"
+	tags: heart, torso, legs, lungs
+	pain_base: 2000.000
+}
+
+organic.state:
+{
+
+}
+
+health:
+{
+	max: 5500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "pig.body"
+		size: [16, 16]
+	}
+	z: -30.000
+	flags: has_damage
+}
+
+damage.effects:
+{
+
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+facing:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing, disable_rotation, disable_control, full_rotate
+}
+
+animal:
+{
+	attack_distance: 1.000
+	attack_cooldown: 1.500
+	charge_distance: 6.000
+	retreat_distance: 15.000
+}
+
+npc:
+{
+	avoid_distance_base: [0.500, 0.000]
+	idle_distance_base: [2.000, 2.000]
+
+	wander_radius: 20.000
+	wander_interval: 5.000
+	wander_interval_extra: 9.000
+
+	pain_modifier: 0.820
+	min_consciousness: 0.500
+}
+
+npc.emotions:
+{
+	hostility: 0.200
+	courage: 0.750
+	cruelty: 0.940
+	irritability: 0.700
+	apathy: 5.500
+}
+
+npc.emotions.state:
+{
+
+}
+
+ai:
+{
+	stance: friendly
+	courage: 0.500
+}
+
+ai.movement:
+{
+
+}
+
+ai.behavior:
+{
+	type: idle
+	movement_flags: wander
+	combat_flags: attack_when_hit, flee, evade, charge, prefer_melee, form_groups, incapacitate
+}
+
+ai.search:
+{
+	radius: 8.000
+}
+
+pathfinding:
+{
+	flags: land
+}
+
+pathfinding.state:
+{
+	
+}
+
+runner:
+{
+	walk_force: 7000.000
+	jump_force: 4000.000
+	max_speed: 6.000
+	max_jump_speed: 7.000
+	max_jump_time: 0.000
+	max_air_time: 0.200
+	max_grounded_dot: 0.900
+	propagate_ratio: 1.000
+	no_rotate_air_mult: 0.000
+	// flags: no_rotate_align_surface
+	walk_lerp: 0.150
+	jump_decay: 0.500
+	crouch_speed_modifier: 0.500
+	air_brake_modifier: 0.000
+}
+
+runner.state:
+{
+	
+}
+
+threat:
+{
+	priority: 0.800
+}
+
+norotate:
+{
+	bias: 0.100
+	multiplier: 1.000
+	mass_multiplier: 50.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192.000, 232.000]
+}
+
+legs:
+{
+	sound_interval_multiplier: 1.100
+	frame_count: 5
+}
+
+headbob:
+{
+	multiplier: [0.020, -0.080]
+	speed: 15.000
+}
+
+faction:
+{
+	
+}
+lootable:
+{
+	items:
+	[
+		{
+			material: meat
+			min: 90.000
+			max: 150.000
+		}
+		{
+			material: leather
+			min: 30.000
+			max: 50.000
+		}
+	]	
+}
++0|instance:
+{
+	$tags: []
+	
+	joint.base:
+	{
+		offset_a: [0.500, -0.300]
+		max_force: 12000.000
+		max_torque: 1000.000
+		flags: organic, control_write, no_sync
+
+		@animated.renderer:
+		{
+			sprite:
+			{
+				texture: "badger.gore.stub"
+				size: [16, 16]
+				frame: [3, 0]
+			}
+			offset: [0.000, 0.000]
+			z: -29.000
+		}
+	}
+	
+	joint.pivot:
+	{
+	
+	}
+	
+	joint.rotaryspring:
+	{
+		stiffness: 400.000
+		damping: 20.000
+	}
+	
+	joint.rotarylimit:
+	{
+		max_torque: 8000.000
+		min: -1.000
+		max: 1.000
+	}
+	
+	+head|child:
+	{
+		$tags: []
+		
+		body:
+		{
+			@shape.circle:
+			{
+				mass: 8.000
+				radius: 0.400
+				friction: 0.700
+				elasticity: 0.250
+				material: flesh
+				layer: entity, solid, creature, flammable
+				mask: world
+			}
+		}
+		
+		lookat:
+		{
+
+		}
+		
+		organic:
+		{
+			tags: brain
+			h_species: "pig"
+			pain_base: 2000.000
+
+			@animated.renderer:
+			{
+				sprite:
+				{
+					texture: "badger.gore.stub"
+					size: [16, 16]
+					frame: [2, 0]
+				}
+				offset: [0.000, 0.000]
+				z: -39.000
+			}
+		}
+		
+		organic.state:
+		{
+		
+		}
+		
+		health:
+		{
+			max: 3500.000
+		}
+		
+		holdable:
+		{
+			offset: [-0.125, 0.125]
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "pig.head"
+				count: 1
+				size: [16, 16]
+			}
+			z: -30.000
+			flags: has_damage
+		}
+
+		damage.effects:
+		{
+
+		}
+		
+		transform:
+		{
+		
+		}
+		
+		head:
+		{
+		
+		}
+		
+		control:
+		{
+			
+		}
+	}
+}

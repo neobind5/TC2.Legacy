@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.65.1"
+	name: "Native Silver"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	material_type: metal_solid
+	tile_flags: non_empty
+	flags: raw, rare, native, metal
+	
+	max_health: 20000.000
+	smoothing: 0.150
+	stability: 6.140
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 3.800
+	density: 0.000
+	friction: 0.500
+	elasticity: 0.500
+	fall_damage_mult: 1.120
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.silver.ore
+	pattern: pattern.stone
+	texture_scale: 1.200
+	texture_overshoot: -0.750
+	texture_offset: 0.000
+	
+	color_preview: "0xffb4ffeb"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: silver
+			quantity: 0.204768
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffccdfda"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

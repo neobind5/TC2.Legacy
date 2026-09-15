@@ -1,0 +1,59 @@
+{
+    flags: none
+    priority: 0
+
+    filters:
+    [
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]recipe\..*\.hjson$'''
+        }
+        //// Structures:
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.market\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]recipe\.build\.outpost\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.outpost\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.supplies\..*\.hjson$'''
+        }
+        //// Tools:
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.medkit\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.chisel\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]Chisel\.cs$'''
+        }
+        //// Mechanics
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.CharacterEditor\.cs$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.cs$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.GUI\.cs$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.SideMenuGUI\.cs$'''
+        }
+    ]
+}

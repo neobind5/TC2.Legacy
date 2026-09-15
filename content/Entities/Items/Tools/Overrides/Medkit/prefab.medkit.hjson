@@ -1,0 +1,73 @@
+$name: "Medkit"
+$desc: 
+	'''
+	Bag with various tools for treating injuries.
+	'''
+$tags: []
+
+body:
+{
+	@shape.box:
+	{
+		size: [1.000, 0.700]
+		offset: [0.000, 0.200]
+		mass: 4.500
+		friction: 0.980
+		elasticity: 0.010
+		material: fabric
+		layer: entity, solid, ignore_bullet, ignore_melee, item, flammable
+		mask: world
+	}
+}
+
+health:
+{
+	max: 900.000
+}
+
+control:
+{
+
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+	flags: storable
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "medkit"
+	}
+}
+
+transform:
+{
+
+}
+
+medkit:
+{
+	power: 100.000
+	integrity_multiplier: 1.000
+	durability_multiplier: 1.000
+	cooldown: 0.500
+	max_distance: 5.000
+	aoe: 1.750
+	heal_min_integrity: 0.000
+	heal_min_durability: 0.000
+	pain: 50.000
+}
+
+norotate:
+{
+
+}
+
+packable:
+{
+
+}

@@ -1,0 +1,152 @@
+﻿{
+	$version: "0.1.75.1"
+	color: "0xffffdaa8"
+	
+	sounds_looped:
+	[
+		{
+			sound: music.sunrise.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.340, 0.400]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.400, 0.500]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.02.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.500, 0.600]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.03.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.600, 0.700]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.04.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.700, 0.800]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.night.00.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.800, 0.900]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.night.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.900, 1.000]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: amb.wasteland.day.loop.00
+			volume: 0.600
+			pitch: 1.000
+			
+			daytime_range: [0.000, 0.300]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+	]
+	
+	sounds_random:
+	[
+		{
+			time_minmax: [25.000, 105.000]
+			volume_minmax: [0.300, 0.400]
+			pitch_minmax: [0.850, 1.150]
+			
+			sounds:
+			[
+				amb.industry.metal.groan.04
+				amb.industry.metal.groan.03
+				amb.industry.metal.groan.02
+				amb.industry.metal.groan.01
+				amb.industry.metal.groan.00
+			]
+		}
+		{
+			time_minmax: [30.000, 80.000]
+			volume_minmax: [0.150, 0.160]
+			pitch_minmax: [0.850, 1.050]
+			
+			sounds:
+			[
+				amb.industry.metal.deep.00
+				amb.industry.metal.deep.01
+			]
+		}
+		{
+			time_minmax: [50.000, 150.000]
+			volume_minmax: [0.200, 0.300]
+			pitch_minmax: [0.950, 1.050]
+			
+			sounds:
+			[
+				amb.ship.horn.00
+				amb.ship.horn.01
+			]
+		}
+	]
+}

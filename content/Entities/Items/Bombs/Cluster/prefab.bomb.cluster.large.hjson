@@ -1,0 +1,118 @@
+$name: "Cluster Bomb (Large, Impact)"
+$desc:
+	'''
+	Maybe can have enough bomb.
+	'''
+$tags: []
+
+control:
+{
+
+}
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 360.500
+		radius: 1.50
+		friction: 0.500
+		elasticity: 0.100
+		material: metal
+		layer: entity, solid, flammable
+		mask: world
+	}
+	fall_damage_multiplier: 20.000
+	gravity: 1.35
+}
+
+norotate:
+{
+	speed: 2.000
+	multiplier: 0.750
+	mass_multiplier: 15.000
+	attached_multiplier: 0.300
+	flags: no_share
+}
+
+health:
+{
+	max: 2900.000
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "bomb.cluster.large"
+	}
+	offset: [0.000, -0.250]
+}
+
+transform:
+{
+
+}
+
+explosive:
+{
+	radius: 4.000
+	power: 6.000
+	damage_entity: 100.000
+	damage_terrain: 100.000
+    primed_threshold: 0.588
+	smoke_amount: 1.200
+	sparks_amount: 2.500
+	smoke_lifetime_multiplier: 0.500
+	smoke_velocity_multiplier: 1.200
+	flash_duration_multiplier: 0.550
+	flash_intensity_multiplier: 0.200
+	volume: 1.000
+	pitch: 2.300
+	damage_type: shrapnel
+	damage_type_secondary: explosion
+    flags: any_damage, explode_when_primed, primed_when_destroyed
+}
+
+bombresources:
+{
+	items:
+	[
+		{
+			material: phlog_gas
+			chance: 100.000
+			min: 530.000
+			max: 914.000
+			min_speed: 10.800
+			max_speed: 120.800
+			merge_radius: 0.0001
+			spawn_radius: 5.750
+			split_size: 100.000
+		}
+		null
+		null
+		null
+	]
+}
+
+cluster:
+{
+	prefab: "bomb.cluster.standard"
+	spread: 3.999
+	speed: 35.000
+	count: 8
+
+	speed_modifier_min: 0.800
+	speed_modifier_max: 1.500
+}
+
+
+packable:
+{
+
+}

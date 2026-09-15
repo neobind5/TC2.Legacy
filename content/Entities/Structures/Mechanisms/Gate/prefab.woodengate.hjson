@@ -1,0 +1,232 @@
+$name: "Gate (Wood)"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [1.000, 12.000]
+		offset: [0.000, 0.000]
+		friction: 0.990
+		elasticity: 0.030
+		mass: 180.000
+		material: wood
+		layer: entity, building, ignore_melee, flammable
+		mask: world
+	}
+}
+
+health:
+{
+	max: 40000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "gate.base"
+	}
+	z: -150.000
+}
+
+gate:
+{
+	length: 6.000
+}
+
+axle:
+{
+	offset: [-1.000, -5.500]
+	mass: 5.000
+	friction: 0.800
+	radius_a: 1.000
+	radius_b: 1.000
+	radius_inner: 0.750
+	radius_outer: 1.000
+	z: -50.000
+	
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "wheel_1000.steel"
+		}
+	}
+}
+
+crank:
+{
+
+}
+
+transform:
+{
+
+}
+
+faction:
+{
+	
+}
+
+interactable:
+{
+	flags: no_tab
+}
+
+// rope.renderer:
+// {
+// 	texture: "rope"
+// 	thickness: 0.200
+// 	scale: 8.000
+// 	z: 100.000
+// }
+
+// joint.base:
+// {
+// 	offset_a: [0.000, -6.000]
+// 	offset_b: [0.000, -3.000]
+// 	max_force: 500000.000
+// 	max_torque: 500000.000
+// 	flags: control_read, control_write
+// }
+
+// joint.gear:
+// {
+// 	min: 0.000
+// 	max: 0.000
+
+// 	error_bias: 0.0001
+// 	max_bias: 20.000
+// }
+
+// joint.slider:
+// {
+// 	a: [0.000, 0.000]
+// 	b: [0.000, 12.000]
+
+// 	min: 0.000
+// 	max: 12.000
+
+// 	error_bias: 0.0001
+// 	max_force: 50000.000
+// 	max_force_b: 50000.000
+// 	max_bias: 20.000
+// }
+
+// joint.distance:
+// {
+// 	max_force: 20000.000
+// 	max_bias: 20.000
+// }
+
+rope.renderer:
+{
+	texture: "rope"
+	thickness: 0.200
+	scale: 8.000
+	z: 100.000
+}
+
++mount|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -6.000]
+		offset_b: [0.000, -3.000]
+		max_force: 50000.000
+		max_torque: 50000.000
+		max_stress: 4.000
+		stress_threshold: 1.500
+		flags: control_read, control_write
+		material_type: metal
+	}
+
+	joint.gear:
+	{
+		min: 0.000
+		max: 0.000
+
+		error_bias: 0.001
+		max_force: 200000.000
+		max_bias: 20.000
+
+		stress_mult: 0.500
+	}
+
+	joint.slider:
+	{
+		a: [0.000, 0.000]
+		b: [0.000, 12.000]
+
+		min: 0.000
+		max: 12.000
+
+		error_bias: 0.001
+		max_force: 40000.000
+		max_bias: 10.000
+	}
+
+	joint.distance:
+	{
+		max_force: 100000.000
+		max_bias: 8.000
+		stress_mult: 0.000
+	}
+
+	+door|child:
+	{
+		$tags: []
+		
+		body:
+		{
+			@shape.box:
+			{
+				size: [0.500, 6.000]
+				offset: [0.000, 0.000]
+				mass: 400.000
+				friction: 0.950
+				elasticity: 0.030
+				material: wood
+				layer: entity, solid, flammable
+				mask: world, solid
+			}
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "gate"
+			}
+			z: 1000.000
+		}
+		
+		health:
+		{
+			max: 25000.000
+		}
+		
+		transform:
+		{
+		
+		}
+
+		faction:
+		{
+			
+		}
+
+		// threat:
+		// {
+		// 	priority: 0.500
+		// }
+	}
+}

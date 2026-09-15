@@ -1,0 +1,88 @@
+$name: "Swaps in gen - Military Supplies"
+$desc:
+	'''
+	Sturdy metal containers packed with enough ordnance to equip or exterminate a whole regiment.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.400
+	fall_damage_multiplier: 2.500
+	inventory_weight_multiplier: 0.850
+
+	@shape.polygon:
+	{
+		points:
+		[
+			[-0.750, -1.000]
+			[0.750, -0.500]
+			[1.000, 0.875]
+			[-1.000, 0.875]
+		]
+		
+		mass: 70.000
+		radius: 0.250
+		friction: 0.450
+		elasticity: 0.100
+		
+		material: metal
+		
+		layer: entity, solid, crate, storage, ignore_bullet, ignore_melee
+		exclude: held, attached
+	}
+
+	@shape.line:
+	{
+		a: [-1.125, 1.125]
+		b: [1.125, 1.125]
+		
+		mass: 30.000
+		radius: 0.300
+		friction: 0.950
+		elasticity: 0.400
+		
+		material: wood
+		
+		layer: entity, solid, crate, platform, ignore_bullet, ignore_melee, ignore_hover, flammable
+		exclude: held, attached
+		// mask: solid
+
+		flags: no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 22000.000
+}
+
+interactable:
+{
+	flags: centered_inventory, no_tab
+	priority: 1.100
+	window_size: [192.000, 192.000]
+	window_size_misc: [96.000, 0.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.supplies.00
+		size: [24, 24]
+		frame: [1, 0]
+	}
+	z: -130.000
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "supplies.04"
+}

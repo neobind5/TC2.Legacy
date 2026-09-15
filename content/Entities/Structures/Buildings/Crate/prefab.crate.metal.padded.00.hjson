@@ -1,0 +1,123 @@
+$name: "Crate (Metal, Small)"
+$desc:
+	'''
+	Small storage crate made of metal.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.500
+	fall_damage_multiplier: 0.200
+	inventory_weight_multiplier: 0.350
+	
+	@shape.box:
+	{
+		material: metal
+		miss_chance: 0.800
+		flags: none
+		tags: none
+		
+		layer: entity, solid, crate, storage, furniture, ignore_bullet
+		mask: world, crate
+		exclude: held
+		
+		mass: 31.000
+		radius: 0.250
+		friction: 0.880
+		elasticity: 0.680
+		
+		cog_offset: [-0.125, 0.1875]
+		
+		size: [1.375, 1.000]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 15500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: crate.metal.padded.00
+		mask: 
+	}
+	z: -70.200
+}
+
+faction.colorable:
+{
+
+}
+
+transform:
+{
+
+}
+
+faction:
+{
+	
+}
+
+storage:
+{
+	@inventory8:
+	{
+		type: storage
+		flags: public, faction
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			require: none
+			include: granular, heavy, small, pellet, ingot, plate, solid, bottled, malleable
+			exclude: long, large, gas
+		}
+		
+		offset: [0.000, 0.000]
+	}
+}
+
+interactable:
+{
+	flags: none
+	priority: 1.000
+	window_size: [192.000, 96.000]
+}
+
+lockable:
+{
+
+}
+
+holdable:
+{
+	force_multiplier: 0.500
+	torque_multiplier: 0.250
+	stress_multiplier: 0.600
+	radius: 0.000
+	flags: disable_parent_facing, disable_rotation, disable_control, force_edge_pickup
+}
+
+attachment:
+{
+	force_multiplier: 1.000
+	torque_multiplier: 4.000
+	offset: [0.000, 0.650]
+	flags: disable_parent_facing
+	tags: medium, fixed
+}
+
+norotate:
+{
+	bias: 0.000
+	speed: 3.000
+	multiplier: 2.000
+	mass_multiplier: 4.000
+	flags: no_share
+}

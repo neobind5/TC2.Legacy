@@ -1,0 +1,145 @@
+$name: "Tyrant"
+$desc:
+	'''
+	Biggest iron fit for auto-cannon ammunition.
+	
+	Designed for Tyrantul hunters however it works just as well for human targets. Some would say it works too well but those people often end up with no head soon after.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.100
+
+	@shape.line:
+	{
+		a: [-0.600, 0.000]
+		b: [0.600, -0.120]
+		mass: 10.500
+		radius: 0.300
+		friction: 0.900
+		elasticity: 0.250
+		material: metal_solid
+		layer: entity, solid, ignore_bullet, ignore_melee, item
+		mask: world
+	}
+}
+
+gun:
+{
+	muzzle_offset: [0.625, -0.250]
+	receiver_offset: [-0.125, -0.125]
+	
+	eject_direction: [-2.800, -5.400]
+	eject_angular_velocity: 5.000
+	flash_size: 1.0
+	
+	smoke_size: 3.000
+	smoke_amount: 4.000
+
+	shake_amount: 0.8
+	shake_radius: 24.000
+	
+	sound_volume: 1.930
+	sound_size: 1.950
+	sound_dist_multiplier: 1.620
+	sound_pitch: 0.8
+
+	sound_shoot: scattergun_shoot
+	sound_cycle: scattergun_close
+	sound_reload: scattergun_reload
+	
+	damage_multiplier: 2.6
+	velocity_multiplier: 200.000
+	jitter_multiplier: 1.250
+	recoil_multiplier: 0.9
+	reload_interval: 1.6
+	cycle_interval: 0.500
+	stability: 4800.000
+	failure_rate: 0.01
+	
+	ammo_filter: ammo_ac
+	max_ammo: 3.000
+	
+	action: revolver
+	type: handgun
+	feed: cylinder
+	heuristic_range: 18.000
+	
+	@inventory1:
+	{
+		type: ammo
+		flags: hidden, ignore_mass, no_auto_pickup
+		stack_size_multiplier: 1.000
+
+		filter:
+		{
+			require: ammo
+			exclude: gas
+		}
+	}
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 2.000]
+		offset: [1.000, -0.250]
+		scale: [16.000, 14.000]
+		intensity: 0.000
+		texture: "light.circle.00"
+	}
+}
+
+gun.state:
+{
+
+}
+
+holdable:
+{
+	offset: [-0.600, 0.100]
+	radius: 4.000
+	flags: storable
+	hints: gun, medium, powerful
+
+	force_multiplier: 2.0
+	torque_multiplier: 1.2
+	
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tyrant"
+	}
+	offset: [0.000, 0.000]
+	scale: [0.900, 0.900]
+}
+
+health:
+{
+	max: 4000.000
+}
+
+transform:
+{
+
+}
+
+packable:
+{
+
+}
+
+control:
+{
+
+}
+
+aimable:
+{
+
+	min: -0.950
+	max: 0.950
+	
+}

@@ -1,0 +1,60 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Plasteel Gravel"
+	name_short: "Ad.Gravel"
+	name_imperial: "Adymntsterk"
+	description:
+		'''
+		Standard plasteel gravel.
+		'''
+	
+	tips: []
+	
+	icon:
+	{
+		texture: resource.plasteel.gravel
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	// Inventory material type.
+	type: gravel
+	flags: magnetic, granular, metal, mineral, heavy, small, raw, gravel, solid
+	display_flags: none
+	hints: none
+	
+	// Ratio of the material volume to the total volume it occupies when stacked. A value of 1.0 means no empty space, while a value closer to 0.0 means a lot of empty space.
+	packing_fraction: 0.000
+	// Mass of 1 unit in kg.
+	mass_per_unit: 3.822
+	
+	// Maximum quantity (units) per stack.
+	quantity_max: 500.000
+	// Minimum spawnable quantity.
+	spawn_quantity_threshold: 1.000
+	// Preferred quantity snapping for recipes.
+	snapping: 1.000
+	// Preferred quantity snapping for inventories.
+	snapping_pickup: 1.000
+	
+	form_type: gravel
+	prefab: resource.plasteel.gravel
+	h_substance: plasteel
+	
+	color_icon: "0xffffffff"
+	color_item: "0xffffffff"
+	color_dust: "0xff6c584b"
+	color_gib: "0xff6c584b"
+	
+	centroid_default: [0.000, 0.250]
+	colliders: []
+	
+	commodity:
+	{
+		flags: none
+		categories: metals, plasteel
+		
+		market_price: 3.100
+		market_price_per_kg_auto: 0.811094
+	}
+}

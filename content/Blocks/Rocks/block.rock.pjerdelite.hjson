@@ -1,0 +1,57 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Pjerdelite"
+	desc:
+		'''
+		Dense ferrous metamorphic rock with a dull metallic texture found deeper underground, forming a bedrock layer.
+
+		Often contains inclusions of smirglum and various heavy metals.
+		'''
+	
+	material_type: stone_metallic
+	tile_flags: non_empty
+	flags: raw, ore, common, magnetic, rock, metamorphic
+	
+	max_health: 10850.000
+	smoothing: 0.160
+	stability: 8.940
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 11.975
+	density: 0.000
+	friction: 0.700
+	elasticity: 0.560
+	fall_damage_mult: 1.030
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.rock.pjerdelite
+	pattern: pattern.stone
+	texture_scale: 1.400
+	texture_overshoot: -0.650
+	texture_offset: 0.000
+	
+	color_preview: "0xff80775f"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: pjerdelite
+			quantity: 3.459533
+		}
+		{
+			material: smirglum.powder
+			quantity: 0.237282
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff7c5642"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+}

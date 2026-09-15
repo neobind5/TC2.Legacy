@@ -1,0 +1,203 @@
+$name: "Heavy Metal Gate"
+$desc:
+	'''
+	Sturdy metal gate.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [1.500, 12.000]
+		offset: [0.000, 0.000]
+		friction: 0.600
+		elasticity: 0.350
+		mass: 800.000
+		material: metal_frame
+		layer: entity, building, ignore_melee,
+		mask: world
+	}
+}
+
+health:
+{
+	max: 120000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "gate.metal.base"
+	}
+	z: -150.000
+}
+
+gate:
+{
+	length: 5.550
+}
+
+axle:
+{
+	offset: [0.000, -5.750]
+	mass: 50.000
+	friction: 0.800
+	radius_a: 1.000
+	radius_b: 1.000
+	radius_inner: 0.750
+	radius_outer: 1.000
+	z: 150.000
+	
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "wheel_1000.steel"
+		}
+	}
+}
+
+crank:
+{
+
+}
+
+transform:
+{
+
+}
+
+faction:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+}
+
++mount|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -6.125]
+		offset_b: [0.000, -3.000]
+		max_force: 800000.000
+		max_torque: 800000.000
+
+		max_stress: 5.000
+		stress_threshold: 1.500
+
+		flags: none
+		material_type: metal
+	}
+
+	joint.gear:
+	{
+		min: 0.000
+		max: 0.000
+
+		error_bias: 0.001
+		max_force: 600000.000
+		max_bias: 20.000
+	}
+
+	joint.slider:
+	{
+		a: [0.000, 0.000]
+		b: [0.000, 5.500]
+
+		min: 0.000
+		max: 5.500
+
+		error_bias: 0.000001
+		max_force: 2000000.000
+		max_bias: 100.000
+	}
+
+	joint.distance:
+	{
+		distance: 5.500
+		step: 10.000
+		max_force: 700000.000
+		error_bias: 0.001
+		max_bias: 7.000
+		max_bias_bounce: 30.000
+		stress_mult: 0.001
+		bounce: 1.000
+	}
+
+	rope.renderer:
+	{
+		texture: "belt.chain"
+		thickness: 0.200
+		scale: 8.000
+		z: -50.000
+	}
+
+	+gate|child:
+	{
+		$tags: []
+		
+		body:
+		{
+			@shape.box:
+			{
+				size: [0.875, 6.000]
+				offset: [0.000, 0.000]
+				mass: 2000.000
+				friction: 0.450
+				elasticity: 0.500
+				radius: 0.000
+				material: metal_solid
+				layer: entity, solid, door, building
+				mask: world, solid
+			}
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "gate.metal"
+				mask: "gate.metal.mask"
+			}
+			z: 100.000
+		}
+
+		faction.colorable:
+		{
+
+		}
+
+		faction:
+		{
+			
+		}
+					
+		health:
+		{
+			max: 200000.000
+		}
+		
+		transform:
+		{
+		
+		}
+
+		// threat:
+		// {
+		// 	priority: 0.500
+		// }
+		
+		// deletewithparent:
+		// {
+		
+		// }
+	}
+}

@@ -1,0 +1,93 @@
+$name: "Trash Can"
+$desc:
+	'''
+	Standard Imperial trash can.
+	Remarkably durable.
+	'''
+$tags: []
+
+body:
+{
+	flags: none
+	buoyancy: 0.120
+	damping: 0.982
+	fall_damage_multiplier: 0.500
+
+	@shape.polygon:
+	{
+		points:
+		[
+			[-0.500, -0.625]
+			[0.500, -0.625]
+			[0.375, 0.750]
+			[-0.375, 0.750]
+		]
+		
+		mass: 16.000
+		radius: 0.225
+		friction: 0.530
+		elasticity: 0.770
+		
+		material: metal_sheet
+		miss_chance: 0.624
+		
+		layer: entity, solid, furniture, conductive, magnetic, ignore_melee
+		cog_offset: [0.000, 0.250]
+	}
+}
+
+health:
+{
+	max: 7800.000
+}
+
+holdable:
+{
+	radius: 0.000
+	flags: disable_parent_facing, disable_rotation, disable_control
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "trashcan"
+	}
+	z: -80.000
+}
+
+transform:
+{
+
+}
+
+shipment:
+{
+	type: trash
+	flags: keep_items, allow_withdraw, allow_deposit
+	layout: large
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192, 96]
+	window_offset: [0.000, -128.000]
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "scrap.steel"
+			quantity: 7.000
+			chance: 0.100
+		}
+		{
+			material: "steel.plate"
+			quantity: 5.000
+			chance: 0.400
+		}
+	]
+}

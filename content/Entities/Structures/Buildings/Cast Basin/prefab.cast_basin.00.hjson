@@ -1,0 +1,104 @@
+$name: "Casting Basin"
+$desc:
+	'''
+	Large concrete basin filled with sand used for casting molten metal.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[-1.250, -0.250]
+			[1.250, -0.375]
+			[1.375, 1.000]
+			[-1.375, 1.000]
+		]
+		
+		mass: 550.000
+		radius: 0.500
+		friction: 0.950
+		
+		material: concrete
+		
+		layer: entity, solid, building, ignore_melee
+		mask: building, world, construction, door
+	}
+}
+
+health:
+{
+	max: 65000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "casting_basin.00"
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [624.000, 510.000]
+	window_size_misc: [96.000, 0.000]
+}
+
+shop:
+{
+	name: "Casting Basin"
+	
+	tags_filter:
+	{
+		include: crude, filtering, blending, drying, moulding
+		exclude: complex, advanced, furniture, blacksmithing, assembling, metalworking, salvaging, architecture, smelting
+	}
+	
+	tools: hammer, bucket, shovel, spatula, knife, ladle
+	infrastructure: barrel, casting_mould, shaping_mould, bucket, liquid_container, form, dies, structure
+	environment: container, form, sturdy, large
+	
+	flags: embed_gui
+	menu_columns: 4
+	recipe_type: workshop
+	blueprints_capacity: 8
+}
+
+workshop:
+{
+	orders_capacity: 3
+
+	@inventory8:
+	{
+		stack_size_multiplier: 1.000
+		type: workshop
+		flags: ignore_mass, standalone, public, vertical, no_auto_pickup
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+	gui_info_size_x: 172.000
+	max_order_mass: 2250.000
+}
+
+shipment:
+{
+	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting
+	type: crafting
+	layout: square
+	color: "0xfff0c63e"
+}

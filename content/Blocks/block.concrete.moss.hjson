@@ -1,0 +1,55 @@
+﻿{
+	$version: "0.1.63.8"
+	name: "Concrete (Mossy)"
+	desc:
+		'''
+		Mossy cast concrete.
+		'''
+	
+	material_type: concrete
+	tile_flags: non_empty
+	flags: artificial, overgrown, construction
+	
+	max_health: 5700.000
+	smoothing: 0.180
+	stability: 1.440
+	strength_tensile: 1.920
+	strength_compressive: 9.760
+	
+	mass: 2.700
+	friction: 0.880
+	elasticity: 0.590
+	fall_damage_mult: 1.000
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.concrete.moss
+	pattern: pattern.concrete
+	texture_scale: 1.070
+	texture_overshoot: -0.400
+	texture_offset: 0.000
+	
+	color_preview: "0xff80775f"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: scrap.concrete
+			quantity: 1.000
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff465133"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff30322a"
+			tile_flags: non_empty
+		}
+	]
+}

@@ -1,0 +1,62 @@
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		radius: 4.000
+		offset: [0.000, 0.000]
+		friction: 0.500
+		elasticity: 0.500
+		material: metal
+		layer: entity, building
+		mask: world
+	}
+}
+
+health:
+{
+	max: 800000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "shaft"
+	}
+	z: -150.000
+}
+
+axle:
+{
+	offset: [0.000, 0.000]
+	mass: 4000.000
+	friction: 0.01
+	radius_a: 4.000
+	radius_b: 0.750
+	radius_inner: 3.000
+	radius_outer: 4.000
+	
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "flywheel.steel.01"
+		}
+		z: -140.000
+	}
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192.000, 280.000]
+}

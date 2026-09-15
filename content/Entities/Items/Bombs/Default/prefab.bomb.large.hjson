@@ -1,0 +1,80 @@
+$name: "Bomb (Large, Impact)"
+$desc:
+	'''
+	Larger bomb = better bomb.
+	'''
+$tags: []
+
+control:
+{
+
+}
+
+body:
+{
+	@shape.line:
+	{
+		a: [0.000, -0.575]
+		b: [0.000, 0.675]
+		offset: [0.000, 0.000]
+		scale: [1.000, 1.000]
+		mass: 120.500
+		radius: 0.750
+		friction: 0.500
+		elasticity: 0.100
+		material: metal
+		layer: entity, solid, flammable
+		mask: world
+	}
+	fall_damage_multiplier: 16.000
+	gravity: 1.35
+}
+
+health:
+{
+	max: 2900.000
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "bomb.large"
+	}
+	offset: [0.000, -0.250]
+}
+
+transform:
+{
+
+}
+
+explosive:
+{
+	radius: 8.000
+	power: 9.000
+	damage_entity: 13000.000
+	damage_terrain: 11500.000
+    primed_threshold: 0.788
+	smoke_amount: 1.800
+	sparks_amount: 3.500
+	smoke_lifetime_multiplier: 0.700
+	smoke_velocity_multiplier: 1.800
+	flash_duration_multiplier: 0.950
+	flash_intensity_multiplier: 0.400
+	volume: 1.600
+	pitch: 2.200
+	damage_type: shrapnel
+	damage_type_secondary: explosion
+    flags: any_damage, explode_when_primed, primed_when_destroyed
+}
+
+packable:
+{
+
+}

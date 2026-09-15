@@ -1,0 +1,62 @@
+$tags: []
+
+body:
+{
+	type: dynamic
+
+	@shape.circle:
+	{
+		radius: 1.900
+		friction: 0.980
+		elasticity: 0.980
+		rigidity_static: 0.680
+		rigidity_dynamic: 0.450
+		
+		material: gas
+		miss_chance: 0.949
+		
+		layer: entity, solid, resource, gas, ignore_melee, ignore_hover
+		mask: world, gas
+		exclude: decoration, background, barbed
+	}
+
+	gravity: 0.318
+	damping: 0.930
+	mass_multiplier: 0.000
+	fall_damage_multiplier: 0.000
+}
+
+transform:
+{
+
+}
+
+gas:
+{
+	radius: 4.000
+	size: 1.450
+	lifetime: 32.000
+	speed: 0.100
+	interval: 2.700
+	color_a: "0x994bd74b"
+	color_b: "0x001eb464"
+}
+
+resource:
+{
+	material: "mithril"
+}
+
+health:
+{
+	max: 120000.000
+}
+
+radioactive:
+{
+	damage: 25.000
+	damage_max: 25.000
+	size: 8.450
+	delay: 0.100
+	delay_variation: 0.050
+}

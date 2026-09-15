@@ -1,0 +1,480 @@
+$name: "Chemical Workshop"
+$desc:
+	'''
+	Laboratory with sufficient technical gear to allow you to work on volatile compounds and materials.
+
+	Smells like trash. People who work here are trash. Personally.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [5.250, 4.750]
+		offset: [0.000, -0.125]
+		
+		mass: 680.000
+		radius: 0.500
+		
+		material: building_reinforced
+		
+		layer: entity, building, support, ignore_melee
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "lab.chemical.00"
+		mask: lab.chemical.00.mask
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: no_tab
+	priority: 1.000
+	window_size: [740.000, 600.000]
+	window_size_misc: [192.000, 0.000]
+}
+
+health:
+{
+	max: 92000.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: chemical, tech, tool
+	type: consumable
+	flags: randomize
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+entrance.linkable:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+laboratory:
+{
+	augments_capacity: 10
+	filter_tags:
+	{
+		require: manual, alchemistry
+		include: explosive, alchemistry, medical, research, science, smelting
+		exclude: large, furniture, organic, blacksmithing, salvaging, social, agriculture
+	}
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: filtering, industrial, cooking, alchemistry, medical, science, biology, blending, fermenting, refining, heating, processing
+		exclude: workbench, large, huge, device, weapon, gun, tool, vehicle, furniture, machinery, blacksmithing, assembling, tailoring, metalworking, carpentry, architecture, construction, smelting
+	}
+	
+	tools: hammer, screwdriver, spanner, magnifying_glass, bucket, shovel, syringe, towel, spatula, tongs, ladle, utensils
+	infrastructure: spigot, cauldron, lab_glassware, pressure_cooker, dishes, bottle, barrel, casting_mould, bucket, surface, liquid_container, heater, blender, stove, fermenter, still, condenser, form, essence_emitter, filter, pump, structure, machine
+	environment: machine, container, stationary, dirty, fireproof, durable, sturdy, waterproof
+	connotations: none	
+	flags: embed_gui
+	menu_columns: 3
+	recipe_type: workshop
+	
+	flags: embed_gui
+	menu_columns: 4
+	blueprints_capacity: 10
+	amount_multiplier: 1.000
+	step_multiplier: 1.000
+	
+	offset_spawn: [0.000, 0.000]
+
+	name: "Chemical Lab"
+}
+
+crafter:
+{
+	tools: pencil, paper, ruler, spanner, pliers, tweezers, magnifying_glass, bucket, paintbrush, syringe, towel, spatula, tongs, knife
+	machinery: heater
+	infrastructure: spigot, cauldron, oven, lab_glassware, pressure_cooker, dishes, bottle, barrel, table, chair, rack
+	environment: workshop, stationary, clean, reinforced
+	temperature_max: 800.000
+	pressure_max: 10.000
+
+	@inventory8:
+	{
+		type: waste
+		flags: standalone, allow_ducts, ignore_mass, vertical
+		stack_size_multiplier: 2.000
+		
+		offset: [0.000, 0.000]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+workshop:
+{
+	orders_capacity: 4
+	h_sound_order_complete: effect.bell.ring.01
+
+	@inventory8:
+	{
+		type: workshop
+		flags: standalone, allow_ducts, ignore_mass, faction, vertical
+		stack_size_multiplier: 2.000
+		
+		offset: [0.000, 0.000]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+personnel:
+{
+	flags: none
+	assign_radius: 20.000
+	slots:
+	[
+		{
+			role: alchemist
+			tags: management, research, civil, industrial, production, dangerous, sedentary, technical, maintenance, operation
+			color: "0xff80dc7e"
+			multiplier: 2.000
+		}
+		{
+			role: alchemist
+			tags: management, research, civil, industrial, production, dangerous, sedentary, technical, maintenance, operation
+			color: "0xff80dc7e"
+			multiplier: 2.000
+		}
+		{
+			role: assistant
+			tags: administrative, civil, industrial, logistics, production, dangerous, manual_labor, paperwork, sedentary, technical, maintenance, operation
+			color: "0xff91a6a4"
+			multiplier: 1.500
+		}
+		{
+			role: guard
+			tags: security, combat, military, dangerous
+			color: "0xff719240"
+			multiplier: 1.000
+		}
+		null
+		null
+		null
+		null
+	]
+	characters_capacity: 4
+}
+
+// spawn:
+// {
+// 	flags: faction
+// }
+
+// dormitory:
+// {
+// 	species: human
+// 	flags: no_kit_selection, no_kit_requirements, region_only
+// 	characters_capacity: 3
+// 	characters_initial_count: 1
+// 	repopulate_interval: 300.000
+// 	repopulate_interval_extra: 600.000
+// 	repopulate_num: 1
+// 	repopulate_num_extra: 2
+// 	repopulate_max: 1
+// 	move_radius: 12.000
+// 	asset_flags: recycle
+// 	character_flags_filter:
+// 	{
+// 		require: engineer
+// 		include: construction, educated, artisan, professional, laborer, technician, engineer, middle_class, upper_middle_class
+// 		exclude: slave, unskilled, medical, farmer, illiterate, lower_class, lower_middle_class
+// 		weight: 1.000
+// 	}
+// }
+
+// animated.renderer|"exhaust":
+// {
+// 	sprite:
+// 	{
+// 		texture: "burner.parts.00"
+// 		size: [16, 16]
+// 		frame: [0, 1]
+// 	}
+// 	offset: [-0.250, -1.500]
+// 	z: -285.000
+// }
+
+// animated.renderer|"intake":
+// {
+// 	sprite:
+// 	{
+// 		texture: "burner.parts.00"
+// 		size: [8, 8]
+// 		frame: [0, 1]
+// 	}
+// 	z: -275.000
+// }
+
+// sound.emitter|"aux":
+// {
+// 	file: "burner.gas.loop.01"
+// 	volume: 0.300
+// 	pitch: 0.700
+// 	size: 1.000
+// 	size_max_modifier: 0.500
+// }
+
+// air.vent|"exhaust":
+// {
+// 	type: exhaust
+// 	offset: [0.250, -1.625]
+// 	rotation: -1.571
+// 	cross_section: 0.200
+// }
+
+// air.vent|"intake":
+// {
+// 	type: intake
+// 	offset: [-0.250, 0.500]
+// 	rotation: 1.571
+// 	cross_section: 0.200
+// }
+
+// air.container:
+// {
+// 	volume: 2.000
+// }
+
+// refinery:
+// {
+// 	@inventory2:
+// 	{
+// 		type: gas
+// 		flags: standalone, ignore_mass, faction
+// 		stack_size_multiplier: 2.000
+		
+// 		offset: [0.000, 0.000]
+// 	}
+// }
+
+essence.container:
+{
+	stability: 0.950
+	health_threshold: 0.100
+	glow_modifier: 3.500
+	flags: show_gui, allow_edit_rate, faction
+
+	@inventory1:
+	{
+		type: essence
+		flags: ignore_mass, no_auto_pickup, faction
+		stack_size_multiplier: 0.050
+		
+		filter:
+		{
+			require: small, pellet, solid, essence
+			include: none
+			exclude: gas
+		}
+
+		offset: [1.875, -0.375]
+	}
+
+	@sound.emitter:
+	{
+		flags: start_muted
+		volume: 0.500
+		pitch: 1.730
+		size: 0.350
+		size_max_modifier: 0.700
+		spread: 80.000
+	}
+
+	@light:
+	{
+		offset: [1.875, 0.875]
+		scale: [6.000, 4.000]
+		texture: light.circle.00
+	}
+}
+
+heat:
+{
+	temperature_high: 620.000
+	temperature_operating: 1337.000
+	cool_rate: 11.500
+	heat_capacity_extra: 150.000
+	flags: exclude_body_mass, no_gui
+	offset: [2.000, -0.250]
+	size: [0.125, 0.125]
+
+	@light:
+	{
+		offset: [1.875, 1.125]
+		scale: [13.000, 10.000]
+		intensity: 2.500
+		texture: light.circle.03
+	}
+	
+	@sound.emitter:
+	{
+		flags: start_muted
+		file: "overheat_loop"
+		volume: 1.000
+		pitch: 1.000
+	}
+}
+
+animated.renderer|"exhaust":
+{
+	sprite:
+	{
+		texture: "burner.parts.00"
+		size: [16, 16]
+		frame: [0, 1]
+	}
+	offset: [-0.125, -3.500]
+	z: -285.000
+}
+
+animated.renderer|"intake":
+{
+	sprite:
+	{
+		texture: "burner.parts.00"
+		size: [8, 8]
+		frame: [0, 1]
+	}
+	z: -275.000
+}
+
+air.vent|"exhaust":
+{
+	type: exhaust
+	offset: [0.375, -3.500]
+	rotation: -1.571
+	cross_section: 0.100
+}
+
+air.vent|"intake":
+{
+	type: intake
+	offset: [2.000, -0.875]
+	rotation: 1.571
+	cross_section: 0.150
+}
+
+air.container:
+{
+	volume: 0.400
+}
+
+burner:
+{
+	flags: none
+	type: liquid
+	area_fuel: 0.800
+	area_aux: 0.007854
+	pressure_max: 8.000
+	temperature_max: 2200.000
+	insulation: 0.450
+
+	// @inventory1:
+	// {
+	// 	stack_size_multiplier: 0.500
+	// 	type: fuel
+	// 	flags: allow_ducts, ignore_mass
+	// 	offset: [-0.250, 1.125]
+	// 	filter:
+	// 	{
+	// 		require: fuel, flammable, solid
+	// 		include: granular, small, powder, volatile
+	// 		exclude: long, gas, large, bottled
+	// 	}
+	// }
+
+	@sound.emitter:
+	{
+		flags: start_muted
+		file: refinery.loop.04
+		volume: 1.000
+		pitch: 0.500
+		size: 0.700
+		size_max_modifier: 0.600
+	}
+
+	@light:
+	{
+		color: [1.000, 0.500, 0.000, 2.000]
+		offset: [-0.250, 0.750]
+		scale: [14.000, 13.000]
+		intensity: 0.000
+		texture: "light.circle.04"
+	}
+}
+
+burner.state:
+{
+	current_temperature: 300.000
+
+	@inventory1:
+	{
+		stack_size_multiplier: 0.500
+		type: input
+		flags: allow_ducts, ignore_mass, no_auto_pickup
+		offset: [-0.250, 1.125]
+		filter:
+		{
+			require: fuel, flammable
+			include: liquid, gas
+			exclude: sticky, viscous, solid
+		}
+	}
+}

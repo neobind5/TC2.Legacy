@@ -1,0 +1,415 @@
+$name: "Bunker"
+$desc: 
+	'''
+	Fortified building serving as a market, garrison and a factory.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	flags: none
+
+	@shape.complex:
+	{
+		material: building_reinforced
+		miss_chance: 0.200
+		flags: none
+		tags: heavy, large
+		
+		layer: entity, solid, building, support, conductive, magnetic
+		mask: world
+		exclude: crate
+		
+		mass: 15000.000
+		radius: 0.750
+		friction: 1.250
+		elasticity: 0.100
+		
+		cog_offset: [0.000, 0.000]
+		
+		count: 7
+		points:
+		[
+			[-2.125, -4.375]
+			[0.000, -5.375]
+			[2.250, -4.375]
+			[2.500, 1.500]
+			[1.250, 2.125]
+			[-1.250, 2.125]
+			[-2.500, 1.625]
+			[0.000, 0.000]
+		]
+	}
+}
+
+health:
+{
+	max: 218500.000
+}
+
+armor:
+{
+	material_type: metal
+	coverage: 0.451
+	flags: no_damage_type_conversion
+	toughness: 500.000
+	protection: 0.940
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: imperialbarracks.00
+		mask: imperialbarracks.00.mask
+		size: [64, 96]
+		frame: [0, 0]
+	}
+	offset: [0.000, -2.000]
+	z: -300.000
+	flags: has_damage
+}
+
+damage.effects:
+{
+	threshold_wreck: 0.400
+	
+	offset: 0
+	frame_count: 4
+}
+
+transform:
+{
+
+}
+
+faction:
+{
+	id: "imperial.07"
+}
+
+nameable:
+{
+	tags: market
+	flags: randomize, no_rename
+	type: building
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+claimer:
+{
+	radius: 32.000
+	strength: 10.000
+	falloff: 1.000
+}
+
+spawn:
+{
+	flags: neutral_only, faction
+}
+
+company:
+{
+	h_company: postus
+	logo_type: sign_2x2
+
+	@animated.renderer:
+	{
+		offset: [0.750, -2.625]
+		z: -295.000
+	}
+
+	// @light:
+	// {
+	// 	// color: [1.000, 0.750, 0.100, 2.000]
+	// 	color: [1.000, 0.750, 0.100, 2.500]
+	// 	offset: [0.000, -1.250]
+	// 	scale: [12.000, 32.000]
+
+	// 	intensity: 1.000
+	// 	texture: "light.box.01"
+	// }
+}
+
+lamp:
+{
+	flicker: 0.000
+	blink_frequency: 1.000
+	blink_amplitude: 0.500
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.000, 2.000]
+		offset: [1.875, -5.750]
+		scale: [56.000, 56.000]
+		intensity: 1.000
+		texture: "light.circle.00"
+	}
+}
+
+sound.emitter:
+{
+	file: conveyor.loop.01
+	volume: 0.500
+	pitch: 0.570
+	size: 3.000
+	size_max_modifier: 0.650
+	spread: 80.000
+	priority: 0.300
+}
+
+// sound.emitter:
+// {
+// 	file: essence.machine.loop.00
+// 	volume: 0.500
+// 	pitch: 0.430
+// 	size: 3.000
+// 	size_max_modifier: 0.650
+// 	spread: 80.000
+// 	priority: 0.300
+// }
+
+interactable:
+{
+	flags: no_tab
+	window_size: [730, 536]
+	window_size_misc: [192, 0]
+	priority: 2.000
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [7, 0]
+	}
+
+	flags: faction, spawner
+}
+
+building:
+{
+
+}
+
+address:
+{
+	flags: auto_generate, no_editing, public
+}
+
+laboratory:
+{
+	filter_tags:
+	{
+		require: crafting
+		include: device, weapon, gun, vehicle, munitions, medical, biology, military, tailoring
+		exclude: huge, architecture
+	}
+	
+	blueprints_capacity: 2
+	augments_capacity: 12
+	flags: none
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: military
+	}
+	
+	tools: none
+	infrastructure: none
+	environment: none
+	connotations: none
+	
+	flags: embed_gui
+	menu_columns: 5
+	recipe_type: workshop
+	
+	offset_spawn: [0.000, 0.375]
+	
+	name: "Bunker"
+}
+
+workshop:
+{
+	orders_capacity: 2
+
+	@inventory8:
+	{
+		type: workshop
+		flags: standalone, ignore_mass, public, no_auto_pickup, faction, horizontal
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [1.375, -0.125]
+	}
+
+	// @inventory8:
+	// {
+	// 	type: output
+	// 	flags: standalone, ignore_mass, public, no_auto_pickup, faction
+	// 	stack_size_multiplier: 4.000
+		
+	// 	filter:
+	// 	{
+	// 		exclude: gas
+	// 	}
+	// 	offset: [0.000, 0.500]
+	// }
+}
+
+crafter:
+{
+	h_crafter: market.siege.00
+	flags: hide_temperature, hide_pressure
+	distance_max: 12.000
+	temperature_max: 893.150
+	pressure_max: 40.000
+	
+	tools: pencil, paper, ruler, hammer, saw, screwdriver, wrench, pliers, bucket, file, tongs, knife
+	infrastructure: oven, anvil, forge, barrel, table, chair, vise, rack, crucible
+	environment: workshop, stationary, dirty, noisy
+	offset: [0.000, 0.000]
+}
+
+// personnel:
+// {
+// 	characters_capacity: 4
+// 	assign_radius: 24.000
+	
+// 	slots:
+// 	[
+// 		{
+// 			role: quartermaster
+// 			flags: required, no_enter, no_leave, faction, can_craft, can_manage, can_use_inventory
+			
+// 			tags: management, administrative, logistics, paperwork, sedentary, commerce, financial, overseer
+// 			color: "0xff5599ac"
+// 			multiplier: 2.000
+// 		}
+// 		{
+// 			role: merchant
+// 			flags: required, no_enter, no_leave, faction, can_craft, can_use_inventory
+			
+// 			tags: civil, dangerous, paperwork, sedentary, commerce, operation, service
+// 			color: "0xff5599ac"
+// 			multiplier: 1.000
+// 		}
+// 		{
+// 			role: operator
+// 			flags: faction, controller, eject_on_destroy, can_craft, can_use_inventory
+			
+// 			tags: security, combat, military, production, dangerous, technical, maintenance, operation
+// 			color: "0xff88be63"
+// 			multiplier: 1.000
+// 		}
+// 		{
+// 			role: engineer
+// 			flags: faction, eject_on_destroy, can_craft, can_manage, can_use_inventory
+			
+// 			tags: research, civil, military, industrial, production, paperwork, technical, maintenance, operation, overseer, education, crafts
+// 			color: "0xffffb200"
+// 			multiplier: 1.000
+// 		}
+// 		null
+// 		null
+// 		null
+// 		null
+// 	]
+// }
+
+// stockpile:
+// {
+// 	request_types: pack, unpack, move, load
+// 	flags: public, auto_create, show_addresses
+// 	flags_stockpile: vendor, npc
+// 	grid_column_count: 4
+// 	capacity_items: 12
+// 	capacity_shipments: 4
+// }
+
+armory:
+{
+	@inventory4:
+	{
+		type: ammo
+		flags: ignore_mass, no_auto_pickup, faction
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			require: ammo, solid
+			include: granular, small
+			exclude: gas
+		}
+
+		offset: [0.000, -1.250]
+	}
+}
+
+shipment:
+{
+	flags: keep_items, allow_withdraw, allow_deposit, no_gui, faction, no_body_mass
+	type: armory
+	layout: large
+}
+
+dormitory:
+{
+	flags: no_hiring, no_kit_selection, no_kit_requirements, region_only, hide_xp, recruit_into_squad
+	species: human
+	
+	characters_capacity: 8
+	characters_initial_count: 4
+	characters_reserved_count: 4
+	
+	repopulate_max: 8
+	repopulate_num: 2
+	repopulate_num_extra: 1
+	repopulate_interval: 60.000
+	repopulate_interval_extra: 0.000
+	repopulate_character_flags_add: none
+	
+	kit_categories_filter:
+	{
+		require: none
+		exclude: contraband, outlaw
+	}
+
+	asset_flags: recycle
+	character_flags_filter:
+	{
+		include: military, armed, soldier
+		weight: 5.000
+	}
+}
+
+spawner:
+{
+	flags: none
+	group_size: 3
+	group_size_extra: 2
+	max_count: 16
+	ai_stance: aggressive
+	ai_type: idle
+	interval: 300.000
+	interval_extra: 25.000
+	interval_count_modifier: 1.000
+}
+
+shipment:
+{
+	flags: keep_items, no_gui, allow_deposit, allow_withdraw, faction
+}

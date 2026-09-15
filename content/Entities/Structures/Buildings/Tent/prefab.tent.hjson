@@ -1,0 +1,264 @@
+$name: "Tent"
+$desc: "A cheap, makeshift tent to start off your faction."
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.250, 2.500]
+		offset: [0.000, -0.250]
+		
+		mass: 360.000
+		radius: 0.500
+		
+		material: building_wood
+		
+		layer: entity, building, support, ignore_melee, ignore_bullet, flammable
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tent"
+		mask: "tent.mask"
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [720, 576]
+	window_size_misc: [192, 0]
+	priority: 1.000
+}
+
+health:
+{
+	max: 26500.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, food
+	flags: randomize
+	type: building
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+entrance.linkable:
+{
+
+}
+
+storage:
+{
+	@inventory16:
+	{
+		type: storage
+		flags: standalone, ignore_mass, no_auto_pickup, public, faction
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			exclude: gas, large
+		}
+
+		offset: [-0.375, -0.250]
+	}
+}
+
+headquarters:
+{
+	flags: enable_join, enable_leave, manage_members, manage_leader, manage_style, allow_create_faction, show_members
+}
+
+claimer:
+{
+	radius: 24.000
+	strength: 5.000
+	falloff: 2.500
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [1, 0]
+	}
+	flags: faction, spawner
+}
+
+armory:
+{
+	@inventory4:
+	{
+		type: ammo
+		flags: ignore_mass, no_auto_pickup, faction, vertical
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			require: ammo, solid
+			include: granular, small
+			exclude: gas, large
+		}
+
+		offset: [0.000, -1.250]
+	}
+}
+
+shipment:
+{
+	flags: keep_items, allow_withdraw, allow_deposit, no_gui, faction, no_body_mass
+	type: armory
+	layout: large
+}
+
+spawn:
+{
+	flags: faction
+}
+
+dormitory:
+{
+	flags: no_kit_selection, no_kit_requirements, repopulate_needs_faction, recruit_into_squad, region_only
+	species: human
+	
+	characters_capacity: 2
+	characters_initial_count: 0
+	characters_reserved_count: 0
+	
+	repopulate_max: 2
+	repopulate_num: 1
+	repopulate_num_extra: 1
+	repopulate_interval: 180.000
+	repopulate_interval_extra: 300.000
+	repopulate_character_flags_add: recruitable
+	
+	asset_flags: recycle
+	character_flags_filter:
+	{
+		include: unskilled, military, farmer, laborer, civillian, armed, hunter, soldier, nomad, brawler, outdoor, strong, lower_middle_class, middle_class
+		exclude: sedentary, upper_middle_class, upper_class, elite_class
+	}
+	kit_categories_filter:
+	{
+		exclude: explosive, advanced, expensive
+	}
+}
+
+squad:
+{
+	max_size: 4
+	flags: no_unit_remove
+	movement_flags: hold, open_doors
+	combat_flags: attack_visible, attack_when_hit, cover, flee, defend, form_groups, assist_work
+}
+
+personnel:
+{
+	flags: none
+	assign_radius: 20.000
+
+	slots:
+	[
+		{
+			role: officer
+			tags: management, administrative, military, paperwork, sedentary
+			color: "0xff719240"
+			multiplier: 3.000
+		}
+		{
+			role: guard
+			tags: security, combat, military
+			color: "0xff719240"
+			multiplier: 1.000
+		}
+	]
+	characters_capacity: 3
+}
+
+shop:
+{
+	tags_filter:
+	{
+		require: manual
+		include: manual, tailoring, engineering, salvaging, social, science
+		exclude: advanced, medium, large, huge, vehicle, blacksmithing, smelting, fermenting, heating, overworld
+	}
+	tags_preferred: crafting, small, device, weapon, tool, munitions, delicate, assembling, tailoring, engineering, cooking, social, construction
+	
+	tools: pencil, paper, ruler, hammer,screwdriver, magnifying_glass, bucket, towel, knife, sandpaper, needle, pins, scissors
+	infrastructure: dishes, bottle, table, chair, rack, bed, stationery, bucket, surface, office, building
+	environment: office, stationary, cozy, quiet, flammable, cramped, small
+	connotations: none
+	
+	flags: embed_gui
+	menu_columns: 4
+	recipe_type: workshop
+	
+	name: "Outpost"
+}
+
+workshop:
+{
+	orders_capacity: 2
+	h_sound_order_complete: computer.bell.00
+	max_order_mass: 70.000
+	gui_info_size_x: 252.000
+}
+
+crafter:
+{
+	flags: no_gui
+	temperature_max: 493.150
+}
+
+laboratory:
+{
+	blueprints_capacity: 3
+	augments_capacity: 8
+	filter_tags:
+	{
+		include: construction, architecture, machinery
+		exclude: complex, advanced, vehicle, blacksmithing, smelting, processing
+	}
+}

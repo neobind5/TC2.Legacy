@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Native Smirglum"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	material_type: metal_solid
+	tile_flags: non_empty
+	flags: raw, common, magnetic, native, metal
+	
+	max_health: 150000.000
+	smoothing: 0.110
+	stability: 6.140
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 11.900
+	density: 0.000
+	friction: 0.600
+	elasticity: 0.500
+	fall_damage_mult: 1.230
+	collision_layer: none
+	collision_mask: essence
+	
+	texture: terrain.smirglum.ore
+	pattern: pattern.stone
+	texture_scale: 1.644
+	texture_overshoot: -0.650
+	texture_offset: 0.000
+	
+	color_preview: "0xff784b39"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: smirglum
+			quantity: 0.239074
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff504343"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

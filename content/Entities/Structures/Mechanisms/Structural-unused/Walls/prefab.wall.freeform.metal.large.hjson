@@ -1,0 +1,291 @@
+$name: "Freeform Wall (Metal, Large)"
+$desc:
+	'''
+	Small vehicle chassis for basic aircraft and portable weaponry.
+	(x1 cabin slot, 2x tool slot, 4x wheel slot)
+	'''
+$tags: []
+
+test_debug:
+{
+	texture: "pattern.sheetmetal.00"
+}
+
+body:
+{
+	@shape.polygon:
+	{
+		material: metal_frame
+		miss_chance: 0.080
+		flags: none
+		tags: medium
+		
+		layer: entity, solid, vehicle
+		mask: world
+		exclude: tree
+		
+		mass: 880.000
+		radius: 0.250
+		friction: 0.980
+		elasticity: 0.080
+		
+		cog_offset: [-0.125, 0.250]
+		
+		points:
+		[
+			[-3.2, -3.2]
+			[3.2, -3.2]
+			[3.2, 3.2]
+			[-3.2, 3.2]
+		]
+	}
+}
+
+health:
+{
+	max: 346000.000
+}
+
+damage.effects:
+{
+	threshold_wreck: 0.370
+}
+
+armor:
+{
+	toughness: 500.000
+	protection: 0.100
+
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+vehicle:
+{
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "pattern.sheetmetal.00"
+			size: [64, 64]
+		}
+		offset: [0.000, 0.000]
+		z: -180.000
+	}
+}
+
+holdable:
+{
+	radius: 0.000
+	stress_multiplier: 0.500
+	flags: disable_parent_facing, disable_rotation, disable_control
+}
+
+attachment:
+{
+	offset: [0.000, 0.000]
+	radius: 0.000
+	flags: disable_parent_facing
+	tags: large, mount, fixed, platform
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	// @net.synchronized:
+	// {
+	// 	interval: 0.000
+	// }
+
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+//norotate:
+//{
+//	multiplier: 0.400
+//	bias: 0.200
+//	mass_multiplier: 25.000
+//	flags: no_share
+//}
+
+// norotate2:
+// {
+// 	min: -0.500
+// 	max: 0.500
+// 	bias: 0.400
+// 	multiplier: 3.000
+// 	mass_multiplier: 80.000
+// }
+
+interactable:
+{
+	flags: none
+	window_size: [288, 288]
+	priority: 1.500
+	window_offset: [0.000, -200.000]
+}
+
++mount_0|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.250]
+		max_force: 10000000.000
+		max_torque: 200000.000
+		flags: control_write, control_read, no_wrap, force_facing, attachment
+		z: -50.000
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.0001
+		max_bias: 100.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.00001
+		max_bias: 10.000
+		min: 0.000
+		max: 0.000
+	}
+
+	attachment.slot:
+	{
+		name: "Mount A\nFreeform"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: use_center_of_gravity, locked, disabled, keyboard_read, keyboard_write, mouse_read, mouse_write, offset, rotation, loose
+
+		offset_bounds: [-3.500, -3.500, 3.500, 3.500]
+
+		rank: 11.000
+		gui_size: [144.000, 144.000]
+	}
+}
+
++mount_1|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.250]
+		max_force: 10000000.000
+		max_torque: 200000.000
+		flags: control_write, control_read, no_wrap, force_facing, attachment
+		z: -50.000
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.0001
+		max_bias: 100.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.00001
+		max_bias: 10.000
+		min: 0.000
+		max: 0.000
+	}
+
+	attachment.slot:
+	{
+		name: "Mount B\nFreeform"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: use_center_of_gravity, locked, disabled, keyboard_read, keyboard_write, mouse_read, mouse_write, offset, rotation, loose
+
+		offset_bounds: [-3.500, -3.500, 3.500, 3.500]
+
+		rank: 11.000
+		gui_size: [144.000, 144.000]
+	}
+}
+
++mount_2|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.250]
+		max_force: 10000000.000
+		max_torque: 200000.000
+		flags: control_write, control_read, no_wrap, force_facing, attachment
+		z: -50.000
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.0001
+		max_bias: 100.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.00001
+		max_bias: 10.000
+		min: 0.000
+		max: 0.000
+	}
+
+	attachment.slot:
+	{
+		name: "Mount C\nFreeform"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: use_center_of_gravity, locked, disabled, keyboard_read, keyboard_write, mouse_read, mouse_write, offset, rotation, loose
+
+		offset_bounds: [-3.500, -3.500, 3.500, 3.500]
+
+		rank: 11.000
+		gui_size: [144.000, 144.000]
+	}
+}
+
++mount_3|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.250]
+		max_force: 10000000.000
+		max_torque: 200000.000
+		flags: control_write, control_read, no_wrap, force_facing, attachment
+		z: -50.000
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.0001
+		max_bias: 100.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.00001
+		max_bias: 10.000
+		min: 0.000
+		max: 0.000
+	}
+
+	attachment.slot:
+	{
+		name: "Mount D\nFreeform"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: use_center_of_gravity, locked, disabled, keyboard_read, keyboard_write, mouse_read, mouse_write, offset, rotation, loose
+
+		offset_bounds: [-3.500, -3.500, 3.500, 3.500]
+
+		rank: 11.000
+		gui_size: [144.000, 144.000]
+	}
+}

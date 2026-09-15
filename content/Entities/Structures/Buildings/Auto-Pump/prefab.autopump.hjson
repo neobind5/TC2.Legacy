@@ -1,0 +1,142 @@
+$name: "Auto-Pump"
+$desc:
+	'''
+	Elaborate structure that drags water up from the earth.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points: 
+		[
+			[-1.000, -2.125]
+			[1.375, -0.875]
+			[1.500, 2.125]
+			[-1.500, 2.125]
+		]
+		mass: 350.000
+		radius: 0.500
+		friction: 0.500
+		elasticity: 0.500
+		material: metal
+		layer: entity, building,
+		mask: world
+	}
+}
+
+health:
+{
+	max: 24000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "pump.00"
+	}
+	z: -400.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	window_size: [24.000, 24.000]
+	window_size_misc: [96.000, 96.000]
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	flags: no_rename, randomize
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim, allow_enemy_unclaim
+}
+
+spawn:
+{
+	flags: faction, public
+}
+
+autopump:
+{
+	produce_interval: 8.000
+	amount: 2.387
+	amount_extra: 1.282
+
+	@inventory1:
+	{
+		type: output
+		flags: standalone, allow_ducts, ignore_mass, no_auto_pickup, no_drop
+		stack_size_multiplier: 1.000
+		offset: [-1.750, 0.625]
+	}
+}
+
+sound.emitter:
+{
+	file: "pump.loop.00"
+	volume: 1.000
+	pitch: 1.000
+	size: 0.750
+	size_max_modifier: 0.700
+}
+
+vibrate:
+{
+	frequency: 10.000
+	modifier: 1.000
+	rotation_mult: 0.009
+	position_mult: [0.020, 0.030]
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: steel.plate
+			flags: drop_on_break
+			quantity: 35.000
+			chance: 0.180
+		}
+		{
+			material: steel.frames
+			quantity: 25.000
+			chance: 0.478
+		}
+		{
+			material: machine_parts
+			flags: drop_on_break
+			quantity: 37.000
+			chance: 0.380
+		}
+		{
+			material: actuator
+			flags: drop_on_break
+			quantity: 6.000
+			chance: 0.678
+		}
+	]
+}

@@ -1,0 +1,135 @@
+$name: "Nuke (Standard, Impact)"
+$desc:
+	'''
+	Weapon of mass destruction. Uncomfortably unstable.
+	'''
+$tags: []
+
+control:
+{
+
+}
+
+body:
+{
+	@shape.line:
+	{
+		a: [0.000, -0.575]
+		b: [0.000, 0.675]
+		offset: [0.000, 0.000]
+		scale: [1.000, 1.000]
+		mass: 850.500
+		radius: 1.150
+		friction: 0.500
+		elasticity: 0.100
+		material: metal
+		layer: entity, solid, flammable
+		mask: world
+	}
+	fall_damage_multiplier: 20.000
+	gravity: 1.6
+}
+
+health:
+{
+	max: 4900.000
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "bomb.nuke.standard"
+	}
+	offset: [0.000, -0.250]
+}
+
+transform:
+{
+
+}
+
+explosive:
+{
+	radius: 15.000
+	power: 16.000
+	damage_entity: 42000.000
+	damage_terrain: 34500.000
+    primed_threshold: 0.788
+	smoke_amount: 5.800
+	sparks_amount: 3.500
+	smoke_lifetime_multiplier: 0.700
+	smoke_velocity_multiplier: 1.800
+	flash_duration_multiplier: 0.950
+	flash_intensity_multiplier: 0.700
+	smoke_color: "0x994bd74b"
+	volume: 1.600
+	pitch: 2.200
+	damage_type: shrapnel
+	damage_type_secondary: explosion
+    flags: any_damage, explode_when_primed, primed_when_destroyed
+}
+
+// harvestable:
+// {
+// 	resources:
+// 	[
+// 		{
+// 			material: mithrilfix
+// 			quantity: 80.000
+// 		}
+// 		{
+// 			material: mithril_gas
+// 			quantity: 129.000
+// 		}
+// 	]
+// 	
+// 	thresholds: [0.980, 0.982, 0.857, 0.974]
+// 	
+// 	pct_damage_mult: [0.750, 0.813, 0.920, 0.985]
+// 	pct_quantity_min: [0.095, 0.032, 0.069, 0.040]
+// 	
+// 	chance_base: [0.102, 0.043, 0.180, 0.267]
+// }
+
+bombresources:
+	{
+		items:
+		[
+			{
+				material: mithrilfix
+				chance: 100.000
+				min: 140.000
+				max: 210.000
+				min_speed: 90.800
+				max_speed: 240.800
+				merge_radius: 0.0001
+				spawn_radius: 2.250
+				split_size: 20.000
+			}
+			{
+				material: mithril_gas
+				chance: 100.000
+				min: 1530.000
+				max: 1914.000
+				min_speed: 50.800
+				max_speed: 180.800
+				merge_radius: 0.0001
+				spawn_radius: 5.750
+				split_size: 100.000
+			}
+			null
+			null
+		]
+	}
+
+
+packable:
+{
+
+}

@@ -1,0 +1,171 @@
+$name: "Abandoned Mine"
+$desc:
+	'''
+	Magical place where miners used spend the rest of their lives chipping away rock.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[0.500, -1.750]
+			[2.625, -1.125]
+			[2.875, 2.000]
+			[-2.875, 2.000]
+		]
+		
+		mass: 6000.000
+		radius: 1.000
+		friction: 0.850
+		
+		material: building_masonry
+		
+		layer: entity, building, ignore_melee
+	}
+}
+
+// health:
+// {
+// 	max: 100000.000
+// }
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "mine"
+		mask: "mine.mask"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [624.000, 384.000]
+	window_size_misc: [288.000, 144.000]
+}
+
+faction.colorable:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	flags: no_rename, randomize
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	// flags: no_menu
+	// requirements:
+	// [
+	// 	{
+	// 		type: money
+	// 		amount: 749.990
+	// 	}
+	// ]
+}
+
+// mine:
+// {
+// 	amount_multiplier: 2.000
+// }
+
+// mine.state:
+// {
+// 	work_current: 500.000
+// 	work_required: 500.000
+// }
+
+// depot:
+// {
+// 	offset: [1.000, 1.000]
+// 	size: [4.000, 3.000]
+// 	flags: allow_withdraw, allow_deposit, allow_send, allow_local, local, public
+
+// 	shipping_fee_base: 25.000
+// 	shipping_fee_per_kg: 0.500
+// 	// shipping_fee_per_km: 0.070
+// }
+
+spawn:
+{
+	flags: faction, public
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [6, 0]
+	}
+
+	flags: faction, spawner
+}
+
+dormitory:
+{
+	species: human
+	flags: no_kit_selection, no_kit_requirements, region_only
+	characters_capacity: 4
+	characters_initial_count: 1
+	repopulate_interval: 300.000
+	repopulate_interval_extra: 400.000
+	repopulate_num: 0
+	repopulate_num_extra: 2
+	repopulate_max: 4
+	asset_flags: recycle
+
+	kit_categories_filter:
+	{
+		require: none
+		exclude: rare, advanced, powerful, expensive, military, arcane
+	}
+
+	character_flags_filter:
+	{
+		require: miner
+		include: slave, construction, unskilled, laborer, civillian, technician, poor, miner, insane, alcoholic, illiterate, brawler, strong, politician, dumb, clumsy, lower_class, lower_middle_class, middle_class
+		exclude: upper_middle_class, upper_class, elite_class
+		weight: 2.000
+	}
+}
+
+fancymine:
+{
+	produce_interval: 20.000
+	amount: 0.983
+	amount_extra: 0.324
+
+	@inventory8:
+	{
+		type: storage
+		flags: standalone, no_auto_pickup
+		stack_size_multiplier: 1.000
+		offset: [-1.750, 0.625]
+	}
+}

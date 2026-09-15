@@ -1,0 +1,55 @@
+﻿{
+	$version: "0.1.67.2"
+	name: "Grass"
+	desc:
+		'''
+		Nice yellow grass.
+		'''
+	
+	material_type: soil
+	tile_flags: non_empty
+	flags: raw, overgrown, organic, soil
+	
+	max_health: 580.000
+	smoothing: 0.200
+	stability: 0.500
+	strength_tensile: 0.000
+	strength_compressive: 0.000
+	
+	mass: 2.300
+	density: 0.000
+	friction: 0.900
+	elasticity: 0.330
+	fall_damage_mult: 0.910
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.grass.01
+	pattern: pattern.soil
+	texture_scale: 1.800
+	texture_overshoot: -0.750
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: soil
+			quantity: 2.616666
+		}
+		{
+			material: cmajzl
+			quantity: 0.633867
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff695f17"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

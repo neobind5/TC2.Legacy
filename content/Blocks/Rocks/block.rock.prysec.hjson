@@ -1,0 +1,49 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Prysec"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	material_type: stone
+	tile_flags: non_empty
+	flags: raw, ore, uncommon, rock, halide
+	
+	max_health: 2880.000
+	smoothing: 0.170
+	stability: 4.040
+	strength_tensile: 6.500
+	strength_compressive: 8.100
+	
+	mass: 4.425
+	density: 0.000
+	friction: 0.840
+	elasticity: 0.580
+	fall_damage_mult: 1.080
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.rock.prysec
+	pattern: pattern.stone
+	texture_scale: 1.610
+	texture_overshoot: -0.350
+	texture_offset: -0.300
+	
+	color_preview: "0xff908c79"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		null
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff908c79"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+}

@@ -1,0 +1,59 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Paratroopers"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	flags: none
+	slot: primary
+	categories: weapon, melee, gun, long_range, cheap, military, stolen
+	faction: srn
+	species: human
+	
+	character_flags:
+	{
+		require: none
+		include: military, armed, soldier, outdoor, lower_middle_class, middle_class
+		exclude: none
+		weight: 0.930
+	}
+	
+	amount_multiplier_min: 1.000
+	amount_multiplier_max: 1.000
+	cost: 0.000
+	
+	shipment:
+	{
+		items:
+		[
+			{
+				type: prefab
+				prefab: battle_rifle
+				quantity: 1.000
+				flags: pickup
+			}
+			{
+				type: resource
+				material: ammo.hc.hv
+				quantity: 120.000
+				flags: pickup
+			}
+			{
+				type: prefab
+				prefab: helmet.00
+				quantity: 1.000
+				flags: equip, despawn, no_consume
+			}
+			{
+				type: prefab
+				prefab: armor.00
+				quantity: 1.000
+				flags: equip, despawn, no_consume
+			}
+		]
+		
+		flags: unpack
+	}
+}

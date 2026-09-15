@@ -1,0 +1,124 @@
+﻿{
+	$version: "0.1.75.1"
+	color: "0xffdbd421"
+	
+	sounds_looped:
+	[
+		{
+			sound: amb.industry.metal.deep.01
+			volume: 0.035
+			pitch: 0.900
+			
+			daytime_range: [0.180, 0.920]
+			
+			mix:
+			{
+				front_left: 0.800
+				front_right: 0.800
+				center: 0.200
+				side_left: 0.700
+				side_right: 0.700
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.action.01.cue
+			volume: 0.040
+			pitch: 0.820
+			
+			daytime_range: [0.000, 0.005]
+			
+			mix:
+			{
+				front_left: 0.150
+				front_right: 0.150
+				center: 0.050
+				side_left: 0.150
+				side_right: 0.150
+				back_left: 0.400
+				back_right: 0.400
+			}
+		}
+		{
+			sound: music.action.03.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.005, 0.200]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.danger.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.200, 0.400]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.danger.00.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.400, 0.600]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.action.08.short
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.600, 0.650]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.action.00.short
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.650, 0.700]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.action.03.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.700, 0.900]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+	]
+	
+	sounds_random: []
+}

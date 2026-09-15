@@ -1,0 +1,57 @@
+﻿{
+	$version: "0.1.73.0"
+	$note:
+		'''
+		- Dark igneous rock, looks similar to obsidian
+		- Contains silver sulfide and mercury sulfide
+		'''
+	name: "Hortspargl"
+	desc:
+		'''
+		Dense obsidian-like igneous rock with a submetallic luster.
+		'''
+	
+	material_type: stone_metallic
+	tile_flags: non_empty
+	flags: raw, ore, common, mineral, rock, igneous
+	
+	max_health: 8200.000
+	smoothing: 0.134
+	stability: 9.660
+	strength_tensile: 8.500
+	strength_compressive: 15.800
+	
+	mass: 5.750
+	density: 0.000
+	friction: 0.650
+	elasticity: 0.790
+	fall_damage_mult: 1.020
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.rock.hortspargl
+	pattern: pattern.stone
+	texture_scale: 1.490
+	texture_overshoot: -0.250
+	texture_offset: 0.000
+	
+	color_preview: "0xff615e59"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: hortspargl
+			quantity: 3.048298
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff615e59"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+}

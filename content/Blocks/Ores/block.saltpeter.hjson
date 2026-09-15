@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Saltpeter"
+	desc:
+		'''
+		An uncommon mineral used in alchemistry.
+		'''
+	
+	material_type: chalk
+	tile_flags: non_empty
+	flags: raw, ore, uncommon, mineral
+	
+	max_health: 3400.000
+	smoothing: 0.180
+	stability: 0.500
+	strength_tensile: 0.000
+	strength_compressive: 0.000
+	
+	mass: 2.100
+	density: 0.000
+	friction: 0.700
+	elasticity: 0.050
+	fall_damage_mult: 1.090
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.saltpeter
+	pattern: pattern.stone
+	texture_scale: 1.100
+	texture_overshoot: -0.250
+	texture_offset: 0.000
+	
+	color_preview: "0xffffd6ac"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: saltpeter
+			quantity: 3.154697
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffe8d1ba"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

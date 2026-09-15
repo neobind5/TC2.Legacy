@@ -1,0 +1,58 @@
+$name: "Swaps in gen - Outpost"
+$desc: "Small faction outpost."
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.250, 2.500]
+		offset: [0.000, -0.250]
+		
+		mass: 360.000
+		radius: 0.500
+		
+		material: building_wood
+		
+		layer: entity, building, support, ignore_melee, ignore_bullet, flammable
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "outpost.00"
+		mask: "outpost.00.mask"
+	}
+	z: -300.000
+}
+
+health:
+{
+	max: 26500.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+transform:
+{
+
+}
+
+swapprefab:
+{
+	flags: ignore_rotation
+	prefab: "fancymine"
+	offset: [0,-0.85]
+}

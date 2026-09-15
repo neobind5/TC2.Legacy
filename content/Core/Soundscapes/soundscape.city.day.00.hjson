@@ -1,0 +1,107 @@
+{
+	sounds_looped:
+	[
+		{
+			sound: music.sunrise.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.340, 0.400]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.400, 0.500]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.02.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.500, 0.600]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.day.03.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.600, 0.800]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.night.00.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.800, 0.900]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: music.night.01.long
+			volume: 0.500
+			pitch: 1.000
+			
+			daytime_range: [0.900, 1.000]
+			
+			mix:
+			{
+				back_left: 1.000
+				back_right: 1.000
+			}
+		}
+		{
+			sound: "amb.city.day.loop.00"
+			volume: 0.105
+			pitch: 0.850
+
+			daytime_range: [0.100, 0.900]
+			
+			mix: 
+			{
+				front_left: 0.500
+				front_right: 0.500
+				center: 0.150
+				lfe: 0.100
+				side_left: 0.200
+				side_right: 0.200
+				back_left: 0.350
+				back_right: 0.350
+			}
+		}
+	]
+	
+	sounds_random:
+	[
+
+	]
+}

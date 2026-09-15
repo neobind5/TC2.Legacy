@@ -1,0 +1,62 @@
+﻿{
+	$version: "0.1.73.1"
+	name: "Kruskite"
+	desc:
+		'''
+		Brittle, porous silicate igneous rock with a dull luster.
+
+		Often found as a host rock for various sulfide minerals, along with containing inclusions of silver and gold.
+		'''
+	
+	material_type: stone_porous
+	tile_flags: non_empty
+	flags: raw, ore, common, porous, rock, silicate, igneous
+	
+	max_health: 1680.000
+	smoothing: 0.140
+	stability: 4.140
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 3.050
+	density: 0.000
+	friction: 0.900
+	elasticity: 0.200
+	fall_damage_mult: 0.880
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.rock.kruskite
+	pattern: pattern.stone
+	texture_scale: 1.300
+	texture_overshoot: -0.750
+	texture_offset: 0.000
+	
+	color_preview: "0xff80775f"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: kruskite
+			quantity: 3.18281
+		}
+		{
+			material: sand
+			quantity: 0.565574
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff80775f"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+	
+	related:
+	{
+		kruskite: component, raw, crushed, similar, ingredient, natural
+	}
+}

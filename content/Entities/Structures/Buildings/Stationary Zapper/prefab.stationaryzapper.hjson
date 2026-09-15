@@ -1,0 +1,148 @@
+$name: "EC Stationary Zapper"
+$desc: "Area-denial device powered by EC-EL pellets. Be careful around it!"
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		a: [0.000, -1.750]
+		b: [0.000, 2.000]
+		mass: 1150.000
+		radius: 1.000
+		friction: 0.400
+		elasticity: 0.200
+		material: metal_solid
+		layer: entity, solid, building, no_overlapped_placement
+		mask: world, solid, essence
+
+		miss_chance: 0.680
+	}
+}
+
+health:
+{
+	max: 25000.000
+}
+
+armor:
+{
+	toughness: 650.000
+	protection: 0.750
+	
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+
+	material_type: metal_solid
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "zapper.00"
+	}
+	z: -200.000
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	
+}
+
+zapper:
+{
+	damage: 2500.000
+	offset_a: [0.000, 0.000]
+	offset_b: [0.000, -2.250]
+
+	@shape.circle:
+	{
+		offset: [0.000, -1.500]
+		mass: 1.000
+		radius: 6.000
+		friction: 0.000
+		elasticity: 0.000
+		rigidity_dynamic: 0.000
+		rigidity_static: 0.000
+		material: none
+		layer: none
+		mask: creature, organic
+		exclude: resource, faction
+	}
+
+	@light:
+	{
+		color: [0.650, 0.800, 1.000, 1.800]
+		offset: [0.000, -1.000]
+		scale: [4.000, 12.000]
+		intensity: 1.000
+		texture: "light.box.00"
+	}
+
+	@sound.emitter:
+	{
+		file: "zapper.loop.00"
+		volume: 1.000
+		size: 1.000
+		size_max_modifier: 1.000
+		pitch: 1.000
+	}
+}
+
+zapper.state:
+{
+	flags: powered
+}
+
+interactable:
+{
+	window_size: [200.000, 192.000]
+}
+
+essence.container:
+{
+	h_essence: "electricity"
+	rate: 1.000
+	available: 500.000
+	stability: 1.200
+	health_threshold: 0.100
+
+	// @inventory1:
+	// {
+	// 	name: "Essence"
+	// 	stack_size_multiplier: 0.400
+	// 	filter_flags: essence
+	// 	type: essence
+	// 	flags: standalone
+	// }
+}
+
+lamp:
+{
+	flicker: 0.000
+	blink_frequency: 1.000
+	blink_amplitude: 0.500
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.000, 2.500]
+		offset: [1.000, 0.750]
+		scale: [28.000, 28.000]
+		intensity: 1.000
+		texture: "light.circle.00"
+	}
+}
+
+faction:
+{
+	
+}

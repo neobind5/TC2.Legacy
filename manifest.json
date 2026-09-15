@@ -1,0 +1,20 @@
+{
+	"version": "0.1.75.1",
+	"guid": "2fc97d3f-7dbd-4bdd-aaca-3b4d3def8b83",
+	"name": "Legacy",
+	"description": "TC1 Inspired overhaul.",
+	"url": null,
+	"git": null,
+	"authors": ["neobind", "Korezack", "Junko"],
+	"dependencies": [
+		{
+			"identifier": "TC2.Core",
+			"required": true
+		},
+		{
+			"identifier": "TC2.Base",
+			"required": true
+		}
+	],
+	"tags": []
+}

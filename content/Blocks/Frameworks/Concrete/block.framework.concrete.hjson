@@ -1,0 +1,59 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Concrete"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	material_type: cermet
+	tile_flags: non_empty
+	flags: artificial, magnetic, metal, construction
+	
+	max_health: 98000.000
+	smoothing: 0.180
+	stability: 4.000
+	strength_tensile: 11.650
+	strength_compressive: 22.000
+	
+	mass: 2.900
+	density: 0.000
+	friction: 0.850
+	elasticity: 0.600
+	fall_damage_mult: 1.100
+	collision_layer: none
+	collision_mask: essence
+	
+	texture: terrain.framework.concrete
+	pattern: pattern.framework
+	texture_scale: 1.375
+	texture_overshoot: -0.030
+	texture_offset: -0.875
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: scrap.concrete
+			quantity: 0.731414
+		}
+		{
+			material: scrap.steel
+			quantity: 0.089437
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff877c79"
+			tile_flags: solid, non_empty
+		}
+		{
+			color: "0xff39354e"
+			tile_flags: non_empty
+		}
+	]
+}

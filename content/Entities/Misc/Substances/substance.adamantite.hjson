@@ -1,0 +1,96 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Adamantite"
+	description:
+		'''
+		Dense and durable metal with low reactivity. Reacts mysteriously in the presence of mithril.
+		'''
+	
+	formula: "Ad"
+	type: element
+	atomic_number: 159
+	flags: none
+	tags: pure, refractory, metal, solid
+	
+	icon:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [14, 1]
+	}
+	
+	color_icon: "0xffa37a69"
+	color_gui: "0xff6c584b"
+	color_dust: "0xff6c584b"
+	color_gib: "0xff6c584b"
+	color_smoke: "0xff6c584b"
+	
+	color_liquid: [0.583, 0.190, 0.265, 1.000]
+	color_molten: [0.592, 0.280, 0.242, 1.357]
+	color_flame: [0.583, 0.190, 0.265, 0.690]
+	color_spark: [0.853, 0.270, 0.382, 1.337]
+	
+	// kg/mol (use atomic mass for elements)
+	molar_mass: 0.123
+	// kg/m³ (STP)
+	density: 19921.200
+	// kg/m³ (STP)
+	density_liquid: 16929.080
+	// kg/m³
+	density_solid: 19921.200
+	
+	// K (STP)
+	melting_point: 3245.280
+	// K (STP)
+	boiling_point: 5841.000
+	
+	// K
+	critical_point_temperature: 0.000
+	// K
+	triple_point_temperature: 0.000
+	
+	// bar
+	critical_point_pressure: 0.000
+	// bar
+	triple_point_pressure: 0.000
+	
+	// K
+	ductile_temperature: 2372.400
+	// K
+	forging_temperature_lower: 1984.500
+	// K
+	forging_temperature_upper: 2920.500
+	// K
+	sintering_temperature_lower: 944.585
+	// K
+	sintering_temperature_upper: 3104.853
+	
+	// K
+	autoignition_temperature: 1715.560
+	
+	// kJ/mol
+	heat_of_fusion: 42.000
+	// kJ/mol
+	heat_of_vaporization: 528.000
+	// kJ/(mol*K)
+	molar_heat_capacity: 0.057404
+	
+	// kJ/kg
+	specific_heat_of_fusion: 92.92036
+	// kJ/kg
+	specific_heat_of_vaporization: 1168.141
+	// kJ/(kg*K)
+	specific_heat_capacity: 0.127
+	
+	// kW/(m*K)
+	thermal_conductivity: 0.137127
+	
+	form_to_material:
+	{
+		powder: adamantite.powder
+		plate: adamantite.plate
+		chunk: adamantite
+		gravel: adamantite.gravel
+		raw: adamantite
+	}
+}

@@ -1,0 +1,90 @@
+$name: "Swaps in gen - Consumer Goods"
+$desc:
+	'''
+	Neatly-stacked standard shoddy paper boxes to fullfill average Imperial citizen's everyday needs.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.600
+	fall_damage_multiplier: 0.700
+	inventory_weight_multiplier: 0.850
+
+	@shape.polygon:
+	{
+		points:
+		[
+			[-0.750, -1.125]
+			[0.750, -1.125]
+			[1.000, 0.875]
+			[-1.000, 0.875]
+		]
+		
+		mass: 15.000
+		radius: 0.250
+		friction: 0.450
+		elasticity: 0.100
+		
+		material: paper
+		
+		layer: entity, solid, crate, storage, ignore_bullet, ignore_melee, flammable
+		exclude: held, attached
+	}
+
+	@shape.line:
+	{
+		a: [-1.125, 1.125]
+		b: [1.125, 1.125]
+		
+		mass: 30.000
+		radius: 0.300
+		friction: 0.950
+		elasticity: 0.400
+		
+		material: wood
+		
+		layer: entity, solid, crate, platform, ignore_bullet, ignore_melee, ignore_hover, flammable
+		exclude: held, attached
+		// mask: solid
+
+		flags: no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 9000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.supplies.00
+		size: [24, 24]
+		frame: [0, 0]
+	}
+	z: -130.000
+}
+
+norotate:
+{
+	rotation: 0.000
+	bias: 0.000
+	speed: 2.000
+	multiplier: 4.000
+	mass_multiplier: 3.000
+	flags: no_share, disable_attached
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "supplies.04"
+}

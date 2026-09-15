@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Sand"
+	desc:
+		'''
+		A sandy soil.
+		'''
+	
+	material_type: sand
+	tile_flags: non_empty
+	flags: raw, soil, silicate
+	
+	max_health: 400.000
+	smoothing: 0.230
+	stability: 0.020
+	strength_tensile: 0.001
+	strength_compressive: 0.020
+	
+	mass: 3.500
+	density: 0.000
+	friction: 1.171
+	elasticity: 0.030
+	fall_damage_mult: 0.720
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.sand
+	pattern: pattern.soil
+	texture_scale: 1.500
+	texture_overshoot: -0.500
+	texture_offset: 0.000
+	
+	color_preview: "0xff80775f"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: sand
+			quantity: 2.807869
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffc69971"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

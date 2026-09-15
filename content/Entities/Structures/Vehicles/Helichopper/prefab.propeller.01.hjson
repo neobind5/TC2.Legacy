@@ -1,0 +1,107 @@
+$name: "Propeller (Top)"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	fall_damage_multiplier: 0.8
+
+	@shape.line:
+	{
+		a: [-1.250, -0.125]
+		b: [1.250, -0.125]
+		mass: 30.000
+		radius: 0.500
+		friction: 1.850
+		elasticity: 0.850
+		material: wood
+		layer: entity, solid
+		mask: world
+		exclude: tree, attached
+	}
+}
+
+health:
+{
+	max: 8500.000
+}
+
+animated.renderer:
+{
+	sprite: 
+	{
+		texture: "propeller.01"
+		fps: 60.000
+		count: 18
+		size: [32, 8]
+	}
+		
+	z: 100.000
+}
+
+transform:
+{
+
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+	radius: 0.000
+	flags: disable_parent_facing, disable_control
+	stress_multiplier: 0.500
+}
+
+attachment:
+{
+	offset: [0.000, 0.000]
+	radius: 0.000
+	flags: disable_parent_facing
+}
+
+// norotate:
+// {
+// 	rotation: 0.000
+// 	bias: 0.010
+// 	speed: 0.600
+// 	multiplier: 6.000
+// 	mass_multiplier: 15.000
+// 	flags: none
+// }
+
+// vibrate:
+// {
+// 	frequency: 50.000
+// 	modifier: 1.000
+// 	rotation_mult: 0.045
+// 	position_mult: [0.040, 0.060]
+// 	flags: shared
+// }
+
+control:
+{
+
+}
+
+propeller:
+{
+	speed_step: 4.000
+	speed_max: 4.000
+	animation_modifier: 100.000
+	max_tilt: 3.000
+	force_modifier: -12000.000
+	flags: none
+
+	@sound.emitter:
+	{
+		file: "propeller.loop.00"
+		flags: start_muted
+		volume: 0.300
+		pitch: 0.600
+		size: 0.800
+		size_max_modifier: 1.400
+	}
+}

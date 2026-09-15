@@ -1,0 +1,101 @@
+$name: "Balloon Envelope"
+$desc:
+	'''
+	It's full of fresh air.
+	'''
+$tags: []
+
+body:
+{
+	gravity: 1.000
+	damping: 0.975
+	fall_damage_multiplier: 0.1
+	
+	@shape.circle:
+	{
+		offset: [0.000, 0.000]
+		mass: 1.000
+		radius: 0.8
+		friction: 0.200
+		elasticity: 0.900
+		buoyancy: 0.850
+		rigidity_dynamic: 0.700
+		rigidity_static: 0.850
+		material: fabric
+		layer: entity, solid, flammable
+		mask: world, solid
+		exclude: creature, vehicle, entity
+		// cog_offset: [0.000, 1.400]
+	}
+}
+
+balloon:
+{
+	speed_max: 0.800
+	temperature_max: 413.150
+	envelope_radius_mid: 0.800
+	envelope_radius_bottom: 0.200
+	envelope_height_bottom: 0.400
+	envelope_thickness: 0.001
+	envelope_thermal_conductivity: 0.00021
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "balloon.small.top.00"
+		size: [19, 16]
+	}
+
+	z: 150.000
+	flags: has_damage
+}
+
+damage.effects:
+{
+	frame_count: 7
+}
+
+faction:
+{
+	
+}
+
+faction.colorable:
+{
+
+}
+
+health:
+{
+	max: 25000.000
+}
+
+// norotate:
+// {
+// 	rotation: 0.000
+// 	bias: 0.500
+// 	speed: 2.000
+// 	multiplier: 1.000
+// 	mass_multiplier: 1.100
+// 	flags: no_share
+// }
+
+transform:
+{
+
+}
+
+claimable:
+{
+	flags: none
+}
+
+threat:
+{
+	priority: 1.000
+	flags: no_melee
+	self_hints: can_fly, is_vehicle
+	item_hints: vehicle, heavy, weak, cheap, slow, propulsion
+}

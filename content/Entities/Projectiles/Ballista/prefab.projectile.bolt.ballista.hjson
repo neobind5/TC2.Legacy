@@ -1,0 +1,27 @@
+$tags: []
+
+projectile:
+{
+	damage_base: 129840.000
+	damage_bonus: 12000.000
+	knockback_multiplier: 800.000
+	lifetime: 260.000
+	damage_type: arrow
+	size: 0.150
+	ricochet_count: 0
+	stabilization: 0.800
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "bolt.ballista"
+	}
+	z: -40.000
+}
+
+transform:
+{
+
+}

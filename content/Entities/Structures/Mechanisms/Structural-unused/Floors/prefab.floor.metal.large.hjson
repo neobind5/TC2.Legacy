@@ -1,0 +1,108 @@
+$name: "Metal Floor (Large)"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	gravity: 1.000
+	fall_damage_multiplier: 0.250
+
+	@shape.line:
+	{
+		material: metal
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, solid, vehicle, platform
+		mask: world, wheel, solid
+		exclude: tree, attached, stored, background, platform
+		
+		mass: 420.000
+		radius: 0.4375
+		friction: 1.900
+		elasticity: 0.150
+		
+		cog_offset: [0.000, 0.000]
+		
+		a: [-3, 0]
+		b: [3, 0]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 126000.000
+}
+
+damage.effects:
+{
+	threshold_wreck: 0.150
+}
+
+armor:
+{
+	toughness: 750.000
+	protection: 1.00
+
+	knockback_modifier: 0.700
+	pain_modifier: 0.000
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+vehicle:
+{
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "terrain.sheetmetal.00"
+		}
+		z: 100.000
+	}
+}
+
+holdable:
+{
+	radius: 0.000
+	stress_multiplier: 0.500
+	flags: disable_parent_facing, disable_rotation, disable_control
+}
+
+attachment:
+{
+	offset: [0.000, 0.000]
+	tags: large, mount, platform, fixed
+	flags: disable_parent_facing
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	// @net.synchronized:
+	// {
+	// 	interval: 0.000
+	// }
+
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+interactable:
+{
+	flags: none
+	window_size: [192, 144]
+	priority: 1.500
+	window_offset: [0.000, -200.000]
+}

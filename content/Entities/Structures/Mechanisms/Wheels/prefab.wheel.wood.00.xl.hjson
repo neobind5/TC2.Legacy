@@ -1,0 +1,87 @@
+$name: "Wheel (Wood, Extra Large)"
+$desc:
+	'''
+	
+	'''
+$tags: []
+
+body:
+{
+	fall_damage_multiplier: 0.300
+
+	@shape.circle:
+	{
+		material: wood
+		miss_chance: 0.539
+		flags: none
+		tags: none
+		
+		layer: entity, solid, item, wheel
+		mask: world, platform
+		exclude: vehicle, wheel
+		
+		mass: 50.000
+		radius: 1.900
+		friction: 1.050
+		elasticity: 0.800
+		
+		rigidity_static: 0.950
+		fall_damage_mult: 0.920
+		cog_offset: [0.000, 0.000]
+		
+		offset: [0.000, 0.000]
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wheel_2000.wood"
+	}
+	z: 110.000
+}
+
+health:
+{
+	max: 38000.000
+}
+
+armor:
+{
+	toughness: 1500.000
+	protection: 0.800
+	
+	knockback_modifier: 1.000
+	pain_modifier: 0.000
+
+	material_type: wood
+	flags: no_damage_type_conversion
+}
+
+holdable:
+{
+	force_multiplier: 0.100
+	torque_multiplier: 0.200
+	stress_multiplier: 0.200
+	radius: 0.000
+	flags: disable_parent_facing, disable_rotation, disable_control, full_rotate, storable
+}
+
+attachment:
+{
+	offset: [0.000, 0.000]
+	radius: 0.000
+	flags: disable_parent_facing
+	tags: large, wheel
+}
+
+transform:
+{
+
+}
+
+wheel:
+{
+	
+}

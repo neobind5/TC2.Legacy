@@ -1,0 +1,54 @@
+﻿{
+	$version: "0.1.63.8"
+	name: "Bituminous Coal"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	material_type: coal
+	tile_flags: non_empty
+	flags: raw, ore, uncommon, fuel, flammable, organic, porous, rock, sedimentary
+	
+	max_health: 3180.000
+	smoothing: 0.150
+	stability: 4.140
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 0.965
+	friction: 0.790
+	elasticity: 0.250
+	fall_damage_mult: 1.120
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.black_coal
+	pattern: pattern.stone
+	texture_scale: 1.550
+	texture_overshoot: -0.700
+	texture_offset: 0.000
+	
+	color_preview: "0xff474771"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: black_coal
+			quantity: 1.980
+		}
+		{
+			material: firedamp
+			quantity: 2.292958
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff2f2f36"
+			tile_flags: solid, non_empty, ground, no_replace
+		}
+	]
+}

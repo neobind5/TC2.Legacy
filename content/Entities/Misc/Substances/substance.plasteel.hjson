@@ -1,0 +1,99 @@
+﻿{
+	$version: "0.1.68.2"
+	$note:
+		'''
+		- Roughly 70.71% Smirglum, 29.29% Silver by mass
+		'''
+	name: "Plasteel"
+	description:
+		'''
+		TODO: Desc
+		'''
+	
+	type: alloy
+	atomic_number: 0
+	flags: none
+	tags: metallic, noble, metal, solid
+	
+	icon:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [14, 1]
+	}
+	
+	color_icon: "0xffd5cf97"
+	color_gui: "0xffd5cf97"
+	color_dust: "0xffd5cf97"
+	color_gib: "0xffd5cf97"
+	color_smoke: "0xffd5cf97"
+	
+	color_liquid: [0.000, 0.000, 0.000, 0.000]
+	color_molten: [0.838, 0.844, 0.515, 1.000]
+	color_flame: [0.000, 0.000, 0.000, 0.000]
+	color_spark: [0.000, 0.000, 0.000, 0.000]
+	
+	// kg/mol (use atomic mass for elements)
+	molar_mass: 0.309455
+	// kg/m³ (STP)
+	density: 21872.490
+	// kg/m³ (STP)
+	density_liquid: 19685.240
+	// kg/m³
+	density_solid: 21872.490
+	
+	// K (STP)
+	melting_point: 2412.397
+	// K (STP)
+	boiling_point: 4051.504
+	
+	// K
+	critical_point_temperature: 0.000
+	// K
+	triple_point_temperature: 0.000
+	
+	// bar
+	critical_point_pressure: 0.000
+	// bar
+	triple_point_pressure: 0.000
+	
+	// K
+	ductile_temperature: 0.000
+	// K
+	forging_temperature_lower: 1206.198
+	// K
+	forging_temperature_upper: 2171.157
+	// K
+	sintering_temperature_lower: 874.9242
+	// K
+	sintering_temperature_upper: 1163.661
+	
+	// K
+	autoignition_temperature: 2518.397
+	
+	// kJ/mol
+	heat_of_fusion: 29.000
+	// kJ/mol
+	heat_of_vaporization: 415.000
+	// kJ/(mol*K)
+	molar_heat_capacity: 0.044331
+	
+	// kJ/kg
+	specific_heat_of_fusion: 93.700
+	// kJ/kg
+	specific_heat_of_vaporization: 1341.000
+	// kJ/(kg*K)
+	specific_heat_capacity: 0.165877
+	
+	// kW/(m*K)
+	thermal_conductivity: 0.160
+	
+	form_to_material:
+	{
+		ingot: plasteel.ingot
+		powder: plasteel.powder
+		plate: plasteel.plate
+		chunk: plasteel
+		raw: plasteel
+	}
+}

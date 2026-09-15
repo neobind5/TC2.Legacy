@@ -1,0 +1,89 @@
+$name: "Swaps in gen - Construction Supplies"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.600
+	fall_damage_multiplier: 1.500
+	inventory_weight_multiplier: 0.750
+
+	@shape.polygon:
+	{
+		points:
+		[
+			[-0.875, -0.500]
+			[1.000, -0.500]
+			[1.125, 0.875]
+			[-1.125, 0.875]
+		]
+		
+		mass: 60.000
+		radius: 0.250
+		friction: 0.450
+		elasticity: 0.100
+		
+		material: rubble
+		
+		layer: entity, solid, crate, storage, ignore_bullet, ignore_melee
+		exclude: held, attached
+	}
+
+	@shape.line:
+	{
+		a: [-1.125, 1.125]
+		b: [1.125, 1.125]
+		
+		mass: 30.000
+		radius: 0.300
+		friction: 0.950
+		elasticity: 0.400
+		
+		material: wood
+		
+		layer: entity, solid, crate, platform, ignore_bullet, ignore_melee, ignore_hover, flammable
+		exclude: held, attached
+		// mask: solid
+
+		flags: no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 14000.000
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	window_size: [192, 192]
+	window_size_misc: [96, 0]
+	priority: 1.100
+	window_offset: [-32.000, -224.000]
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.supplies.00
+		size: [24, 24]
+		frame: [5, 0]
+	}
+	z: -130.000
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "supplies.06"
+}

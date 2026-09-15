@@ -1,0 +1,85 @@
+$name: "Swaps in gen - Crashed Market"
+$desc: "It used to be such a nice place to trade at..."
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		material: rubble
+		miss_chance: 0.870
+		flags: none
+		tags: none
+		
+		layer: entity, building, storage, ignore_melee
+		mask: world
+		exclude: none
+		
+		mass: 3540.000
+		radius: 0.600
+		friction: 0.950
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[-1.750, -0.250]
+			[1.750, -1.125]
+			[2.375, 2.500]
+			[-2.250, 2.625]
+		]
+	}
+}
+
+health:
+{
+	max: 1.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "market.wrecked.00"
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	window_size: [192.000, 192.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+nameable:
+{
+	tags: lame, dangerous, food
+	type: location
+	flags: no_rename, randomize
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "yeoldemarket"
+}
+
+// cluster:
+// {
+// 	prefab: "yeoldemarket"
+// 	spread: 50.500
+// 	speed: 12.000
+// 	count: 20
+// 
+// 	speed_modifier_min: 0.800
+// 	speed_modifier_max: 1.000
+// }

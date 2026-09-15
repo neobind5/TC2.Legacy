@@ -1,0 +1,56 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Betoniter"
+	desc:
+		'''
+		Hard argillaceous sedimentary rock with an earthy luster.
+		Often found together with various alkaline minerals.
+		'''
+	
+	material_type: concrete
+	tile_flags: non_empty
+	flags: raw, ore, common, rock, sedimentary, aluminosilicate
+	
+	max_health: 5840.000
+	smoothing: 0.160
+	stability: 8.940
+	strength_tensile: 4.800
+	strength_compressive: 21.000
+	
+	mass: 5.0475
+	density: 0.000
+	friction: 0.700
+	elasticity: 0.560
+	fall_damage_mult: 1.050
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.rock.betoniter
+	pattern: pattern.stone
+	texture_scale: 1.130
+	texture_overshoot: -0.740
+	texture_offset: 0.000
+	
+	color_preview: "0xff4f5353"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: betoniter
+			quantity: 2.951724
+		}
+		{
+			material: scrap.concrete
+			quantity: 0.539007
+		}
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff4f5353"
+			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+		}
+	]
+}

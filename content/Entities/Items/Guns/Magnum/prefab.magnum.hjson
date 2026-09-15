@@ -1,0 +1,146 @@
+$name: "Magnum"
+$desc:
+	'''
+	Bigger iron fit for machine-gun ammunition. 
+	
+	Has more kick so it's recommended to hold it with both hands to ensure contact with shooters face does not accur.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.100
+
+	@shape.line:
+	{
+		a: [-0.450, 0.000]
+		b: [0.450, -0.100]
+		mass: 4.800
+		radius: 0.300
+		friction: 0.900
+		elasticity: 0.250
+		material: metal_solid
+		layer: entity, solid, ignore_bullet, ignore_melee, item
+		mask: world
+	}
+}
+
+gun:
+{
+	muzzle_offset: [0.625, -0.250]
+	receiver_offset: [-0.125, -0.125]
+	
+	eject_direction: [-2.800, -5.400]
+	eject_angular_velocity: 5.000
+	flash_size: 0.700
+	
+	smoke_size: 1.000
+	smoke_amount: 0.500
+
+	shake_amount: 0.6
+	shake_radius: 8.000
+	
+	sound_volume: 1.930
+	sound_size: 1.950
+	sound_dist_multiplier: 1.620
+	sound_pitch: 0.6
+	
+	sound_shoot: lmg.shoot.00
+	sound_cycle: breechloader.pocket.cycle
+	sound_reload: breechloader.long.reload
+	
+	damage_multiplier: 2.200
+	velocity_multiplier: 370.000
+	jitter_multiplier: 1.250
+	recoil_multiplier: 1.2
+	reload_interval: 0.900
+	cycle_interval: 0.300
+	stability: 2400.000
+	failure_rate: 0.005
+	
+	ammo_filter: ammo_mg
+	max_ammo: 5.000
+	
+	action: revolver
+	type: handgun
+	feed: cylinder
+	heuristic_range: 18.000
+	
+	@inventory1:
+	{
+		type: ammo
+		flags: hidden, ignore_mass, no_auto_pickup
+		stack_size_multiplier: 1.000
+
+		filter:
+		{
+			require: ammo
+			exclude: gas
+		}
+	}
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 2.000]
+		offset: [1.000, -0.250]
+		scale: [16.000, 14.000]
+		intensity: 0.000
+		texture: "light.circle.00"
+	}
+}
+
+gun.state:
+{
+
+}
+
+holdable:
+{
+	offset: [-0.500, 0.100]
+	radius: 4.000
+	flags: storable
+	hints: gun, small
+
+	force_multiplier: 1.200
+	torque_multiplier: 1.050
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "magnum"
+	}
+	offset: [0.000, 0.000]
+	scale: [0.900, 0.900]
+}
+
+health:
+{
+	max: 3200.000
+}
+
+transform:
+{
+
+}
+
+packable:
+{
+
+}
+
+control:
+{
+
+}
+
+aimable:
+{
+
+
+	min: -1.200
+	max: 1.400
+	
+
+}

@@ -1,0 +1,82 @@
+$name: "Flagpole (Metal)"
+$desc:
+	'''
+	Metal flagpole indicating a claimed territory.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		material: metal_pole
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, solid, building, support, ignore_melee, background
+		mask: world, building
+		exclude: none
+		
+		mass: 258.000
+		radius: 0.250
+		friction: 0.500
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		a: [0.000, -5.000]
+		b: [0.000, 5.000]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 16000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "flagpost.metal.00"
+		mask: "flagpost.metal.00.mask"
+	}
+	offset: [0.250, 0.000]
+	z: -150.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.700
+}
+
+transform:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+claimer:
+{
+	radius: 40.000
+	strength: 1.300
+	falloff: 0.500
+}
+
+// interactable:
+// {
+// 	window_size: [96.000, 96.000]
+// }

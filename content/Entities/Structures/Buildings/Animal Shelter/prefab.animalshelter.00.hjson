@@ -1,0 +1,236 @@
+$name: "Steel Animal Shelter"
+$desc:
+	'''
+	A cramped, dirty metal shed that stores upwards of a dozen animals.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [4.250, 3.750]
+		offset: [0.000, -0.125]
+		
+		mass: 450.000
+		radius: 0.500
+		friction: 0.750
+		elasticity: 0.250
+		
+		material: building_masonry
+		
+		layer: entity, building, support, storage, ignore_melee, ignore_bullet, flammable
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "animalshelter.00"
+		// texture: "kitchen.00.mask"
+	}
+	z: -300.000
+}
+
+health:
+{
+	max: 38000.000
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [644.000, 656.000]
+	window_size_misc: [192.000, 0.000]
+}
+
+nameable:
+{
+	tags: food, industrial, tool
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: agriculture
+		exclude: advanced, medium, large, huge, gun, vehicle, furniture, blacksmithing, carpentry, architecture, smelting, moulding, separation, processing, fermenting
+	}
+	
+	tools: pencil, paper, hammer, cleaver, tweezers, bucket, syringe, towel, spatula, knife, needle, pins, scissors, ladle
+	infrastructure: bottle, barrel, rack, bucket, surface, hard_surface, building
+	environment: workshop, stationary, fancy, cozy, sturdy, flammable, kitchen, small
+	
+	flags: embed_gui
+	menu_columns: 4
+	recipe_type: workshop
+	
+	offset_spawn: [-1.000, 0.375]
+	
+	name: "Ranch"
+}
+
+workshop:
+{
+	orders_capacity: 3
+	
+	h_sound_order_complete: quest_complete2
+	max_order_mass: 10000.000
+
+	@inventory16:
+	{
+		type: workshop
+		flags: standalone, ignore_mass, public, faction
+		stack_size_multiplier: 1.000
+		
+		offset: [0.000, 0.000]
+
+		filter:
+		{
+			exclude: gas, large
+		}
+	}
+}
+
+crafter:
+{
+	flags: no_gui
+	
+	temperature_max: 959.000
+	pressure_max: 3.000
+	
+	spawn_offset: [1.000, -0.375]
+
+	// @inventory2:
+	// {
+	// 	type: waste
+	// 	flags: standalone, allow_ducts, ignore_mass, no_auto_pickup, vertical
+	// 	stack_size_multiplier: 1.000
+		
+	// 	filter:
+	// 	{
+	// 		include: soft, malleable, granular, viscous, small, gravel, powder
+	// 		exclude: gas
+	// 	}
+	// 	offset: [-0.500, 0.500]
+	// }
+}
+
+personnel:
+{
+	flags: none
+	assign_radius: 20.000
+	
+	slots:
+	[
+		{
+			role: farmer
+			tags: civil, production, manual_labor, maintenance, operation
+			color: "0xffe3cb93"
+			multiplier: 2.000
+		}
+		{
+			role: farmer
+			tags: civil, production, manual_labor, maintenance, operation
+			color: "0xffe3cb93"
+			multiplier: 1.500
+		}
+	]
+	characters_capacity: 2
+}
+
+// animated.renderer|"exhaust":
+// {
+// 	sprite:
+// 	{
+// 		texture: burner.parts.00
+// 		size: [16, 16]
+// 		frame: [0, 1]
+// 	}
+// 	offset: [-0.125, -2.250]
+// 	rotation: 0.000
+// 	z: -285.000
+// }
+
+// animated.renderer|"intake":
+// {
+// 	sprite:
+// 	{
+// 		texture: "burner.parts.00"
+// 		size: [8, 8]
+// 		frame: [0, 1]
+// 	}
+// 	z: -275.000
+// }
+
+shipment:
+{
+	type: crafting
+	layout: square
+	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting, no_body_mass
+	color: "0xfff0c63e"
+}
+
+// heat:
+// {
+// 	temperature_medium: 514.4965
+// 	temperature_high: 951.993
+// 	temperature_ignite: 1207.770
+// 	temperature_operating: 998.3445
+// 	temperature_melt: 1357.770
+// 	temperature_breakdown: 1835.000
+// 	cool_rate: 20.000
+// 	heat_capacity_extra: 300.000
+// 	heat_capacity_mult: 1.200
+// 	heat_damage_mult: 0.150
+// 	smoke_size_mult: 0.740
+// 	smoke_speed_mult: 0.150
+// 	smoke_rise_mult: 0.180
+// 	flags: exclude_body_mass
+// 	fire_flags: none
+// 	offset: [-0.625, 0.625]
+// 	smoke_offset: [-0.500, 0.375]
+// 	size: [1.625, 1.625]
+// 	flame_tint: "0x7630945d"
+
+// 	@light:
+// 	{
+// 		offset: [-0.750, 0.750]
+// 		scale: [22.000, 20.000]
+// 		intensity: 1.000
+// 		texture: light.circle.04
+// 	}
+		
+// 	@sound.emitter:
+// 	{
+// 		file: furnace_loop
+// 		flags: start_muted
+// 		volume: 1.100
+// 		pitch: 1.100
+// 		size_max_modifier: 0.850
+// 		priority: 0.550
+// 		offset: [-0.750, 0.750]
+// 	}
+// }

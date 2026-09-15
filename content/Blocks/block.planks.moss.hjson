@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.68.0"
+	name: "Planks (Moss)"
+	desc:
+		'''
+		Wooden planks mossed together.
+		'''
+	
+	material_type: wood
+	tile_flags: non_empty
+	flags: artificial, flammable, overgrown, organic, construction
+	
+	max_health: 350.000
+	smoothing: 0.150
+	stability: 0.500
+	strength_tensile: 0.000
+	strength_compressive: 0.000
+	
+	mass: 1.000
+	density: 0.000
+	friction: 0.950
+	elasticity: 0.420
+	fall_damage_mult: 0.780
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.planks.moss
+	pattern: pattern.planks
+	texture_scale: 1.021
+	texture_overshoot: -0.575
+	texture_offset: 0.015
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: scrap.wood
+			quantity: 0.434615
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff9f833f"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+	]
+}

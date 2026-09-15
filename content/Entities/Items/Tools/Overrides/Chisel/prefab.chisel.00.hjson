@@ -1,0 +1,102 @@
+$name: "Carving Hammer"
+$desc: 
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+control:
+{
+
+}
+
+body:
+{
+	buoyancy: 0.200
+
+	@shape.line:
+	{
+		a: [0.000, -0.600]
+		b: [0.000, 0.600]
+		mass: 5.400
+		radius: 0.200
+		friction: 0.950
+		elasticity: 0.050
+		material: tool
+		layer: entity, solid, ignore_bullet, ignore_melee, item, flammable, conductive, magnetic
+		mask: world
+	}
+}
+
+health:
+{
+	max: 4700.000
+}
+
+aimable:
+{
+
+}
+
+melee:
+{
+	damage_base: 150.000
+	damage_bonus: 20.000
+	armor_pierce: 5.000
+	
+	primary_damage_multiplier: 0.910
+	secondary_damage_multiplier: 1.230
+	terrain_damage_multiplier: 3.000
+	pain_multiplier: 1.200
+	stun_multiplier: 0.790
+	
+	cooldown: 0.400
+	max_distance: 5.750
+	aoe: 0.2
+	thickness: 0.150
+	knockback: 0.000
+	yield: 1.500
+	penetration_falloff: 0.800
+	
+	hit_offset: [0.125, -0.500]
+	
+	damage_type: pickaxe
+	category: pointed
+	
+	damage_flags_add: no_loot_discard, allow_encumbered, force_loot_notification
+	damage_flags_rem: no_loot_notification
+	
+	hit_mask: world, destructible
+	hit_exclude: plant, water, fire, gas, powder, liquid, stored, ignore_melee
+	hit_ignore: water, fire, gas, powder, liquid, stored
+}
+
+melee.state:
+{
+
+}
+
+holdable:
+{
+	offset: [0.000, 0.500]
+	flags: storable
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: chisel.00
+	}
+	scale: [0.875, 0.875]
+}
+
+transform:
+{
+
+}
+
+packable:
+{
+
+}
