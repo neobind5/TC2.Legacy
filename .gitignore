@@ -13,6 +13,7 @@
 *.ase
 *.aseprite
 *.psd
+*.old.png
 
 projects.json
 

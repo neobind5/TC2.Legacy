@@ -55,5 +55,14 @@
             flags: disabled
             regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.SideMenuGUI\.cs$'''
         }
+        //// Resources
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.mithril\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mithril\.hjson$'''
+        }
     ]
 }

@@ -1,8 +1,8 @@
 {
-	"version": "0.1.75.1",
+	"version": "0.1.75.2",
 	"guid": "2fc97d3f-7dbd-4bdd-aaca-3b4d3def8b83",
 	"name": "Legacy",
-	"description": "TC1 Inspired overhaul.",
+	"description": "Fork of Korequest & TC2 Overhaul aiming to stay in line with what made TC1 fun.",
 	"url": null,
 	"git": null,
 	"authors": ["neobind", "Korezack", "Junko"],

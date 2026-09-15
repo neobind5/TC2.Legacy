@@ -32,7 +32,7 @@ transform:
 
 resource:
 {
-	material: "mithrilfix"
+	material: "mithril"
 
 	@light:
 	{
@@ -67,6 +67,7 @@ mithril:
 		texture: "light.circle.00"
 	}
 }
+
 radioactive:
 {
 	damage: 0.000
