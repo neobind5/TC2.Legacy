@@ -8,6 +8,10 @@
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]recipe\..*\.hjson$'''
         }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]catalogue\.test\.00\.hjson$'''
+        }
         //// Structures:
         {
             flags: none
@@ -56,6 +60,7 @@
             regex: '''TC2\.(?!Legacy).*[/\\]Conquest\.SideMenuGUI\.cs$'''
         }
         //// Resources
+        // Mithril
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]material\.mithril\.hjson$'''
@@ -63,6 +68,448 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mithril\.hjson$'''
+        }
+        // Wood
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.sawdust\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.sawdust\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.woodchips\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.woodchips\.hjson$'''
+        }
+        // Coal
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.black_coal\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.coal\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.coal\.powder\.hjson$'''
+        }
+        // Copper
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.ingot\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.copper\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.copper\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.rod\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.copper\.rod\.hjson$'''
+        }
+        // Arcanite
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.arcanite\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.arcanite\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.arcanite\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.arcanite\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.arcanite\.rod\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.arcanite\.rod\.hjson$'''
+        }
+        // Niklajzner
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.niklajzner\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.niklajzner\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.ferronickel\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.ferronickel\.powder\.hjson$'''
+        }
+        // Recondite
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.recondite\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.recondite\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.recondite\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.recondite\.powder\.hjson$'''
+        }
+        // Smirglum
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.smirglum\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.smirglum\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.smirglum\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.smirglum\.powder\.hjson$'''
+        }
+        // Steel
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.steel\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.steel\.plate\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.steel\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.steel\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.steel\.rod\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.steel\.rod\.hjson$'''
+        }
+        // Gold
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.gold\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.gold\.powder\.hjson$'''
+        }
+        // Silver
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.silver\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.silver\.powder\.hjson$'''
+        }
+        // Glass
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.glass\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.glass\.powder\.hjson$'''
+        }
+        // Scrap
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.arcane\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.arcane\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.charred\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.charred\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.cloth\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.cloth\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.compacted\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.compacted\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.copper\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.copper\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.ferrous\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.ferrous\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.fur\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.fur\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.machine\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.machine\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.metal\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.metal\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.niklajzner\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.niklajzner\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.smirgrafit\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.smirgrafit\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.smirgrafit\.dusty\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.smirgrafit\.dusty\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.steel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.steel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.wood\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.wood\.hjson$'''
+        }
+        // Gravel
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.copper\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.copper\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.ferrous\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.ferrous\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.gold\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.gold\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.silver\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.silver\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.smirglum\.gravel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.smirglum\.gravel\.hjson$'''
+        }
+        // Misc
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.rot\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.rot\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.mush\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mush\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.mulch\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mulch\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.peat\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.peat\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.shite\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.shite\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.sludge\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.sludge\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.slag\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.slag\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.pestilence\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.pestilence\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.clinker\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.clinker\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.graphite\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.graphite\.powder\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.coke\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.coke\.hjson$'''
         }
     ]
 }

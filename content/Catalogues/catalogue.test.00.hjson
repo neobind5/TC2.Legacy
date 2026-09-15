@@ -1,0 +1,92 @@
+﻿{
+	$version: "0.1.75.2"
+	name: "The Most Rushed Catalogue"
+	
+	h_company: postus
+	
+	date_created: "000.00.00 00:00:00"
+	
+	items:
+	[
+		{
+			type: resource
+			h_material: wood
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: karban
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: black_coal
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: gravel
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: copper
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: niklajzner
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: toluene
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: sand
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: tallow
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: meat
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: starch
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: sugar
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: sulfur
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: porridge
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: water
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: mushroom
+			quantity: 0.000
+		}
+	]
+}
