@@ -1,0 +1,58 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Carpentry"
+	name_short: "Carpentry"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [16, 0]
+	}
+	
+	flags: passive, ambient, wip
+	tags: simple
+	
+	amount_base: 1.000
+	cooldown: 1.000
+	multiplier: 1.000
+	
+	amount_jitter: 0
+	cooldown_jitter: 0
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: none
+	infrastructure_optional: none
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.700
+	sound_pitch: 1.000
+	sound_size: 0.750
+	sound_dist: 0.900
+	
+	sounds: []
+	sounds_manual: []
+	sounds_crafter: []
+	sounds_passive: ["work_woodworking_00", "work_woodworking_01", "work_woodworking_02", "effect.tinker.components.02", "work_woodworking_02", "work_woodworking_03", "work_woodworking_04", "work_woodworking_05", "effect.clink.metal.01", "effect.tool.small.01", "work_woodworking_04", "effect.ponk.metal.00", "wrench.dismantle.00", "wrench.dismantle.00", "wrench.dismantle.00", "effect.boink.metal.00"]
+	sounds_ambient: []
+	
+	sounds_start: []
+	sounds_end: []
+	sounds_fail: ["structural.wood.break.00", "structural.wood.break.01", "structural.wood.break.02", "wood_break_00"]
+}

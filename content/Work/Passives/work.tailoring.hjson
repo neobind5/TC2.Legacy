@@ -1,0 +1,58 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Tailoring"
+	name_short: "Tailoring"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [2, 0]
+	}
+	
+	flags: passive, ambient, wip
+	tags: simple
+	
+	amount_base: 1.000
+	cooldown: 1.000
+	multiplier: 1.000
+	
+	amount_jitter: 0
+	cooldown_jitter: 0
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: none
+	infrastructure_optional: none
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.600
+	sound_pitch: 1.100
+	sound_size: 0.500
+	sound_dist: 0.600
+	
+	sounds: []
+	sounds_manual: []
+	sounds_crafter: []
+	sounds_passive: ["effect.cloth.slide.00", "effect.cloth.place.03", "effect.cloth.place.02", "effect.cloth.place.00", "effect.cloth.shuffle.00", "effect.tool.small.00", "effect.cloth.shuffle.02", "effect.cloth.place.01"]
+	sounds_ambient: []
+	
+	sounds_start: []
+	sounds_end: []
+	sounds_fail: ["flesh_hit_slash_00", "snap", "flesh.hit.scratch.00", "syringe.inject.00"]
+}

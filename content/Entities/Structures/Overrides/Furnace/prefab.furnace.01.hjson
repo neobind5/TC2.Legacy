@@ -1,0 +1,75 @@
+$name: "Swaps in gen - Derelict Furnace"
+$desc:
+	'''
+	It used to be a huge mighty metalworking furnace, but its hubris led to its downfall.
+
+	The firebox got clogged up with runaway slag and it died in agony.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		material: building_masonry
+		miss_chance: 0.750
+		flags: none
+		tags: none
+		
+		layer: entity, building, ignore_melee, ignore_bullet
+		mask: world
+		exclude: none
+		
+		mass: 4500.000
+		radius: 0.500
+		friction: 0.500
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[-1.250, -2.250]
+			[0.750, -2.375]
+			[1.750, 3.750]
+			[-1.750, 3.750]
+		]
+	}
+}
+
+health:
+{
+	max: 110000.000
+}
+
+armor:
+{
+	toughness: 120.000
+	protection: 0.500
+	coverage: 0.350
+	integrity_damage_mult: 0.940
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "furnace.01"
+	}
+	z: -280.000
+}
+
+transform:
+{
+
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "essence_rig.00"
+}

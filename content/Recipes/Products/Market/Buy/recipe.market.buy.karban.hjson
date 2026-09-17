@@ -1,0 +1,95 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Buy karban"
+	desc:
+		'''
+		Fools call it carbon.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+		money: ingredient
+		timber.oak: product
+		timber.pine: product
+		timber.maple: product
+		gravel.rod: product
+		gravel: product
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Karban"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: money
+							amount: 7.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: karban
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}
+	]
+	
+	type: buy
+	flags: item, production, auto_complete
+	tags: manual, crafting, simple
+	hints: none
+	connotations: none
+	infrastructure: table, chair, surface
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: resource.karban
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "buy"
+	rank: 400.000
+	
+	min: 10
+	max: 500
+	step: 10
+	
+	version: 1
+}

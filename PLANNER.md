@@ -1,6 +1,6 @@
 # Project Direction
 
-## Gamemode Balancing (5%)
+## Gamemode Balancing (8%)
 
     - 1 to 3 maps per server, possibly adding smaller maps with resources around larger ones?
     (Reasoning: Cram players into tight spaces to speed up the game and stir conflict.)
@@ -9,7 +9,7 @@
     (Reasoning: Players should be expected to be able to reach endgame and fight it out before wipes.)
 
 
-## Progression Rework (15%)
+## Progression Rework (30%)
 
     - Less pregenerated lootboxes.
 
@@ -34,7 +34,7 @@
     (Note: Better shops that can be created further in can be an option.) (50%)
 
 
-## Simplifying Item Management (33%) - Active
+## Simplifying Item Management (38%)
 
     - Reducing the amount of interchangable items --
     (scraps, metal sheet/ingot/rod/frame) through removal of most bloat. (Done!)
@@ -45,20 +45,20 @@
     - Minimizing recipes required for desired result.
 
 
-## Building Rework (0%)
+## Building Rework (34%) - Actively working on!
 
     - Buildings have very specific purposes,
     and only have recipes pertaining to that purpose.
     (Reasoning: Reduces sensory overload when dealing with GUI/)
 
-    - Smaller buildings.
+    - Smaller buildings. (On the way!)
     (Note: Custom sprites + smaller hitboxes/)
 
     - More types of decor, more placeable decor.
     (Reasoning: Better looking bases. Low priority.)
 
     - All buildings and masonry made significantly cheaper. Tiered structural materials.
-    (Note: Remove foundation cost on most buildings, )
+    (Note: Remove foundation cost on most buildings)
 
 
 ## Faction Rework (0%)

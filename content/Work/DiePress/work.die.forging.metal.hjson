@@ -1,0 +1,62 @@
+﻿{
+	$version: "0.1.64.1"
+	name: "Die-Forging"
+	name_short: "D-Forging"
+	desc:
+		'''
+		Shaping metal by forcing it into a die using a press or hammer.
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [8, 0]
+	}
+	
+	flags: machine, crafter_only, time_independent, no_randomization, wip
+	tags: tools, impact, complex, technical, construction, industrial, dangerous, thermal, kinetic, fast
+	
+	amount_base: 5.000
+	cooldown: 1.500
+	multiplier: 1.320
+	
+	amount_jitter: 0.570
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: anvil, hard_surface
+	infrastructure_optional: press
+	
+	character_traits:
+	{
+		weight: 1.000
+	}
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.740
+	sound_pitch: 1.130
+	sound_size: 1.790
+	sound_dist: 0.760
+	
+	sounds: []
+	sounds_manual: []
+	sounds_crafter: ["press.smash.00", "press.smash.01", "press.smash.02"]
+	sounds_passive: []
+	sounds_ambient: []
+	
+	sounds_start: []
+	sounds_end: []
+	sounds_fail: []
+}

@@ -1,0 +1,302 @@
+$name: "Smithy"
+$desc:
+	'''
+	Basic metalworking workshop equipped with a small pellet-powered forge and a simple anvil.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.250, 2.750]
+		offset: [0.000, -0.125]
+		
+		mass: 535.000
+		radius: 0.500
+		
+		material: building_masonry
+		
+		layer: entity, building, support, storage, ignore_melee, ignore_bullet, flammable, workshop
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: smithy.00
+		// mask: smithy.00.mask
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [768, 592]
+	window_size_misc: [96, 0]
+	priority: 2.000
+}
+
+health:
+{
+	max: 40000.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, industrial, tool, factory
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+entrance.linkable:
+{
+
+}
+
+laboratory:
+{
+	filter_tags:
+	{
+		include: furniture, blacksmithing, metalworking
+		exclude: advanced, huge
+	}
+	
+	blueprints_capacity: 2
+	augments_capacity: 10
+	flags: none
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: crafting, gun, tool, blacksmithing, metalworking, metallurgy, salvaging, construction, heating
+		exclude: advanced, large, huge, social, forestry, smelting, fermenting, moulding, overworld
+	}
+	
+	tools: hammer, cutters, saw, hand_drill, screwdriver, spanner, pliers, bucket, axe, shovel, file, chisel, towel, tongs, pick, crowbar, knife, sandpaper, ladle
+	infrastructure: oven, anvil, forge, dishes, table, rack, shaping_mould, bucket, surface, hard_surface, heater, stove, smokestack, structure, building, workbench
+	environment: workshop, stationary, dirty, polluted, ugly, scary, fireproof, durable, sturdy, smithy
+	connotations: none
+	
+	flags: embed_gui
+	menu_columns: 5
+	recipe_type: workshop
+	
+	offset_spawn: [1.000, 0.250]
+	
+	name: "Smithy"
+}
+
+workshop:
+{
+	orders_capacity: 3
+	h_sound_order_complete: order_complete
+	max_order_mass: 250.000
+	gui_info_size_x: 332.000
+
+	@inventory8:
+	{	
+		type: workshop
+		flags: standalone, allow_ducts, ignore_mass, public, faction, vertical
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, -0.250]
+	}
+}
+
+personnel:
+{
+	characters_capacity: 2
+	flags: none
+	assign_radius: 20.000
+	slots:
+	[
+		{
+			role: foreman
+			flags: faction, can_craft, can_manage, can_use_inventory
+			tags: management, civil, industrial, logistics, paperwork
+			color: "0xffffa800"
+			multiplier: 1.250
+		}
+		{
+			role: blacksmith
+			flags: neutral, can_craft, can_use_inventory
+			tags: civil, industrial, production, dangerous, manual_labor, technical, operation
+			color: "0xffff8333"
+			multiplier: 1.000
+		}
+	]
+}
+
+crafter:
+{
+	tools: pencil, paper, ruler, hammer, saw, screwdriver, wrench, pliers, bucket, file, tongs, knife
+	machinery: heater, burner, stove
+	infrastructure: oven, anvil, forge, barrel, table, chair, vise, rack, crucible
+	environment: workshop, stationary, dirty, noisy
+	temperature_max: 1593.150
+
+	@inventory4:
+	{	
+		type: waste
+		flags: standalone, allow_ducts, ignore_mass
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [1.125, 0.250]
+	}
+}
+
+// spawn:
+// {
+// 	flags: faction
+// }
+
+// dormitory:
+// {
+// 	species: human
+// 	flags: no_kit_selection, no_kit_requirements, region_only
+// 	characters_capacity: 3
+// 	characters_initial_count: 1
+// 	repopulate_interval: 300.000
+// 	repopulate_interval_extra: 600.000
+// 	repopulate_num: 1
+// 	repopulate_num_extra: 2
+// 	repopulate_max: 1
+// 	move_radius: 12.000
+// 	asset_flags: recycle
+// 	character_flags_filter:
+// 	{
+// 		require: engineer
+// 		include: construction, educated, artisan, professional, laborer, technician, engineer, middle_class, upper_middle_class
+// 		exclude: slave, unskilled, medical, farmer, illiterate, lower_class, lower_middle_class
+// 		weight: 1.000
+// 	}
+// }
+
+essence.container:
+{
+	stability: 0.910
+	health_threshold: 0.100
+	glow_modifier: 1.000
+	emit_type: stressor
+	flags: show_gui, allow_edit_rate, faction
+
+	@inventory1:
+	{
+		type: essence
+		flags: ignore_mass, no_auto_pickup, faction
+		stack_size_multiplier: 0.200
+		
+		filter:
+		{
+			require: small, pellet, solid, essence
+			include: none
+			exclude: gas
+		}
+
+		offset: [-0.375, 1.000]
+	}
+
+	@sound.emitter:
+	{
+		flags: start_muted
+		volume: 0.500
+		pitch: 1.730
+		size: 0.350
+		size_max_modifier: 0.700
+		spread: 80.000
+	}
+
+	@light:
+	{
+		offset: [-0.375, 0.625]
+		scale: [11.000, 7.000]
+		texture: light.circle.00
+	}
+}
+
+heat:
+{
+	temperature_medium: 600.000
+	temperature_high: 1250.000
+	temperature_ignite: 1615.000
+	temperature_operating: 1593.150
+	temperature_breakdown: 1850.000
+	cool_rate: 10.000
+	heat_capacity_extra: 400.000
+	heat_capacity_mult: 3.000
+	heat_damage_mult: 0.180
+	smoke_size_mult: 0.700
+	smoke_speed_mult: 0.010
+	smoke_rise_mult: 0.100
+	flags: exclude_body_mass, no_gui
+	fire_flags: none
+	offset: [-0.875, -0.250]
+	smoke_offset: [-0.875, -0.250]
+	size: [0.875, 0.500]
+
+	@light:
+	{
+		offset: [-0.875, -0.125]
+		scale: [28.000, 26.000]
+		intensity: 1.000
+		texture: light.circle.03
+	}
+		
+	@sound.emitter:
+	{
+		file: furnace_loop
+		flags: start_muted
+		volume: 1.100
+		pitch: 1.100
+		size_max_modifier: 0.850
+		priority: 0.550
+		offset: [-0.625, -0.125]
+	}
+}

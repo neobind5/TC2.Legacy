@@ -1,0 +1,95 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Buy gravel"
+	desc:
+		'''
+		Gotta have(l) some Gravel.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+		money: ingredient
+		timber.oak: product
+		timber.pine: product
+		timber.maple: product
+		gravel.rod: product
+		gravel: product
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Gravel"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: money
+							amount: 2.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: gravel
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}
+	]
+	
+	type: buy
+	flags: item, production, auto_complete
+	tags: manual, crafting, simple
+	hints: none
+	connotations: none
+	infrastructure: table, chair, surface
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: resource.gravel
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "buy"
+	rank: 301.000
+	
+	min: 100
+	max: 1500
+	step: 100
+	
+	version: 1
+}

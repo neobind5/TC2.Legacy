@@ -92,7 +92,7 @@ explosive:
 	radius: 7.000
 	power: 3.100
 	damage_entity: 4000.000
-	damage_terrain: 6000.000
+	damage_terrain: 800.000
 	health_threshold: 0.850
 	
 	damage_type: phlogiston
@@ -106,7 +106,7 @@ explosive:
 	force_multiplier: 0.200
 	stun_multiplier: 0.400
 	
-	smoke_amount: 1.780
+	smoke_amount: 1.280
 	smoke_lifetime_multiplier: 0.750
 	smoke_velocity_multiplier: 0.400
 	smoke_color: "0xffd8d8d8"
@@ -128,7 +128,7 @@ cluster:
 	offset: [0.000, -0.800]
 	velocity: [0.000, -20.000]
 	radius: 0.480
-	prefab: projectile.phlogiston
+	prefab: fire.phlogiston
 	spread: 2.000
 	speed: 4.000
 	speed_modifier_min: 0.000

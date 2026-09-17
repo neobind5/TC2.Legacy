@@ -1,0 +1,65 @@
+﻿{
+	$version: "0.1.62.0"
+	name: "Conveyor (Roller)"
+	tips: []
+	
+	stages: []
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: steel.plate
+			amount: 3.500
+			group: 0
+			flags: prerequisite
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: conveyor.roller
+			amount: 0.000
+			group: 0
+		}
+	]
+	
+	type: conveyor
+	flags: disabled, wip
+	tags: none
+	
+	icon:
+	{
+		texture: conveyor.roller
+	}
+	
+	color_frame: "0xffaeb59a"
+	rank: 0.000
+	
+	dismantle_work: 10.000
+	dismantle_yield: 0.900
+	
+	placement:
+	{
+		type: line
+		flags: none
+		
+		size: [0.500, 0.500]
+		
+		cooldown: 0.300
+		min_support: 0.050
+		min_claim: 0.900
+		
+		length_min: 1.000
+		length_max: 10.000
+		
+		sound: building_place
+		
+		mappings_replace:
+		{
+		
+		}
+	}
+}

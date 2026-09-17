@@ -1,0 +1,96 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Short Breechloader"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Gun"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Crafted"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: niklajzner.ingot
+							amount: 2.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: wood.rod
+							amount: 2.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: money
+							amount: 70.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: breechloader.short
+			amount: 1.000
+			group: 0
+			flags: primary, compact
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, simple, medium, weapon, gun
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: breechloader.short
+	}
+	icon_offset: [-2.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: -1.900
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

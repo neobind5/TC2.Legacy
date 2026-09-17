@@ -1,0 +1,88 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Incendiary Bomb (Standard, Impact)"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Bomb"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Bought"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: phlogiston
+							amount: 80.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: money
+							amount: 1500.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: bomb.incendiary.standard
+			amount: 1.000
+			group: 0
+			flags: primary, compact
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, simple, medium, weapon, explosive
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: bomb.incendiary.standard
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: -1.900
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

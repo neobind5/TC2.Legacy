@@ -1,0 +1,58 @@
+﻿{
+	$version: "0.1.64.0"
+	name: "Machining"
+	name_short: "Machining"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [14, 0]
+	}
+	
+	flags: passive, ambient, wip
+	tags: simple
+	
+	amount_base: 1.000
+	cooldown: 1.000
+	multiplier: 1.000
+	
+	amount_jitter: 0
+	cooldown_jitter: 0
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: none
+	infrastructure_optional: none
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.500
+	sound_pitch: 1.000
+	sound_size: 0.500
+	sound_dist: 1.000
+	
+	sounds: ["work_machining_00_loop"]
+	sounds_manual: []
+	sounds_crafter: []
+	sounds_passive: []
+	sounds_ambient: []
+	
+	sounds_start: ["effect.lathe.00.stereo"]
+	sounds_end: []
+	sounds_fail: []
+}

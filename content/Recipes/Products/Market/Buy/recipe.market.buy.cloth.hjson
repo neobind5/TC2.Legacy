@@ -1,0 +1,95 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Buy cloth"
+	desc:
+		'''
+		Buy some cloth.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+		money: ingredient
+		timber.oak: product
+		timber.pine: product
+		timber.maple: product
+		wood.rod: product
+		wood: product
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Cloth"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: money
+							amount: 8.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: cloth
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}
+	]
+	
+	type: buy
+	flags: item, production, auto_complete
+	tags: manual, crafting, simple
+	hints: none
+	connotations: none
+	infrastructure: table, chair, surface
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: resource.cloth
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "buy"
+	rank: 500.000
+	
+	min: 25
+	max: 500
+	step: 25
+	
+	version: 1
+}

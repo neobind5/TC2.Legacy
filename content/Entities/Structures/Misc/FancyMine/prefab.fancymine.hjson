@@ -1,0 +1,149 @@
+$name: "Fancy Mine"
+$desc:
+	'''
+	Mine that gradually produces ores and minerals.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[0.500, -1.750]
+			[2.625, -1.125]
+			[2.875, 2.000]
+			[-2.875, 2.000]
+		]
+		
+		mass: 6000.000
+		radius: 1.000
+		friction: 0.850
+		
+		material: building_masonry
+		
+		layer: entity, building, support, ignore_melee, ignore_bullet, storage
+		mask: world, building
+	}
+}
+
+health:
+{
+	max: 170000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "fancymine"
+		mask: "fancymine.mask"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	priority: 1.000
+	window_size: [624, 552]
+	window_size_misc: [288.000, 144.000]
+}
+
+faction.colorable:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	flags: no_rename, randomize
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu, enable_wololo
+}
+
+spawn:
+{
+	flags: faction, public
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [6, 0]
+	}
+
+	flags: faction, spawner
+}
+
+fancymine:
+{
+	produce_interval: 20.000
+	amount: 0.983
+	amount_extra: 0.324
+
+	@inventory8:
+	{
+		type: storage
+		flags: standalone, no_auto_pickup, public, faction
+		stack_size_multiplier: 1.000
+		offset: [-1.750, 0.625]
+	}
+}
+
+vendor:
+{
+	type: vending_machine
+	item_count_max: 8
+	flags: none
+	
+	fee_base: 0.000
+	fee_per_kg: 1.500
+	weight_max: 1000.000
+
+	@inventory1:
+	{
+		type: money
+		flags: no_auto_pickup
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			require: currency
+		}
+		offset: [-1.000, 0.250]
+	}
+
+	@inventory8:
+	{
+		type: output
+		flags: standalone, public, no_auto_pickup, vertical
+		stack_size_multiplier: 4.000
+		
+		offset: [0.750, 0.375]
+	}
+}

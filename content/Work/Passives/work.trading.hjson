@@ -1,0 +1,58 @@
+﻿{
+	$version: "0.1.64.0"
+	name: "Trading"
+	name_short: "Trading"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [27, 0]
+	}
+	
+	flags: passive, ambient, wip
+	tags: simple
+	
+	amount_base: 1.000
+	cooldown: 1.000
+	multiplier: 1.000
+	
+	amount_jitter: 0
+	cooldown_jitter: 0
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: none
+	infrastructure_optional: none
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.500
+	sound_pitch: 1.000
+	sound_size: 0.500
+	sound_dist: 1.000
+	
+	sounds: []
+	sounds_manual: []
+	sounds_crafter: []
+	sounds_passive: ["vo_bandit","npc_talk_00","npc_talk_01","npc_talk_02","vo_attack","vo_bad","vo_builder","vo_ladder","vo_yes","vo_no","vo_idiot","vo_hi","vo_why","vo_what","vo_chicken","vo_huh","vo_strong","vo_water","vo_uhh","vo_die","vo_look","vo_destroy","vo_neutral","vo_need","vo_kill","vo_okay","vo_hello","vo_rip","vo_haha","vo_help","vo_join","vo_gun","vo_give","vo_build","vo_jerk","vo_please","vo_run","vo_lalala","vo_fire","vo_grrr","vo_lag"]
+	sounds_ambient: []
+	
+	sounds_start: []
+	sounds_end: []
+	sounds_fail: []
+}

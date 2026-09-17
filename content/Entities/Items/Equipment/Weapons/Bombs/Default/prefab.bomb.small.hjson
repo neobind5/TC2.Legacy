@@ -14,7 +14,7 @@ body:
 {
 	@shape.circle:
 	{
-		mass: 50.500
+		mass: 40.500
 		radius: 0.500
 		friction: 0.500
 		elasticity: 0.100
@@ -22,8 +22,8 @@ body:
 		layer: entity, solid, flammable
 		mask: world
 	}
-	fall_damage_multiplier: 12.000
-	gravity: 1.35
+	fall_damage_multiplier: 25.000
+	gravity: 1.55
 }
 
 health:

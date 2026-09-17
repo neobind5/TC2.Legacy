@@ -1,0 +1,97 @@
+﻿{
+	$version: "0.1.75.2"
+	name: "The Most Rushed Catalogue"
+	
+	h_company: postus
+	
+	date_created: "000.00.00 00:00:00"
+	
+	items:
+	[
+		{
+			type: resource
+			h_material: karban
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: black_coal
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: copper
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: niklajzner
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: crude_oil
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: sulfur
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: betoniter
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: brezolyt
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: hortspargl
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: krakatite
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: kruskite
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: pjerdelite
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: soil
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: sand
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: clay
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: gravel
+			quantity: 0.000
+		}
+		{
+			type: resource
+			h_material: saltpeter
+			quantity: 0.000
+		}
+	]
+}

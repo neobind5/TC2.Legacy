@@ -1,0 +1,143 @@
+$name: "Outpost"
+$desc: "Small faction outpost."
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.250, 2.500]
+		offset: [0.000, -0.250]
+		
+		mass: 360.000
+		radius: 0.500
+		
+		material: building_wood
+		
+		layer: entity, building, support, ignore_melee, ignore_bullet, flammable
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "outpost.00"
+		mask: "outpost.00.mask"
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [720, 576]
+	window_size_misc: [192, 0]
+	priority: 1.000
+}
+
+health:
+{
+	max: 26500.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, food
+	flags: randomize
+	type: building
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+entrance.linkable:
+{
+
+}
+
+headquarters:
+{
+	flags: enable_join, enable_leave, manage_members, manage_leader, manage_style, manage_policies, allow_create_faction, show_members
+}
+
+claimer:
+{
+	radius: 32.000
+	strength: 5.000
+	falloff: 2.500
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [1, 0]
+	}
+	flags: faction, spawner
+}
+
+spawn:
+{
+	flags: faction
+}
+
+dormitory:
+{
+	flags: no_kit_selection, no_kit_requirements, repopulate_needs_faction, recruit_into_squad, region_only
+	species: human
+	
+	characters_capacity: 10
+	characters_initial_count: 0
+	characters_reserved_count: 0
+	
+	repopulate_max: 10
+	repopulate_num: 1
+	repopulate_num_extra: 0
+	repopulate_interval: 30.000
+	repopulate_interval_extra: 0.000
+	repopulate_character_flags_add: none
+	
+	asset_flags: recycle
+	character_flags_filter:
+	{
+		include: unskilled, military, farmer, laborer, civillian, armed, hunter, soldier, nomad, brawler, outdoor, strong, lower_middle_class, middle_class
+		exclude: sedentary, upper_middle_class, upper_class, elite_class
+	}
+	kit_categories_filter:
+	{
+		exclude: explosive, advanced, expensive
+	}
+}

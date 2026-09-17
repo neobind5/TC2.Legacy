@@ -1,0 +1,321 @@
+$name: "Metalworks"
+$desc:
+	'''
+	Large workshop specialized for medium-scale mineral and metal processing, as well as blacksmithing and metal forming.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [6.250, 3.750]
+		offset: [0.000, -0.125]
+		
+		mass: 2750.000
+		radius: 0.500
+		
+		material: building_reinforced
+		
+		layer: entity, building, support, ignore_melee, ignore_bullet, workshop
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: metalworks.00
+		mask: metalworks.00.mask
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [816, 600]
+	window_size_misc: [192, 0]
+	priority: 0.700
+}
+
+health:
+{
+	max: 98000.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: dangerous, industrial, tool, factory
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+address:
+{
+	
+}
+
+entrance.linkable:
+{
+
+}
+
+laboratory:
+{
+	blueprints_capacity: 3
+	filter_tags:
+	{
+		require: metalworking
+		include: smelting, metalworking
+	}
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: blacksmithing, industrial, metalworking, metallurgy, salvaging, smelting
+		exclude: advanced, huge, munitions, social, forestry, fermenting, overworld
+	}
+	tags_preferred: industrial, metallurgy, salvaging, smelting, refining, heating, processing
+	
+	tools: ruler, hammer, cutters, saw, hand_drill, screwdriver, wrench, spanner, pliers, bucket, axe, shovel, file, chisel, towel, spatula, tongs, pick, crowbar, knife, sandpaper, ladle
+	infrastructure: oven, anvil, forge, barrel, table, chair, vise, rack, crucible, casting_mould, shaping_mould, pulley, bucket, surface, hard_surface, heater, stove, kiln, smokestack, structure, building, workbench
+	environment: indoor, warm, workshop, stationary, dirty, smelly, ugly, cozy, scary, noisy, reinforced, durable, sturdy, smithy, factory, building, large
+	connotations: heavy, big, industrial, scary
+	
+	flags: embed_gui
+	menu_columns: 6
+	recipe_type: workshop
+	
+	offset_spawn: [1.875, 0.250]
+	
+	name: "Metalworks"
+}
+
+workshop:
+{
+	orders_capacity: 3
+	h_sound_order_complete: effect.buzzer.09
+	max_order_mass: 750.000
+
+	@inventory16:
+	{
+		type: workshop
+		flags: standalone, allow_ducts, ignore_mass, public, faction
+		stack_size_multiplier: 5.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [0.500, 0.000]
+	}
+}
+
+shipment:
+{
+	type: crafting
+	layout: square
+	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting, no_body_mass
+	color: "0xfff0c63e"
+}
+
+personnel:
+{
+	characters_capacity: 4
+	flags: none
+	assign_radius: 20.000
+
+	slots:
+	[
+		{
+			role: foreman
+			tags: management, civil, industrial, logistics, production, manual_labor, paperwork, sedentary, technical, overseer
+			color: "0xffff8333"
+			multiplier: 1.350
+		}
+		{
+			role: blacksmith
+			tags: industrial, production, dangerous, manual_labor, crafts
+			color: "0xffffa800"
+			multiplier: 1.000
+		}
+		{
+			role: metalworker
+			tags: industrial, production, dangerous, manual_labor, maintenance, operation
+			color: "0xffffa800"
+			multiplier: 1.000
+		}
+		{
+			role: metalworker
+			tags: industrial, production, dangerous, manual_labor, maintenance, operation
+			color: "0xffffa800"
+			multiplier: 1.000
+		}
+		null
+		null
+		null
+		null
+	]
+}
+
+crafter:
+{
+	tools: pencil, paper, ruler, hammer, saw, screwdriver, wrench, pliers, bucket, file, tongs, knife
+	machinery: heater, burner, stove
+	infrastructure: oven, anvil, forge, barrel, table, chair, vise, rack, crucible
+	environment: workshop, stationary, dirty, noisy
+	temperature_max: 893.150
+
+	@inventory8:
+	{
+		type: waste
+		flags: standalone, allow_ducts, ignore_mass, vertical
+		stack_size_multiplier: 4.000
+		
+		offset: [0.000, 0.000]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+// spawn:
+// {
+// 	flags: faction
+// }
+
+// dormitory:
+// {
+// 	species: human
+// 	flags: no_kit_selection, no_kit_requirements, region_only
+// 	characters_capacity: 3
+// 	characters_initial_count: 1
+// 	repopulate_interval: 300.000
+// 	repopulate_interval_extra: 600.000
+// 	repopulate_num: 1
+// 	repopulate_num_extra: 2
+// 	repopulate_max: 1
+// 	move_radius: 12.000
+// 	asset_flags: recycle
+// 	character_flags_filter:
+// 	{
+// 		require: engineer
+// 		include: construction, educated, artisan, professional, laborer, technician, engineer, middle_class, upper_middle_class
+// 		exclude: slave, unskilled, medical, farmer, illiterate, lower_class, lower_middle_class
+// 		weight: 1.000
+// 	}
+// }
+
+essence.container:
+{
+	stability: 0.950
+	health_threshold: 0.100
+	glow_modifier: 1.800
+	emit_type: stressor
+	flags: show_gui, allow_edit_rate, faction
+
+	@inventory1:
+	{
+		type: essence
+		flags: ignore_mass, no_auto_pickup, faction
+		stack_size_multiplier: 0.200
+		
+		filter:
+		{
+			require: small, pellet, solid, essence
+			include: none
+			exclude: gas
+		}
+
+		offset: [1.875, -0.375]
+	}
+
+	@sound.emitter:
+	{
+		flags: start_muted
+		volume: 0.500
+		pitch: 1.730
+		size: 0.350
+		size_max_modifier: 0.700
+		spread: 80.000
+	}
+
+	@light:
+	{
+		offset: [-2.125, 1.125]
+		scale: [13.000, 7.000]
+		texture: light.circle.00
+	}
+}
+
+heat:
+{
+	temperature_medium: 750.000
+	temperature_high: 1400.000
+	temperature_breakdown: 1750.000
+	cool_rate: 13.000
+	heat_capacity_extra: 2000.000
+	heat_capacity_mult: 6.000
+	heat_damage_mult: 0.100
+	flags: exclude_body_mass, no_gui
+	offset: [-2.125, 0.250]
+	smoke_offset: [-2.250, -2.375]
+	size: [0.250, 0.250]
+
+	@light:
+	{
+		offset: [-2.125, 0.250]
+		scale: [3.000, 6.000]
+		intensity: 2.500
+		texture: light.box.02
+	}
+		
+	@sound.emitter:
+	{
+		flags: start_muted
+		file: "overheat_loop"
+		volume: 1.000
+		pitch: 1.000
+	}
+}
+
+fillable:
+{
+	flags: use_misc, reusable
+	volume_capacity: 0.004
+	capacity: 1.000
+}

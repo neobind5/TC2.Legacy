@@ -1,0 +1,97 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Mastiff Helmet"
+	tips: []
+	
+	related_materials:
+	{
+		money: ingredient
+		timber.oak: product
+		timber.pine: product
+		timber.maple: product
+		wood.rod: product
+		wood: product
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Helmet"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: leather
+							amount: 10.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: money
+							amount: 200.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					products:
+					[
+						{
+							type: prefab
+							prefab: helmet.03
+							amount: 1.000
+							group: 0
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, simple, military
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: helmet.03
+		size: [16, 16]
+		frame: [0, 0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "Craft"
+	rank: 0.000
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

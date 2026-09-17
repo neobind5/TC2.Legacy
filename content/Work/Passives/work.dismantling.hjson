@@ -1,0 +1,58 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Dismantling"
+	name_short: "Dismantling"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	
+	icon:
+	{
+		texture: ui.icons.work.00
+		size: [16, 16]
+		frame: [9, 0]
+	}
+	
+	flags: passive, ambient, wip
+	tags: simple
+	
+	amount_base: 1.000
+	cooldown: 1.000
+	multiplier: 1.000
+	
+	amount_jitter: 0
+	cooldown_jitter: 0
+	color: "0xffaeb59a"
+	
+	tools_required: none
+	tools_optional: none
+	
+	infrastructure_required: none
+	infrastructure_optional: none
+	
+	skills_min:
+	{
+	
+	}
+	
+	skills_mult:
+	{
+	
+	}
+	
+	sound_volume: 0.850
+	sound_pitch: 1.000
+	sound_size: 0.450
+	sound_dist: 0.950
+	
+	sounds: []
+	sounds_manual: []
+	sounds_crafter: []
+	sounds_passive: ["wrench.dismantle.00", "wrench.dismantle.00", "wrench.dismantle.00", "effect.spring.erupt.01", "effect.use.machine.00", "effect.clang.metal.00", "effect.rattle.spring.00", "effect.tinker.components.00", "effect.spring.machine.00", "effect.spring.machine.01", "effect.tinker.machine.00"]
+	sounds_ambient: []
+	
+	sounds_start: []
+	sounds_end: ["effect.clang.metal.00"]
+	sounds_fail: []
+}

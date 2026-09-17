@@ -1,0 +1,76 @@
+﻿{
+	$version: "0.1.62.0"
+	name: "Conveyor (Magnetic)"
+	desc:
+		'''
+		Chain-based conveyor for fast transport and filtering of magnetic materials.
+		'''
+	tips: []
+	
+	stages: []
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: steel.plate
+			amount: 2.200
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: machine_parts
+			amount: 1.000
+			group: 0
+			flags: prerequisite
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: conveyor.magnetic
+			amount: 0.000
+			group: 0
+		}
+	]
+	
+	type: conveyor
+	flags: disabled, wip
+	tags: none
+	
+	icon:
+	{
+		texture: conveyor.magnetic
+	}
+	
+	color_frame: "0xffaeb59a"
+	rank: 0.000
+	
+	dismantle_work: 15.000
+	dismantle_yield: 0.900
+	
+	placement:
+	{
+		type: line
+		flags: none
+		
+		size: [0.500, 0.500]
+		
+		cooldown: 0.300
+		min_support: 0.050
+		min_claim: 0.900
+		
+		length_min: 1.000
+		length_max: 30.000
+		
+		sound: building_place
+		
+		mappings_replace:
+		{
+		
+		}
+	}
+}

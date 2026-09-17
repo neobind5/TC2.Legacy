@@ -10,7 +10,23 @@
         }
         {
             flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]work\..*\.hjson$'''
+        }
+        {
+            flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]catalogue\.test\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.rifle\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.battle_rifle\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.vending_machine\.00\.hjson$'''
         }
         //// Structures:
         {
@@ -24,6 +40,10 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.outpost\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.furnace\.01\.hjson$'''
         }
         {
             flags: none
@@ -510,6 +530,11 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.coke\.hjson$'''
+        }
+        // Misc
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.phlogiston\.hjson$'''
         }
     ]
 }

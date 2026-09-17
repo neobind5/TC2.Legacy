@@ -40,7 +40,7 @@
 		}
 		{
 			type: resource
-			h_material: toluene
+			h_material: crude_oil
 			quantity: 0.000
 		}
 		{

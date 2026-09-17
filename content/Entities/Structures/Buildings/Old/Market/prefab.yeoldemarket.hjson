@@ -1,0 +1,166 @@
+$name: "Ye Olde Market"
+$desc: 
+	'''
+	Oh, how we've missed you!
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	flags: none
+	tags: angular, complex
+
+	@shape.polygon:
+	{
+		material: rubble
+		miss_chance: 0.870
+		flags: none
+		tags: none
+		
+		layer: entity, building, storage, ignore_melee
+		mask: world
+		exclude: none
+		
+		mass: 3540.000
+		radius: 0.600
+		friction: 0.950
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[-2.25, -1.750]
+			[2.25, -1.750]
+			[2.250, 2.500]
+			[-2.250, 2.500]
+		]
+	}
+}
+
+health:
+{
+	max: 85000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "yeoldemarket"
+		mask: "yeoldemarket.mask"
+	}
+	z: -100.000
+}
+
+// faction.colorable:
+// {
+// 
+// }
+
+transform:
+{
+
+}
+
+shop:
+{
+	tags_filter:
+	{
+		require: manual
+		include: manual, munitions, tailoring, engineering, salvaging, medical, research, social, science
+		exclude: advanced, medium, large, huge, vehicle, blacksmithing, smelting, fermenting, heating, overworld
+	}
+	tags_preferred: crafting, small, device, weapon, tool, munitions, delicate, assembling, tailoring, engineering, cooking, social, construction
+	
+	tools: pencil, paper, ruler, hammer, hand_drill, screwdriver, magnifying_glass, bucket, towel, knife, sandpaper, needle, pins, scissors
+	infrastructure: dishes, bottle, table, chair, rack, bed, stationery, bucket, surface, office, building
+	environment: office, stationary, cozy, quiet, flammable, cramped, small
+	connotations: none
+	
+	flags: embed_gui
+	menu_columns: 4
+	recipe_type: buy
+	
+	name: "Market Tools"
+}
+
+workshop:
+{
+	orders_capacity: 5
+	
+	tools: none
+	infrastructure: none
+	environment: none
+	
+	gui_info_size_x: 252.000
+	
+
+	@inventory8:
+	{
+		type: storage
+		flags: standalone, ignore_mass, public, no_auto_pickup, faction, vertical
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, 0.875]
+	}
+}
+
+nameable:
+{
+	tags: homely, food
+	flags: randomize
+	type: building
+	max_length: 16
+}
+
+interactable:
+{
+	window_size: [624, 552]
+	window_size_misc: [96, 0]
+	priority: 3.000
+}
+
+lamp:
+{
+	@light:
+	{
+		color: [1.000, 0.850, 0.400, 2.000]
+		offset: [-1.350, -1.800]
+		scale: [32.000, 32.000]
+		intensity: 0.800
+		texture: "light_invsqr"
+	}
+}
+
+// faction:
+// {
+// 
+// }
+// 
+// claimable:
+// {
+// 	flags: allow_owner_unclaim, allow_enemy_unclaim, enable_wololo
+// }
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [7, 0]
+	}
+
+	flags: faction, spawner
+}
+
+address:
+{
+	
+}

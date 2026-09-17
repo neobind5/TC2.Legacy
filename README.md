@@ -3,10 +3,10 @@ Fork of Korequest & TC2 Overhaul aiming to stay in line with what made TC1 fun.
 Please contribute!! It's a lot of work!
 
 ## Goals:
-- Gamemode Balancing (5%)
-- Progression Rework (15%)
-- Simplifying Item Management (33%)
-- Building Rework (0%) - Next priority
+- Gamemode Balancing (8%)
+- Progression Rework (30%)
+- Simplifying Item Management (38%)
+- Building Rework (34%) - Next priority
 - Faction Rework (0%)
 - Vehicle Rework (25%)
 

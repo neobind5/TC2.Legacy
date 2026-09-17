@@ -1,0 +1,170 @@
+﻿{
+	$version: "0.1.72.1"
+	$note: "- Extracted from crude oil pipelines."
+	name: "Crude Oil"
+	name_short: "Crude Oil"
+	name_imperial: "Black Oil"
+	name_dumb: "Oil"
+	description:
+		'''
+		Flammable, gross liquid extracted from crude oil pipelines.
+
+		Stored in a specialized spring-loaded container made of reinforced glass, with a nozzle at the bottom.
+		'''
+	
+	tips: []
+	
+	icon:
+	{
+		texture: resource.crude_oil
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	// Inventory material type.
+	type: liquid
+	flags: liquid, explosive, toxic, chemical, bottled, corrosive, fragile, manufactured, fuel, flammable, volatile, processed, acidic, primary
+	display_flags: none
+	spawn_flags:
+	{
+		add: allow_encumbered, show_notification, no_discard
+	}
+	hints: materials, dangerous, explosive, advanced, powerful, destructive, chemical, industrial, arcane, imperial, fast, propulsion, unstable
+	
+	// Ratio of the material volume to the total volume it occupies when stacked. A value of 1.0 means no empty space, while a value closer to 0.0 means a lot of empty space.
+	packing_fraction: 0.000
+	// General purity modifier.
+	purity: 0.998
+	// Mass of 1 unit in kg.
+	mass_per_unit: 2.572
+	
+	// Maximum quantity (units) per stack.
+	quantity_max: 100.000
+	// Minimum spawnable quantity.
+	spawn_quantity_threshold: 1.000
+	// Preferred quantity snapping for recipes.
+	snapping: 0.100
+	// Preferred quantity snapping for inventories.
+	snapping_pickup: 50.000
+	
+	form_type: packaged
+	prefab: resource.crude_oil
+	h_substance: crude_oil
+	
+	color_icon: "0xffffffff"
+	color_item: "0xffffffff"
+	color_dust: "0xffffffff"
+	color_gib: "0xffffffff"
+	color_liquid: [1.510, 0.730, 0.370, 1.920]
+	
+	colliders: []
+	
+	commodity:
+	{
+		flags: marketable
+		categories: chemicals, refined, artificial, arcane, fuel, energy, consumer, industrial
+		
+		market_price: 8.200
+		market_price_per_kg_auto: 2.2
+		
+		industries_produce: high_tech, power, arcane, engineering, experimental
+		
+		buildings_produce: none
+		buildings_buy: factory, hospital, airport, trainyard, power_plant, docks, prison, labor_camp, foundry, manufactory, refinery, checkpoint, laboratory, university, school, bar, train_station, farm, exchange, arsenal, scrapyard, black_market, brewery, metalworks, circus, market, fuel_depot, essenceworks, brickworks, steel_mill, bakery, glassworks
+		buildings_sell: airport, trainyard, checkpoint, bar, train_station, exchange, black_market, market, fuel_depot, essenceworks
+		
+		categories_produce: magitech, advanced, powerful, ancient
+	}
+	
+	fuel:
+	{
+		// TODO: Desc
+		type: liquid
+		
+		// Combustion energy in kJ/kg, see https://en.wikipedia.org/wiki/Heat_of_combustion
+		energy_combustion: 21000.000
+		// Ratio of produced exhaust gas and leftover ashes.
+		purity: 0.998
+		// Rate at which 1 unit of the material ignites, see https://en.wikipedia.org/wiki/Combustibility_and_flammability
+		flammability: 8.900
+		// Rate at which combustion decays, see https://en.wikipedia.org/wiki/Smouldering
+		decay_rate: 1.800
+		
+		// Adiabatic flame temperature (Kelvin) in pure oxygen, see https://en.wikipedia.org/wiki/Adiabatic_flame_temperature
+		flame_temperature_o2: 4300.000
+		// Adiabatic flame temperature (Kelvin) in air. If not known, just subtract 1000 from 'flame_temperature_o2'.
+		flame_temperature_air: 1600.000
+		// Auto-ignition temperature (Kelvin), see https://en.wikipedia.org/wiki/Autoignition_temperature.
+		autoignition_temperature: 210.000
+		// Minimum temperature (Kelvin) for ignition, see https://en.wikipedia.org/wiki/Flash_point
+		flash_point: 42.000
+		// kJ/(kg*K)
+		specific_heat: 1.000
+		
+		// kW/(m*K)
+		thermal_conductivity: 0.000074
+		// TODO: Desc
+		porosity: 0.000
+		// TODO: Desc
+		volatility: 4.880
+		// TODO: Desc
+		viscosity: 0.510
+		// TODO: Desc
+		surface_area_mult: 0.000
+		
+		// Percentage of carbon.
+		carbon_ratio: 0.1015
+		// Percentage of hydrogen.
+		hydrogen_ratio: 0.120
+		// Percentage of nitrogen.
+		nitrogen_ratio: 0.000
+		// Percentage of oxygen.
+		oxygen_ratio: 0.778
+		// Percentage of sulfur.
+		sulfur_ratio: 0.000
+		// Percentage of water.
+		water_ratio: 0.000
+		
+		// Percentage of volatiles.
+		volatiles_ratio: 0.000
+		volatiles: []
+	}
+	
+	ammo:
+	{
+		count: 1
+		mass: 0.001
+		heat: 120.000
+		velocity_min: 1.000
+		
+		speed_base: 0.000
+		speed_mult: 0.150
+		speed_jitter: 0.020
+		spin_base: 0.000
+		spin_mult: 1.000
+		spread_mult: 1.000
+		recoil_mult: 1.000
+		
+		failure_base: 0.100
+		failure_mult: 1.000
+		
+		stability_base: 50.000
+		stability_mult: 1.000
+		
+		prefab: fire
+	}
+	
+	// Info regarding relations of other materials towards this material.
+	related:
+	{
+		smrad.dust: component, raw, similar, element, powdered, ingredient
+		smirgrafit.clay: reaction, feedstock
+		hydrogen: component, clean, similar, element, gas
+		oxygen: component, clean, similar, element, gas
+		putty: similar, manufactured, feedstock
+		smrad: component, container, clean, similar, element, powdered, ingredient
+		scrap.charred: ruined, burnt, mangled, dirty, waste, solidified, roasted, impure, result, byproduct
+		ash: burnt, residue, dirty, powdered, corroded, roasted, impure, result, byproduct
+		mithril: similar, catalyst
+	}
+}
