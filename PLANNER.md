@@ -9,7 +9,7 @@
     (Reasoning: Players should be expected to be able to reach endgame and fight it out before wipes.)
 
 
-## Progression Rework (30%)
+## Progression Rework (40%) - Actively working on!
 
     - Less pregenerated lootboxes.
 
@@ -34,18 +34,16 @@
     (Note: Better shops that can be created further in can be an option.) (50%)
 
 
-## Simplifying Item Management (38%)
+## Simplifying Item Management (60%)
 
     - Reducing the amount of interchangable items --
     (scraps, metal sheet/ingot/rod/frame) through removal of most bloat. (Done!)
 
     - Recipes that take predictable item quantities
-    and produce predictable outputs with no garbage. 
-
-    - Minimizing recipes required for desired result.
+    and produce predictable outputs with no garbage.
 
 
-## Building Rework (34%) - Actively working on!
+## Building Rework (40%) - Actively working on!
 
     - Buildings have very specific purposes,
     and only have recipes pertaining to that purpose.
@@ -61,7 +59,7 @@
     (Note: Remove foundation cost on most buildings)
 
 
-## Faction Rework (0%)
+## Faction Rework (20%)
 
     - Factions start from tents
 
