@@ -1,0 +1,133 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Steel Smelting"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Steel"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Karban Smelt"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: niklajzner.ingot
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: karban
+							amount: 6.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 48.250
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+				{
+					name: "Coal Smelt"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: niklajzner.ingot
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: black_coal
+							amount: 1.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 25.750
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: steel.ingot
+			amount: 1
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, metalworking
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.steel.ingot
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, -8.000]
+	icon_scale:1.5
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 6
+	frame_size: [64.000, 64.000]
+	
+	min: 1
+	max: 25
+	step: 1
+	
+	version: 1
+}

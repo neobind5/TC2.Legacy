@@ -93,8 +93,8 @@ headquarters:
 
 claimer:
 {
-	radius: 32.000
-	strength: 5.000
+	radius: 52.000
+	strength: 10.000
 	falloff: 2.500
 }
 

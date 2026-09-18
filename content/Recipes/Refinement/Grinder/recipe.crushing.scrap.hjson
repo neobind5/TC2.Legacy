@@ -1,0 +1,120 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Scrap Grinding"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Scrap"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Crushed"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: scrap.mixed
+							amount: 2.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 1.500
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: niklajzner
+			amount: 0.4890
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: copper
+			amount: 0.6290
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: silver
+			amount: 0.0489
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: gold
+			amount: 0.0189
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: smirglum
+			amount: 0.0049
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, crude, processing
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.scrap.mixed
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, -4.000]
+	icon_scale:2
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 7
+	frame_size: [120.000, 120.000]
+	
+	min: 25
+	max: 500
+	step: 25
+	
+	version: 1
+}

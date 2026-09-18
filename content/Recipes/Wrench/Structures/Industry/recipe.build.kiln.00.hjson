@@ -1,29 +1,22 @@
 ﻿{
 	$version: "0.1.72.1"
-	name: "Betoniter Kiln"
+	name: "Gravel Furnace"
 	tips: []
 	
 	requirements:
 	[
 		{
 			type: resource
-			material: betoniter
-			amount: 150.000
+			material: gravel
+			amount: 25.000
 			snapping: 0.500
 			group: 0
 			flags: prerequisite
 		}
 		{
 			type: resource
-			material: brick.concrete
-			amount: 30.000
-			group: 0
-			flags: prerequisite
-		}
-		{
-			type: resource
-			material: steel.frames
-			amount: 4.000
+			material: karban
+			amount: 10.000
 			group: 0
 			flags: prerequisite
 		}
@@ -33,7 +26,7 @@
 	[
 		{
 			type: prefab
-			prefab: kiln.00
+			prefab: gravelfurnace
 			amount: 1.000
 			group: 0
 			flags: primary
@@ -53,14 +46,14 @@
 	
 	icon:
 	{
-		texture: kiln.00
-		size: [24, 32]
+		texture: gravelfurnace
+		size: [32, 48]
 	}
-	icon_offset: [0.000, 1.875]
+	icon_offset: [-1.000, -10.875]
 	
 	color_frame: "0xffff5f11"
 	color_button: "0xff9dd80f"
-	rank: -557.000
+	rank: 1
 	frame_size: [64.000, 56.000]
 	
 	placement:
@@ -69,7 +62,7 @@
 		flags: allow_mirror_x, require_terrain, terrain_is_support, no_solid_support
 		
 		size: [2.250, 3.000]
-		offset: [0.000, -1.250]
+		offset: [0.000, -3.20]
 		
 		rect_foundation: [-1.125, 0.000, 1.125, 0.500]
 		tileflags_foundation: solid

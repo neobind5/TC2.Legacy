@@ -1,0 +1,88 @@
+$name: "Giant Door (Wood)"
+$desc:
+	'''
+	Standard giant heavy-duty wooden door for giants.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	fall_damage_multiplier: 0.500
+	
+	@shape.box:
+	{
+		size: [0.500, 4.750]
+		offset: [0.000, 0.000]
+		mass: 85.000
+		radius: 0.125
+		friction: 0.650
+		elasticity: 0.600
+		material: wood
+		layer: entity, solid, building, door, no_overlapped_placement, flammable
+		mask: world, solid
+	}
+}
+
+health:
+{
+	max: 68000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "door.wood.01"
+		// mask: "door.wood.mask"
+		count: 5
+		size: [24, 40]
+	}
+	offset: [0.875, 0.000]
+	z: 100.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu, enable_wololo
+}
+
+interactable:
+{
+	flags: no_window, once, use_left_click
+	priority: 2.000
+}
+
+transform:
+{
+
+}
+
+dooredit:
+{
+	sound_open: hatch.open.00
+	sound_close: hatch.open.00
+	
+	size_open: [2.250, 4.750]
+	size_closed: [0.500, 4.750]
+	offset_open: [1.000, 0.000]
+	offset_closed: [0.000, 0.000]
+	direction: horizontal
+	flags: lockable, giant_only
+
+	frame_closed: 0
+	frame_open: 4
+
+	fps_close: 4.000
+	fps_open: 3.000
+}

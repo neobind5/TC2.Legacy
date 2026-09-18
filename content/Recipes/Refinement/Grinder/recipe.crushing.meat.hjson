@@ -1,0 +1,113 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Meat Grinding"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Meat"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Crushed"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: meat
+							amount: 2.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 1.500
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: meat
+			amount: 0.8890
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: tallow
+			amount: 0.8890
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: glue
+			amount: 0.4
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: oil
+			amount: 0.2890
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, crude, processing
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.meat
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, -4.000]
+	icon_scale:2
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 6
+	frame_size: [120.000, 120.000]
+	
+	min: 25
+	max: 500
+	step: 25
+	
+	version: 1
+}

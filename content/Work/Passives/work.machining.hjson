@@ -46,13 +46,13 @@
 	sound_size: 0.500
 	sound_dist: 1.000
 	
-	sounds: ["work_machining_00_loop"]
+	sounds: []
 	sounds_manual: []
-	sounds_crafter: []
-	sounds_passive: []
+	sounds_crafter: ["effect.mechanical.adjust.00"]
+	sounds_passive: ["effect.mechanical.slide.00"]
 	sounds_ambient: []
 	
 	sounds_start: ["effect.lathe.00.stereo"]
-	sounds_end: []
-	sounds_fail: []
+	sounds_end: ["effect.mechanical.adjust.03"]
+	sounds_fail: ["effect.mechanical.adjust.02","effect.mechanical.adjust.01"]
 }

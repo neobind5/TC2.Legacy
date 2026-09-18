@@ -1,0 +1,92 @@
+﻿{
+	$version: "0.1.70.1"
+	name: "Formwork (Cast Concrete)"
+	desc:
+		'''
+		TODO: Desc
+		'''
+	tips: []
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: gravel
+			amount: 0.200
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: cement
+			amount: 0.100
+			group: 0
+			flags: prerequisite
+		}
+	]
+	
+	products:
+	[
+		{
+			type: block
+			block: concrete.steel
+			tile_flags: solid, become_background_on_break
+			group: 0
+		}
+	]
+	
+	type: architecture
+	flags: disabled, wip
+	tags: complex, medium, architecture, construction
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: block_icons
+		size: [16, 16]
+		frame: [14, 0]
+	}
+	
+	icon_extra:
+	{
+		texture: resource.cement
+		size: [16, 16]
+		frame: [2, 0]
+	}
+	icon_extra_offset: [-3.000, -6.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	rank: -74.500
+	
+	placement:
+	{
+		type: rectangle
+		flags: continuous, replace, ignore_obstructed
+		
+		size: [2.500, 2.500]
+		radius: 1.000
+		
+		cooldown: 0.200
+		min_claim: 1.000
+		
+		sound: stone_place_0
+		
+		snapping_flags: snap_to_surface, align_to_surface, add_size_to_snap_radius, add_size_to_snap_offset, use_raw_collider
+		
+		mappings_replace:
+		{
+			framework:
+			{
+				block: concrete
+				meta: 0
+				flags: solid, become_background_on_break
+			}
+		}
+	}
+	
+	version: 1
+}

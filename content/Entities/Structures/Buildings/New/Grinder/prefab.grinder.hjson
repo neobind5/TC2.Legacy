@@ -1,3 +1,8 @@
+$name: "Hand Grinder"
+$desc:
+	'''
+	Grind simple materials with your hands, or grind your hands with simple materials.
+	'''
 $tags: []
 
 body:
@@ -35,57 +40,108 @@ transform:
 
 }
 
-grinder:
+health:
 {
-	@inventory8:
-	{
-		name: "Output"
-		stack_size_multiplier: 2.000
-		type: output
-		flags: allow_ducts, ignore_mass, public
-	}
-
-	@sound.emitter:
-	{
-		file: "grinder_loop"
-		volume: 1.000
-		pitch: 1.000
-		size: 0.800
-	}
-}
-grinder.state:
-{
-	@inventory1:
-	{
-		name: "Input"
-		stack_size_multiplier: 2.000
-		type: input
-		flags: allow_ducts, ignore_mass
-	}
-}
-
-axle:
-{
-	offset: [0.000, 0.000]
-	mass: 1.000
-	friction: 0.800
-	radius_a: 0.750
-	radius_b: 0.750
-	radius_inner: 0.625
-	radius_outer: 0.750
-	z: -140.000
-	
-	@animated.renderer:
-	{
-		sprite:
-		{
-			texture: "wheel_0750.steel"
-		}
-		z: -140.000
-	}
+	max: 40000.000
 }
 
 interactable:
 {
-	window_size: [192.000, 192.000]
+	flags: no_tab
+	window_size: [768, 592]
+	window_size_misc: [96, 0]
+	priority: 2.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, industrial, tool, factory
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: crude, processing
+		exclude: advanced, large, huge, moulding
+	}
+	
+	flags: embed_gui
+	menu_columns: 5
+	recipe_type: workshop
+	
+	offset_spawn: [1.000, 0.250]
+	
+	name: "hand grinder"
+}
+
+workshop:
+{
+	orders_capacity: 1
+	h_sound_order_complete: order_complete
+	max_order_mass: 100000.000
+	gui_info_size_x: 332.000
+
+	@inventory8:
+	{	
+		type: workshop
+		flags: standalone, allow_ducts, ignore_mass, public, faction, vertical
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, -0.250]
+	}
+}
+
+crafter:
+{
+	tools: pencil, paper, ruler, hammer, saw, screwdriver, wrench, pliers, bucket, file, tongs, knife
+	machinery: heater, burner, stove
+	infrastructure: oven, anvil, forge, barrel, table, chair, vise, rack, crucible
+	environment: workshop, stationary, dirty, noisy
+	temperature_max: 1593.150
+
+	@inventory4:
+	{	
+		type: waste
+		flags: standalone, allow_ducts, ignore_mass
+		stack_size_multiplier: 2.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [1.125, 0.250]
+	}
 }

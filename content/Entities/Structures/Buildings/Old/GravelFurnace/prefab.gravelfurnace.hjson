@@ -1,4 +1,4 @@
-$name: "Gravel Furnace"
+$name: "Simple Furnace"
 $desc:
 	'''
 	Piece of shit furnace you cobbled together with some mortar and gravel. 
@@ -74,8 +74,8 @@ shop:
 {
 	tags_filter:
 	{
-		include: metalworking, metallurgy, cooking, drying, heating, processing, dangerous
-		exclude: crafting, complex, advanced, large, huge, assembling, construction, fermenting
+		include: metalworking, metallurgy
+		exclude: advanced, large, huge
 	}
 	
 	tools: hammer, cutters, saw, hand_drill, bucket, axe, shovel, tongs, pick
@@ -89,7 +89,7 @@ shop:
 	
 	offset_spawn: [-0.375, -0.125]
 	
-	name: "Gravel Furnace"
+	name: "Simple Furnace"
 }
 
 crafter:
@@ -121,7 +121,7 @@ workshop:
 	orders_capacity: 1
 	
 	gui_info_size_x: 252.000
-	max_order_mass: 250.000
+	max_order_mass: 250000.000
 	
 	h_sound_order_complete: computer.bell.00
 }

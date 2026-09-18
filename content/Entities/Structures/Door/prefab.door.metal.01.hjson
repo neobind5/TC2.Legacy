@@ -1,0 +1,100 @@
+$name: "Giant Door (Metal)"
+$desc:
+	'''
+	Standard giant heavy-duty metal door for giants.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	fall_damage_multiplier: 0.500
+	
+	@shape.box:
+	{
+		size: [0.500, 4.750]
+		offset: [0.000, 0.000]
+		mass: 350.000
+		radius: 0.125
+		friction: 0.550
+		elasticity: 0.420
+		material: metal_solid
+		layer: entity, solid, building, door, no_overlapped_placement
+		mask: world, solid
+	}
+}
+
+health:
+{
+	max: 90000.000
+}
+
+armor:
+{
+	toughness: 600.000
+	protection: 0.900
+	
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+
+	material_type: metal_solid
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "door.metal.01"
+		// mask: "door.metal.mask"
+		count: 5
+		size: [24, 40]
+	}
+	offset: [0.875, 0.000]
+	z: 100.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+interactable:
+{
+	flags: no_window, once, use_left_click
+	priority: 2.000
+}
+
+transform:
+{
+
+}
+
+dooredit:
+{
+	sound_open: hatch.open.00
+	sound_close: hatch.open.00
+
+	size_open: [2.250, 4.750]
+	size_closed: [0.500, 4.750]
+	offset_open: [1.000, 0.000]
+	offset_closed: [0.000, 0.000]
+	direction: horizontal
+	flags: lockable, giant_only
+
+	frame_closed: 0
+	frame_open: 4
+
+	fps_close: 4.000
+	fps_open: 3.000
+}

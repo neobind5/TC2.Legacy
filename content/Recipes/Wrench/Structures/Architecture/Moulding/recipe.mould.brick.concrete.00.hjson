@@ -1,0 +1,307 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "ISO Concrete Masonry Unit"
+	desc:
+		'''
+		ISO-recommended general-purpose concrete masonry unit formulation carefully formulated and certified by ISO.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+		brick.concrete: solidified, product, result, manufactured, output
+		cement: powdered, ingredient, input, auto_generated
+		water: raw, ingredient, liquid, input, auto_generated
+		sand: raw, powdered, ingredient, input, auto_generated
+		gravel: raw, ingredient, input, auto_generated
+	}
+	
+	stages:
+	[
+		{
+			name: "Composition"
+			
+			type: ingredients
+			flags: wip
+			tags: material, formula, ingredient
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: shovel
+			
+			ratio: 1.000
+			mass_base: 1.740
+			
+			options:
+			[
+				{
+					name: "Standard"
+					
+					type: undefined
+					flags: wip
+					
+					color: "0xff675f5d"
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: cement
+							amount: 0.200
+							snapping: 0.100
+							falloff: 0.973
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: resource
+							material: water
+							amount: 0.220
+							snapping: 0.100
+							falloff: 1.016
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: resource
+							material: sand
+							amount: 0.400
+							snapping: 0.100
+							falloff: 0.979
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: resource
+							material: gravel
+							amount: 1.000
+							snapping: 0.100
+							falloff: 0.991
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: work
+							work: filling.gravel
+							amount: 25.000
+							amount_min: 110.000
+							difficulty: 7
+							snapping: 5.000
+							falloff: 0.636
+							group: 0
+							flags: simultaneous, conditional
+						}
+						{
+							type: work
+							work: filling.liquid
+							amount: 25.000
+							amount_min: 75.000
+							difficulty: 5
+							snapping: 5.000
+							falloff: 0.529
+							group: 0
+							flags: simultaneous, conditional
+						}
+						{
+							type: work
+							work: blending
+							amount: 11.000
+							amount_min: 150.000
+							difficulty: 7
+							snapping: 5.000
+							falloff: 0.710
+							group: 1
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: brick.concrete
+							amount: 0.969
+							amount_extra: 0.029
+							snapping: 1.000
+							group: 0
+							flags: primary, spawn, compact
+						}
+					]
+					
+					filter_tools:
+					{
+						include: ruler, bucket, shovel, file, spatula, ladle, utensils
+					}
+					filter_infrastructure:
+					{
+						include: cauldron, dishes, barrel, bucket, liquid_container, blender, form
+					}
+				}
+				{
+					name: "Recycled"
+					
+					type: undefined
+					flags: wip
+					
+					color: "0xff675f5d"
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: scrap.concrete
+							amount: 1.2
+							snapping: 0.100
+							falloff: 1
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: resource
+							material: water
+							amount: 0.200
+							snapping: 0.100
+							falloff: 1
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: work
+							work: filling.gravel
+							amount: 25.000
+							amount_min: 110.000
+							difficulty: 7
+							snapping: 5.000
+							falloff: 0.636
+							group: 0
+							flags: simultaneous, conditional
+						}
+						{
+							type: work
+							work: filling.liquid
+							amount: 25.000
+							amount_min: 75.000
+							difficulty: 5
+							snapping: 5.000
+							falloff: 0.529
+							group: 0
+							flags: simultaneous, conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: brick.concrete
+							amount: 0.969
+							amount_extra: 0.029
+							snapping: 1.000
+							group: 0
+							flags: primary, spawn, compact
+						}
+					]
+					
+					filter_tools:
+					{
+						include: ruler, bucket, shovel, file, spatula, ladle, utensils
+					}
+					filter_infrastructure:
+					{
+						include: cauldron, dishes, barrel, bucket, liquid_container, blender, form
+					}
+				}
+			]
+		}
+		{
+			name: "Curing"
+			
+			type: postprocessing
+			flags: wip
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: fracture
+			
+			options:
+			[
+				{
+					name: "Simple"
+					
+					type: undefined
+					flags: wip
+					
+					color: "0xff675f5d"
+					
+					requirements:
+					[
+						{
+							type: work
+							work: cement.curing
+							amount: 550.000
+							difficulty: 6
+							snapping: 25.000
+							group: 0
+							flags: no_scaling, no_residue, conditional
+						}
+					]
+				}
+				{
+					name: "Accelerated"
+					
+					type: undefined
+					flags: wip
+					
+					color: "0xff675f5d"
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: phlogiston
+							amount: 0.200
+							snapping: 1
+							falloff: 0.8
+							group: 0
+							flags: no_residue, prerequisite
+						}
+						{
+							type: work
+							work: cement.curing
+							amount: 15.000
+							difficulty: 6
+							snapping: 25.000
+							group: 0
+							flags: no_scaling, no_residue, conditional
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	type: workshop
+	flags: production, wip
+	tags: manual, simple, medium, blending, drying, moulding, messy
+	hints: none
+	connotations: none
+	infrastructure: shaping_mould, form
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.brick.concrete
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [0.000, 1.000]
+	
+	icon_c_scale: 1.010
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	rank: 10.000
+	
+	min: 10
+	max: 500
+	step: 10
+	
+	version: 1
+}

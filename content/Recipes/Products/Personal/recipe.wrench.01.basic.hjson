@@ -1,0 +1,86 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Shitty Wrench"
+	tips: []
+	
+	related_materials:
+	{
+		niklajzner: raw, input, auto_generated
+		glue: liquid, input, auto_generated
+		steel.frames: input, auto_generated
+		scrap.mixed: scrap, input, auto_generated
+		machine_parts: input, auto_generated
+		steel.rod: input, auto_generated
+	}
+	
+	stages:
+	[
+		{
+			name: "Wrench"
+			
+			type: part
+			flags: none
+			tags: none
+			
+			options:
+			[
+				{
+					name: "Extra Shoddy"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: scrap.mixed
+							amount: 7
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: wrench.01
+			amount: 1.000
+			group: 0
+			flags: primary, compact
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, crude
+	hints: none
+	connotations: none
+	infrastructure: personal
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: wrench.01
+	}
+	
+	icon_offset: [0.000, 0.000]
+	icon_scale:1.5
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 0
+	frame_size: [64.000, 64.000]
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

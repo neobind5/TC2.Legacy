@@ -1,0 +1,96 @@
+﻿{
+	$version: "0.1.73.0"
+	$note:
+		'''
+		- Hexagonal prism-shaped smirglum core, roughly 4.3cm wide, 0.139cm thick, with each side being about 2.15cm
+		- 0.0500 kg Smirglum
+		- 0.0125 kg Gold
+		'''
+	name: "Kordel Denar"
+	name_short: "Đk"
+	name_imperial: "Kordeldubl"
+	name_dumb: "Moneys"
+	description:
+		'''
+		Standard coin-shaped currency used across the lands of Kordel.
+		'''
+	
+	tips: []
+	
+	icon:
+	{
+		texture: resource.money
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	icon_extra:
+	{
+		texture: ui_icons_crafting.mini
+		size: [16, 16]
+		frame: [5, 0]
+	}
+	
+	// Inventory material type.
+	type: coin
+	flags: hard, magnetic, granular, metal, currency, small, manufactured, pellet, solid, processed
+	display_flags: hide_fraction
+	spawn_flags:
+	{
+		add: allow_encumbered, show_notification, no_discard
+	}
+	hints: materials, small, expensive, fancy, civilian, office, imperial
+	
+	// Ratio of the material volume to the total volume it occupies when stacked. A value of 1.0 means no empty space, while a value closer to 0.0 means a lot of empty space.
+	packing_fraction: 0.9325
+	// General purity modifier.
+	purity: 0.992
+	// Mass of 1 unit in kg.
+	mass_per_unit: 0.000
+	
+	// Maximum quantity (units) per stack.
+	quantity_max: 500000.000
+	// Minimum spawnable quantity.
+	spawn_quantity_threshold: 1.000
+	// Preferred quantity snapping for recipes.
+	snapping: 1.000
+	// Preferred quantity snapping for inventories.
+	snapping_pickup: 5.000
+	
+	prefab: resource.money
+	
+	color_icon: "0xffffffff"
+	color_item: "0xffffffff"
+	color_dust: "0xffffffff"
+	color_gib: "0xffffffff"
+	
+	centroid_default: [0.000, 0.250]
+	colliders: []
+	
+	commodity:
+	{
+		flags: none
+		categories: artificial, consumer
+		
+		market_price: 1.000
+		market_price_per_kg_auto: 16.000
+		
+		buildings_produce: black_market, bank
+		buildings_consume: customs, exchange, black_market, market, bank
+		
+		categories_produce: imperial, commercial, criminal, governmental, financial, wealthy, mercantile
+		categories_consume: commercial, financial, wealthy, mercantile
+	}
+	
+	// Info regarding relations of other materials towards this material.
+	related:
+	{
+		pellet: component, residue, clean, similar, payload, filler, element, ingredient
+		smirglum: ruined, crushed, source, mangled, decomposition, similar, payload, filler, element, solidified, ingredient, byproduct
+		smirglum.powder: residue, raw, source, decomposition, purified, clean, similar, payload, filler, element, powdered, ingredient
+		gold: ruined, residue, raw, melted, source, mangled, decomposition, similar, casing, element, solidified, ingredient
+		gold.powder: residue, raw, source, decomposition, purified, clean, similar, casing, element, powdered, ingredient
+		arcanite: residue, melted, mangled, decomposition, similar, alloy, solidified, product
+		arcanite.powder: residue, melted, decomposition, similar, alloy, powdered, product
+	}
+}

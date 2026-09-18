@@ -1,0 +1,92 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Silver Smelting"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Silver"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Smelt"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: silver
+							amount: 7.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 42.750
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: silver.ingot
+			amount: 1
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, metalworking
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.silver.ingot
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, -8.000]
+	icon_scale:1.5
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 7
+	frame_size: [64.000, 64.000]
+	
+	min: 1
+	max: 25
+	step: 1
+	
+	version: 1
+}

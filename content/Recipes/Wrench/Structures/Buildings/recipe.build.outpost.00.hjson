@@ -75,23 +75,23 @@
 						{
 							type: resource
 							material: steel.frames
-							amount: 8.000
+							amount: 30.000
 							snapping: 0.500
 							loss: 0.075
 							group: 0
 						}
 						{
 							type: resource
-							material: steel.plate
-							amount: 25.000
+							material: steel.ingot
+							amount: 15.000
 							snapping: 0.500
 							loss: 0.122
 							group: 0
 						}
 						{
 							type: resource
-							material: wood
-							amount: 20.000
+							material: wood.rod
+							amount: 40.000
 							snapping: 5.000
 							loss: 0.075
 							group: 0
@@ -99,7 +99,7 @@
 						{
 							type: work
 							work: carpentry
-							amount: 400.000
+							amount: 60.000
 							difficulty: 6
 							snapping: 5.000
 							group: 0

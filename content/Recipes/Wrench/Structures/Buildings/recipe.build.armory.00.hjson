@@ -3,7 +3,7 @@
 	name: "Armory"
 	tips:
 	[
-		"Crafts simple weaponry"
+		"Crafts simple armor and melee weaponry."
 	]
 	
 	stages:
@@ -20,7 +20,7 @@
 			options:
 			[
 				{
-					name: "Niklajzner"
+					name: "Wood"
 					
 					type: undefined
 					flags: wip
@@ -30,8 +30,8 @@
 					[
 						{
 							type: resource
-							material: niklajzner
-							amount: 80.000
+							material: wood.rod
+							amount: 10.000
 							snapping: 1.000
 							group: 0
 							flags: primary

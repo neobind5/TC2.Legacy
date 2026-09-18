@@ -30,7 +30,7 @@
 						{
 							type: resource
 							material: sulfur
-							amount: 80.000
+							amount: 20.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

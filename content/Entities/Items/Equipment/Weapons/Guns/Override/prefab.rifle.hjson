@@ -141,5 +141,5 @@ telescope:
 	zoom_modifier: 1.000
 	zoom_min: 1.000
 	zoom_max: 1.000
-	max_distance: 150.000
+	max_distance: 180.000
 }

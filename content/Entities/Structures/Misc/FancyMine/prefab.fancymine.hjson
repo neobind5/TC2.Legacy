@@ -30,11 +30,6 @@ body:
 	}
 }
 
-health:
-{
-	max: 170000.000
-}
-
 animated.renderer:
 {
 	sprite:

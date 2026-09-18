@@ -1,0 +1,98 @@
+$name: "Hatch (Metal)"
+$desc:
+	'''
+	Standard metal hatch.
+	Can be locked.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [2.250, 0.500]
+		offset: [0.000, 0.000]
+		
+		mass: 40.000
+		radius: 0.125
+		friction: 0.750
+		elasticity: 0.400
+		
+		material: metal_sheet
+		miss_chance: 0.000
+		
+		layer: entity, solid, building, door, no_overlapped_placement
+		mask: world, solid
+		exclude: none
+	}
+}
+
+health:
+{
+	max: 13800.000
+}
+
+armor:
+{
+	toughness: 420.000
+	protection: 0.960
+	
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hatch.metal"
+		mask: "hatch.metal.mask"
+		count: 5
+		size: [20, 24]
+	}
+	z: 100.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu
+}
+
+interactable:
+{
+	flags: no_window, once, use_left_click
+	priority: 2.200
+}
+
+transform:
+{
+
+}
+
+dooredit:
+{
+	sound_open: "depot_load"
+	sound_close: "depot_unload"
+	size_open: [2.250, 1.500]
+	size_closed: [2.250, 0.500]
+	offset_open: [0.000, -0.625]
+	direction: vertical
+	flags: lockable
+	fps_close: 4.000
+	fps_open: 5.000
+}

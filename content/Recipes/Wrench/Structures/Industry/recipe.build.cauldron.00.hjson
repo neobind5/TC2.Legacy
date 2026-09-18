@@ -67,7 +67,7 @@
 	
 	color_frame: "0xff80dc7e"
 	color_button: "0xff9dd80f"
-	rank: -574.000
+	rank: 2
 	frame_size: [48.000, 96.000]
 	
 	placement:

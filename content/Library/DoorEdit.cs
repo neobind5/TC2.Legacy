@@ -1,0 +1,237 @@
+﻿
+namespace TC2.Base.Components
+{
+	public static partial class DoorEdit
+	{
+		// TODO: add auto-closing
+		// TODO: reduce struct size or split it if it's going to be synced often (considering it's a door)
+		[IComponent.Data(Net.SendType.Reliable, IComponent.Scope.Region)]
+		public partial struct Data(): IComponent
+		{
+			public static readonly Sound.Handle default_sound_lock = "door_lock";
+			public static readonly Sound.Handle default_sound_unlock = "door_unlock";
+			public static readonly Sound.Handle default_sound_locked = "door_locked";
+			public static readonly Sound.Handle default_sound_stuck = "door.stuck.00";
+
+			public Sound.Handle sound_open;
+			public Sound.Handle sound_close;
+
+			public Sound.Handle sound_lock = DoorEdit.Data.default_sound_lock;
+			public Sound.Handle sound_unlock = DoorEdit.Data.default_sound_unlock;
+			public Sound.Handle sound_locked = DoorEdit.Data.default_sound_locked;
+			public Sound.Handle sound_stuck = DoorEdit.Data.default_sound_stuck;
+
+			public DoorEdit.Direction direction;
+			public DoorEdit.Flags flags;
+			public byte frame_closed = 0;
+			public byte frame_open = 4;
+
+			public Vector2 size_open;
+			public Vector2 size_closed;
+
+			public Vector2 offset_open;
+			public Vector2 offset_closed;
+
+			public byte fps_close = 10;
+			public byte fps_open = 10;
+			[Asset.Ignore] public float animation_progress;
+
+			[Asset.Ignore, Net.Ignore, Save.Ignore] public float last_use_time;
+			[Asset.Ignore, Net.Ignore, Save.Ignore] private float unused_00;
+		}
+
+		public enum Direction: byte
+		{
+			Horizontal,
+			Vertical
+		}
+
+		[Flags]
+		public enum Flags: byte
+		{
+			None = 0,
+
+			Open = 1 << 0,
+			Lockable = 1 << 1,
+			Locked = 1 << 2,
+			Bidirectional = 1 << 3,
+			Giant_Only = 1 << 4 // TODO: hack
+		}
+
+
+#if SERVER
+		[ISystem.Event<Map.ImportEvent>(ISystem.Mode.Single, ISystem.Scope.Region)]
+		public static void OnImport(ISystem.Info info, Entity entity, ref Region.Data region, [Source.Owned] ref Map.ImportEvent data,
+		[Source.Owned] ref DoorEdit.Data door)
+		{
+			//App.WriteLine($"import door {entity}");
+			ref var entry = ref data.entry;
+
+			door.flags.AddFlag(DoorEdit.Flags.Locked, door.flags.HasAny(DoorEdit.Flags.Lockable));
+			//door.Sync(entity, true);
+		}
+#endif
+
+		[Shitcode]
+		[ISystem.LateUpdate(ISystem.Mode.Single, ISystem.Scope.Region)]
+		public static void UpdateAnimation(ISystem.Info info,
+		[Source.Owned] ref Animated.Renderer.Data renderer, [Source.Owned] ref DoorEdit.Data door)
+		{
+			if (door.flags.HasAny(DoorEdit.Flags.Open))
+			{
+				if (door.animation_progress <= 1.00f)
+				{
+					door.animation_progress = Maths.MoveTowards(door.animation_progress, 1.00f, App.fixed_update_interval_s * door.fps_close);
+					renderer.sprite.frame.x = (uint)Maths.Lerp(door.frame_closed, door.frame_open, door.animation_progress);
+				}
+			}
+			else
+			{
+				if (door.animation_progress >= 0.00f)
+				{
+					door.animation_progress = Maths.MoveTowards(door.animation_progress, 0.00f, App.fixed_update_interval_s * door.fps_close);
+					renderer.sprite.frame.x = (uint)Maths.Lerp(door.frame_closed, door.frame_open, door.animation_progress);
+				}
+			}
+		}
+
+#if SERVER
+		[Shitcode]
+		[ISystem.Event<Interactable.InteractEvent>(ISystem.Mode.Single, ISystem.Scope.Region)]
+		public static void OnInteract(ISystem.Info info, Entity entity, ref XorRandom random, ref Region.Data region, [Source.Owned] ref Interactable.InteractEvent ev, 
+		[Source.Owned] in Transform.Data transform, [Source.Owned] ref Animated.Renderer.Data renderer, 
+		[Source.Owned] ref DoorEdit.Data door, [Source.Owned] ref Interactable.Data interactable, 
+		[Source.Owned] ref Body.Data body, [Source.Owned, Pair.Component<Body.Data>] ref Shape.Box shape, [Source.Owned, Optional] in Faction.Data faction)
+		{
+			var is_same_faction = ev.faction_id == faction.id;
+
+			if (door.flags.HasAny(DoorEdit.Flags.Lockable) && ev.control.keyboard.GetKey(Keyboard.Key.LeftShift))
+			{
+				if (door.flags.HasNone(DoorEdit.Flags.Open) && is_same_faction)
+				{
+					door.flags.ToggleFlag(DoorEdit.Flags.Locked); // ^= DoorEdit.Flags.Locked;
+
+					if (door.flags.HasAny(DoorEdit.Flags.Locked))
+					{
+						Sound.Play(ref region, door.sound_lock, transform.position, volume: 0.70f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.70f);
+						WorldNotification.Push(ref region, "* Locks *"u8, 0xffffda00, transform.position);
+					}
+					else
+					{
+						Sound.Play(ref region, door.sound_unlock, transform.position, volume: 0.70f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.70f);
+						WorldNotification.Push(ref region, "* Unlocks *"u8, 0xffffda00, transform.position);
+					}
+
+					door.Sync(entity);
+				}
+			}
+			else
+			{
+				if (door.flags.HasAll(DoorEdit.Flags.Lockable | DoorEdit.Flags.Locked) && !is_same_faction)
+				{
+					Sound.Play(ref region, door.sound_locked, transform.position, volume: 0.70f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.40f);
+					WorldNotification.Push(ref region, "* Locked *"u8, 0xffff0000, transform.position);
+				}
+				else
+				{
+					var stuck = false;
+					door.last_use_time = info.WorldTime;
+
+					if (door.flags.HasAny(DoorEdit.Flags.Open))
+					{
+						var mask = shape.GetCombinedMask(); 
+						mask.AddFlag(Physics.Layer.Solid);
+
+						Span<ShapeOverlapResult> results = stackalloc ShapeOverlapResult[8];
+						if (region.TryOverlapShapeAll(shape: ref shape,
+						hits: ref results,
+						mask: mask,
+						require: Physics.Layer.Dynamic,
+						exclude: Physics.Layer.World | Physics.Layer.Building | Physics.Layer.Door | Physics.Layer.Gas | Physics.Layer.Essence | Physics.Layer.Fire | Physics.Layer.Water | Physics.Layer.Static))
+						{
+							WorldNotification.Push(ref region, "* DOOR STUCK! *"u8, 0xffff0000, transform.position);
+							Sound.Play(ref region, door.sound_stuck, transform.position, volume: 1.00f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.40f);
+							Shake.Emit(ref region, transform.position, 0.30f, 0.30f, 6.00f);
+
+							foreach (ref var result in results)
+							{
+								ref var hit_body = ref result.GetBody();
+								if (hit_body.IsNotNull())
+								{
+									var dir = door.offset_open.GetNormalized();
+									dir.Y = 1.000f;
+									
+									var force = Physics.LimitForce(ref hit_body, dir * -15000.00f, new Vector2(6, 6));
+
+									hit_body.AddForceWorld(force, transform.position);
+								}
+							}
+
+							stuck = true;
+						}
+					}
+					else 
+					{
+						if (door.flags.HasAny(DoorEdit.Flags.Giant_Only) & ev.self_hints.HasNone(NPC.SelfHints.Is_Giant))
+						{
+							WorldNotification.Push(ref region, "* TOO SMALL! *"u8, 0xffff0000, transform.position);
+							Sound.Play(ref region, door.sound_stuck, transform.position, volume: 1.00f, pitch: random.NextFloatExtra(1.25f, 0.35f), priority: 0.32f);
+
+							stuck = true;
+						}
+					}
+
+					if (!stuck)
+					{
+						door.flags.ToggleFlag(DoorEdit.Flags.Open);
+
+						if (door.flags.HasAny(DoorEdit.Flags.Open))
+						{
+							shape.mask.RemoveFlag(Physics.Layer.Solid);
+							shape.layer.RemoveFlag(Physics.Layer.Solid);
+
+							var delta = (ev.control.mouse.position - transform.position);
+							var sign = 1.00f;
+
+							if (door.flags.HasAny(DoorEdit.Flags.Bidirectional))
+							{
+								sign = (float)((door.direction == Direction.Horizontal ? delta.X : delta.Y) < Maths.epsilon ? -1.00f : 1.00f);
+							}
+
+							var scale = door.direction == Direction.Horizontal ? new Vector2(sign, 1.00f) : new Vector2(1.00f, sign);
+
+							shape.size = door.size_open;
+							shape.offset = door.offset_open * scale;
+
+							renderer.scale = scale;
+							//renderer.sprite.frame.X = 4;
+							renderer.z = -200;
+
+							Sound.Play(ref region, door.sound_open, transform.position, volume: 1.00f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.40f);
+						}
+						else
+						{
+							shape.mask.AddFlag(Physics.Layer.Solid);
+							shape.layer.AddFlag(Physics.Layer.Solid);
+
+							shape.size = door.size_closed;
+							shape.offset = door.offset_closed;
+
+							//renderer.sprite.frame.X = 0;
+							renderer.z = 100.00f;
+
+							Sound.Play(ref region, door.sound_close, transform.position, volume: 1.00f, pitch: random.NextFloatRange(0.95f, 1.05f), priority: 0.40f);
+						}
+
+						body.MarkDirty();
+
+						door.Sync(entity);
+						renderer.Sync(entity);
+						shape.Sync<Shape.Box, Body.Data>(entity);
+					}
+				}
+			}
+		}
+#endif
+	}
+}

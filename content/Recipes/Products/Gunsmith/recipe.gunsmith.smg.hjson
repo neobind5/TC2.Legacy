@@ -37,8 +37,8 @@
 						}
 						{
 							type: resource
-							material: machine_parts
-							amount: 14.000
+							material: steel.frames
+							amount: 20.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -93,7 +93,7 @@
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
 	button_name: "Craft"
-	rank: -1.900
+	rank: 11
 	frame_size: [48.000, 48.000]
 	
 	min: 1

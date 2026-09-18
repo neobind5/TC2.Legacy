@@ -1,7 +1,7 @@
 $name: "Gunsmith"
 $desc:
 	'''
-	Basic metalworking workshop equipped with a small pellet-powered forge and a simple anvil.
+	Basic gunsmithy for creating a variety of simple guns. Pay the workers well, they're armed.
 	'''
 $tags: []
 

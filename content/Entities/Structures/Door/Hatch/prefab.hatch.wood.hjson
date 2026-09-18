@@ -1,0 +1,90 @@
+$name: "Hatch (Wood)"
+$desc:
+	'''
+	Standard wooden hatch.
+	Can be locked.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [2.250, 0.500]
+		offset: [0.000, 0.000]
+
+		mass: 20.500
+		radius: 0.125
+		friction: 0.750
+		elasticity: 0.300
+
+		material: wood
+		miss_chance: 0.000
+		
+		layer: entity, solid, building, door, no_overlapped_placement
+		mask: world, solid
+		exclude: none
+	}
+}
+
+health:
+{
+	max: 10000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hatch.wood"
+		mask: "hatch.wood.mask"
+		count: 5
+		size: [20, 24]
+	}
+	z: 100.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu, enable_wololo
+}
+
+interactable:
+{
+	flags: no_window, once, use_left_click
+	priority: 2.200
+}
+
+transform:
+{
+
+}
+
+dooredit:
+{
+	sound_open: "door_open"
+	sound_close: "door_close"
+	size_open: [2.250, 1.500]
+	size_closed: [2.250, 0.500]
+	offset_open: [0.000, -0.625]
+	direction: vertical
+	flags: lockable
+
+	frame_closed: 0
+	frame_open: 4
+
+	fps_close: 8.000
+	fps_open: 6.000
+}

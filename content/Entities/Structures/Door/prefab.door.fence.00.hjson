@@ -1,0 +1,103 @@
+$name: "Door (Chain-Link)"
+$desc:
+	'''
+	Standard chain-link fence, but it's actually a standard flimsy door.
+	Low-caliber projectiles may pass through, larger ones probably won't.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [0.250, 2.750]
+		offset: [0.000, 0.000]
+		
+		mass: 14.000
+		radius: 0.250
+		friction: 0.950
+		elasticity: 0.800
+		rigidity_dynamic: 0.790
+		
+		material: wire
+		miss_chance: 0.979
+		
+		layer: entity, solid, building, door, no_overlapped_placement
+		mask: world, solid
+	}
+}
+
+health:
+{
+	max: 8000.000
+}
+
+armor:
+{
+	toughness: 250.000
+	protection: 0.950
+	coverage: 0.450
+	knockback_modifier: 1.000
+	pain_modifier: 0.000
+	material_type: metal_frame
+	flags: no_damage_type_conversion
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "door.fence.00"
+		mask: "door.fence.00.mask"
+		count: 5
+		size: [16, 24]
+	}
+	z: 100.000
+	offset: [0.500, 0.000]
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: no_menu, enable_wololo
+}
+
+interactable:
+{
+	flags: no_window, once, use_left_click
+	priority: 3.000
+}
+
+transform:
+{
+
+}
+
+dooredit:
+{
+	sound_open: "door_open"
+	sound_close: "door_close"
+	size_open: [1.350, 2.750]
+	size_closed: [0.250, 2.750]
+	offset_open: [0.700, 0.000]
+	offset_closed: [0.000, 0.000]
+	direction: horizontal
+	flags: lockable
+
+	frame_closed: 0
+	frame_open: 4
+
+	fps_close: 5.000
+	fps_open: 7.000
+}

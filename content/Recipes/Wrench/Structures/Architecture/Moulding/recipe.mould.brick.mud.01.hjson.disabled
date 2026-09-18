@@ -1,0 +1,203 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Holistic Mud Bricks"
+	desc:
+		'''
+		Thoroughly-kneaded mud bricks with enhanced plasticity.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+		brick.mud: solidified, product, brick, result, byproduct, output
+		mud: raw, input, auto_generated
+		shite: raw, input, auto_generated
+		woodchips: raw, powdered, input, auto_generated
+	}
+	
+	stages:
+	[
+		{
+			name: "Composition"
+			
+			type: moulding
+			flags: wip, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: punch
+			
+			ratio: 1.000
+			mass_base: 0.65934
+			
+			options:
+			[
+				{
+					name: "Basic"
+					
+					type: undefined
+					flags: wip, auto_generated
+					
+					color: "0xff724421"
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: mud
+							amount: 0.660
+							snapping: 0.500
+							group: 0
+							flags: primary, prerequisite
+						}
+						{
+							type: resource
+							material: shite
+							amount: 0.340
+							snapping: 0.500
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: woodchips
+							amount: 1.000
+							snapping: 0.250
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: kneading
+							amount: 31.000
+							amount_min: 70.000
+							difficulty: 4
+							step_max: 25
+							snapping: 5.000
+							falloff: 0.714
+							group: 1
+							flags: simultaneous, conditional
+						}
+						{
+							type: work
+							work: sculpting
+							amount: 10.000
+							amount_min: 10.000
+							difficulty: 5
+							step_max: 10
+							snapping: 5.000
+							falloff: 0.866
+							group: 1
+							flags: simultaneous, conditional
+						}
+					]
+					
+					filter_tools:
+					{
+						include: shovel, spatula
+					}
+					filter_infrastructure:
+					{
+						include: table, chair
+					}
+				}
+			]
+		}
+		{
+			name: "Drying"
+			
+			type: postprocessing
+			flags: wip, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: fracture
+			
+			options:
+			[
+				{
+					name: "Simple"
+					
+					type: undefined
+					flags: wip, auto_generated
+					
+					color: "0xff6c4c3d"
+					
+					requirements:
+					[
+						{
+							type: work
+							work: drying
+							amount: 90.000
+							difficulty: 3
+							snapping: 5.000
+							group: 0
+							flags: no_scaling, no_residue, conditional
+						}
+					]
+					
+					filter_environment:
+					{
+						exclude: wet
+					}
+				}
+			]
+		}
+	]
+	
+	products:
+	[
+		{
+			type: resource
+			material: brick.mud
+			amount: 0.886
+			amount_extra: 0.113
+			snapping: 0.200
+			group: 0
+			flags: byproduct, primary
+			spawn_flags: merge, pickup, show_notification
+		}
+	]
+	
+	type: workshop
+	flags: production, wip
+	tags: manual, dumb, crude, basic, simple, small, agriculture, blending, drying, moulding, messy
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	h_company: common.kobold
+	
+	icon:
+	{
+		texture: resource.brick.mud
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [6.000, 0.000]
+	
+	icon_extra:
+	{
+		texture: resource.shite
+		size: [16, 16]
+		frame: [1, 0]
+	}
+	icon_extra_offset: [3.000, -10.000]
+	
+	icon_c:
+	{
+		texture: resource.woodchips
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_c_offset: [-18.000, -11.000]
+	
+	color_frame: "0xffe3cb93"
+	color_button: "0xff9dd80f"
+	rank: 0.000
+	
+	min: 10
+	max: 200
+	step: 10
+	
+	version: 1
+}

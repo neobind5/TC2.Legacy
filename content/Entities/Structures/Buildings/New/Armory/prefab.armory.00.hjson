@@ -1,7 +1,7 @@
 $name: "Armory"
 $desc:
 	'''
-	Basic metalworking workshop equipped with a small pellet-powered forge and a simple anvil.
+	Basic armory for production of armor, healing, wrenches, and blades.
 	'''
 $tags: []
 
