@@ -62,7 +62,7 @@
 		size: [1.000, 1.000]
 		snap: [0.125, 0.125]
 		
-		cooldown: 0.500
+		cooldown: 0.000
 		min_support: 0.040
 		min_claim: 1.000
 		max_range: 5.000

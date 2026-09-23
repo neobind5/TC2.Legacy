@@ -1,0 +1,84 @@
+$name: "Busted Steam Engine"
+$desc: 
+	'''
+	It ran out of steam.
+	'''
+
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		material: wreck
+		miss_chance: 0.705
+		flags: none
+		tags: none
+		
+		layer: entity, background, building
+		mask: world
+		exclude: none
+		
+		mass: 3260.000
+		radius: 0.500
+		friction: 0.500
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[2.000, 2.125]
+			[-2.500, 2.000]
+			[-2.000, -2.000]
+			[1.500, 0.500]
+		]
+	}
+}
+
+health:
+{
+	max: 98000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.steam_engine.00"
+	}
+	z: -280.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: scrap.mixed
+			quantity: 134.4422
+		}
+		{
+			material: niklajzner.ingot
+			quantity: 42.83552
+		}
+		{
+			material: copper.ingot
+			quantity: 12.72024
+		}
+	]
+	
+	thresholds: [0.949, 0.989, 0.790, 0.610]
+	
+	pct_damage_mult: [0.891, 0.940, 0.425, 0.670]
+	pct_quantity_min: [0.063, 0.019, 0.021, 0.054]
+	
+	chance_base: [0.796, 0.922, 0.647, 0.767]
+}

@@ -37,11 +37,11 @@
 	[
 		{
 			material: gravel
-			quantity: 2.031997
+			quantity: 4.031997
 		}
 		{
 			material: soil
-			quantity: 0.739028
+			quantity: 1.739028
 		}
 	]
 	

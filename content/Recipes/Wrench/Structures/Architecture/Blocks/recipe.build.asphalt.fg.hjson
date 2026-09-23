@@ -58,7 +58,7 @@
 		
 		radius: 0.750
 		
-		cooldown: 0.250
+		cooldown: 0.000
 		min_support: 0.300
 		min_claim: 1.000
 		

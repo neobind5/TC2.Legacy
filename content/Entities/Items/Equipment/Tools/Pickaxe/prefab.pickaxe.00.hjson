@@ -1,0 +1,101 @@
+$name: "Pickaxe"
+$desc:
+	'''
+	Pointed tool used digging through hard materials.
+	'''
+$tags: []
+
+control:
+{
+
+}
+
+body:
+{
+	buoyancy: 0.200
+
+	@shape.line:
+	{
+		a: [0.000, -0.600]
+		b: [0.000, 0.600]
+		mass: 5.400
+		radius: 0.200
+		friction: 0.950
+		elasticity: 0.050
+		material: tool
+		layer: entity, solid, ignore_bullet, ignore_melee, item, flammable, conductive, magnetic
+		mask: world
+	}
+}
+
+health:
+{
+	max: 4700.000
+}
+
+aimable:
+{
+
+}
+
+melee:
+{
+	damage_base: 450.000
+	damage_bonus: 300.000
+	armor_pierce: 220.000
+	
+	primary_damage_multiplier: 0.910
+	secondary_damage_multiplier: 1.230
+	terrain_damage_multiplier: 8.000
+	pain_multiplier: 1.200
+	stun_multiplier: 0.790
+	
+	cooldown: 0.900
+	max_distance: 1.750
+	aoe: 1.125
+	thickness: 0.450
+	knockback: 50.000
+	yield: 1.500
+	penetration_falloff: 0.800
+	
+	hit_offset: [0.125, -0.500]
+	
+	damage_type: pickaxe
+	category: pointed
+	
+	damage_flags_add: no_loot_discard, allow_encumbered, force_loot_notification
+	damage_flags_rem: no_loot_notification
+	
+	hit_mask: world, destructible
+	hit_exclude: plant, water, fire, gas, powder, liquid, stored, ignore_melee
+	hit_ignore: water, fire, gas, powder, liquid, stored
+}
+
+melee.state:
+{
+
+}
+
+holdable:
+{
+	offset: [0.000, 0.500]
+	flags: storable
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: pickaxe.00
+	}
+}
+
+transform:
+{
+
+}
+
+packable:
+{
+
+}

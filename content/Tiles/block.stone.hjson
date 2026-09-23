@@ -1,6 +1,6 @@
 ﻿{
 	$version: "0.1.73.0"
-	name: "[OBSOLETE] Stone"
+	name: "Stone"
 	desc:
 		'''
 		Natural stone.

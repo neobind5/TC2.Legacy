@@ -1,6 +1,6 @@
 ﻿{
 	$version: "0.1.74.0"
-	name: "Gold Smelting"
+	name: "Crude Gold Smelting"
 	tips: []
 	
 	stages:
@@ -63,7 +63,7 @@
 	
 	type: workshop
 	flags: item, auto_complete
-	tags: manual, crafting, metalworking
+	tags: manual, crafting, metalworking, crude
 	hints: none
 	connotations: none
 	infrastructure: none
@@ -85,7 +85,7 @@
 	frame_size: [64.000, 64.000]
 	
 	min: 1
-	max: 25
+	max: 10
 	step: 1
 	
 	version: 1

@@ -1,6 +1,6 @@
 ﻿{
 	$version: "0.1.74.0"
-	name: "Clay Bricks"
+	name: "Crude Clay Bricks"
 	tips: []
 	
 	stages:
@@ -37,7 +37,7 @@
 						{
 							type: work
 							work: machining
-							amount: 3.250
+							amount: 0.550
 							amount_min: 0.000
 							group: 0
 							flags: conditional
@@ -63,7 +63,7 @@
 	
 	type: workshop
 	flags: item, auto_complete
-	tags: manual, crafting, metalworking
+	tags: manual, crafting, metalworking, crude
 	hints: none
 	connotations: none
 	infrastructure: none

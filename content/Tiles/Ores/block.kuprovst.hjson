@@ -40,8 +40,8 @@
 			quantity: 4.095476
 		}
 		{
-			material: copper.gravel
-			quantity: 0.203478
+			material: soil
+			quantity: 2.031997
 		}
 	]
 	

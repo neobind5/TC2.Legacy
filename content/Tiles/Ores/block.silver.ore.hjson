@@ -39,7 +39,10 @@
 			material: silver
 			quantity: 0.204768
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.831997
+		}
 	]
 	
 	mappings:

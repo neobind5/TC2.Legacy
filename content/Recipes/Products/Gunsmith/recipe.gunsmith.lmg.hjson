@@ -30,7 +30,7 @@
 						{
 							type: resource
 							material: steel.ingot
-							amount: 22.000
+							amount: 52.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -38,7 +38,7 @@
 						{
 							type: resource
 							material: steel.frames
-							amount: 50.000
+							amount: 38.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -46,7 +46,15 @@
 						{
 							type: resource
 							material: wood.rod
-							amount: 8.000
+							amount: 12.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: computer_parts.basic
+							amount: 2.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -54,7 +62,7 @@
 						{
 							type: resource
 							material: money
-							amount: 2950.000
+							amount: 19950.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

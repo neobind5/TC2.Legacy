@@ -39,7 +39,10 @@
 			material: sulfur
 			quantity: 5.197392
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.431997
+		}
 	]
 	
 	mappings:

@@ -1,0 +1,446 @@
+$name: "Brave Red Toaster"
+$desc:
+	'''
+	He's well past his prime.
+	'''
+$tags: []
+
+body:
+{
+	type: dynamic
+	
+	@shape.polygon:
+	{
+		material: wreck
+		miss_chance: 0.741
+		flags: none
+		tags: none
+		
+		layer: entity, solid, background, harvestable, ignore_melee
+		mask: world
+		exclude: none
+		
+		mass: 850.000
+		radius: 0.700
+		friction: 0.550
+		elasticity: 0.570
+		
+		cog_offset: [0.000, 0.500]
+		
+		points:
+		[
+			[-0.875, -0.375]
+			[0.875, 0.000]
+			[1.000, 0.500]
+			[-1.125, 0.375]
+		]
+	}
+}
+
+health:
+{
+	max: 46500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.garbage.01
+		size: [32, 24]
+		frame: [2, 0]
+	}
+	z: -10.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: scrap.mixed
+			quantity: 56.700
+		}
+	]
+	
+	thresholds: [0.980, 0.375, 1.000, 0.430]
+	
+	pct_damage_mult: [0.977, 0.502, 1.000, 0.485]
+	pct_quantity_min: [0.052, 0.095, 0.066, 0.157]
+	
+	chance_base: [0.229, 0.105, 0.775, 0.137]
+}
+
+loot.container:
+{
+	rolls: 2
+	rolls_extra: 2
+	rarity_min: 0.000
+	rarity_mid: 2.500
+	rarity_max: 3.000
+	amount_multiplier: 1.000
+	merge_flags: skip_resources
+	flags: no_duplicates
+
+	tables:
+	[
+	]
+}
+
+interactable:
+{
+	flags: none
+	window_size: [216, 240]
+	window_size_misc: [192, 0]
+}
+
+shipment:
+{
+	type: wreckage
+	flags: keep_items, allow_withdraw, allow_deposit, use_misc
+	layout: square
+	// layout: large
+}
+
+storage:
+{
+	@loot.container:
+	{
+		rarity_min: 0.000
+		rarity_mid: 2.500
+		rarity_max: 3.000
+		amount_multiplier: 0.880
+		flags: no_duplicates, shuffle_inventory
+		merge_flags: skip_prefabs
+		rolls: 3
+		rolls_extra: 4
+		tables:
+		[
+			junk.00
+			bleh.00
+			null
+		]
+	}
+
+	@inventory8:
+	{
+		type: storage
+		flags: standalone, public, no_auto_pickup
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-1.000, -0.125]
+	}
+}
+
+// lockable:
+// {
+// 	flags: locked
+// 	unlock_threshold: 0.800
+// }
+
+holdable:
+{
+	radius: 0.000
+	flags: disable_parent_facing, disable_rotation, full_rotate
+	stress_multiplier: 0.500
+}
+
+tractor:
+{
+	speed: 12.000
+	brake_step: 35.000
+	speed_step: 60.000
+}
+
+vehicle:
+{
+
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+axle:
+{
+	offset: [-1.500, -0.125]
+	offset_inner: [-1.500, -0.125]
+	
+	mass: 90.000
+	radius_b: 0.850
+	radius_inner: 0.850
+	z: -75.000
+
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: wheel_1000.steel
+		}
+		offset: [-1.500, -0.125]
+		z: -75.000
+	}
+
+	@sound.emitter:
+	{
+		file: attachment_rotate_loop_01
+		flags: start_muted
+		volume: 1.000
+		pitch: 1.200
+		spread: 90.200
+		offset: [-1.625, -0.250]
+	}
+			
+	@sound.mixer:
+	{
+		volume_modifier: 1.280
+		pitch_modifier: 0.250
+		pitch_min: 1.000
+		volume_lerp_a: 0.150
+		volume_lerp_b: 0.050
+		pitch_lerp_a: 0.150
+		pitch_lerp_b: 0.250
+	}
+}
+
+crank:
+{
+	offset: [-1.500, -0.125]
+	radius: 0.400
+	ratio: 1.000
+	max_speed: 30.000
+	torque: 500.000
+}
+
+norotate:
+{
+	bias: 0.250
+	multiplier: 0.750
+	mass_multiplier: 20.000
+	flags: no_share
+}
+
++seat|instance:
+{
+	seat:
+	{
+		offset: [-0.250, -0.875]
+		flags: open
+		max_tilt: 5.000
+	}
+}
+
++slot.motor|instance:
+{
+	attachment.slot:
+	{
+		flags: keyboard_write, offset
+		flags_editable: locked, disabled, keyboard_write
+		name: "Motor"
+		identifier: "motor"
+		tags_filter:
+		{
+			require: motor, fixed
+			include: small, medium
+		}
+		rank: -5.000
+		gui_size: [144.000, 88.000]
+	}
+
+	joint.base:
+	{
+		offset_a: [-2.000, -0.250]
+		max_force: 80000.000
+		max_torque: 90000.000
+		max_displacement: 0.100
+		displacement_stress_modifier: 0.100
+		z: -15.000
+		material_type: metal
+		flags: attachment, allow_dragging, control_write, force_facing
+
+		@armor:
+		{
+			toughness: 650.000
+			protection: 1.000
+			coverage: 1.000
+			integrity_damage_mult: 0.678
+			durability_damage_mult: 0.660
+			knockback_modifier: 0.300
+			stun_modifier: 0.400
+			pain_modifier: 0.000
+			material_type: metal_solid
+			flags: no_damage_type_conversion
+		}
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.0001
+		max_bias: 20.000
+	}
+
+	joint.gear:
+	{
+		rotation: -1.3253
+		flags: none
+		max_bias: 5.000
+	}
+}
+
++slot.wheel.00|instance:
+{
+	attachment.slot:
+	{
+		flags: keyboard_write
+		flags_editable: locked, keyboard_write, offset
+		tags_filter:
+		{
+			require: wheel
+			include: small, medium
+		}
+		rank: 6.000
+		offset_bounds: [0.000, -1.000, 0.000, 1.000]
+		offset: [0.000, 1.000]
+		gui_size: [96.000, 72.000]
+		name: "Spinner"
+		identifier: "wheel.00"
+	}
+
+	joint.base:
+	{
+		offset_a: [-0.125, 0.750]
+		z: 110.000
+		material_type: metal
+		flags: no_wrap, attachment, control_write, force_facing
+	}
+
+	joint.wheel:
+	{
+		error_bias: 0.000
+		max_bias: 15.000
+		groove_force: 120000.000
+		spring_force: 75000.000
+		length: 1.000
+		rest_length: 0.500
+		stiffness: 65000.000
+		damping: 1500.000
+		brake: 20000.000
+		stress_mult: 0.150
+	}
+
+	wheel.slot:
+	{
+		force_multiplier: 1.000
+		ratio: 1.700
+	}
+}
+
++slot.wheel.01|instance:
+{
+	attachment.slot:
+	{
+		flags: keyboard_write
+		flags_editable: locked, keyboard_write, offset
+		name: "Wheel (FG)"
+		identifier: "wheel.01"
+		tags_filter:
+		{
+			require: wheel
+			include: small, medium
+		}
+		rank: 7.000
+		offset_bounds: [0.000, -1.000, 0.000, 1.000]
+		offset: [0.000, 1.000]
+		gui_size: [80.000, 80.000]
+	}
+
+	joint.base:
+	{
+		offset_a: [1.000, 0.750]
+		z: -200.000
+		material_type: metal
+		flags: no_wrap, attachment, control_write, force_facing
+	}
+
+	joint.wheel:
+	{
+		error_bias: 0.000
+		max_bias: 15.000
+		groove_force: 120000.000
+		spring_force: 75000.000
+		length: 1.000
+		rest_length: 0.500
+		stiffness: 65000.000
+		damping: 1500.000
+		brake: 20000.000
+		stress_mult: 0.150
+	}
+
+	wheel.slot:
+	{
+		force_multiplier: 1.000
+		ratio: 1.700
+	}
+}
+
++slot.wheel.02|instance:
+{
+	attachment.slot:
+	{
+		flags: keyboard_write
+		flags_editable: locked, keyboard_write, offset
+		name: "Backwheel"
+		identifier: "wheel.02"
+		tags_filter:
+		{
+			require: wheel
+			include: medium, large
+		}
+		rank: 8.000
+		offset_bounds: [0.000, -0.100, 0.000, 0.400]
+		gui_size: [80.000, 80.000]
+	}
+
+	joint.base:
+	{
+		offset_a: [-1.625, 0.750]
+		force_modifier: 0.000
+		displacement_stress_modifier: 0.100
+		z: -250.000
+		material_type: metal
+		flags: no_wrap, attachment, control_write, force_facing
+	}
+
+	joint.wheel:
+	{
+		error_bias: 0.000
+		max_bias: 15.000
+		groove_force: 120000.000
+		spring_force: 75000.000
+		length: 0.800
+		rest_length: 0.400
+		stiffness: 65000.000
+		damping: 1000.000
+		brake: 5000.000
+		stress_mult: 0.150
+	}
+
+	wheel.slot:
+	{
+		force_multiplier: 1.000
+		ratio: 1.200
+	}
+}

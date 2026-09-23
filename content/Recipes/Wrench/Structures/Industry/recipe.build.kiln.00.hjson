@@ -8,7 +8,7 @@
 		{
 			type: resource
 			material: gravel
-			amount: 25.000
+			amount: 125.000
 			snapping: 0.500
 			group: 0
 			flags: prerequisite
@@ -70,7 +70,7 @@
 		rect_clearance: [-1.125, -2.750, 1.125, 0.000]
 		tileflags_clearance: solid
 		
-		cooldown: 1.000
+		cooldown: 0.000
 		min_support: 0.250
 		min_clearance: 0.900
 		min_claim: 1.000

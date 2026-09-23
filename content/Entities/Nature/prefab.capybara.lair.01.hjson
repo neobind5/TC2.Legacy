@@ -1,0 +1,137 @@
+$name: "Capybara Lair"
+$desc: 
+	'''
+	But why?
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		a: [2.125, -1.000]
+		b: [0.625, -0.375]
+		mass: 500.000
+		radius: 1.000
+		friction: 0.750
+		elasticity: 0.500
+		material: stone
+		layer: entity, solid, background
+		mask: world
+		exclude: none
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "capybara.lair.01"
+	}
+	offset: [1.375, -0.625]
+	z: -150.000
+}
+
+transform:
+{
+
+}
+
+nameable:
+{
+	tags: chemical, dangerous, industrial, homely, tool, factory, food
+	flags: no_rename, randomize
+	type: consumable
+	max_length: 16
+}
+
+spawner:
+{
+	group_size: 1
+	group_size_extra: 0
+	interval: 60.000
+	interval_extra: 300.000
+	interval_count_modifier: 30.000
+	ai_stance: defensive
+	ai_type: idle
+	flags: none
+	max_count: 3
+}
+
+faction:
+{
+	id: "capybara"
+}
+
+spawn:
+{
+	spawn_offset: [0.000, -0.250]
+	flags: faction, neutral_only
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [0, 0]
+	}
+
+	flags: faction, spawner
+}
+
+interactable:
+{
+	flags: no_tab, no_interact, faction_only
+	window_size: [592.000, 344.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+dormitory:
+{
+	species: "capybara"
+	flags: no_hiring, no_kit_selection, no_kit_requirements, hide_xp, hide_kits, region_only
+	asset_flags: recycle
+
+	repopulate_max: 5
+	repopulate_num: 1
+	repopulate_num_extra: 1
+
+	characters_capacity: 5
+	characters_initial_count: 2
+	characters_reserved_count: 1
+}
+
+alarm:
+{
+	rotation_speed: 3.000
+
+	@light:
+	{
+		color: [0.949541, 0.100181, 0.100181, 1.000]
+		offset: [0.250, -1.375]
+		scale: [15.000, 10.000]
+		intensity: 0.000
+		texture: "light.cone.01"
+		rotation: 0.000
+	}
+
+	@sound.emitter:
+	{
+		file: "effect.buzzer.08"
+		channel_type: world
+		flags: start_muted
+		volume: 1.000
+		volume_mult: 0.000
+		pitch: 0.830
+		pitch_mult: 1.000
+		size: 0.500
+		size_max_modifier: 0.900
+		spread: 80.000
+		priority: 0.750
+		offset: [0.250, -1.500]
+	}
+}

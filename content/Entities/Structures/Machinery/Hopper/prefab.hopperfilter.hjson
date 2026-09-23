@@ -1,0 +1,103 @@
+$name: "Filter"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.750, 1.000]
+		offset: [0.000, 0.875]
+		mass: 1000.000
+		friction: 0.700
+		elasticity: 0.500
+		material: metal
+		layer: entity, support, solid, building, storage
+		mask: world, resource, solid, vehicle, wheel
+	}
+
+	// @shape.circle:
+	// {
+	// 	radius: 1.000
+	// 	friction: 0.900
+	// 	elasticity: 0.000
+	// 	material: metal
+	// 	rigidity_dynamic: 0.000
+	// 	rigidity_static: 0.000
+	// 	layer: entity
+	// 	mask: resource
+	// }
+
+	//@shape.line:
+	//{
+	//	radius: 0.000
+	//	a: [-0.750, 0.750]
+	//	b: [0.750, 0.750]
+	//	friction: 0.900
+	//	elasticity: 0.000
+	//	material: metal
+	//	rigidity_dynamic: 1.000
+	//	rigidity_static: 1.000
+	//	layer: entity
+	//	mask: resource
+	//}
+}
+
+health:
+{
+	max: 12000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hopper"
+	}
+	z: -480.000
+}
+
+transform:
+{
+
+}
+
+hopperfilter:
+{
+	sound_load: "depot_load"
+
+	@inventory8:
+	{
+		name: "Filter"
+		stack_size_multiplier: 5.000
+		type: storage
+		flags: allow_ducts, ignore_mass, public, standalone, faction
+		offset: [0.000, 0.625]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+interactable:
+{
+	window_size: [192.000, 96.000]
+}
+
+conveyorsolid:
+{
+	sound_load: ""
+	strength:7.5
+	dampening:0.1
+	volume: 0.6
+	pitch: 0.9
+	sound_cooldown: 1.0
+	dist_multiplier: 0.4
+}

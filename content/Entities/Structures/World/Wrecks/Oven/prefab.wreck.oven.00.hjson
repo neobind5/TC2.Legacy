@@ -1,0 +1,82 @@
+$name: "Antiquated Oven"
+$desc: 
+	'''
+	Where did we go wrong?
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points: 
+		[
+			[-0.500, -1.125]
+			[0.500, -0.375]
+			[0.625, 1.250]
+			[-0.625, 1.250]
+		]
+		radius: 0.250
+		friction: 0.500
+		elasticity: 0.500
+		mass: 180.000
+		material: wreck
+		layer: entity, background, furniture, ignore_bullet, ignore_melee
+		mask: world
+	}
+}
+
+health:
+{
+	max: 11000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.oven.00"
+	}
+	z: -280.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "niklajzner.ingot"
+			quantity: 4.000
+		}
+	]
+}
+
+shipment:
+{
+	flags: keep_items, allow_withdraw, allow_deposit
+}
+
+loot.container:
+{
+	rolls: 1
+	rolls_extra: 2
+	merge_flags: skip_resources
+
+	tables:
+	[
+		"oven"
+	]
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192.000, 96.000]
+}

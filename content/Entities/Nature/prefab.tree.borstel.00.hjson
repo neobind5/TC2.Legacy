@@ -1,0 +1,50 @@
+$name: "Borstel Tree"
+$desc: 
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	buoyancy: 0.640
+	
+	@shape.line:
+	{
+		a: [0.000, -15.750]
+		b: [0.000, -0.250]
+		
+		mass: 13000.000
+		radius: 0.750
+		friction: 0.940
+		elasticity: 0.310
+		
+		material: tree
+		
+		layer: entity, solid, tree, flammable, ignore_bullet, organic
+		mask: world, tree
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tree.borstel.00"
+	}
+	offset: [0.000, -8.250]
+	z: -80.000
+}
+
+swapprefab:
+{
+	flags: no_replacement
+	prefab: ""
+}

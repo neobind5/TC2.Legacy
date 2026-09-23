@@ -1,0 +1,113 @@
+$name: "Twuk Nest"
+$desc: 
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		material: bramble
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, solid, background, building, harvestable, flammable, no_overlapped_placement, ignore_bullet
+		mask: world
+		exclude: none
+		
+		mass: 180.000
+		radius: 1.100
+		friction: 0.750
+		elasticity: 0.100
+		
+		cog_offset: [0.000, 0.000]
+		
+		a: [-1.625, 0.750]
+		b: [1.500, 0.750]
+		offset: [0.000, 0.000]
+	}
+}
+
+transform:
+{
+
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "twuk.nest.00"
+	}
+	z: -150.000
+}
+
+nameable:
+{
+	tags: dangerous, fancy, food, female
+	type: gun
+	flags: no_rename, randomize
+}
+
+faction:
+{
+	id: twuk
+}
+
+spawn:
+{
+	flags: faction, public
+}
+
+spawner:
+{
+	interval: 300.000
+	interval_extra: 600.000
+	interval_count_modifier: 150.000
+	ai_stance: aggressive
+	ai_type: attack
+	max_count: 3
+}
+
+dormitory:
+{
+	flags: no_hiring, no_reject, no_kit_selection, no_kit_requirements, repopulate_needs_faction, region_only, hide_xp, hide_kits
+	species: twuk
+	
+	characters_capacity: 4
+	characters_initial_count: 1
+	characters_reserved_count: 1
+	
+	repopulate_interval: 120.000
+	repopulate_interval_extra: 300.000
+	repopulate_max: 4
+	repopulate_num: 1
+	repopulate_num_extra: 1
+	repopulate_character_flags_add: npc, public
+	
+	asset_flags: recycle
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [0, 1]
+	}
+
+	flags: faction, spawner
+}
+
+interactable:
+{
+	flags: no_tab, no_interact, faction_only
+	window_size: [592.000, 344.000]
+	window_size_misc: [48.000, 0.000]
+}

@@ -1,0 +1,149 @@
+$name: "Perturbed Automobile"
+$desc:
+	'''
+	A brand new car after 3 years of service to an Imperial citizen.
+	'''
+$tags: []
+
+body:
+{
+	type: dynamic
+	buoyancy: 0.600
+	
+	@shape.polygon:
+	{
+		material: wreck
+		miss_chance: 0.674
+		flags: none
+		tags: heavy, large
+		
+		layer: entity, solid, vehicle, conductive, harvestable, magnetic
+		mask: world
+		exclude: none
+		
+		mass: 1134.000
+		radius: 0.500
+		friction: 0.980
+		elasticity: 0.500
+		
+		fall_damage_mult: 1.280
+		cog_offset: [-0.125, 0.250]
+		
+		points:
+		[
+			[-1.125, -0.375]
+			[1.375, -0.250]
+			[1.500, 0.250]
+			[-2.125, 0.375]
+		]
+	}
+}
+
+health:
+{
+	max: 43500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.car"
+	}
+	offset: [-0.375, 0.000]
+	z: -85.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "niklajzner.ingot"
+			quantity: 9.000
+		}
+		{
+			material: "crude_oil"
+			quantity: 20.000
+		}
+	]
+	
+	thresholds: [0.980, 0.982, 0.857, 0.974]
+	
+	pct_damage_mult: [0.750, 0.813, 0.920, 0.985]
+	pct_quantity_min: [0.095, 0.032, 0.069, 0.040]
+	
+	chance_base: [0.102, 0.043, 0.180, 0.267]
+}
+
+shipment:
+{
+	type: wreckage
+	flags: keep_items, allow_withdraw, allow_deposit, use_misc
+	layout: square
+}
+
+loot.container:
+{
+	rolls: 3
+	rolls_extra: 2
+	merge_flags: skip_resources
+	flags: no_duplicates
+
+	tables:
+	[
+	]
+}
+
+storage:
+{
+	@loot.container:
+	{
+		rolls: 5
+		rolls_extra: 3
+		rarity_min: 0.000
+		rarity_mid: 2.500
+		rarity_max: 3.000
+		amount_multiplier: 0.400
+		merge_flags: skip_prefabs
+		flags: no_duplicates, shuffle_inventory
+
+		tables:
+		[
+			junk.00
+		]
+	}
+
+	@inventory8:
+	{
+		type: wreckage
+		flags: public, no_auto_pickup
+		stack_size_multiplier: 2.000
+		
+		offset: [0.000, 0.000]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	window_size: [192.000, 96.000]
+	window_size_misc: [96.000, 0.000]
+}
+
+holdable:
+{
+	radius: 0.000
+	flags: disable_parent_facing, disable_rotation, full_rotate
+	stress_multiplier: 0.500
+}

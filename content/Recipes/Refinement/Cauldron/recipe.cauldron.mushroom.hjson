@@ -1,0 +1,121 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Crude Mushroom Extraction"
+	tips: []
+	desc: "Extract something less disgusting."
+	
+	stages:
+	[
+		{
+			name: "Fat"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Mixed"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: mushroom
+							amount: 20.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: water
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 22.000
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: alcohol
+			amount: 3
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: vinegar
+			amount: 2.2
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: mushroom.juice
+			amount: 1.8
+			group: 0
+			flags: none
+		}
+		{
+			type: resource
+			material: onion.juice
+			amount: 0.4
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, crude, raw
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.mushroom
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 3
+	frame_size: [32.000, 32.000]
+	
+	min: 1
+	max: 25
+	step: 1
+	
+	version: 1
+}

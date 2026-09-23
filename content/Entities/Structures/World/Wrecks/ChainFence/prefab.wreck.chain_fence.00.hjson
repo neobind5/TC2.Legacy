@@ -1,0 +1,73 @@
+$name: "Rusty Chain-Link Fence"
+$desc: 
+	'''
+	Rusted-down fence full of holes.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[-2.000, -1.250]
+			[1.875, -1.250]
+			[1.875, 1.500]
+			[-2.125, 1.500]
+		]
+		
+		mass: 65.000
+		radius: 0.500
+		friction: 0.850
+		elasticity: 0.100
+		
+		material: wire
+		miss_chance: 0.000
+		
+		layer: entity, background, ignore_melee, ignore_bullet
+		mask: world
+		exclude: none
+	}
+}
+
+health:
+{
+	max: 2800.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.chain_fence.00"
+	}
+	z: -350.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "niklajzner.ingot"
+			quantity: 4.000
+		}
+		null
+		null
+	]
+	
+	thresholds: [0.937, 0.318, 0.000, 0.000]
+	
+	pct_damage_mult: [1.000, 0.810, 0.000, 0.000]
+	pct_quantity_min: [0.111, 0.362, 0.000, 0.000]
+	
+	chance_base: [0.620, 0.922, 0.000, 0.000]
+}

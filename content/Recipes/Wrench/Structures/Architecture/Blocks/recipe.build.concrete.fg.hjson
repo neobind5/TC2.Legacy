@@ -70,7 +70,7 @@
 		size: [2.500, 2.500]
 		radius: 1.000
 		
-		cooldown: 0.200
+		cooldown: 0.000
 		min_claim: 1.000
 		
 		sound: stone_place_0

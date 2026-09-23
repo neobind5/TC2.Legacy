@@ -1,0 +1,283 @@
+$name: "Industrial Furnace"
+$desc:
+	'''
+	Slightly better furnace capable of much higher temperatures. x2 yields, but costs coal.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[-1.000, -0.625]
+			[1.125, -0.625]
+			[1.000, 1.625]
+			[-0.875, 1.625]
+		]
+		
+		mass: 220.000
+		radius: 0.375
+		friction: 0.650
+		elasticity: 0.200
+		
+		material: stone_slab
+		miss_chance: 0.702
+		
+		layer: entity, solid, building, support, ignore_melee, background, crafter
+		mask: world, building
+		exclude: none
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "industrial_furnace"
+		size: [32, 48]
+	}
+	z: -280.000
+}
+
+control:
+{
+
+}
+
+health:
+{
+	max: 25500.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192, 192]
+	window_size_misc: [96, 0]
+	priority: 2.000
+}
+
+storage:
+{
+	@inventory16:
+	{	
+		type: storage
+		flags: allow_ducts, ignore_mass, public, faction
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, -0.250]
+	}
+}
+
+autocrafter:
+{
+	flags: force_drop
+	sound_load: produce_sound
+	cooldown: 2.000
+	drop_offset: [0, 0]
+	recipes:
+	[
+		{
+			// Crude Wood Burning
+			requirements:
+			[
+				{
+					material: wood
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: black_coal
+					count: 5.00
+				}
+				{
+					material: karban
+					count: 15.00
+				}
+				{
+					material: ash
+					count: 30
+				}
+			]
+		}
+		{
+			// Crude Glass Smelting
+			requirements:
+			[
+				{
+					material: silicon
+					count: 20.000
+				}
+				{
+					material: ash
+					count: 5.000
+				}
+				{
+					material: lime
+					count: 5.000
+				}
+			]
+			products:
+			[
+				{
+					material: glass
+					count: 8.00
+				}
+			]
+		}
+		{
+			// Crude Clay Bricks
+			requirements:
+			[
+				{
+					material: clay
+					count: 15.000
+				}
+			]
+			products:
+			[
+				{
+					material: brick.clay
+					count: 8.00
+				}
+			]
+		}
+		{
+			// Crude Concrete
+			requirements:
+			[
+				{
+					material: cement
+					count: 15.000
+				}
+			]
+			products:
+			[
+				{
+					material: brick.concrete
+					count: 8.00
+				}
+			]
+		}
+		{
+			// Crude Copper Smelting
+			requirements:
+			[
+				{
+					material: copper
+					count: 6.000
+				}
+				{
+					material: black_coal
+					count: 3.000
+				}
+			]
+			products:
+			[
+				{
+					material: copper.ingot
+					count: 2
+				}
+			]
+		}
+		{
+			// Crude Niklajzner Smelting
+			requirements:
+			[
+				{
+					material: niklajzner
+					count: 8.000
+				}
+				{
+					material: black_coal
+					count: 4.000
+				}
+			]
+			products:
+			[
+				{
+					material: niklajzner.ingot
+					count: 2
+				}
+			]
+		}
+		{
+			// Crude Steel Smelting
+			requirements:
+			[
+				{
+					material: niklajzner.ingot
+					count: 3.000
+				}
+				{
+					material: black_coal
+					count: 8.000
+				}
+			]
+			products:
+			[
+				{
+					material: steel.ingot
+					count: 2
+				}
+			]
+		}
+		{
+			// Crude Silver Smelting
+			requirements:
+			[
+				{
+					material: silver
+					count: 8.000
+				}
+				{
+					material: black_coal
+					count: 4.000
+				}
+			]
+			products:
+			[
+				{
+					material: silver.ingot
+					count: 2
+				}
+			]
+		}
+		{
+			// Crude Gold Smelting
+			requirements:
+			[
+				{
+					material: gold
+					count: 10.000
+				}
+				{
+					material: black_coal
+					count: 5.000
+				}
+			]
+			products:
+			[
+				{
+					material: gold.ingot
+					count: 2
+				}
+			]
+		}
+	]
+}

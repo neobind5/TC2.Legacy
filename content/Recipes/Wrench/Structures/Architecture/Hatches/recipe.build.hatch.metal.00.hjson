@@ -1,0 +1,103 @@
+﻿{
+	$version: "0.1.72.0"
+	name: "Hatch (Metal)"
+	desc:
+		'''
+		Sturdy metal hatch to keep the intruders out.
+		'''
+	tips: []
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: steel.ingot
+			amount: 8.000
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: machine_parts
+			amount: 5.000
+			group: 0
+			flags: prerequisite
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: hatch.metal
+			amount: 1.000
+			group: 0
+		}
+	]
+	
+	type: architecture
+	flags: no_amount_multiplier, blueprintable, no_cancel
+	tags: simple, medium, metalworking, construction
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	dismantle_work: 20.000
+	dismantle_yield: 0.800
+	
+	icon:
+	{
+		texture: hatch.metal.icon
+	}
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	rank: -5095.000
+	frame_size: [64.000, 48.000]
+	
+	placement:
+	{
+		type: simple
+		flags: allow_placement_over_buildings, require_terrain
+		
+		size: [2.500, 0.750]
+		offset: [0.000, -0.125]
+		
+		rect_foundation: [-1.500, 0.000, 1.500, 0.250]
+		tileflags_foundation: solid
+		
+		rect_clearance: [-1.125, -1.500, 1.125, 0.500]
+		tileflags_clearance: solid
+		
+		cooldown: 0.000
+		min_support: 0.200
+		min_clearance: 0.950
+		min_claim: 1.000
+		
+		rotation_max: 5.000
+		rotation_step: 0.1964
+		
+		sound: building_place
+		
+		physics_filter:
+		{
+			include: door
+		}
+		
+		snapping_filter:
+		{
+			require: building
+			include: climbable
+			exclude: construction, dynamic
+		}
+		snapping_flags: snap_to_surface, align_parallel, use_raw_collider
+		
+		mappings_replace:
+		{
+		
+		}
+	}
+	
+	version: 1
+}

@@ -1,0 +1,111 @@
+$name: "Capybara Lair"
+$desc: 
+	'''
+	In academic literature, there are numerous claims that capybaras don't live in lairs.
+	Alas, capybaras are illiterate.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		a: [2.125, -1.000]
+		b: [0.625, -0.375]
+		mass: 500.000
+		radius: 1.000
+		friction: 0.750
+		elasticity: 0.500
+		material: stone
+		layer: entity, solid, background
+		mask: none
+		exclude: none
+	}
+}
+
+transform:
+{
+
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "capybara.lair.00"
+	}
+	offset: [1.375, -0.625]
+	z: -150.000
+}
+
+nameable:
+{
+	tags: lame, homely, food
+	flags: no_rename, randomize
+	type: consumable
+	max_length: 16
+}
+
+faction:
+{
+	id: capybara
+}
+
+spawn:
+{
+	spawn_offset: [-0.125, -0.125]
+	flags: faction, public
+}
+
+spawner:
+{
+	group_size: 1
+	group_size_extra: 0
+	interval: 40.000
+	interval_extra: 200.000
+	interval_count_modifier: 60.000
+	ai_stance: friendly
+	ai_type: idle
+	flags: none
+	max_count: 3
+}
+
+dormitory:
+{
+	flags: no_hiring, no_reject, no_kit_selection, no_kit_requirements, repopulate_needs_faction, region_only, hide_xp, hide_kits
+	species: capybara
+	
+	characters_capacity: 5
+	characters_initial_count: 2
+	characters_reserved_count: 1
+	
+	repopulate_interval: 60.000
+	repopulate_interval_extra: 240.000
+	repopulate_max: 5
+	repopulate_num: 1
+	repopulate_num_extra: 1
+	repopulate_character_flags_add: npc, public
+	
+	asset_flags: recycle
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: "ui_icons_minimap"
+		size: [16, 16]
+		frame: [0, 1]
+	}
+
+	flags: faction, spawner
+}
+
+interactable:
+{
+	flags: no_tab, no_interact, faction_only
+	window_size: [592.000, 344.000]
+	window_size_misc: [48.000, 0.000]
+}

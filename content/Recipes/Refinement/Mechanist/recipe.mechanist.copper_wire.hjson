@@ -28,8 +28,16 @@
 					[
 						{
 							type: resource
-							material: copper.ingot
+							material: wood.rod
 							amount: 1.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: copper.ingot
+							amount: 2.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -37,7 +45,7 @@
 						{
 							type: work
 							work: machining
-							amount: 30
+							amount: 2
 							amount_min: 0.000
 							group: 0
 							flags: conditional
@@ -85,7 +93,7 @@
 	frame_size: [64.000, 64.000]
 	
 	min: 1
-	max: 10
+	max: 20
 	step: 1
 	
 	version: 1

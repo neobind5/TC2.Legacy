@@ -1,0 +1,97 @@
+$name: "Chest"
+$desc: 
+	'''
+	Small personal storage.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [1.500, 1.250]
+		mass: 31.000
+		radius: 0.250
+		material: wood
+		layer: entity, solid, storage, furniture, flammable, ignore_melee, no_overlapped_placement, background
+		mask: world, furniture, door
+		exclude: held, dynamic
+
+		miss_chance: 0.650
+	}
+}
+
+health:
+{
+	max: 8300.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "chest"
+		mask: "chest.mask"
+	}
+	offset: [0.000, 0.000]
+	z: -200.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+storage:
+{
+	@inventory8:
+	{		
+		type: storage
+		flags: ignore_mass, public, no_auto_pickup, faction, allow_ducts
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			include: granular, small, solid, bottled, malleable
+			exclude: gas, long, large
+		}
+	}
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	priority: 0.750
+	window_size: [192.000, 96.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+lockable:
+{
+
+}
+
+nameable:
+{
+	tags: lame, industrial, homely, food
+	flags: randomize
+	type: consumable
+	max_length: 10
+}

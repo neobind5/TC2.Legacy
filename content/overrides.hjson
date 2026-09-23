@@ -10,6 +10,30 @@
         }
         {
             flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.pickaxe\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.hopper\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.cauldron\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.money\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.money\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.chest\.hjson$'''
+        }
+        {
+            flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]work\..*\.hjson$'''
         }
         {
@@ -42,7 +66,23 @@
         }
         {
             flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]origin\.giant\.professor\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]origin\.giant\.bastard\.hjson$'''
+        }
+        {
+            flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]kit\.kobold\..*\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.workbench\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.workbench\.01\.hjson$'''
         }
         //// Tiles
         {
@@ -247,6 +287,14 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mithril\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.charcoal\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.charcoal\.hjson$'''
         }
         // Wood
         {
@@ -694,6 +742,128 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.phlogiston\.hjson$'''
+        }
+        // Junk
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.barrel\.metal\.wreck\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.car\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.chain_fence\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.chain_fence\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.chair\.wood\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.hand_crank\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.crates\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.crates\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.ladder\.metal\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.ladder\.wood\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.lamp_post\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.lamp_post\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.lamp_post\.02\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.garbage\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.garbage\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.garbage\.02\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.garbage\.03\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.garbage\.04\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.oven\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.pallet\.ingot\.steel\.wreck\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.pump\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.steam_engine\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.wreck\.golem\.00\.hjson$'''
+        }
+        //// Spawns
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.badger_den\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.capybara_lair\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.capybara_lair\.01\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.hornet_hive\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.tree\.borstel\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.twuk\.nest\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.zabar\.bore\.00\.hjson$'''
         }
     ]
 }

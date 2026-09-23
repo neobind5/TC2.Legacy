@@ -1,6 +1,6 @@
 ﻿{
 	$version: "0.1.74.0"
-	name: "Wood Burning"
+	name: "Crude Wood Burning"
 	tips: []
 	
 	stages:
@@ -29,7 +29,7 @@
 						{
 							type: resource
 							material: wood
-							amount: 1.000
+							amount: 5.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -37,7 +37,7 @@
 						{
 							type: work
 							work: machining
-							amount: 9.250
+							amount: 1.250
 							amount_min: 0.000
 							group: 0
 							flags: conditional
@@ -55,7 +55,7 @@
 		{
 			type: resource
 			material: karban
-			amount: 1
+			amount: 0.5
 			group: 0
 			flags: none
 		}
@@ -70,7 +70,7 @@
 	
 	type: workshop
 	flags: item, auto_complete
-	tags: manual, crafting, metalworking
+	tags: manual, crafting, metalworking, crude
 	hints: none
 	connotations: none
 	infrastructure: none

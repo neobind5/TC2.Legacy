@@ -54,7 +54,7 @@
 		
 		size: [0.250, 0.250]
 		
-		cooldown: 0.500
+		cooldown: 0.000
 		min_support: 0.010
 		min_claim: 1.000
 		

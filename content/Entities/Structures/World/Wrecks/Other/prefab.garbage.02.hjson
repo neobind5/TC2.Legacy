@@ -1,0 +1,143 @@
+$name: "Technical Garbage"
+$desc:
+	'''
+	Trash metal.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[0.125, -0.625]
+			[1.000, -0.500]
+			[0.875, 1.000]
+			[-0.750, 1.000]
+		]
+		
+		mass: 1250.000
+		radius: 0.700
+		friction: 0.850
+		elasticity: 0.100
+		
+		material: wreck
+		miss_chance: 0.749
+		
+		layer: entity, solid, harvestable, ignore_melee, background
+	}
+}
+
+health:
+{
+	max: 38500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "atlas.garbage.01"
+		size: [32, 24]
+		frame: [0, 0]
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192.000, 96.000]
+	window_size_misc: [96.000, 0.000]
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: scrap.mixed
+			quantity: 495.000
+		}
+	]
+	
+	thresholds: [0.980, 0.929, 0.719, 0.920]
+	
+	pct_damage_mult: [1.000, 0.902, 0.889, 0.885]
+	pct_quantity_min: [0.042, 0.045, 0.116, 0.057]
+	
+	chance_base: [0.133, 0.129, 0.075, 0.141]
+}
+
+shipment:
+{
+	type: trash
+	flags: keep_items, allow_withdraw, allow_deposit, use_misc
+	layout: square
+}
+
+loot.container:
+{
+	rarity_min: 0.000
+	rarity_mid: 2.500
+	rarity_max: 3.000
+	rarity_falloff: 0.800
+	
+	weight_multiplier: 1.000
+	amount_multiplier: 1.000
+	
+	merge_flags: skip_resources, bias_weight, bias_amount
+	
+	rolls: 2
+	rolls_extra: 2
+	
+	tables:
+	[
+		junk.00
+		drugs.00
+	]
+}
+
+storage:
+{
+	@loot.container:
+	{
+		rarity_min: 0.000
+		rarity_mid: 2.500
+		rarity_max: 3.000
+		rarity_falloff: 1.100
+		
+		weight_multiplier: 1.000
+		amount_multiplier: 1.000
+		
+		flags: shuffle_inventory
+		merge_flags: skip_prefabs, bias_weight, bias_amount
+		
+		rolls: 4
+		rolls_extra: 5
+		
+		tables:
+		[
+			junk.00
+			bleh.00
+			null
+		]
+	}
+
+	@inventory8:
+	{
+		type: wreckage
+		flags: ignore_mass, no_auto_pickup
+		stack_size_multiplier: 1.000
+		
+		offset: [0.250, 0.000]
+	}
+}

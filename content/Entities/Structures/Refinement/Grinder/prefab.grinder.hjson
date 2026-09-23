@@ -1,0 +1,558 @@
+$name: "Hand Grinder"
+$desc:
+	'''
+	Grind simple materials with your hands, or grind your hands with simple materials.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [2.000, 3.000]
+		offset: [0.000, 0.000]
+		friction: 0.500
+		elasticity: 0.500
+		material: metal
+		layer: entity, solid, building, support, ignore_melee, background, crafter
+		mask: world, building
+		exclude: none
+	}
+}
+
+health:
+{
+	max: 6000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "grinder.small"
+	}
+	z: -280.000
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 40000.000
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192, 96]
+	window_size_misc: [96, 0]
+	priority: 2.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, industrial, tool, factory
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+storage:
+{
+	@inventory8:
+	{	
+		type: storage
+		flags: allow_ducts, ignore_mass, public, faction
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, -0.250]
+	}
+}
+
+autocrafter:
+{
+	flags: force_drop
+	sound_load: produce_sound
+	cooldown: 4.000
+	drop_offset: [1, -0.8750]
+	recipes:
+	[
+		{
+			// Crude Gravel Grinding
+			requirements:
+			[
+				{
+					material: gravel
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: cement
+					count: 10.00
+				}
+				{
+					material: copper
+					count: 4.55
+				}
+				{
+					material: niklajzner
+					count: 12.48
+				}
+				{
+					material: sulfur
+					count: 6.63
+				}
+				{
+					material: silver
+					count: 1
+				}
+				{
+					material: gold
+					count: 1
+				}
+			]
+		}
+		{
+			// Crude Soil Grinding
+			requirements:
+			[
+				{
+					material: soil
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: mud
+					count: 8.75
+				}
+				{
+					material: clay
+					count: 9.75
+				}
+				{
+					material: copper
+					count: 7.3
+				}
+				{
+					material: sulfur
+					count: 10.38
+				}
+				{
+					material: saltpeter
+					count: 1.51
+				}
+			]
+		}
+		{
+			// Crude Sand Grinding
+			requirements:
+			[
+				{
+					material: sand
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: silicon
+					count: 2.25
+				}
+				{
+					material: salt
+					count: 2.25
+				}
+				{
+					material: silver
+					count: 1.23
+				}
+				{
+					material: gold
+					count: 1.03
+				}
+				{
+					material: mercury
+					count: 1
+				}
+			]
+		}
+		{
+			// Crude Cement Grinding
+			requirements:
+			[
+				{
+					material: cement
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: sand
+					count: 27.5
+				}
+				{
+					material: lime
+					count: 8.75
+				}
+				{
+					material: niklajzner
+					count: 3.73
+				}
+				{
+					material: mercury
+					count: 1
+				}
+			]
+		}
+		{
+			// Crude Plant Grinding
+			requirements:
+			[
+				{
+					material: plants
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: compost
+					count: 12.23
+				}
+				{
+					material: sugar
+					count: 6.23
+				}
+			]
+		}
+		{
+			// Crude Meat Grinding
+			requirements:
+			[
+				{
+					material: meat
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: tallow
+					count: 22.23
+				}
+				{
+					material: glue
+					count: 10
+				}
+				{
+					material: oil
+					count: 7.23
+				}
+			]
+		}
+		{
+			// Crude Himl Grinding
+			requirements:
+			[
+				{
+					material: himlkarzenus
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: mithril
+					count: 1.05
+				}
+				{
+					material: silicon
+					count: 24.33
+				}
+				{
+					material: adamantite
+					count: 1.8
+				}
+			]
+		}
+		{
+			// Crude Rubble Grinding
+			requirements:
+			[
+				{
+					material: scrap.rubble
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: cement
+					count: 25
+				}
+				{
+					material: wood
+					count: 10
+				}
+			]
+		}
+		{
+			// Crude Scrap Grinding
+			requirements:
+			[
+				{
+					material: scrap.mixed
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: niklajzner
+					count: 20
+				}
+				{
+					material: copper
+					count: 24
+				}
+			]
+		}
+		{
+			// Crude Grain Milling
+			requirements:
+			[
+				{
+					material: grain
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: flour
+					count: 36
+				}
+				{
+					material: starch
+					count: 23
+				}
+			]
+		}
+		{
+			// Crude Karban Grinding
+			requirements:
+			[
+				{
+					material: karban
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: graphite
+					count: 36
+				}
+			]
+		}
+		//// STONES
+		{
+			// Crude Betoniter Grinding
+			requirements:
+			[
+				{
+					material: betoniter
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 72
+				}
+			]
+		}
+		{
+			// Crude Brezolyt Grinding
+			requirements:
+			[
+				{
+					material: bresolyt
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 46
+				}
+				{
+					material: sulfur
+					count: 9
+				}
+				{
+					material: karban
+					count: 7
+				}
+			]
+		}
+		{
+			// Crude Hortspargl Grinding
+			requirements:
+			[
+				{
+					material: hortspargl
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 26
+				}
+				{
+					material: silicon
+					count: 40
+				}
+			]
+		}
+		{
+			// Crude Krakatite Grinding
+			requirements:
+			[
+				{
+					material: bresolyt
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 16
+				}
+				{
+					material: saltpeter
+					count: 21
+				}
+			]
+		}
+		{
+			// Crude Kruskite Grinding
+			requirements:
+			[
+				{
+					material: kruskite
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 16
+				}
+				{
+					material: silver
+					count: 1.8
+				}
+				{
+					material: gold
+					count: 1.2
+				}
+			]
+		}
+		{
+			// Crude Kuprovst Grinding
+			requirements:
+			[
+				{
+					material: kuprovst
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 26
+				}
+				{
+					material: copper
+					count: 9.8
+				}
+				{
+					material: sulfur
+					count: 6.2
+				}
+			]
+		}
+		{
+			// Crude Pjerdelite Grinding
+			requirements:
+			[
+				{
+					material: pjerdelite
+					count: 50.000
+				}
+			]
+			products:
+			[
+				{
+					material: gravel
+					count: 26.5
+				}
+				{
+					material: mercury
+					count: 3.8
+				}
+				{
+					material: smirglum
+					count: 2.3
+				}
+			]
+		}
+	]
+}

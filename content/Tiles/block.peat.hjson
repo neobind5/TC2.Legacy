@@ -32,10 +32,13 @@
 	resources:
 	[
 		{
-			material: peat
-			quantity: 6.014878
+			material: karban
+			quantity: 1.014878
 		}
-		null
+		{
+			material: black_coal
+			quantity: 1.314878
+		}
 	]
 	
 	mappings:

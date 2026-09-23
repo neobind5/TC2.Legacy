@@ -1,0 +1,87 @@
+$name: "Conveyor"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+body:
+{
+	type: static
+
+	@shape.line:
+	{
+		radius: 0.000
+		a: [-3, 0.0]
+		b: [3, 0.0]
+		radius: 0.8
+		mass: 1000.000
+		friction: 0.05
+		elasticity: 0.000
+		material: metal
+		layer: entity, support, solid, building, storage
+		mask: world, resource, solid, vehicle, wheel
+	}
+}
+
+health:
+{
+	max: 5200.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "conveyor_solid.anim"
+		size: [1024, 12]
+		//fps:60
+		//count:4
+	}
+	z: -290.000
+}
+
+transform:
+{
+
+}
+
+conveyorsolidresizable:
+{
+	sound_load: ""
+	strength:7.5
+	dampening:0.1
+	volume: 0.6
+	pitch: 0.9
+	sound_cooldown: 1.0
+	dist_multiplier: 0.4
+}
+
+interactable:
+{
+	window_size: [192.000, 96.000]
+}
+
+resizable:
+{
+	cap_a:
+	{
+		texture: "conveyor.end.a"
+		size: [12, 12]
+		fps:60
+		count:4
+	}
+	
+	cap_b:
+	{
+		texture: "conveyor.end.b"
+		size: [12, 12]
+		fps:60
+		count:4
+	}
+	
+	flags: shape_cap_offset
+	
+	a: [-2.250, 0.000]
+	b: [2.250, 0.000]
+	cap_offset: 0.500
+}

@@ -49,10 +49,10 @@
 	sounds: []
 	sounds_manual: []
 	sounds_crafter: []
-	sounds_passive: ["vo_bandit","npc_talk_00","npc_talk_01","npc_talk_02","vo_attack","vo_bad","vo_builder","vo_ladder","vo_yes","vo_no","vo_idiot","vo_hi","vo_why","vo_what","vo_chicken","vo_huh","vo_strong","vo_water","vo_uhh","vo_die","vo_look","vo_destroy","vo_neutral","vo_need","vo_kill","vo_okay","vo_hello","vo_rip","vo_haha","vo_help","vo_join","vo_gun","vo_give","vo_build","vo_jerk","vo_please","vo_run","vo_lalala","vo_fire","vo_grrr","vo_lag"]
+	sounds_passive: [] //["vo_bandit","npc_talk_00","npc_talk_01","npc_talk_02","vo_attack","vo_bad","vo_builder","vo_ladder","vo_yes","vo_no","vo_idiot","vo_hi","vo_why","vo_what","vo_chicken","vo_huh","vo_strong","vo_water","vo_uhh","vo_die","vo_look","vo_destroy","vo_neutral","vo_need","vo_kill","vo_okay","vo_hello","vo_rip","vo_haha","vo_help","vo_join","vo_gun","vo_give","vo_build","vo_jerk","vo_please","vo_run","vo_lalala","vo_fire","vo_grrr","vo_lag"]
 	sounds_ambient: []
 	
 	sounds_start: []
-	sounds_end: []
+	sounds_end: ["transaction"]
 	sounds_fail: []
 }

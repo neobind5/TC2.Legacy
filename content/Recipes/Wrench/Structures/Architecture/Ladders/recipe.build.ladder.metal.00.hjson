@@ -12,7 +12,7 @@
 	[
 		{
 			type: resource
-			material: steel.frames
+			material: steel.ingot
 			amount: 1.500
 			snapping: 0.500
 			falloff: 0.870
@@ -60,7 +60,7 @@
 		
 		size: [0.625, 0.625]
 		
-		cooldown: 0.500
+		cooldown: 0.000
 		min_support: 0.150
 		min_clearance: 0.920
 		min_claim: 1.000

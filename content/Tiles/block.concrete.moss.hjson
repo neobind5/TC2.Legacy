@@ -35,10 +35,13 @@
 	resources:
 	[
 		{
-			material: scrap.concrete
-			quantity: 1.000
+			material: cement
+			quantity: 0.200
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.131997
+		}
 	]
 	
 	mappings:

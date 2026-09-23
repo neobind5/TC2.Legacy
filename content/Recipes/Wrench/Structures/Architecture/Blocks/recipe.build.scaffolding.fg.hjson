@@ -57,7 +57,7 @@
 		snap: [0.125, 0.125]
 		radius: 0.500
 		
-		cooldown: 0.500
+		cooldown: 0.000
 		min_support: 0.020
 		min_claim: 1.000
 		

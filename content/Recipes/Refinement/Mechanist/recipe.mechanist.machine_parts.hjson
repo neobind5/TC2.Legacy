@@ -37,7 +37,7 @@
 						{
 							type: resource
 							material: niklajzner.ingot
-							amount: 1.000
+							amount: 2.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -45,7 +45,7 @@
 						{
 							type: work
 							work: machining
-							amount: 25
+							amount: 8
 							amount_min: 0.000
 							group: 0
 							flags: conditional
@@ -63,7 +63,7 @@
 		{
 			type: resource
 			material: machine_parts
-			amount: 5
+			amount: 8
 			group: 0
 			flags: none
 		}
@@ -93,7 +93,7 @@
 	frame_size: [64.000, 64.000]
 	
 	min: 1
-	max: 10
+	max: 20
 	step: 1
 	
 	version: 1

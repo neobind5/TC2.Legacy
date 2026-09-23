@@ -41,7 +41,10 @@
 			material: krakatite
 			quantity: 3.104962
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.931997
+		}
 	]
 	
 	mappings:

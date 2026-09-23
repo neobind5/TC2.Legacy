@@ -1,0 +1,88 @@
+$name: "Tired Pallet (Niklajzner Brick)"
+$desc:
+	'''
+	An old shipping pallet with a bunch of stacked weathered niklajzner bricks on it.
+	
+	For reasons unknown, they're welded together, which may explain why they still haven't been stolen.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.050
+	fall_damage_multiplier: 1.500
+
+	@shape.polygon:	
+	{
+		points: 
+		[
+			[1.125, 0.625]
+			[-1.125, 0.625]
+			[-0.500, -0.375]
+			[0.500, -0.375]
+		]
+		radius: 0.250
+		mass: 520.000
+		friction: 0.850
+		elasticity: 0.600
+		material: metal_solid
+		layer: entity, solid, ignore_melee, harvestable, bulk, conductive, magnetic
+		mask: world
+
+		miss_chance: 0.850
+	}
+}
+
+health:
+{
+	max: 46000.000
+}
+
+holdable:
+{
+	radius: 0.000
+	force_multiplier: 1.500
+	torque_multiplier: 2.000
+	flags: disable_parent_facing, disable_rotation, disable_control
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "pallet.ingot.steel.wreck.00"
+	}
+	z: -90.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: niklajzner.ingot
+			quantity: 12.000
+		}
+		{
+			material: wood
+			quantity: 10.000
+		}
+		{
+			material: putty
+			quantity: 17.000
+		}
+		null
+	]
+	
+	thresholds: [0.931, 0.061, 0.290, 0.000]
+	
+	pct_damage_mult: [0.611, 0.776, 0.910, 0.000]
+	pct_quantity_min: [0.010, 0.363, 0.459, 0.000]
+	
+	chance_base: [0.327, 0.145, 0.003, 0.000]
+}

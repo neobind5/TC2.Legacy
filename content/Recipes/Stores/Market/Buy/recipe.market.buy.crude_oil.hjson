@@ -85,7 +85,7 @@
 	color_frame: "0xffaeb59a"
 	color_button: "0xfffff500"
 	button_name: "buy"
-	rank: 302.000
+	rank: 402.000
 	
 	min: 25
 	max: 500

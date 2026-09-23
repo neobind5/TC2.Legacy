@@ -1,0 +1,202 @@
+$name: "Hornet Hive"
+$desc: "TODO: Desc"
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		mass: 2000.000
+		radius: 1.500
+		friction: 0.950
+		elasticity: 0.500
+		material: clay
+		layer: entity, solid
+		mask: world
+	}
+}
+
+transform:
+{
+
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hornet_hive.base"
+	}
+	z: -150.000
+}
+
+nameable:
+{
+	tags: chemical, tech, dangerous
+	flags: no_rename, randomize
+	type: building
+}
+
+faction:
+{
+	id: hornet
+}
+
++slot|instance:
+{
+	joint.base:
+	{
+		offset_a: [-0.375, 0.900]
+		offset_b: [0.375, -2.500]
+		max_force: 500000.000
+		max_torque: 20000.000
+		flags: no_stress
+	}
+
+	joint.rope:
+	{
+		distance: 1.500
+	}
+
+	rope.renderer:
+	{
+		texture: "hornet_hive.rope"
+		thickness: 1.000
+		scale: 0.200
+		z: -10.000
+	}
+
+	+attached|child:
+	{
+		$name: "Hornet Hive"
+		$tags: []
+		
+		body:
+		{
+			type: dynamic
+			fall_damage_multiplier: 1.700
+			
+			@shape.line:
+			{
+				a: [1.000, -2.500]
+				b: [0.125, -1.500]
+				offset: [-0.750, 1.875]
+				mass: 2900.000
+				radius: 1.500
+				friction: 0.950
+				elasticity: 0.300
+				material: fabric
+				layer: entity, solid, flammable, organic
+				mask: world
+				exclude: none
+				flags: none
+			}
+		}
+
+		transform:
+		{
+		
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "hornet_hive"
+			}
+			z: -100.000
+		}
+
+		faction:
+		{
+			id: hornet
+		}
+
+		spawn:
+		{
+			flags: faction, public
+			spawn_offset: [-1.750, 0.000]
+		}
+	
+		spawner:
+		{
+			group_size: 2
+			group_size_extra: 3
+			max_count: 8
+			ai_stance: aggressive
+			ai_type: attack
+			interval: 160.000
+			interval_extra: 300.000
+			interval_count_modifier: 30.000
+		}
+
+		dormitory:
+		{
+			flags: no_hiring, no_reject, no_kit_selection, no_kit_requirements, repopulate_needs_faction, region_only, hide_kits
+			species: hornet
+			
+			characters_capacity: 10
+			characters_initial_count: 4
+			characters_reserved_count: 2
+
+			repopulate_interval: 60.000
+			repopulate_interval_extra: 180.000
+			repopulate_max: 10
+			repopulate_num: 1
+			repopulate_num_extra: 2
+			repopulate_character_flags_add: npc, public
+			
+			asset_flags: recycle
+		}
+
+		minimap.marker:
+		{
+			sprite:
+			{
+				texture: "ui_icons_minimap"
+				size: [16, 16]
+				frame: [0, 0]
+			}
+
+			flags: faction, spawner
+		}
+
+		interactable:
+		{
+			flags: no_tab, no_interact, faction_only
+			window_size: [592.000, 408.000]
+			window_size_misc: [48.000, 0.000]
+		}
+
+		lootable:
+		{
+			merge_radius: 0.000
+			spawn_radius: 3.000
+			items:
+			[
+				{
+					material: "scrap.cloth"
+					min: 500.000
+					max: 800.000
+				}
+				{
+					material: "insect"
+					min: 200.000
+					max: 500.000
+				}
+				{
+					material: "chitin"
+					min: 50.000
+					max: 200.000
+				}
+				{
+					material: "red_sugar"
+					min: 100.000
+					max: 250.000
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,65 @@
+$name: "Dumped Pump"
+$desc: 
+	'''
+	It's dumb.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		material: wreck
+		miss_chance: 0.841
+		flags: none
+		tags: none
+		
+		layer: entity, background, building
+		mask: world
+		exclude: none
+		
+		mass: 93.000
+		radius: 0.500
+		friction: 0.770
+		elasticity: 0.460
+		
+		cog_offset: [0.000, 0.000]
+		
+		a: [0.000, -0.500]
+		b: [0.000, 1.000]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 8000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.pump.00"
+	}
+	z: -280.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "machine_parts"
+			quantity: 10.000
+			chance: 0.620
+		}
+	]
+}

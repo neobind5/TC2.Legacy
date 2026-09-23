@@ -39,7 +39,10 @@
 			material: copper
 			quantity: 3.240506
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.931997
+		}
 	]
 	
 	mappings:

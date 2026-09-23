@@ -1,0 +1,57 @@
+$name: "Vandalized Old Lamp Post"
+$desc:
+	'''
+	Some vandalized, broken-down, long-forgotten lamp post.
+	Can be salvaged for spare parts.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		a: [0.500, -3.750]
+		b: [0.250, -0.500]
+		mass: 139.000
+		radius: 0.750
+		friction: 0.500
+		elasticity: 0.500
+		material: metal_pole
+		layer: entity, support, ignore_melee, background
+		mask: world
+		miss_chance: 0.835
+	}
+}
+
+health:
+{
+	max: 6400.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "wreck.lamp_post.02"
+	}
+	offset: [1.000, -2.500]
+	z: -150.000
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "niklajzner.ingot"
+			quantity: 4.000
+		}
+	]
+}

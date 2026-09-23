@@ -13,13 +13,6 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: steel.frames
-			amount: 1.000
-			group: 0
-			flags: prerequisite
-		}
 	]
 	
 	products:
@@ -56,7 +49,7 @@
 	placement:
 	{
 		type: simple
-		flags: allow_mirror_x, allow_placement_over_buildings, require_terrain, terrain_is_support
+		flags: allow_mirror_x, require_terrain, terrain_is_support
 		
 		size: [2.000, 1.875]
 		offset: [0.000, -0.750]
@@ -67,7 +60,7 @@
 		rect_clearance: [-1.000, -1.500, 1.000, 0.250]
 		tileflags_clearance: solid
 		
-		cooldown: 0.500
+		cooldown: 0.000
 		min_support: 0.200
 		min_clearance: 0.750
 		min_claim: 1.000

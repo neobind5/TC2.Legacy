@@ -1,0 +1,59 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Basic Computer Parts"
+	name_short: "C.Parts"
+	name_imperial: "Robokyp"
+	name_dumb: "Chips"
+	description:
+		'''
+		Basic parts for basic computing.
+		'''
+	
+	tips: []
+	
+	icon:
+	{
+		texture: resource.computer_parts.basic
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	// Inventory material type.
+	type: components
+	flags: hard, magnetic, granular, metal, small, manufactured, device, solid
+	display_flags: none
+	hints: none
+	
+	// Ratio of the material volume to the total volume it occupies when stacked. A value of 1.0 means no empty space, while a value closer to 0.0 means a lot of empty space.
+	packing_fraction: 0.8608
+	// Mass of 1 unit in kg.
+	mass_per_unit: 0.0575
+	
+	// Maximum quantity (units) per stack.
+	quantity_max: 25.000
+	// Minimum spawnable quantity.
+	spawn_quantity_threshold: 1
+	// Preferred quantity snapping for recipes.
+	snapping: 1
+	// Preferred quantity snapping for inventories.
+	snapping_pickup: 5.000
+	
+	prefab: resource.computer_parts.basic
+	
+	color_icon: "0xffffffff"
+	color_item: "0xffffffff"
+	color_dust: "0xffffffff"
+	color_gib: "0xffffffff"
+	
+	centroid_default: [0.000, 0.250]
+	colliders: []
+	
+	commodity:
+	{
+		flags: none
+		categories: metals, construction_materials
+		
+		market_price: 80.000
+		market_price_per_kg_auto: 62.13593
+	}
+}

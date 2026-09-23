@@ -39,7 +39,10 @@
 			material: gold
 			quantity: 0.161917
 		}
-		null
+		{
+			material: gravel
+			quantity: 0.931997
+		}
 	]
 	
 	mappings:

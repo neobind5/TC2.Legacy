@@ -1,0 +1,105 @@
+$name: "Doomsday Device"
+$desc:
+	'''
+	Thankfully it's been deactivated by harsh weather.
+	'''
+$tags: []
+
+body:
+{
+	type: dynamic
+	
+	@shape.polygon:
+	{
+		material: metal_pole
+		miss_chance: 0.741
+		flags: none
+		tags: none
+		
+		layer: entity, solid, background, harvestable, ignore_melee
+		mask: world
+		exclude: none
+		
+		mass: 650.000
+		radius: 0.700
+		friction: 0.950
+		elasticity: 0.900
+		
+		cog_offset: [0.000, 0.4375]
+		
+		points:
+		[
+			[0.000, -1.125]
+			[0.625, 0.125]
+			[0.875, 1.000]
+			[-0.750, 1.000]
+		]
+	}
+}
+
+health:
+{
+	max: 18500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: atlas.garbage.01
+		size: [32, 32]
+		frame: [3, 0]
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192.000, 96.000]
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: scrap.mixed
+			quantity: 90.4348
+		}
+		{
+			material: cloth
+			quantity: 44.000
+		}
+	]
+	
+	thresholds: [0.980, 0.929, 0.932, 0.920]
+	
+	pct_damage_mult: [1.000, 0.902, 0.889, 0.885]
+	pct_quantity_min: [0.042, 0.045, 0.116, 0.097]
+	
+	chance_base: [0.176, 0.122, 0.114, 0.243]
+}
+
+shipment:
+{
+	type: wreckage
+	flags: keep_items, allow_withdraw, allow_deposit
+}
+
+loot.container:
+{
+	rolls: 3
+	rolls_extra: 1
+	merge_flags: skip_resources
+
+	tables:
+	[
+		"junk.00"
+	]
+}

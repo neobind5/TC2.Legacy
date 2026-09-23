@@ -39,7 +39,10 @@
 			material: smirglum
 			quantity: 0.239074
 		}
-		null
+		{
+			material: gravel
+			quantity: 1.831997
+		}
 	]
 	
 	mappings:

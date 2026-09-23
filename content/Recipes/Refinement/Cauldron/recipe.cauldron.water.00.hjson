@@ -1,0 +1,273 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Collect Water"
+	desc:
+		'''
+		Drain some water from a nearby lake, spring or puddle.
+		'''
+	tips:
+	[
+		"Requires to be near a body of water"
+	]
+	
+	related_materials:
+	{
+		water: wet, raw, product, result, liquid, output
+		water.clean: wet, raw, clean, product, result, liquid, output
+		water.dirty: wet, raw, dirty, product, result, liquid, output
+		water.swamp: wet, raw, dirty, product, result, liquid, output
+		water.toxic: wet, raw, dirty, chemical, product, result, liquid, output
+		water.sea: raw, result, liquid, output, auto_generated
+	}
+	
+	stages:
+	[
+		{
+			name: "Water Source"
+			
+			type: source
+			flags: important
+			tags: raw, formula
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: wet
+			
+			ratio: 1.000
+			volume_base: 1.000
+			
+			options:
+			[
+				{
+					name: "Freshwater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, argument, primary, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 1.000
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+				{
+					name: "Clearwater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water.clean
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 0.500
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+				{
+					name: "Seawater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water.sea
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 2.000
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+				{
+					name: "Wastewater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water.dirty
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 5.000
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+				{
+					name: "Swampwater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water.swamp
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 6.000
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+				{
+					name: "Toxwater"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: prefab
+							prefab: water.toxic
+							amount: 1.000
+							group: 0
+							flags: no_consume, no_scaling, prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 8.000
+							flags: conditional
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: water
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	type: workshop
+	flags: wip, auto_complete
+	tags: manual, basic, raw, crude
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.water
+		size: [16, 16]
+		frame: [2, 0]
+	}
+	frame_size: [32.000, 32.000]
+	color_frame: "0xffe3cb93"
+	color_button: "0xff88b31f"
+	rank: -10.000
+	
+	min: 10
+	max: 200
+	step: 10
+	
+	h_sound_complete: water.impact.hard.00
+	
+	version: 1
+}

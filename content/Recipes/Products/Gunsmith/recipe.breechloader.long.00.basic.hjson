@@ -46,7 +46,7 @@
 						{
 							type: resource
 							material: money
-							amount: 90.000
+							amount: 190.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
