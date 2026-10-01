@@ -1,7 +1,8 @@
 $name: "Industrial Crusher"
 $desc:
 	'''
-	Pulverizes materials into their most basic components quickly and efficiently.
+	Pulverizes materials into their most basic components quickly.
+	Collects certain materials regular grinders fail to.
 	'''
 $tags: []
 
@@ -112,19 +113,19 @@ autocrafter:
 	recipes:
 	[
 		{
-			// Crude Gravel Grinding
+			// Crude Stone Grinding
 			requirements:
 			[
 				{
-					material: gravel
+					material: stone
 					count: 50.000
 				}
 			]
 			products:
 			[
 				{
-					material: cement
-					count: 10.00
+					material: gravel
+					count: 35.00
 				}
 				{
 					material: copper
@@ -198,7 +199,7 @@ autocrafter:
 			[
 				{
 					material: silicon
-					count: 4.25
+					count: 28.25
 				}
 				{
 					material: salt
@@ -219,31 +220,27 @@ autocrafter:
 			]
 		}
 		{
-			// Crude Cement Grinding
+			// Crude Gravel Grinding
 			requirements:
 			[
 				{
-					material: cement
-					count: 50.000
+					material: gravel
+					count: 10.000
 				}
 			]
 			products:
 			[
 				{
-					material: sand
-					count: 32.5
-				}
-				{
-					material: lime
-					count: 9.75
-				}
-				{
-					material: niklajzner
+					material: cement
 					count: 8.73
 				}
 				{
-					material: mercury
-					count: 1.8
+					material: sand
+					count: 5.5
+				}
+				{
+					material: lime
+					count: 3.75
 				}
 			]
 		}
@@ -253,7 +250,7 @@ autocrafter:
 			[
 				{
 					material: plants
-					count: 50.000
+					count: 20.000
 				}
 			]
 			products:
@@ -261,10 +258,6 @@ autocrafter:
 				{
 					material: compost
 					count: 18.23
-				}
-				{
-					material: sugar
-					count: 9.23
 				}
 			]
 		}
@@ -274,14 +267,14 @@ autocrafter:
 			[
 				{
 					material: meat
-					count: 50.000
+					count: 20.000
 				}
 			]
 			products:
 			[
 				{
 					material: tallow
-					count: 22.23
+					count: 15.23
 				}
 				{
 					material: glue
@@ -299,7 +292,7 @@ autocrafter:
 			[
 				{
 					material: himlkarzenus
-					count: 50.000
+					count: 20.000
 				}
 			]
 			products:
@@ -310,7 +303,7 @@ autocrafter:
 				}
 				{
 					material: silicon
-					count: 26.33
+					count: 16.33
 				}
 				{
 					material: adamantite
@@ -324,18 +317,18 @@ autocrafter:
 			[
 				{
 					material: scrap.rubble
-					count: 50.000
+					count: 8.000
 				}
 			]
 			products:
 			[
 				{
 					material: cement
-					count: 41
+					count: 7
 				}
 				{
 					material: wood
-					count: 19
+					count: 5
 				}
 			]
 		}
@@ -345,18 +338,18 @@ autocrafter:
 			[
 				{
 					material: scrap.mixed
-					count: 50.000
+					count: 5.000
 				}
 			]
 			products:
 			[
 				{
 					material: niklajzner
-					count: 21
+					count: 3
 				}
 				{
 					material: copper
-					count: 32
+					count: 2.1
 				}
 			]
 		}
@@ -366,18 +359,18 @@ autocrafter:
 			[
 				{
 					material: grain
-					count: 50.000
+					count: 5.000
 				}
 			]
 			products:
 			[
 				{
 					material: flour
-					count: 39
+					count: 4.4
 				}
 				{
 					material: starch
-					count: 26
+					count: 3
 				}
 			]
 		}
@@ -399,164 +392,164 @@ autocrafter:
 			]
 		}
 		//// STONES
-		{
-			// Crude Betoniter Grinding
-			requirements:
-			[
-				{
-					material: betoniter
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 72
-				}
-			]
-		}
-		{
-			// Crude Brezolyt Grinding
-			requirements:
-			[
-				{
-					material: bresolyt
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 46
-				}
-				{
-					material: sulfur
-					count: 19
-				}
-				{
-					material: karban
-					count: 18
-				}
-			]
-		}
-		{
-			// Crude Hortspargl Grinding
-			requirements:
-			[
-				{
-					material: hortspargl
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 26
-				}
-				{
-					material: silicon
-					count: 48
-				}
-			]
-		}
-		{
-			// Crude Krakatite Grinding
-			requirements:
-			[
-				{
-					material: bresolyt
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 16
-				}
-				{
-					material: saltpeter
-					count: 26
-				}
-			]
-		}
-		{
-			// Crude Kruskite Grinding
-			requirements:
-			[
-				{
-					material: kruskite
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 16
-				}
-				{
-					material: silver
-					count: 2.8
-				}
-				{
-					material: gold
-					count: 1.8
-				}
-			]
-		}
-		{
-			// Crude Kuprovst Grinding
-			requirements:
-			[
-				{
-					material: kuprovst
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 26
-				}
-				{
-					material: copper
-					count: 11.8
-				}
-				{
-					material: sulfur
-					count: 7.2
-				}
-			]
-		}
-		{
-			// Crude Pjerdelite Grinding
-			requirements:
-			[
-				{
-					material: pjerdelite
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 29.5
-				}
-				{
-					material: mercury
-					count: 6.8
-				}
-				{
-					material: smirglum
-					count: 4.3
-				}
-			]
-		}
+		//{
+		//	// Crude Betoniter Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: betoniter
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 72
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Brezolyt Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: bresolyt
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 46
+		//		}
+		//		{
+		//			material: sulfur
+		//			count: 19
+		//		}
+		//		{
+		//			material: karban
+		//			count: 18
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Hortspargl Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: hortspargl
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 26
+		//		}
+		//		{
+		//			material: silicon
+		//			count: 48
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Krakatite Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: bresolyt
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 16
+		//		}
+		//		{
+		//			material: saltpeter
+		//			count: 26
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Kruskite Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: kruskite
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 16
+		//		}
+		//		{
+		//			material: silver
+		//			count: 2.8
+		//		}
+		//		{
+		//			material: gold
+		//			count: 1.8
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Kuprovst Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: kuprovst
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 26
+		//		}
+		//		{
+		//			material: copper
+		//			count: 11.8
+		//		}
+		//		{
+		//			material: sulfur
+		//			count: 7.2
+		//		}
+		//	]
+		//}
+		//{
+		//	// Crude Pjerdelite Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: pjerdelite
+		//			count: 50.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: gravel
+		//			count: 29.5
+		//		}
+		//		{
+		//			material: mercury
+		//			count: 6.8
+		//		}
+		//		{
+		//			material: smirglum
+		//			count: 4.3
+		//		}
+		//	]
+		//}
 	]
 }

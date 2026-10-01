@@ -11,61 +11,25 @@
 		"Provides a small storage"
 	]
 	
-	stages:
+	requirements:
 	[
 		{
-			name: "Furniture"
-			
-			type: infrastructure
-			flags: wip
-			tags: none
-			// Damage type used for discarding leftover resources.
-			discard_damage_type: axe
-			
-			options:
-			[
-				{
-					name: "Standard"
-					
-					type: undefined
-					flags: wip
-					
-					requirements:
-					[
-						{
-							type: resource
-							material: alcohol
-							amount: 15.000
-							snapping: 0.500
-							loss: 0.075
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: wood
-							amount: 35.000
-							snapping: 0.500
-							loss: 0.122
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: work
-							work: carpentry
-							amount: 25.000
-							amount_min: 40.000
-							difficulty: 6
-							snapping: 5.000
-							group: 0
-							flags: conditional
-						}
-					]
-				}
-			]
+			type: resource
+			material: alcohol
+			amount: 21.000
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
 		}
-	]
-	
+		{
+			type: resource
+			material: wood
+			amount: 35.000
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+	]	
 	products:
 	[
 		{
@@ -73,7 +37,6 @@
 			prefab: tavern
 			amount: 1.000
 			group: 0
-			flags: primary, hidden
 		}
 	]
 	
@@ -97,7 +60,7 @@
 	color_frame: "0xffc54e5e"
 	color_button: "0xff9dd80f"
 	button_name: "Build"
-	rank: -1000.000
+	rank: 1
 	
 	min: 1
 	max: 1
@@ -109,7 +72,7 @@
 		flags: allow_mirror_x
 		
 		size: [5.000, 5.000]
-		offset: [0.000, -1.500]
+		offset: [0.000, -2.400]
 		
 		rect_foundation: [-2.500, 0.000, 2.500, 1.000]
 		tileflags_foundation: solid
@@ -139,25 +102,5 @@
 		
 		}
 	}
-	
-	construction:
-	{
-		prefab: construction.5x5
-		
-		requirements:
-		[
-			{
-				type: resource
-				material: wood
-				amount: 16.000
-				loss: 0.110
-				group: 0
-				flags: compact, no_scaling, prerequisite
-			}
-		]
-	}
-	
-	h_sound_finalize: building_construct
-	
 	version: 1
 }

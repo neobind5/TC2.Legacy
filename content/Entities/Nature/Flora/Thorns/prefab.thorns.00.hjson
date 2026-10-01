@@ -1,0 +1,87 @@
+$name: "Thorns"
+$desc: "Can scratch your back greatly."
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[1.375, -1.375]
+			[2.000, -0.250]
+			[1.000, 0.625]
+			[-2.375, 1.500]
+		]
+		
+		mass: 3150.000
+		radius: 1.750
+		friction: 0.100
+		elasticity: 0.400
+		rigidity_static: 0.010
+		rigidity_dynamic: 0.010
+		
+		material: tree
+		
+		layer: entity, plant, organic, flammable, barbed, no_overlapped_placement, ignore_bullet
+		mask: creature
+		exclude: vehicle, tree, wheel
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 3500.000
+}
+
+foliage.renderer:
+{
+	z: 50.000
+	offset: [0.250, 0.000]
+
+	sprite:
+	{
+		texture: "thorns.00"
+	}
+}
+
+barbedwire:
+{
+	damage: 100.000
+	speed_multiplier: 0.800
+	damage_type: scratch
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 120.000
+		}
+		{
+			material: seed.oak
+			quantity: 2.000
+		}
+		{
+			material: resin
+			quantity: 127.000
+		}
+		null
+	]
+	
+	thresholds: [0.990, 1.000, 0.772, 0.000]
+	
+	pct_damage_mult: [0.952, 1.000, 0.859, 0.000]
+	pct_quantity_min: [0.030, 0.022, 0.078, 0.000]
+	
+	chance_base: [0.184, 0.569, 0.173, 0.000]
+}

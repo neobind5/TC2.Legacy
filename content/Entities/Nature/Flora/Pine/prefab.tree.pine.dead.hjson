@@ -1,0 +1,98 @@
+$name: "Pine Tree (Dead)"
+$desc: "A dead tree. Seems like a good source of wood."
+$tags: []
+
+body:
+{
+	type: static
+	buoyancy: 0.800
+	
+	@shape.line:
+	{
+		a: [0.000, -10.500]
+		b: [0.000, -0.250]
+		mass: 1140.000
+		radius: 0.500
+		friction: 0.920
+		elasticity: 0.210
+
+		material: tree
+		miss_chance: 0.928
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 3000.000
+}
+
+//splittable:
+//{
+//	split_health: 0.2
+//	rect: [-0.500, -10.500, 0.500, -0.250]
+//	sprite_stub:
+//	{
+//		texture: "tree.stubs.00"
+//		size: [16, 8]
+//		frame: [1, 0]
+//	}
+//	sound_split: "tree_snap_00"
+//}
+
+holdable:
+{
+	radius: 0.000
+	force_multiplier: 3.000
+	torque_multiplier: 2.000
+	flags: disable_parent_facing, disable_rotation, full_rotate
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tree.pine.00"
+	}
+	offset: [0.000, -5.500]
+	z: -80.000
+}
+
+tree:
+{
+	sound_cut: "tree_fall"
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 100
+		}
+		{
+			material: seed.pine
+			quantity: 2
+		}
+		{
+			material: resin
+			quantity: 10
+		}
+	]
+	
+	thresholds: [0.990, 0, 0.835, 0.441]
+	
+	pct_damage_mult: [0.952, 1, 0.859, 0.390]
+	pct_quantity_min: [0.040, 1, 0.060, 0.160]
+	
+	chance_base: [0.184, 1, 0.239, 0.114]
+}

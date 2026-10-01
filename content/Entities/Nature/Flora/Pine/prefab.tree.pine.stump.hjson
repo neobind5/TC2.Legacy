@@ -1,0 +1,64 @@
+$name: "Pine Stump"
+$desc: "What's left of a pine tree."
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		radius: 1.125
+		offset: [0.080, -0.375]
+		mass: 320.000
+		friction: 0.950
+		elasticity: 0.500
+		material: tree
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 6800.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tree.pine.00.stump"
+	}
+	offset: [0.000, -0.500]
+	z: -250.000
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 20.000
+		}
+		{
+			material: resin
+			quantity: 5.000
+		}
+		null
+	]
+	
+	thresholds: [0.990, 1.000, 0.772, 0.000]
+	
+	pct_damage_mult: [0.952, 0.900, 0.859, 0.000]
+	pct_quantity_min: [0.040, 0.102, 0.060, 0.000]
+	
+	chance_base: [0.188, 0.471, 0.173, 0.000]
+}

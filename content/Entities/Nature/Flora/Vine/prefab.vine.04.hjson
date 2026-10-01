@@ -1,0 +1,79 @@
+$name: "Vines"
+$desc:
+	'''
+	A bunch of hanging vines.
+	Can be climbed.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		material: foliage
+		miss_chance: 0.000
+		flags: none
+		tags: flammable, soft
+		
+		layer: entity, background, plant, organic, climbable, flammable, ignore_melee, ignore_bullet
+		mask: world
+		exclude: none
+		
+		mass: 81.000
+		radius: 1.0625
+		friction: 0.950
+		elasticity: 0.500
+		
+		rigidity_static: 0.000
+		rigidity_dynamic: 0.000
+		cog_offset: [0.000, 0.000]
+		
+		a: [0.625, -0.500]
+		b: [-0.125, 6.625]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 4000.000
+}
+
+foliage.renderer:
+{
+	offset: [0.000, 3.000]
+	z: -150.000
+	
+	sprite:
+	{
+		texture: "vine.04"
+	}
+}
+
+transform:
+{
+
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "plants"
+			quantity: 420.000
+		}
+		null
+		null
+		null
+	]
+	
+	thresholds: [0.533, 0.000, 0.000, 0.000]
+	
+	pct_damage_mult: [0.820, 0.000, 0.000, 0.000]
+	pct_quantity_min: [0.077, 0.000, 0.000, 0.000]
+	
+	chance_base: [0.647, 0.000, 0.000, 0.000]
+}

@@ -1,0 +1,71 @@
+$name: "Boulder"
+$desc: 
+	'''
+	Enormous boulder, undeniably well-fed.
+
+	Can be mined for a huge amount of stone.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	tags: solid, round, irregular, dense
+
+	@shape.circle:
+	{
+		offset: [0.000, 0.000]
+		mass: 5000.000
+		radius: 2.250
+		friction: 0.950
+		elasticity: 0.020
+		material: stone
+		layer: entity, solid, background
+		mask: world
+
+		miss_chance: 0.330
+	}
+}
+
+health:
+{
+	max: 12000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "boulder.03"
+	}
+	offset: [0.000, -0.625]
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+cover:
+{
+	threshold: 0.200
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "stone"
+			quantity: 4350.000
+		}
+	]
+	
+	thresholds: [0.980, 0.000, 0.000, 0.000]
+	
+	pct_damage_mult: [0.975, 0.000, 0.000, 0.000]
+	pct_quantity_min: [0.029, 0.000, 0.000, 0.000]
+	
+	chance_base: [0.782, 0.000, 0.000, 0.000]
+}

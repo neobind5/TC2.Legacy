@@ -37,12 +37,12 @@
 	resources:
 	[
 		{
-			material: betoniter
-			quantity: 2.951724
+			material: stone
+			quantity: 3.951724
 		}
 		{
-			material: gravel
-			quantity: 1.031997
+			material: lye
+			quantity: 0.531997
 		}
 	]
 	

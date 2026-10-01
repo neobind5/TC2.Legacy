@@ -1,0 +1,59 @@
+$name: "Pine Tree"
+$desc:
+	'''
+	A young tree taking shape. Grows remarkably fast.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	buoyancy: 0.800
+	
+	@shape.line:
+	{
+		a: [0.000, -10.500]
+		b: [0.000, -0.250]
+		mass: 1140.000
+		radius: 0.500
+		friction: 0.920
+		elasticity: 0.210
+
+		material: tree
+		miss_chance: 0.928
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+health:
+{
+	max: 600.000
+}
+
+animated.renderer:
+{
+	offset: [0.000, -0.600]
+	sprite:
+	{
+		texture: resource.seed.pine
+		count: 4
+		size: [16, 16]
+		offset: [0,-15]
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+crop:
+{
+	time_seconds: 180
+	time_extra: 2
+	prefab: "tree.pine"
+}

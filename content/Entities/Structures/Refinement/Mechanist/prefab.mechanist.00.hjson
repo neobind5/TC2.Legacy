@@ -86,7 +86,7 @@ shop:
 {
 	tags_filter:
 	{
-		include: assembling, engineering
+		include: assembling
 		exclude: advanced, large, huge
 	}
 	

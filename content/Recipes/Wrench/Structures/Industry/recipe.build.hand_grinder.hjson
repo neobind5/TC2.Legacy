@@ -7,7 +7,7 @@
 	[
 		{
 			type: resource
-			material: gravel
+			material: stone
 			amount: 100.000
 			snapping: 0.500
 			group: 0

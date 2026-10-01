@@ -1,7 +1,7 @@
-$name: "Mining Drill"
+$name: "Mini Drill"
 $desc: 
 	'''
-	Heavy mining drill powered by a high-torque EC-MT motor.
+	Lightweight drill for quick excavation.
 	'''
 $tags: []
 
@@ -19,7 +19,7 @@ body:
 		
 		layer: entity, solid, item, shield, conductive, magnetic
 		mask: world
-		exclude: resource, item, ignore_melee, ignore_bullet
+		exclude: resource
 		
 		mass: 10.000
 		radius: 0.300
@@ -36,15 +36,15 @@ body:
 
 health:
 {
-	max: 12000.000
+	max: 8000.000
 }
 
 drill:
 {
 	damage: 95.000
-	damage_terrain_multiplier: 3.000
+	damage_terrain_multiplier: 20.000
 
-	max_distance: 2.400
+	max_distance: 1.800
 	speed: 3.600
 	radius: 1.200
 	
@@ -64,7 +64,7 @@ drill:
 
 holdable:
 {
-	offset: [-1.000, -0.125]
+	offset: [-0.300, -0.125]
 	force_multiplier: 0.750
 	torque_multiplier: 5.850
 	stress_multiplier: 0.500

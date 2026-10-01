@@ -76,13 +76,13 @@ vehicle:
 	}
 }
 
-harvestable:
-{
-	resources:
-	[
-		{
-			material: "wood"
-			quantity: 30.000
-		}
-	]
-}
+//harvestable:
+//{
+//	resources:
+//	[
+//		{
+//			material: "wood"
+//			quantity: 30.000
+//		}
+//	]
+//}

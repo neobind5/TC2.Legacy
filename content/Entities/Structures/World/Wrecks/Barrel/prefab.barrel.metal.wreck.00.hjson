@@ -58,17 +58,17 @@ transform:
 
 }
 
-harvestable:
-{
-	resources:
-	[
-		{
-			material: "niklajzner.ingot"
-			quantity: 4.000
-		}
-		{
-			material: "crude_oil"
-			quantity: 30.000
-		}
-	]
-}
+//harvestable:
+//{
+//	resources:
+//	[
+//		{
+//			material: "niklajzner.ingot"
+//			quantity: 4.000
+//		}
+//		{
+//			material: "crude_oil"
+//			quantity: 30.000
+//		}
+//	]
+//}

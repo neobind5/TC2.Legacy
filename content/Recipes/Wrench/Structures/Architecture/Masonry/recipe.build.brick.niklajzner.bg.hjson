@@ -11,15 +11,8 @@
 	[
 		{
 			type: resource
-			material: niklajzner
-			amount: 0.240
-			group: 0
-			flags: prerequisite
-		}
-		{
-			type: resource
-			material: phlogiston
-			amount: 0.008
+			material: niklajzner.ingot
+			amount: 0.090
 			group: 0
 			flags: prerequisite
 		}
@@ -52,7 +45,7 @@
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
-	rank: -80.000
+	rank: 106
 	
 	placement:
 	{

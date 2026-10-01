@@ -37,11 +37,11 @@
 	resources:
 	[
 		{
-			material: brezolyt
+			material: stone
 			quantity: 2.644342
 		}
 		{
-			material: gravel
+			material: graphite
 			quantity: 0.931997
 		}
 	]

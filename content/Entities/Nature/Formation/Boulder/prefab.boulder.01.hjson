@@ -1,0 +1,76 @@
+$name: "Boulder"
+$desc: 
+	'''
+	A medium-sized boulder that looks exactly like a boulder.
+
+	Can be mined for a decent amount of stone.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	tags: solid, round, irregular, dense
+
+	@shape.polygon:
+	{
+		points: 
+		[
+			[-0.250, -0.750]
+			[0.250, -0.500]
+			[1.250, 1.000]
+			[-1.250, 1.125]
+		]
+		radius: 0.500
+		mass: 900.000
+		friction: 0.950
+		elasticity: 0.020
+		material: stone
+		layer: entity, solid, background
+		mask: world
+
+		miss_chance: 0.620
+	}
+}
+
+health:
+{
+	max: 2000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "boulder.01"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+cover:
+{
+	threshold: 0.200
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: "stone"
+			quantity: 760.000
+		}
+	]
+	
+	thresholds: [0.980, 0.000, 0.000, 0.000]
+	
+	pct_damage_mult: [0.975, 0.000, 0.000, 0.000]
+	pct_quantity_min: [0.029, 0.000, 0.000, 0.000]
+	
+	chance_base: [0.782, 0.000, 0.000, 0.000]
+}

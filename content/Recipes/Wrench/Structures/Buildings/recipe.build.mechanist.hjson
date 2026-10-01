@@ -6,46 +6,15 @@
 		"Crafts some doodads."
 	]
 	
-	stages:
+	requirements:
 	[
 		{
-			name: "Furniture"
-			
-			type: infrastructure
-			flags: wip
-			tags: none
-			// Damage type used for discarding leftover resources.
-			discard_damage_type: sledgehammer
-			
-			options:
-			[
-				{
-					name: "Wood"
-					
-					type: undefined
-					flags: wip
-					discard_damage_type_override: drill
-					
-					requirements:
-					[
-						{
-							type: resource
-							material: wood.rod
-							amount: 10.000
-							snapping: 1.000
-							group: 0
-							flags: primary
-						}
-						{
-							type: work
-							work: hammering
-							amount: 10.000
-							group: 1
-							flags: conditional
-						}
-					]
-				}
-			]
+			type: resource
+			material: wood
+			amount: 100.000
+			snapping: 1.000
+			group: 0
+			flags: prerequisite
 		}
 	]
 	
@@ -56,7 +25,6 @@
 			prefab: mechanist.00
 			amount: 1.000
 			group: 0
-			flags: primary, hidden
 		}
 	]
 	
@@ -74,7 +42,7 @@
 	color_frame: "0xffff5f11"
 	color_button: "0xff9dd80f"
 	button_name: "Build"
-	rank: -800.000
+	rank: 100
 	
 	min: 1
 	max: 1
@@ -116,25 +84,6 @@
 		
 		}
 	}
-	
-	construction:
-	{
-		prefab: construction.5x5
-		
-		requirements:
-		[
-			{
-				type: resource
-				material: wood
-				amount: 20.000
-				loss: 0.110
-				group: 0
-				flags: compact, no_scaling, prerequisite
-			}
-		]
-	}
-	
-	h_sound_finalize: building_construct
 	
 	version: 1
 }

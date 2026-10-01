@@ -1,0 +1,126 @@
+$name: "Fermenter"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+
+	@shape.polygon:
+	{
+		material: wood
+		miss_chance: 0.745
+		flags: none
+		tags: none
+		
+		layer: entity, solid, building, support, ignore_melee, background, crafter, flammable
+		mask: world, building
+		exclude: none
+		
+		mass: 84.000
+		radius: 0.480
+		friction: 0.750
+		elasticity: 0.410
+		
+		cog_offset: [0.000, 0.3125]
+		
+		points:
+		[
+			[-0.750, -0.375]
+			[0.750, -0.375]
+			[0.625, 1.000]
+			[-0.625, 1.000]
+		]
+	}
+}
+
+health:
+{
+	max: 4500.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "fermenter.00"
+		size: [24, 24]
+		frame: [0, 0]
+	}
+	z: -150.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab
+	window_size: [192, 192]
+	window_size_misc: [96, 0]
+	priority: 2.000
+}
+
+storage:
+{
+	@inventory16:
+	{	
+		type: storage
+		flags: allow_ducts, ignore_mass, public, faction
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas
+		}
+		offset: [-0.625, -0.250]
+	}
+}
+
+autocrafter:
+{
+	flags: none
+	//sound_load: produce_sound
+	cooldown: 1.000
+	//drop_offset: [0, 0]
+	recipes:
+	[
+		{
+			requirements:
+			[
+				{
+					material: alcohol
+					count: 0.32
+				}
+			]
+			products:
+			[
+				{
+					material: vinegar
+					count: 0.16
+				}
+			]
+		}
+		{
+			requirements:
+			[
+				{
+					material: grain
+					count: 3.2
+				}
+			]
+			products:
+			[
+				{
+					material: alcohol
+					count: 1.6
+				}
+			]
+		}
+	]
+}

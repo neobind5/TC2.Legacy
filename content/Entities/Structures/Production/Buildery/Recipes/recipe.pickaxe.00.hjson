@@ -1,0 +1,83 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Pickaxe"
+	tips: []
+	
+	related_materials:
+	{
+		niklajzner: raw, input, auto_generated
+		glue: liquid, input, auto_generated
+		steel.frames: input, auto_generated
+		scrap.mixed: scrap, input, auto_generated
+		machine_parts: input, auto_generated
+		steel.rod: input, auto_generated
+	}
+	
+	stages:
+	[
+		{
+			name: "Pickaxe"
+			
+			type: part
+			flags: none
+			tags: none
+			
+			options:
+			[
+				{
+					name: "Bought"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: money
+							amount: 120
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: pickaxe.00
+			amount: 1.000
+			group: 0
+			flags: primary, compact
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, simple, engineering
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: pickaxe.00
+	}
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 1
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

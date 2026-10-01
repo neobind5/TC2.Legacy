@@ -1,0 +1,59 @@
+$name: "Oak Tree"
+$desc:
+	'''
+	A young tree taking shape. Grows remarkably fast.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	buoyancy: 0.750
+	
+	@shape.line:
+	{
+		a: [0.000, -9.250]
+		b: [0.000, -0.375]
+		mass: 3820.000
+		radius: 0.500
+		friction: 0.840
+		elasticity: 0.080
+		
+		material: tree
+		miss_chance: 0.910
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+health:
+{
+	max: 600.000
+}
+
+animated.renderer:
+{
+	offset: [0.000, -0.600]
+	sprite:
+	{
+		texture: resource.seed.oak
+		count: 4
+		size: [16, 16]
+		offset: [0,-15]
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+crop:
+{
+	time_seconds: 240
+	time_extra: 2
+	prefab: "tree.oak"
+}

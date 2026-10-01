@@ -1,0 +1,58 @@
+$tags: []
+
+body:
+{
+	@shape.circle:
+	{
+		offset: [0.000, 0.250]
+		
+		mass: 1.000
+		radius: 0.700
+		friction: 0.940
+		elasticity: 0.650
+		
+		material: foliage
+		miss_chance: 0.763
+		
+		layer: entity, solid, resource, ignore_melee, plant, organic, flammable
+		mask: world
+		exclude: none
+	}
+	damping: 0.979
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "resource.seed.maple"
+		count: 4
+		size: [16, 16]
+	}
+	z: -65.000
+}
+
+transform:
+{
+
+}
+
+resource:
+{
+	material: "seed.maple"
+}
+
+holdable:
+{
+	offset: [0.000, 0.750]
+}
+
+health:
+{
+	max: 18500.000
+}
+
+breakable:
+{
+	flags: no_damage
+}

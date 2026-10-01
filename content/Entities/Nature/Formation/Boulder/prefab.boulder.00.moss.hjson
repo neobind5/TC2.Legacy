@@ -1,0 +1,83 @@
+$name: "Boulder"
+$desc: 
+	'''
+	A really pretty boulder, with moss too!
+
+	Can be mined for a large amount of stone.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	tags: solid, round, irregular, dense
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[0.125, -0.375]
+			[1.375, 0.375]
+			[2.000, 1.125]
+			[-1.875, 1.250]
+		]
+		
+		mass: 2100.000
+		radius: 0.800
+		friction: 0.950
+		elasticity: 0.020
+		
+		material: stone
+		miss_chance: 0.622
+		
+		layer: entity, solid, background
+	}
+}
+
+health:
+{
+	max: 6100.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "boulder.00.moss"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+cover:
+{
+	threshold: 0.200
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: stone
+			quantity: 1850.000
+		}
+		{
+			material: plants
+			quantity: 100.000
+		}
+		null
+		null
+	]
+	
+	thresholds: [0.991, 1.000, 0.000, 0.000]
+	
+	pct_damage_mult: [1.000, 1.000, 0.000, 0.000]
+	pct_quantity_min: [0.038, 0.180, 0.000, 0.000]
+	
+	chance_base: [0.918, 1.000, 0.000, 0.000]
+}

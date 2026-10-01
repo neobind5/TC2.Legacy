@@ -1,0 +1,52 @@
+$name: "Oak Stump"
+$desc: "Remains of a brave oak tree."
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		radius: 1.000
+		offset: [0.125, -0.500]
+		mass: 550.000
+		friction: 0.950
+		elasticity: 0.500
+		material: tree
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 8100.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tree.oak.00.stump"
+	}
+	offset: [-0, -0.500]
+	z: -250.000
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 20.000
+		}
+	]
+}

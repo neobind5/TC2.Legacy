@@ -7,7 +7,7 @@
 	[
 		{
 			type: resource
-			material: gravel
+			material: stone
 			amount: 125.000
 			snapping: 0.500
 			group: 0
@@ -15,8 +15,8 @@
 		}
 		{
 			type: resource
-			material: karban
-			amount: 10.000
+			material: wood
+			amount: 30.000
 			group: 0
 			flags: prerequisite
 		}

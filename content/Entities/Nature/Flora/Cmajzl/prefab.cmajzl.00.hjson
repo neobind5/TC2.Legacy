@@ -1,0 +1,82 @@
+$name: "Cmajzl Colony"
+$desc: 
+	'''
+	Thick, tangled growth of Cmajzl, a common parasitic cereal grain of many uses that tastes terrible.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.line:
+	{
+		material: foliage
+		miss_chance: 0.869
+		flags: none
+		tags: large, flammable, soft
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement
+		mask: world, building, no_overlapped_placement
+		exclude: held
+		
+		mass: 73.000
+		radius: 0.625
+		friction: 0.950
+		elasticity: 0.100
+		
+		rigidity_dynamic: 0.200
+		fall_damage_mult: 1.900
+		flammability: 0.640
+		cog_offset: [-0.1875, 0.6875]
+		
+		a: [-0.125, -1.250]
+		b: [0.000, 1.000]
+		offset: [0.000, 0.000]
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 200.000
+}
+
+animated.renderer:
+{
+	z: 50.000
+	
+	sprite:
+	{
+		texture: "atlas.cmajzl.00"
+		size: [16, 32]
+	}
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: grain
+			quantity: 8.000
+		}
+		{
+			material: cmajzl
+			quantity: 2.000
+		}
+		null
+		null
+	]
+	
+	thresholds: [1.000, 1.000, 0.000, 0.000]
+	
+	pct_damage_mult: [0.892, 1.000, 0.000, 0.000]
+	pct_quantity_min: [0.075, 0.276, 0.000, 0.000]
+	
+	chance_base: [0.986, 0.522, 0.000, 0.000]
+}

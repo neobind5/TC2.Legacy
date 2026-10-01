@@ -1,0 +1,83 @@
+$name: "Withered Log"
+$desc: "Very old remains of a very old tree."
+$tags: []
+
+body:
+{
+	type: dynamic
+	buoyancy: 0.700
+
+	@shape.line:
+	{
+		a: [-2.500, 0.125]
+		b: [2.750, 0.125]
+		
+		mass: 980.000
+		radius: 0.625
+		friction: 0.970
+		elasticity: 0.140
+		
+		material: tree
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 1200.000
+}
+
+holdable:
+{
+	radius: 0.000
+	force_multiplier: 1.500
+	torque_multiplier: 1.500
+	flags: disable_parent_facing, disable_rotation, disable_control
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "log.00"
+	}
+	z: -80.000
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 120
+		}
+		{
+			material: seed.maple
+			quantity: 4.000
+		}
+		{
+			material: seed.oak
+			quantity: 4.000
+		}
+		{
+			material: seed.pine
+			quantity: 4.000
+		}
+	]
+	
+	thresholds: [0.974, 0.890, 0.000, 0.000]
+	
+	pct_damage_mult: [0.964, 0.937, 0.000, 0.000]
+	pct_quantity_min: [0.019, 0.076, 0.000, 0.000]
+	
+	chance_base: [0.110, 0.188, 0.000, 0.000]
+}

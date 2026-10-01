@@ -1,0 +1,96 @@
+$name: "Oak Tree (Dead)"
+$desc: "A dead oak tree. Seems like a good source of wood."
+$tags: []
+
+body:
+{
+	type: static
+	buoyancy: 0.750
+	
+	@shape.line:
+	{
+		a: [0.000, -9.250]
+		b: [0.000, -0.375]
+		offset: [0.000, 0.000]
+		
+		mass: 3820.000
+		radius: 0.500
+		friction: 0.840
+		elasticity: 0.080
+		
+		material: tree
+		miss_chance: 0.910
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement, tree
+		mask: world, building, tree, no_overlapped_placement
+		exclude: held
+	}
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 3500
+}
+
+//splittable:
+//{
+//	rect: [-0.500, -9.250, 0.500, -0.375]
+//	split_health: 0.2
+//	sprite_stub:
+//	{
+//		texture: tree.stubs.00
+//		size: [16, 8]
+//	}
+//	sound_split: tree_snap_00
+//}
+
+holdable:
+{
+	radius: 0.000
+	force_multiplier: 3.000
+	torque_multiplier: 2.000
+	flags: disable_parent_facing, disable_rotation, full_rotate
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "tree.oak.00"
+	}
+	offset: [-0, -5.500]
+	z: -80.000
+}
+
+tree:
+{
+	sound_cut: "tree_fall"
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: wood
+			quantity: 130.000
+		}
+		{
+			material: seed.oak
+			quantity: 2
+		}
+		null
+	]
+	
+	thresholds: [0.990, 1.000, 0.772, 0.000]
+	
+	pct_damage_mult: [0.952, 0.900, 0.859, 0.000]
+	pct_quantity_min: [0.030, 0.022, 0.078, 0.000]
+	
+	chance_base: [0.188, 0.471, 0.173, 0.000]
+}

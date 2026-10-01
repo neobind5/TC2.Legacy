@@ -41,11 +41,11 @@
 	resources:
 	[
 		{
-			material: hortspargl
+			material: stone
 			quantity: 3.048298
 		}
 		{
-			material: gravel
+			material: silicon
 			quantity: 1.931997
 		}
 	]

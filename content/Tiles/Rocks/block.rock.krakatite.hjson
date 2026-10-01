@@ -38,12 +38,12 @@
 	resources:
 	[
 		{
-			material: krakatite
+			material: stone
 			quantity: 3.104962
 		}
 		{
-			material: gravel
-			quantity: 0.931997
+			material: tar
+			quantity: 2.331997
 		}
 	]
 	

@@ -14,7 +14,14 @@
 	[
 		{
 			type: resource
-			material: brick.mud
+			material: soil
+			amount: 0.300
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: water
 			amount: 0.200
 			group: 0
 			flags: prerequisite
@@ -48,7 +55,7 @@
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
-	rank: -96.500
+	rank: 2
 	
 	placement:
 	{

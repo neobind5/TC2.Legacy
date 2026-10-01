@@ -36,7 +36,7 @@
 	]
 	
 	type: architecture
-	flags: disabled, wip
+	flags: none
 	tags: none
 	infrastructure: none
 	
@@ -49,7 +49,7 @@
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
-	rank: 4.000
+	rank: 203
 	
 	placement:
 	{

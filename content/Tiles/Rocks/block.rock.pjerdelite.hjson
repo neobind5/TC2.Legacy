@@ -38,11 +38,11 @@
 	resources:
 	[
 		{
-			material: pjerdelite
+			material: stone
 			quantity: 3.459533
 		}
 		{
-			material: smirglum.powder
+			material: smirglum.amalgam
 			quantity: 0.237282
 		}
 	]

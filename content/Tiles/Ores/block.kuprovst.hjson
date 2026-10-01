@@ -36,12 +36,12 @@
 	resources:
 	[
 		{
-			material: kuprovst
+			material: stone
 			quantity: 4.095476
 		}
 		{
-			material: soil
-			quantity: 2.031997
+			material: copper
+			quantity: 1.031997
 		}
 	]
 	

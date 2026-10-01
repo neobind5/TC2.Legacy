@@ -38,7 +38,7 @@
 	resources:
 	[
 		{
-			material: kruskite
+			material: stone
 			quantity: 3.18281
 		}
 		{

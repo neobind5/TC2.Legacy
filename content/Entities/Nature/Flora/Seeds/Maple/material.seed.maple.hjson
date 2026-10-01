@@ -1,0 +1,60 @@
+﻿{
+	$version: "0.1.72.0"
+	name: "Maple Samara"
+	name_short: "Maple Samara"
+	name_imperial: "Maple Samara"
+	name_dumb: "Tree Seed"
+	description:
+		'''
+		Elegant seed pods that discovered aerodynamics.
+		'''
+	
+	tips: []
+	
+	icon:
+	{
+		texture: resource.seed.maple
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	
+	// Inventory material type.
+	type: foliage
+	flags: soft, malleable, food, granular, organic, small, raw, flammable, flexible, solid, impure, primary
+	display_flags: none
+	hints: materials
+	
+	// Ratio of the material volume to the total volume it occupies when stacked. A value of 1.0 means no empty space, while a value closer to 0.0 means a lot of empty space.
+	packing_fraction: 0.000
+	// Mass of 1 unit in kg.
+	mass_per_unit: 0.037
+	
+	// Maximum quantity (units) per stack.
+	quantity_max: 20.000
+	// Minimum spawnable quantity.
+	spawn_quantity_threshold: 0.1
+	// Preferred quantity snapping for recipes.
+	snapping: 1
+	// Preferred quantity snapping for inventories.
+	snapping_pickup: 1.000
+	
+	form_type: raw
+	prefab: resource.seed.maple
+	
+	color_icon: "0xffffffff"
+	color_item: "0xffffffff"
+	color_dust: "0xffffffff"
+	color_gib: "0xffffffff"
+	
+	centroid_default: [0.000, 0.250]
+	colliders: []
+	
+	commodity:
+	{
+		flags: none
+		categories: food, raw, cooking
+		
+		market_price: 15
+		market_price_per_kg_auto: 3
+	}
+}

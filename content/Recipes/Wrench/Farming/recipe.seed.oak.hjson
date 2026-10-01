@@ -1,0 +1,101 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Oak Tree"
+	tips:
+	[
+		"Plant a nice tree."
+	]
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: seed.oak
+			amount: 1.000
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+		//{
+		//	type: resource
+		//	material: compost
+		//	amount: 25.000
+		//	snapping: 0.500
+		//	group: 0
+		//	flags: prerequisite
+		//}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: construction.oak
+			amount: 1.000
+			group: 0
+		}
+	]
+	
+	type: buildings
+	flags: no_amount_multiplier, construction, building, ignore_tools, ignore_equipment, ignore_machinery, ignore_environment, no_cancel, auto_complete
+	tags: simple, metalworking, construction
+	hints: none
+	
+	color_frame: "0xffff5f11"
+	color_button: "0xff9dd80f"
+	button_name: "Plant"
+	rank: -300
+	
+	min: 1
+	max: 1
+	step: 1
+
+	icon_extra:
+	{
+		texture: resource.seed.oak
+		size: [16, 16]
+	}
+	icon_extra_offset: [-1,-6]
+	icon_extra_scale: 1.5
+	
+	placement:
+	{
+		type: simple
+		flags: allow_mirror_x
+		
+		size: [5.000, 5.000]
+		offset: [0.000, -0.500]
+		
+		rect_foundation: [-2.000, 0.000, 2.000, 1.000]
+		tileflags_foundation: solid
+		
+		rect_clearance: [-0.75, -11.500, 0.75, 0.000]
+		tileflags_clearance: solid
+		
+		cooldown: 0.200
+		min_support: 0.7
+		min_clearance: 0.7
+		min_claim: 1.000
+		
+		rotation_max: 0.3
+		
+		sound: building_place
+		
+		snapping_filter:
+		{
+			include: world
+			exclude: construction, dynamic
+		}
+		snapping_flags: snap_to_surface, use_raw_collider, no_end_snap
+		snapping_radius: 0.500
+		
+		mappings_replace:
+		{
+		
+		}
+	}
+	
+	h_sound_finalize: building_construct
+	
+	version: 1
+}

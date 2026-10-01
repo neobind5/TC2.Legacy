@@ -1,0 +1,80 @@
+$name: "Boulder"
+$desc: 
+	'''
+	A really pretty boulder.
+
+	Can be mined for a large amount of stone.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	tags: solid, round, irregular, dense
+	
+	@shape.polygon:
+	{
+		points:
+		[
+			[0.125, -0.375]
+			[1.375, 0.375]
+			[1.875, 0.875]
+			[-1.750, 0.875]
+		]
+		
+		mass: 2240.000
+		radius: 0.800
+		friction: 0.950
+		elasticity: 0.020
+		
+		material: stone
+		miss_chance: 0.688
+		
+		layer: entity, solid, background
+	}
+}
+
+health:
+{
+	max: 6400.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "boulder.00"
+	}
+	z: -100.000
+}
+
+transform:
+{
+
+}
+
+cover:
+{
+	threshold: 0.200
+}
+
+harvestable:
+{
+	resources:
+	[
+		{
+			material: stone
+			quantity: 1900.000
+		}
+		null
+		null
+		null
+	]
+	
+	thresholds: [0.980, 0.000, 0.000, 0.000]
+	
+	pct_damage_mult: [0.975, 0.000, 0.000, 0.000]
+	pct_quantity_min: [0.029, 0.000, 0.000, 0.000]
+	
+	chance_base: [0.782, 0.000, 0.000, 0.000]
+}

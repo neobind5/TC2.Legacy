@@ -1,0 +1,96 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Arrows"
+	tips: []
+	desc:
+	'''
+	Primitive bolts fit for both bows and crossbows.
+	'''
+	
+	stages:
+	[
+		{
+			name: "Materials"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Bound"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: wood
+							amount: 1.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: leather
+							amount: 0.200
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: ammo.arrow
+			amount: 1.000
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, military
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.ammo.arrow
+		count: 4
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [2.000, -3.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 203
+	frame_size: [48.000, 48.000]
+	
+	min: 10
+	max: 100
+	step: 10
+	
+	version: 1
+}

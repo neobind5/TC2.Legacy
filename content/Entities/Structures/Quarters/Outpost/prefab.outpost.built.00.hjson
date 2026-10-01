@@ -1,5 +1,5 @@
 $name: "Outpost"
-$desc: "Small faction outpost."
+$desc: "Designated outpost for established factions, has a large claim radius."
 
 body:
 {
