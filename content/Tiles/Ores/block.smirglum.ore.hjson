@@ -41,15 +41,15 @@
 		}
 		{
 			material: stone
-			quantity: 1.831997
+			quantity: 0.831997
 		}
 	]
 	
 	mappings:
 	[
-		{
-			color: "0xff504343"
-			tile_flags: solid, non_empty, ground, no_replace
-		}
+//		{
+//			color: "0xff504343"
+//			tile_flags: solid, non_empty, ground, no_replace
+//		}
 	]
 }

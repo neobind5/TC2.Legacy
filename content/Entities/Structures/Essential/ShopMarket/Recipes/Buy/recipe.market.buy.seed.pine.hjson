@@ -1,0 +1,89 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Buy pine seed"
+	desc:
+		'''
+		Overpriced seeds to start off your forest.
+		'''
+	tips: []
+	
+	related_materials:
+	{
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Seed"
+					
+					type: undefined
+					flags: none
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: money
+							amount: 100
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					products:
+					[
+						{
+							type: resource
+							material: seed.pine
+							amount: 1.000
+							group: 0
+							flags: primary
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}
+	]
+	
+	type: buy
+	flags: item, production, auto_complete
+	tags: manual, crafting, simple
+	hints: none
+	connotations: none
+	infrastructure: table, chair, surface
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: resource.seed.pine
+		size: [16, 16]
+		frame: [1, 0]
+	}
+	icon_offset: [0.000, -4.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "buy"
+	rank: 702.000
+	
+	min: 1
+	max: 25
+	step: 1
+	
+	version: 1
+}

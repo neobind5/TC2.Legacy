@@ -1,6 +1,6 @@
 ﻿{
 	$version: "0.1.72.1"
-	name: "Metal Roof (Red)"
+	name: "Metal Roof (Orange)"
 	desc:
 		'''
 		Fancy and durable - a metal roof built to the Imperial standard, painted a comfortable orange.
@@ -25,7 +25,7 @@
 	collision_mask: none
 	
 	texture: terrain.roof.metal.orange
-	pattern: pattern.scaffolding
+	pattern: pattern.roof.metal.orange
 	texture_scale: 1.700
 	texture_overshoot: -0.250
 	texture_offset: 0.210
@@ -36,7 +36,7 @@
 	resources:
 	[
 		{
-			material: steel.plate
+			material: niklajzner.ingot
 			quantity: 0.100
 		}
 		null
@@ -47,6 +47,10 @@
 		{
 			color: "0xff8e5566"
 			tile_flags: solid, non_empty, become_background_on_break, no_cull, no_replace
+		}
+		{
+			color: "0xff9e5566"
+			tile_flags: non_empty
 		}
 	]
 }

@@ -37,7 +37,7 @@
 	[
 		{
 			material: niklajzner
-			quantity: 3.240506
+			quantity: 1.240506
 		}
 		{
 			material: stone
@@ -47,9 +47,9 @@
 	
 	mappings:
 	[
-		{
-			color: "0xff484a45"
-			tile_flags: solid, non_empty, ground, no_replace
-		}
+//		{
+//			color: "0xff484a45"
+//			tile_flags: solid, non_empty, ground, no_replace
+//		}
 	]
 }

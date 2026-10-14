@@ -157,23 +157,23 @@ autocrafter:
 				}
 			]
 		}
-		{
-			// Crude Concrete
-			requirements:
-			[
-				{
-					material: cement
-					count: 15.000
-				}
-			]
-			products:
-			[
-				{
-					material: brick.concrete
-					count: 8.00
-				}
-			]
-		}
+		//{
+		//	// Crude Concrete
+		//	requirements:
+		//	[
+		//		{
+		//			material: cement
+		//			count: 15.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: brick.concrete
+		//			count: 8.00
+		//		}
+		//	]
+		//}
 		{
 			// Crude Copper Smelting
 			requirements:

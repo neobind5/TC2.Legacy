@@ -36,10 +36,6 @@
 	resources:
 	[
 		{
-			material: scrap.wood
-			quantity: 0.434615
-		}
-		{
 			material: plants
 			quantity: 0.638461
 		}

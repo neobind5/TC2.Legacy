@@ -1,0 +1,54 @@
+﻿{
+	$version: "0.1.63.5"
+	name: "Concrete (Steel-Reinforced)"
+	desc:
+		'''
+		Durable cast concrete, reinforced with nickelsteel.
+		'''
+	
+	material_type: concrete
+	tile_flags: non_empty
+	flags: artificial, metal, construction
+	
+	max_health: 48000.000
+	smoothing: 0.180
+	stability: 1.800
+	strength_tensile: 1.800
+	strength_compressive: 8.000
+	
+	mass: 2.900
+	friction: 0.850
+	elasticity: 0.600
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.concrete.steel
+	pattern: pattern.concrete.steel
+	texture_scale: 1.070
+	texture_overshoot: -0.400
+	texture_offset: 0.000
+	
+	color_preview: "0xff66645c"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: scrap.concrete
+			quantity: 1.600
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff66645c"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff56554e"
+			tile_flags: non_empty
+		}
+	]
+}

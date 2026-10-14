@@ -86,7 +86,7 @@ harvestable:
 		}
 		{
 			material: sugar
-			quantity: 5.000
+			quantity: 15.000
 		}
 	]
 	

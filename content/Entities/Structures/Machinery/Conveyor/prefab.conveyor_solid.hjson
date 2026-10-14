@@ -45,7 +45,7 @@ transform:
 
 }
 
-conveyorsolidresizable:
+conveyorsolid:
 {
 	sound_load: ""
 	strength:7.5

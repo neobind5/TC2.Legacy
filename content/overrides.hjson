@@ -227,6 +227,19 @@
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]block\.rock\.pyrsec\.hjson$'''
         }
+        
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.roof\.metal\.red\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.roof\.metal\.green\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.roof\.metal\.blue\.hjson$'''
+        }
         //// Structures:
         {
             flags: none
@@ -296,6 +309,22 @@
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.charcoal\.hjson$'''
         }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.mortar\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.mortar\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.brick\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.brick\.concrete\.hjson$'''
+        }
         // Wood
         {
             flags: none
@@ -307,11 +336,45 @@
         }
         {
             flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.timber\.maple\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.timber\.maple\.hjson$'''
+        }
+        
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.timber\.oak\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.timber\.oak\.hjson$'''
+        }
+        
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.timber\.pine\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.timber\.pine\.hjson$'''
+        }
+        {
+            flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]material\.woodchips\.hjson$'''
         }
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.woodchips\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.wood\.rod\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.wood\.rod\.hjson$'''
         }
         // Coal
         {
@@ -575,6 +638,14 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]material\.scrap\.rubble\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.scrap\.rubble\.hjson$'''
         }
         {
             flags: none
@@ -985,6 +1056,101 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]prefab\.fermenter\.00\.hjson$'''
+        }
+        // Removed buildings
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.ammoshop\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.armory\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.barracks\.0[01]\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.headquarters\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.kitchen\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.storage\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.smithy\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.metalworks\.00\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.manufactory\.00\.hjson$'''
+        }
+        // More tiles
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.clay\.hjson$'''
+        }
+        
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.mud\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.niklajzner\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.stone\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.brick\.stone\.moss\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.cobblestone\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.concrete\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.concrete\.moss\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.concrete\.steel\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.planks\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.planks\.mithril\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.planks\.moss\.hjson$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]block\.sheetmetal\.00\.hjson$'''
         }
     ]
 }

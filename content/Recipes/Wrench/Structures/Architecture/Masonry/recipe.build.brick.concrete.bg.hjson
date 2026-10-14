@@ -3,7 +3,7 @@
 	name: "Concrete Slabs (Back)"
 	desc:
 		'''
-		TODO: Desc
+		Slabs of concrete, conveniently procured straight from cement.
 		'''
 	tips: []
 	
@@ -11,18 +11,18 @@
 	[
 		{
 			type: resource
-			material: brick.concrete
-			amount: 0.075
+			material: cement
+			amount: 0.135
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: mortar
-			amount: 0.010
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: mortar
+		//	amount: 0.010
+		//	group: 0
+		//	flags: prerequisite
+		//}
 	]
 	
 	products:

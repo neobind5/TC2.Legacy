@@ -5,12 +5,6 @@
 	
 	related_materials:
 	{
-		money: ingredient
-		timber.oak: product
-		timber.pine: product
-		timber.maple: product
-		wood.rod: product
-		wood: product
 	}
 	
 	stages:
@@ -43,8 +37,15 @@
 						}
 						{
 							type: resource
+							material: karban
+							amount: 30.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
 							material: money
-							amount: 900.000
+							amount: 700.000
 							group: 0
 							flags: prerequisite
 						}

@@ -42,7 +42,7 @@
 	]
 	
 	type: machinery
-	flags: no_amount_multiplier, no_cancel
+	flags: no_amount_multiplier, no_cancel,
 	tags: complex, medium, metalworking, engineering, construction
 	hints: none
 	connotations: none

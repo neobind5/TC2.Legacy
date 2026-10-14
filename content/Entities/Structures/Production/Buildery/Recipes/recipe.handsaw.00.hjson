@@ -41,8 +41,8 @@
 						}
 						{
 							type: resource
-							material: wood.rod
-							amount: 2
+							material: wood
+							amount: 15
 							group: 0
 							flags: prerequisite
 						}

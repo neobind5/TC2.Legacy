@@ -29,8 +29,8 @@
 		}
 	]
 	
-	type: architecture
-	flags: allow_mirror_x
+	type: industry
+	flags: allow_mirror_x, disabled, wip
 	tags: simple, woodworking, construction
 	hints: none
 	connotations: none
@@ -48,7 +48,7 @@
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
-	rank: -4614.400
+	rank: 100
 	
 	placement:
 	{
@@ -72,7 +72,7 @@
 		{
 			exclude: building, construction, no_overlapped_placement, dynamic
 		}
-		snapping_flags: snap_to_surface, align_to_surface, use_collider_radius, add_size_to_snap_radius
+		snapping_flags: snap_to_surface, align_to_surface, use_collider_radius, rotate_line_normal
 		snapping_radius: 0.250
 		snapping_depth: 0.750
 		

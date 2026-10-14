@@ -9,12 +9,6 @@
 	
 	related_materials:
 	{
-		money: ingredient
-		timber.oak: product
-		timber.pine: product
-		timber.maple: product
-		wood.rod: product
-		wood: product
 	}
 	
 	stages:

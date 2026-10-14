@@ -1,0 +1,55 @@
+﻿{
+	$version: "0.1.63.8"
+	name: "Concrete Slabs"
+	desc:
+		'''
+		Durable concrete slabs.
+		'''
+	
+	material_type: concrete
+	tile_flags: non_empty
+	flags: artificial, masonry, construction
+	
+	max_health: 32000.000
+	smoothing: 0.180
+	stability: 4.800
+	strength_tensile: 1.800
+	strength_compressive: 15.000
+	
+	mass: 0.260
+	friction: 0.850
+	elasticity: 0.440
+	fall_damage_mult: 0.960
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.brick.concrete
+	pattern: pattern.brick.concrete
+	texture_scale: 1.070
+	texture_overshoot: -0.400
+	texture_offset: 0.000
+	
+	color_preview: "0xff80775f"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: brick.concrete
+			quantity: 0.075
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff838079"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff474542"
+			tile_flags: non_empty
+		}
+	]
+}

@@ -61,7 +61,7 @@
 	]
 	
 	type: workshop
-	flags: item, auto_complete
+	flags: item, auto_complete, disabled, hidden
 	tags: manual, crafting, assembling, engineering, crude
 	hints: none
 	connotations: none

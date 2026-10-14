@@ -1,0 +1,91 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Strung Cloth"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Cloth"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Cutting (Sloppy)"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: plants
+							amount: 8.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: machining
+							amount: 3
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: cloth
+			amount: 1
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, assembling, engineering, crude
+	hints: none
+	connotations: none
+	infrastructure: personal
+	infrastructure_exclude: none
+	
+	icon:
+	{
+		texture: resource.cloth
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, 0.000]
+	icon_scale:1.5
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 1
+	frame_size: [64.000, 64.000]
+	
+	min: 1
+	max: 30
+	step: 1
+	
+	version: 1
+}

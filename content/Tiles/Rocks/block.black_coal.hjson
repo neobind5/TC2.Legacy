@@ -46,9 +46,9 @@
 	
 	mappings:
 	[
-		{
-			color: "0xff2f2f36"
-			tile_flags: solid, non_empty, ground, no_replace
-		}
+//		{
+//			color: "0xff2f2f36"
+//			tile_flags: solid, non_empty, ground, no_replace
+//		}
 	]
 }

@@ -36,15 +36,15 @@
 						}
 						{
 							type: resource
-							material: steel.ingot
-							amount: 0.200
+							material: mercury
+							amount: 0.080
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: money
-							amount: 16.000
+							amount: 24.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

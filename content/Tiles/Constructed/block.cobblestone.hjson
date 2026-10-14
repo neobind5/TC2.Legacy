@@ -1,0 +1,56 @@
+﻿{
+	$version: "0.1.73.0"
+	name: "Cobblestone"
+	desc:
+		'''
+		Stones cobbled together.
+		'''
+	
+	material_type: stone
+	tile_flags: non_empty
+	flags: artificial, construction
+	
+	max_health: 3800.000
+	smoothing: 0.150
+	stability: 0.500
+	strength_tensile: 0.000
+	strength_compressive: 0.000
+	
+	mass: 5.000
+	density: 0.000
+	friction: 0.900
+	elasticity: 0.470
+	fall_damage_mult: 1.000
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.cobblestone
+	pattern: pattern.cobblestone
+	texture_scale: 1.800
+	texture_overshoot: -0.750
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: stone
+			quantity: 0.601304
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff7d716b"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff403935"
+			tile_flags: non_empty
+		}
+	]
+}

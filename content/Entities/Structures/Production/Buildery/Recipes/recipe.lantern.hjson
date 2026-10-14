@@ -42,14 +42,14 @@
 						{
 							type: resource
 							material: copper_wire
-							amount: 1
+							amount: 5
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: crude_oil
-							amount: 5
+							amount: 10
 							group: 0
 							flags: prerequisite
 						}

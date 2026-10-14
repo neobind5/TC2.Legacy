@@ -37,6 +37,7 @@ namespace TC2.Base.Components
 				Sound.Play(ref region, conveyor_solid.sound_load, transform.position, conveyor_solid.volume, conveyor_solid.pitch, conveyor_solid.size, conveyor_solid.priority, conveyor_solid.dist_multiplier);
 				conveyor_solid.next_time = time + conveyor_solid.sound_cooldown;
 			}
+			/*
 			var pos_a = resizable.a;
 			var pos_b = resizable.b;
 
@@ -53,10 +54,13 @@ namespace TC2.Base.Components
 				//App.WriteLine(dir2);
 				//transform_a.Y = -1;
 			}
+			*/
 			if (body.HasArbiters())
 			{
-				var axis = dir.GetPerpendicular(float.IsNegative(transform.scale.GetParity()));
-				//var dir = transform.GetDirection();
+				
+				var axis = transform.GetDirection().GetPerpendicular(float.IsNegative(transform.scale.GetParity()));
+				//var axis = dir.GetPerpendicular(float.IsNegative(transform.scale.GetParity()));
+				var dir = transform.GetDirection();
 
 				foreach (var arbiter in body.GetArbiters())
 				{

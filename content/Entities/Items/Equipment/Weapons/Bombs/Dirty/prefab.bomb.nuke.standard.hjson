@@ -18,7 +18,7 @@ body:
 		b: [0.000, 0.675]
 		offset: [0.000, 0.000]
 		scale: [1.000, 1.000]
-		mass: 850.500
+		mass: 150.500
 		radius: 1.150
 		friction: 0.500
 		elasticity: 0.100
@@ -102,12 +102,12 @@ bombresources:
 		items:
 		[
 			{
-				material: mithrilfix
+				material: mithril
 				chance: 100.000
-				min: 140.000
-				max: 210.000
-				min_speed: 90.800
-				max_speed: 240.800
+				min: 80.000
+				max: 110.000
+				min_speed: 20.800
+				max_speed: 80.800
 				merge_radius: 0.0001
 				spawn_radius: 2.250
 				split_size: 20.000
@@ -115,13 +115,13 @@ bombresources:
 			{
 				material: mithril_gas
 				chance: 100.000
-				min: 1530.000
-				max: 1914.000
+				min: 1230.000
+				max: 1414.000
 				min_speed: 50.800
 				max_speed: 180.800
 				merge_radius: 0.0001
-				spawn_radius: 5.750
-				split_size: 100.000
+				spawn_radius: 30.750
+				split_size: 20.000
 			}
 			null
 			null

@@ -1,0 +1,51 @@
+﻿{
+	$version: "0.1.63.8"
+	name: "Planks"
+	desc:
+		'''
+		Wooden planks hammered together.
+		'''
+	
+	material_type: wood
+	tile_flags: non_empty
+	flags: artificial, flammable, organic, construction
+	
+	max_health: 100.000
+	smoothing: 0.178
+	stability: 1.160
+	strength_tensile: 5.000
+	strength_compressive: 1.200
+	
+	mass: 0.190
+	friction: 0.900
+	elasticity: 0.340
+	fall_damage_mult: 0.750
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.planks
+	pattern: pattern.planks
+	texture_scale: 1.000
+	texture_overshoot: -0.375
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffbc7049"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff633e2b"
+			tile_flags: non_empty
+		}
+	]
+}

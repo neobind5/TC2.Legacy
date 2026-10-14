@@ -105,6 +105,10 @@ autocrafter:
 			[
 				{
 					material: karban
+					count: 50.00
+				}
+				{
+					material: black_coal
 					count: 10.00
 				}
 				{
@@ -155,23 +159,23 @@ autocrafter:
 				}
 			]
 		}
-		{
-			// Crude Concrete
-			requirements:
-			[
-				{
-					material: cement
-					count: 15.000
-				}
-			]
-			products:
-			[
-				{
-					material: brick.concrete
-					count: 5.00
-				}
-			]
-		}
+		//{
+		//	// Crude Concrete
+		//	requirements:
+		//	[
+		//		{
+		//			material: cement
+		//			count: 15.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: brick.concrete
+		//			count: 5.00
+		//		}
+		//	]
+		//}
 		{
 			// Crude Copper Smelting
 			requirements:

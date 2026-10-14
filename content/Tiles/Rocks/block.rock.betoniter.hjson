@@ -38,19 +38,19 @@
 	[
 		{
 			material: stone
-			quantity: 3.951724
+			quantity: 1.351724
 		}
 		{
 			material: lye
-			quantity: 0.531997
+			quantity: 0.131997
 		}
 	]
 	
 	mappings:
 	[
-		{
-			color: "0xff4f5353"
-			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
-		}
+//		{
+//			color: "0xff4f5353"
+//			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+//		}
 	]
 }

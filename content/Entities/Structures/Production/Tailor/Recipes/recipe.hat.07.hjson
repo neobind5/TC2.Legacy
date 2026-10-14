@@ -3,7 +3,7 @@
 	name: "Cowboy Hat"
 	desc:
 	'''
-	Preferable to the Pigboy Hat.
+	Preferable to a Pigboy Hat.
 	'''
 	
 	related_materials:
@@ -41,7 +41,7 @@
 						{
 							type: resource
 							material: money
-							amount: 900.000
+							amount: 350.000
 							group: 0
 							flags: prerequisite
 						}

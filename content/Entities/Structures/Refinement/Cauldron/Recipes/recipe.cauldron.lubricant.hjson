@@ -30,7 +30,7 @@
 						{
 							type: resource
 							material: oil
-							amount: 3.000
+							amount: 11.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -54,7 +54,7 @@
 						{
 							type: resource
 							material: water
-							amount: 4.000
+							amount: 10.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -80,7 +80,7 @@
 		{
 			type: resource
 			material: lubricant
-			amount: 5.00
+			amount: 25.00
 			group: 0
 			flags: none
 		}

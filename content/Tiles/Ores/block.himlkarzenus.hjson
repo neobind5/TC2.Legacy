@@ -49,9 +49,9 @@
 	
 	mappings:
 	[
-		{
-			color: "0xffb63789"
-			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
-		}
+//		{
+//			color: "0xffb63789"
+//			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+//		}
 	]
 }

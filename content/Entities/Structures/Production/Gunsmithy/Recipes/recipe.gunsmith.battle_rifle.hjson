@@ -53,8 +53,8 @@
 						}
 						{
 							type: resource
-							material: wood.rod
-							amount: 8.000
+							material: wood
+							amount: 20.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

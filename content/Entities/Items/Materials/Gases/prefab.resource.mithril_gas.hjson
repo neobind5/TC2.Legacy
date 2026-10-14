@@ -13,16 +13,16 @@ body:
 		rigidity_dynamic: 0.450
 		
 		material: gas
-		miss_chance: 0.949
+		miss_chance: 0.049
 		
 		layer: entity, solid, resource, gas, ignore_melee, ignore_hover
 		mask: world, gas
 		exclude: decoration, background, barbed
 	}
 
-	gravity: 0.318
-	damping: 0.930
-	mass_multiplier: 0.000
+	gravity: 1.018
+	damping: 0.995
+	mass_multiplier: 100.000
 	fall_damage_multiplier: 0.000
 }
 
@@ -33,11 +33,11 @@ transform:
 
 gas:
 {
-	radius: 4.000
-	size: 1.450
-	lifetime: 32.000
-	speed: 0.100
-	interval: 2.700
+	radius: 1.500
+	size: 2.500
+	lifetime: 8.000
+	speed: 1.500
+	interval: 0.200
 	color_a: "0x994bd74b"
 	color_b: "0x001eb464"
 }
@@ -47,10 +47,10 @@ resource:
 	material: "mithril"
 }
 
-health:
-{
-	max: 120000.000
-}
+//health:
+//{
+//	max: 900000.000
+//}
 
 radioactive:
 {
@@ -59,4 +59,15 @@ radioactive:
 	size: 8.450
 	delay: 0.100
 	delay_variation: 0.050
+}
+
+despawn:
+{
+	sleep_count_max: 4
+	interval: 6.000
+	interval_extra: 16.000
+	threshold_delete: 0.001
+	threshold_despawning: 1.000
+	amount_ratio: 0.002
+	amount_ratio_extra: 0.011
 }

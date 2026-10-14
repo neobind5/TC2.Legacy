@@ -30,7 +30,7 @@
 	]
 	
 	type: architecture
-	flags: none
+	flags: disabled, wip
 	tags: simple, complex, assembling, metalworking, architecture, construction
 	hints: none
 	connotations: none

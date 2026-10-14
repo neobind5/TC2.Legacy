@@ -7,8 +7,8 @@
 	[
 		{
 			type: resource
-			material: brick.concrete
-			amount: 14.000
+			material: cement
+			amount: 34.000
 			group: 0
 			flags: prerequisite
 		}
@@ -49,7 +49,7 @@
 	]
 	
 	type: industry
-	flags: no_amount_multiplier, blueprintable, wip
+	flags: no_amount_multiplier, blueprintable, wip, disabled, hidden
 	tags: basic, simple, medium, architecture, construction
 	hints: none
 	connotations: none

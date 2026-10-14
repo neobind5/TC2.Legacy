@@ -56,19 +56,19 @@
 		{
 			type: resource
 			material: oil
-			amount: 1.00
+			amount: 2.60
 			group: 0
 			flags: none
 		}
 		// temp
-		{
-			type: resource
-			material: lye
-			amount: 0.200
-			snapping: 1.000
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: lye
+		//	amount: 0.200
+		//	snapping: 1.000
+		//	group: 0
+		//	flags: prerequisite
+		//}
 	]
 	
 	type: workshop

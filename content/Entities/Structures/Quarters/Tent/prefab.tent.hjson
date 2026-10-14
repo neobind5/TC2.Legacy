@@ -156,3 +156,28 @@ squad:
 	movement_flags: hold
 	combat_flags: attack_visible, attack_when_hit, cover, flee, defend, form_groups, assist_work
 }
+
+shop:
+{
+	tags_filter:
+	{
+		include: social
+		exclude: advanced, crude
+	}
+	
+	flags: embed_gui
+	menu_columns: 5
+	recipe_type: workshop
+	
+	offset_spawn: [1.000, 0.250]
+	
+	name: "tent"
+}
+
+workshop:
+{
+	orders_capacity: 1
+	h_sound_order_complete: order_complete
+	max_order_mass: 10000.000
+	gui_info_size_x: 332.000
+}

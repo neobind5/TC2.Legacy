@@ -39,7 +39,7 @@
 	]
 	
 	type: machinery
-	flags: no_amount_multiplier, wip, no_cancel
+	flags: no_amount_multiplier, wip, no_cancel, disabled
 	tags: complex, large, metalworking, construction
 	hints: none
 	connotations: none

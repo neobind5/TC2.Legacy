@@ -61,7 +61,7 @@ transform:
 
 storage:
 {
-	@inventory8:
+	@inventory16:
 	{		
 		type: storage
 		flags: ignore_mass, public, no_auto_pickup, faction, allow_ducts
@@ -79,7 +79,7 @@ interactable:
 {
 	flags: no_tab, centered_inventory
 	priority: 0.750
-	window_size: [192.000, 96.000]
+	window_size: [192.000, 192.000]
 	window_size_misc: [48.000, 0.000]
 }
 

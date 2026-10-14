@@ -48,7 +48,7 @@
 						{
 							type: resource
 							material: money
-							amount: 1250.000
+							amount: 750.000
 							group: 0
 							flags: prerequisite
 						}

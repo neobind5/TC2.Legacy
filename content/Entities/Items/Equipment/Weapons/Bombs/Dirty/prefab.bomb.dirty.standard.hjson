@@ -102,12 +102,12 @@ bombresources:
 		items:
 		[
 			{
-				material: mithrilfix
+				material: mithril
 				chance: 100.000
 				min: 20.000
 				max: 64.000
-				min_speed: 50.800
-				max_speed: 240.800
+				min_speed: 10.800
+				max_speed: 50.800
 				merge_radius: 0.0001
 				spawn_radius: 1.750
 				split_size: 1.000
@@ -115,13 +115,13 @@ bombresources:
 			{
 				material: mithril_gas
 				chance: 100.000
-				min: 530.000
-				max: 914.000
-				min_speed: 10.800
-				max_speed: 120.800
+				min: 130.000
+				max: 214.000
+				min_speed: 1.800
+				max_speed: 6.800
 				merge_radius: 0.0001
 				spawn_radius: 5.750
-				split_size: 100.000
+				split_size: 3.000
 			}
 			null
 			null

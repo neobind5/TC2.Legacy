@@ -37,7 +37,7 @@
 						{
 							type: resource
 							material: steel.frames
-							amount: 0.600
+							amount: 0.300
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -45,7 +45,7 @@
 						{
 							type: resource
 							material: money
-							amount: 24.000
+							amount: 16.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

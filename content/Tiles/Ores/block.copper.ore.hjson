@@ -37,7 +37,7 @@
 	[
 		{
 			material: copper
-			quantity: 3.240506
+			quantity: 1.940506
 		}
 		{
 			material: stone
@@ -47,9 +47,9 @@
 	
 	mappings:
 	[
-		{
-			color: "0xffaa6a2e"
-			tile_flags: solid, non_empty, ground, no_replace
-		}
+//		{
+//			color: "0xffaa6a2e"
+//			tile_flags: solid, non_empty, ground, no_replace
+//		}
 	]
 }

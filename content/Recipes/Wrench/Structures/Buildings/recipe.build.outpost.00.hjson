@@ -6,8 +6,8 @@
 	[
 		{
 			type: resource
-			material: wood.rod
-			amount: 20.000
+			material: wood
+			amount: 120.000
 			snapping: 0.500
 			group: 0
 			flags: prerequisite
@@ -23,7 +23,7 @@
 		{
 			type: resource
 			material: computer_parts.basic
-			amount: 3.000
+			amount: 2.000
 			snapping: 0.500
 			group: 0
 			flags: prerequisite

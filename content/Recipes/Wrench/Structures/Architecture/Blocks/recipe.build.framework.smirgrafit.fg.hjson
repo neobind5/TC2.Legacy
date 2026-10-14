@@ -3,7 +3,7 @@
 	name: "Formwork (Smirgrafit)"
 	desc:
 		'''
-		TODO: Desc
+		Coat formworks in smirgrafit. Requires heating to cure.
 		'''
 	tips: []
 	

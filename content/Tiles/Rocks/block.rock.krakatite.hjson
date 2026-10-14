@@ -39,19 +39,19 @@
 	[
 		{
 			material: stone
-			quantity: 3.104962
+			quantity: 1.104962
 		}
 		{
 			material: tar
-			quantity: 2.331997
+			quantity: 1.331997
 		}
 	]
 	
 	mappings:
 	[
-		{
-			color: "0xff917d54"
-			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
-		}
+//		{
+//			color: "0xff917d54"
+//			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+//		}
 	]
 }

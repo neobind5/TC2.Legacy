@@ -42,7 +42,7 @@
 	[
 		{
 			material: stone
-			quantity: 3.048298
+			quantity: 1.048298
 		}
 		{
 			material: silicon
@@ -52,9 +52,9 @@
 	
 	mappings:
 	[
-		{
-			color: "0xff615e59"
-			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
-		}
+//		{
+//			color: "0xff615e59"
+//			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+//		}
 	]
 }

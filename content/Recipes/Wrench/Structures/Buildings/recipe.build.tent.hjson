@@ -25,7 +25,7 @@
 		{
 			type: resource
 			material: wood
-			amount: 35.000
+			amount: 150.000
 			snapping: 0.500
 			group: 0
 			flags: prerequisite

@@ -28,14 +28,6 @@
 					[
 						{
 							type: resource
-							material: wood.rod
-							amount: 1.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
 							material: copper.ingot
 							amount: 2.000
 							snapping: 1.000
@@ -45,7 +37,7 @@
 						{
 							type: work
 							work: machining
-							amount: 1
+							amount: 8
 							amount_min: 0.000
 							group: 0
 							flags: conditional

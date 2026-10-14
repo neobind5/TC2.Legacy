@@ -37,30 +37,6 @@
 						{
 							type: resource
 							material: copper_wire
-							amount: 20.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: machine_parts
-							amount: 12.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: steel.frames
-							amount: 8.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: lubricant
 							amount: 10.000
 							snapping: 1.000
 							group: 0
@@ -69,7 +45,7 @@
 						{
 							type: work
 							work: machining
-							amount: 10
+							amount: 30
 							amount_min: 0.000
 							group: 0
 							flags: conditional
@@ -87,7 +63,7 @@
 		{
 			type: resource
 			material: computer_parts.basic
-			amount: 1
+			amount: 2
 			group: 0
 			flags: none
 		}

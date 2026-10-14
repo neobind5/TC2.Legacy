@@ -1,16 +1,16 @@
 ﻿{
 	$version: "0.1.63.8"
-	name: "Planks"
+	name: "Planks (Mithril)"
 	desc:
 		'''
-		Wooden planks hammered together.
+		Wooden planks mithrilled together.
 		'''
 	
 	material_type: wood
 	tile_flags: non_empty
 	flags: artificial, construction
 	
-	max_health: 9500.000
+	max_health: 300.000
 	smoothing: 0.110
 	stability: 0.500
 	strength_tensile: 0.000
@@ -34,10 +34,6 @@
 	
 	resources:
 	[
-		{
-			material: scrap.wood
-			quantity: 0.010
-		}
 		{
 			material: mithril
 			quantity: 0.638461

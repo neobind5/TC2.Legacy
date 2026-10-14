@@ -13,8 +13,8 @@ body:
 	{
 		points:
 		[
-			[0.500, -1.750]
-			[2.625, -1.125]
+			[-2.875, -0.400]
+			[2.875, -0.400]
 			[2.875, 2.000]
 			[-2.875, 2.000]
 		]
@@ -95,17 +95,59 @@ minimap.marker:
 	flags: faction, spawner
 }
 
-fancymine:
+resourcegenerator8:
 {
-	produce_interval: 20.000
-	amount: 0.983
-	amount_extra: 0.324
+	produce_interval: 10.000
+	efficiency:0.075
+
+	items:
+	[
+		{
+			material: stone
+			chance: 100.000
+			min: 5.000
+			max: 12.000
+		}
+		{
+			material: soil
+			chance: 100.000
+			min: 9.000
+			max: 11.000
+		}
+		{
+			material: copper
+			chance: 100.000
+			min: 1.000
+			max: 2.500
+		}
+		{
+			material: niklajzner
+			chance: 100.000
+			min: 0.800
+			max: 1.100
+		}
+	]
 
 	@inventory8:
 	{
-		type: storage
-		flags: allow_ducts, ignore_mass, public, standalone
+		type: output
+		flags: standalone, allow_ducts, ignore_mass, public
 		stack_size_multiplier: 1.000
 		offset: [-1.750, 0.625]
 	}
 }
+
+//fancymine:
+//{
+//	produce_interval: 20.000
+//	amount: 0.983
+//	amount_extra: 0.324
+//
+//	@inventory8:
+//	{
+//		type: storage
+//		flags: allow_ducts, ignore_mass, public, standalone
+//		stack_size_multiplier: 1.000
+//		offset: [-1.750, 0.625]
+//	}
+//}

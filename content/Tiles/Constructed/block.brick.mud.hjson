@@ -1,0 +1,55 @@
+﻿{
+	$version: "0.1.63.8"
+	name: "Mud Bricks"
+	desc:
+		'''
+		Mud bricks made by the best of mediocre mudders.
+		'''
+	
+	material_type: brick
+	tile_flags: non_empty
+	flags: artificial, masonry, construction
+	
+	max_health: 1000
+	smoothing: 0.125
+	stability: 2.500
+	strength_tensile: 0.000
+	strength_compressive: 0.000
+	
+	mass: 5.000
+	friction: 0.900
+	elasticity: 0.450
+	fall_damage_mult: 1.000
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.brick.mud
+	pattern: pattern.brick.mud
+	texture_scale: 1.500
+	texture_overshoot: -0.300
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: dirt
+			quantity: 0.060
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xff6f5f53"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff2f251d"
+			tile_flags: non_empty
+		}
+	]
+}

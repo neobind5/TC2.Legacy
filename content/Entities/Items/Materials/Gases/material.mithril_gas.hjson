@@ -48,7 +48,7 @@
 	
 	form_type: gas
 	prefab: resource.mithril_gas
-	h_substance: mithril
+	//h_substance: mithril
 	
 	color_icon: "0x994bd74b"
 	color_item: "0x994bd74b"

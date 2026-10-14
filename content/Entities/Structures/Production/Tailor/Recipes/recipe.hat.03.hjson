@@ -3,7 +3,7 @@
 	name: "Bowler Hat"
 	desc:
 	'''
-	Less educated Kobold "aristocrats" have been spotted using these as real bowls.
+	Less educated Kobold "aristocrats" have been spotted using these as regular bowls.
 	
 	Maybe they're onto something.
 	'''
@@ -43,7 +43,7 @@
 						{
 							type: resource
 							material: money
-							amount: 1100.000
+							amount: 500.000
 							group: 0
 							flags: prerequisite
 						}

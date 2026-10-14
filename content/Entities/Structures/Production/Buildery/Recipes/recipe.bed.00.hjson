@@ -41,14 +41,14 @@
 						{
 							type: resource
 							material: steel.frames
-							amount: 6
+							amount: 2
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: money
-							amount: 80
+							amount: 60
 							group: 0
 							flags: prerequisite
 						}

@@ -177,7 +177,7 @@ autocrafter:
 				}
 				{
 					material: saltpeter
-					count: 2.31
+					count: 11.31
 				}
 			]
 		}
@@ -216,22 +216,22 @@ autocrafter:
 			[
 				{
 					material: gravel
-					count: 10.000
+					count: 50.000
 				}
 			]
 			products:
 			[
 				{
 					material: cement
-					count: 8.73
+					count: 16.73
 				}
 				{
 					material: sand
-					count: 5.5
+					count: 20.5
 				}
 				{
 					material: lime
-					count: 3.75
+					count: 9.75
 				}
 			]
 		}
@@ -286,27 +286,27 @@ autocrafter:
 				}
 			]
 		}
-		{
-			// Crude Rubble Grinding
-			requirements:
-			[
-				{
-					material: scrap.rubble
-					count: 8.000
-				}
-			]
-			products:
-			[
-				{
-					material: cement
-					count: 7
-				}
-				{
-					material: wood
-					count: 5
-				}
-			]
-		}
+		//{
+		//	// Crude Rubble Grinding
+		//	requirements:
+		//	[
+		//		{
+		//			material: scrap.rubble
+		//			count: 8.000
+		//		}
+		//	]
+		//	products:
+		//	[
+		//		{
+		//			material: cement
+		//			count: 7
+		//		}
+		//		{
+		//			material: wood
+		//			count: 5
+		//		}
+		//	]
+		//}
 		{
 			// Crude Scrap Grinding
 			requirements:

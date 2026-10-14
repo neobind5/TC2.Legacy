@@ -1,0 +1,56 @@
+﻿{
+	$version: "0.1.72.1"
+	name: "Sheetmetal"
+	desc:
+		'''
+		Sheet of cheap metal, stronger than wood, but doesn't compare to tougher materials.
+		'''
+	
+	material_type: metal_sheet
+	tile_flags: non_empty
+	flags: artificial, magnetic, metal, construction
+	
+	max_health: 5000.000
+	smoothing: 0.170
+	stability: 5.000
+	strength_tensile: 14.000
+	strength_compressive: 3.200
+	
+	mass: 0.443
+	density: 0.000
+	friction: 0.950
+	elasticity: 0.430
+	fall_damage_mult: 0.740
+	collision_layer: none
+	collision_mask: none
+	
+	texture: terrain.sheetmetal.00
+	pattern: pattern.sheetmetal.00
+	texture_scale: 0.545
+	texture_overshoot: -1.000
+	texture_offset: 0.000
+	
+	color_preview: "0x00000000"
+	color_fill: "0xff140e08"
+	
+	resources:
+	[
+		{
+			material: niklajzner.ingot
+			quantity: 0.017987
+		}
+		null
+	]
+	
+	mappings:
+	[
+		{
+			color: "0xffc7ccad"
+			tile_flags: solid, non_empty, become_background_on_break
+		}
+		{
+			color: "0xff303128"
+			tile_flags: non_empty
+		}
+	]
+}

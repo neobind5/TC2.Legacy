@@ -5,9 +5,6 @@
 	
 	related_materials:
 	{
-		money: product
-		wood.rod: ingredient
-		wood: ingredient
 	}
 	
 	stages:
@@ -25,7 +22,7 @@
 			[
 				{
 					name: "Raw Water"
-					desc: "Sell a glass of water, shopkeeper was thirsty."
+					desc: "Sell a glass of supposedly clean water to the shopkeeper."
 					
 					type: undefined
 					flags: none
@@ -46,7 +43,7 @@
 						{
 							type: resource
 							material: money
-							amount: 0.100
+							amount: 1
 							group: 0
 							flags: primary
 						}
@@ -95,9 +92,9 @@
 	button_name: "sell"
 	rank: 3.000
 	
-	min: 100
-	max: 1500
-	step: 100
+	min: 25
+	max: 100
+	step: 25
 	
 	version: 1
 }

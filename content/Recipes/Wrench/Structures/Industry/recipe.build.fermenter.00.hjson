@@ -12,13 +12,6 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: niklajzner
-			amount: 3.000
-			group: 0
-			flags: prerequisite
-		}
 	]
 	
 	products:
@@ -34,7 +27,7 @@
 	
 	type: industry
 	flags: no_amount_multiplier, blueprintable, wip
-	tags: complex, medium, metalworking, construction
+	tags: basic, simple, medium, architecture, construction
 	hints: none
 	connotations: none
 	infrastructure: none

@@ -71,8 +71,8 @@ harvestable:
 	resources:
 	[
 		{
-			material: "wood.rod"
-			quantity: 5.000
+			material: "wood"
+			quantity: 15.000
 		}
 		{
 			material: "plants"

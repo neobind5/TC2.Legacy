@@ -5,9 +5,6 @@
 	
 	related_materials:
 	{
-		money: product
-		wood.rod: ingredient
-		wood: ingredient
 	}
 	
 	stages:
@@ -46,7 +43,7 @@
 						{
 							type: resource
 							material: money
-							amount: 9.000
+							amount: 17.000
 							group: 0
 							flags: primary
 						}

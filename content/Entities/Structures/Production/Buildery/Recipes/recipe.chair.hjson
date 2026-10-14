@@ -44,15 +44,8 @@
 						}
 						{
 							type: resource
-							material: wood.rod
-							amount: 4
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
 							material: money
-							amount: 20
+							amount: 10
 							group: 0
 							flags: prerequisite
 						}

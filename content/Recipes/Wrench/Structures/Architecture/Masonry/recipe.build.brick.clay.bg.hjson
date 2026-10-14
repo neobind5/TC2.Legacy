@@ -3,7 +3,7 @@
 	name: "Clay Bricks (Back)"
 	desc:
 		'''
-		TODO: Desc
+		Clay bricks glued together. Surprisingly durable.
 		'''
 	tips: []
 	
@@ -19,7 +19,7 @@
 		{
 			type: resource
 			material: glue
-			amount: 0.005
+			amount: 0.015
 			group: 0
 			flags: prerequisite
 		}
@@ -52,7 +52,7 @@
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
-	rank: 103
+	rank: 104
 	
 	placement:
 	{

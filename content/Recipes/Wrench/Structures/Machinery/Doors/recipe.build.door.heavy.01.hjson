@@ -54,7 +54,7 @@
 	]
 	
 	type: machinery
-	flags: no_amount_multiplier, no_cancel
+	flags: no_amount_multiplier, no_cancel,
 	tags: complex, large, industrial, metalworking, metallurgy, engineering, construction
 	hints: none
 	connotations: none

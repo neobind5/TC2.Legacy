@@ -38,19 +38,19 @@
 	[
 		{
 			material: stone
-			quantity: 2.644342
+			quantity: 0.944342
 		}
 		{
 			material: graphite
-			quantity: 0.931997
+			quantity: 0.331997
 		}
 	]
 	
 	mappings:
 	[
-		{
-			color: "0xff82796a"
-			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
-		}
+//		{
+//			color: "0xff82796a"
+//			tile_flags: solid, non_empty, become_background_on_break, ground, no_replace
+//		}
 	]
 }

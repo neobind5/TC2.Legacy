@@ -29,7 +29,7 @@
 	]
 	
 	type: architecture
-	flags: none
+	flags: disabled, wip
 	tags: complex, metallurgy, architecture, construction
 	hints: none
 	connotations: none

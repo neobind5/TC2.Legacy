@@ -8,21 +8,21 @@
 		{
 			type: resource
 			material: wood
-			amount: 40.000
+			amount: 200.000
 			group: 0
 			flags: prerequisite
 		}
 		{
 			type: resource
 			material: copper_wire
-			amount: 12.000
+			amount: 16.000
 			group: 0
 			flags: prerequisite
 		}
 		{
 			type: resource
 			material: machine_parts
-			amount: 48.000
+			amount: 20.000
 			group: 0
 			flags: prerequisite
 		}
@@ -39,7 +39,7 @@
 	]
 	
 	type: machinery
-	flags: no_amount_multiplier, wip, no_cancel
+	flags: no_amount_multiplier, wip, no_cancel, disabled
 	tags: basic, simple, large, woodworking, assembling, construction
 	hints: none
 	connotations: none

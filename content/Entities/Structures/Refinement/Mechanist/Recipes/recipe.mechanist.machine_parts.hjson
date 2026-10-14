@@ -29,7 +29,7 @@
 						{
 							type: resource
 							material: copper_wire
-							amount: 12.000
+							amount: 8.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -45,7 +45,7 @@
 						{
 							type: work
 							work: machining
-							amount: 2
+							amount: 8
 							amount_min: 0.000
 							group: 0
 							flags: conditional

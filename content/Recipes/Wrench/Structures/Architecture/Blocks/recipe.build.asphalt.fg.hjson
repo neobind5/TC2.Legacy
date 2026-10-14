@@ -19,7 +19,7 @@
 		{
 			type: resource
 			material: tar
-			amount: 0.200
+			amount: 0.080
 			group: 0
 			flags: prerequisite
 		}

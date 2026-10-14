@@ -63,11 +63,11 @@ harvestable:
 	[
 		{
 			material: grain
-			quantity: 8.000
+			quantity: 32.000
 		}
 		{
 			material: cmajzl
-			quantity: 2.000
+			quantity: 4.000
 		}
 		null
 		null

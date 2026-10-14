@@ -38,14 +38,13 @@
 							type: resource
 							material: silicon
 							amount: 0.300
-							snapping: 1.000
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: money
-							amount: 8.000
+							amount: 3.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
