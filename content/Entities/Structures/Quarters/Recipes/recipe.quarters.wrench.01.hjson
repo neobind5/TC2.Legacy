@@ -63,7 +63,7 @@
 	hints: none
 	connotations: none
 	infrastructure: none
-	infrastructure_exclude: none
+	infrastructure_exclude: personal
 	
 	icon:
 	{

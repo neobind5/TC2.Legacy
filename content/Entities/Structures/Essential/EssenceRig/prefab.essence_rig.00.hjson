@@ -259,7 +259,8 @@ resourcegenerator8:
 
 	@inventory8:
 	{
-		type: output
+		//type: output
+		type: storage
 		flags: standalone, allow_ducts, ignore_mass, public
 		stack_size_multiplier: 1.000
 		offset: [-1.750, 0.625]

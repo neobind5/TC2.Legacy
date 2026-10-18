@@ -29,22 +29,22 @@
 						{
 							type: resource
 							material: gunpowder
-							amount: 2.000
+							amount: 0.400
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
-							material: copper
-							amount: 0.200
+							material: gravel
+							amount: 0.320
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: money
-							amount: 7.000
+							amount: 1.800
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

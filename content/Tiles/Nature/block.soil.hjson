@@ -39,7 +39,10 @@
 			material: soil
 			quantity: 2.936111
 		}
-		null
+		{
+			material: sulfur
+			quantity: 0.423797
+		}
 	]
 	
 	mappings:

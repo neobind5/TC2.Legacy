@@ -1,7 +1,9 @@
 $name: "Fermenter"
 $desc:
 	'''
-	TODO: Desc
+	Produces alcohol from grains, which eventually decays into vinegar.
+	
+	Automatically produces products out of materials put inside.
 	'''
 $tags: []
 

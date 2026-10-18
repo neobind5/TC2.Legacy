@@ -29,14 +29,6 @@
 						{
 							type: resource
 							material: nitrosugar
-							amount: 1.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: steel.frames
 							amount: 0.300
 							snapping: 1.000
 							group: 0
@@ -44,8 +36,16 @@
 						}
 						{
 							type: resource
+							material: steel.frames
+							amount: 0.040
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
 							material: money
-							amount: 16.000
+							amount: 10.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

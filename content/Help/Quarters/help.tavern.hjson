@@ -1,0 +1,29 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Tavern"
+	category: "01: Quarters"
+	desc:
+		'''
+		Allows neutral spawning.
+
+		Simple tools and beer(?) can be requested from this for free.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Tavern"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: tavern
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

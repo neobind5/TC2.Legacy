@@ -1,6 +1,6 @@
 # Project Direction
 
-## Gamemode Balancing (20%)
+## Gamemode Balancing (30%)
 
     - 1 to 3 maps per server, possibly adding smaller maps with resources around larger ones?
     (Reasoning: Cram players into tight spaces to speed up the game and stir conflict.)

@@ -1,0 +1,89 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Hand Grinder"
+	category: "02: Refinement"
+	desc:
+		'''
+		Grinders will grind up valid materials inside of their storage.
+
+		This is an essential building, and the first priority once stone is acquired.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Hand Grinder"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: grinder.small
+		size: [16, 24]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+		{
+			text: "Gravel x35, Copper x6, Niklajzner x19, Sulfur x9, Silver x1, Gold x1:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Stone x50"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Clay x19, Copper x8, Sulfur x16, Saltpeter x11:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Soil x50"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Silicon x28:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Sand x50"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Cement x18, Sand x20, Lime x10:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Gravel x50"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Flour x13:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Grain x10"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Graphite x38:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Karban x50"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

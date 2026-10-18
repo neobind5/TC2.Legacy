@@ -1,0 +1,32 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "05: Farming"
+	category: "00: Essentials"
+	desc:
+		'''
+		All plants in Smrtec are highly GMO, created as part of terraforming and colonizing this moon. They grow absurdly quickly due to exposure with Life Essence.
+
+		With any wrench, you can plant seeds into the ground. Eventually, they'll grow into a full-sized plant ready to be harvested.
+
+		Plants may provide money or resources for chemistry, cooking, and construction.
+
+		Seeds can be bought at a market, or obtained by harvesting plants.
+		'''
+	
+	order: 5
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Farming"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: ui_icons_xp
+		size: [16, 16]
+		frame: [3, 5]
+	}
+	entries:
+	[
+	]
+}

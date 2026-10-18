@@ -61,7 +61,7 @@ transform:
 crop:
 {
 	offset: [0.000, -1.000]
-	time_seconds: 240
-	time_extra: 2
+	time_seconds: 90
+	time_extra: 5
 	prefab: "cmajzl.00"
 }

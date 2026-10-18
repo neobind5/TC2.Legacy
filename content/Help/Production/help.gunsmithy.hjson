@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Gunsmithy"
+	category: "03: Production"
+	desc:
+		'''
+		Produces a variety of guns.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Gunsmithy"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: gunsmithy.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

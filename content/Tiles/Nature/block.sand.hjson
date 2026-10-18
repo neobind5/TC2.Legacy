@@ -39,7 +39,10 @@
 			material: sand
 			quantity: 3.807869
 		}
-		null
+		{
+			material: gold
+			quantity: 0.093797
+		}
 	]
 	
 	mappings:

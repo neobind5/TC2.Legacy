@@ -38,7 +38,7 @@
 						{
 							type: resource
 							material: wood
-							amount: 15.000
+							amount: 5.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -46,7 +46,7 @@
 						{
 							type: resource
 							material: money
-							amount: 140.000
+							amount: 70.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

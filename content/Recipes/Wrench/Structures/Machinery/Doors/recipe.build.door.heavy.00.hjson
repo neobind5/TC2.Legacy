@@ -8,7 +8,7 @@
 		{
 			type: resource
 			material: steel.ingot
-			amount: 10.000
+			amount: 5.000
 			group: 0
 			flags: prerequisite
 		}
@@ -22,7 +22,7 @@
 		{
 			type: resource
 			material: computer_parts.basic
-			amount: 2.000
+			amount: 1.000
 			group: 0
 			flags: prerequisite
 		}

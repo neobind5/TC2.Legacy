@@ -39,7 +39,10 @@
 			material: clay
 			quantity: 4.481754
 		}
-		null
+		{
+			material: water
+			quantity: 2.481754
+		}
 	]
 	
 	mappings:

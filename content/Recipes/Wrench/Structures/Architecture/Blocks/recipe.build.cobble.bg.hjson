@@ -11,7 +11,7 @@
 	[
 		{
 			type: resource
-			material: stone
+			material: gravel
 			amount: 0.1
 			group: 0
 			flags: prerequisite

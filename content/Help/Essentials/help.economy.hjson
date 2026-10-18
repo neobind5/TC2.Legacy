@@ -1,0 +1,47 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "04: Economy"
+	category: "00: Essentials"
+	desc:
+		'''
+		The Kordel Denar is the primary currency used in the lands of Kordel.
+		Most vendors will trade with this.
+		'''
+	
+	order: 4
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Economy"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [3, 1]
+	}
+	entries:
+	[
+		{
+			text: "While denar can be used for general trading with others, it is best used for official trade."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Markets are scattered across the region, their products are standardized and are always in stock. A nearby market is generally required for a successful base."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "With a market, you can sell a variety of goods and resources to be compensated with money. Finding a good source of income is vital."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Skilled workers may require money as compensation when performing dangerous, laborious, complicated, or artistic crafts."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

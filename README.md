@@ -3,8 +3,8 @@ Fork of Korequest & TC2 Overhaul aiming to stay in line with what made TC1 fun.
 Please contribute!! It's a lot of work! Playtesting is viable with current build.
 
 ## Goals:
-- Gamemode Balancing (20%)
-    - Public Playtesting soon...
+- Gamemode Balancing (30%)
+    - Occasional Playtests.
 - Progression Rework (80%)
     - Earlygame (Done!)
     - Midgame (~30%)

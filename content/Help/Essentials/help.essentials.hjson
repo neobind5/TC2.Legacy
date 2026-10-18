@@ -1,0 +1,52 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "01: Overview"
+	category: "00: Essentials"
+	desc:
+		'''
+		Legacy changes progression significantly to be more approachable. This tutorial assumes you understand Conquest.
+		If in doubt, there is probably a tutorial for it.
+		'''
+	
+	order: 1
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Overview"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [6, 4]
+	}
+	entries:
+	[
+		{
+			text: "Overview:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Expect changes to balance and mechanics over time, this tutorial will adapt to any changes."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Feel free to ask others for help if the tutorial doesn't suit your needs. But don't pester others."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "General gameplay differs from conquest, and is closer to TC1. Progression is staged and is inspired by Factorio."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Things may feel unapproachable at first if going in blind. The tutorial should help you get started."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

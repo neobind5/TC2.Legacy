@@ -18,13 +18,13 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: glue
-			amount: 0.01
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: glue
+		//	amount: 0.01
+		//	group: 0
+		//	flags: prerequisite
+		//}
 		//{
 		//	type: resource
 		//	material: mortar

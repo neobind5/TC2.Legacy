@@ -383,6 +383,10 @@
         }
         {
             flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.resource\.black_coal\.hjson$'''
+        }
+        {
+            flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]material\.coal\.powder\.hjson$'''
         }
         {
@@ -1151,6 +1155,39 @@
         {
             flags: none
             regex: '''TC2\.(?!Legacy).*[/\\]block\.sheetmetal\.00\.hjson$'''
+        }
+        // characters
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.giant\.female\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.giant\.male\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.human\.female\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.human\.male\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.kobold\.female\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]prefab\.kobold\.male\.hjson$'''
+        }
+        {
+            flags: disabled
+            regex: '''TC2\.(?!Legacy).*[/\\]Base\.SideMenuGUI\.cs$'''
+        }
+        {
+            flags: none
+            regex: '''TC2\.(?!Legacy).*[/\\]help\..*\.hjson$'''
         }
     ]
 }

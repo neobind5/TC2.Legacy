@@ -1,0 +1,57 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "03: Production"
+	category: "00: Essentials"
+	desc:
+		'''
+		Buildings and industry allow you to create resources and goods.
+		Reading descriptions may give you a general idea of what something does. Everything has tutorial pages which offer more detailed breakdowns.
+		'''
+	
+	order: 3
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Production and Refinement"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [13, 4]
+	}
+	entries:
+	[
+		{
+			text: "With a pickaxe you can dig stone, this will provide basic resources for construction. You can also loot mines for resources."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "A Handgrinder can grind resources, providing ores, compounds, and cement depending on what you put into it."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Furnaces smelt ores in its inventory into ingots for general use and produce karban."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Cauldrons produce explosive compounds and various chemicals required for certain crafts."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "A Buildery can be constructed for more specialized tools."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "An Armory will provide basic weaponry and better equipment."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

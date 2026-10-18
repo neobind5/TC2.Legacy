@@ -2,6 +2,9 @@ $name: "Hand Grinder"
 $desc:
 	'''
 	Grind simple materials with your hands, or grind your hands with simple materials.
+	Fit for rock grinding, milling, and powderizing just about anything your heart desires.
+	
+	Automatically produces products out of materials put inside.
 	'''
 $tags: []
 
@@ -124,27 +127,27 @@ autocrafter:
 			[
 				{
 					material: gravel
-					count: 35.00
+					count: 35
 				}
 				{
 					material: copper
-					count: 5.55
+					count: 6
 				}
 				{
 					material: niklajzner
-					count: 19.48
+					count: 19
 				}
 				{
 					material: sulfur
-					count: 8.63
+					count: 9
 				}
 				{
 					material: silver
-					count: 1.5
+					count: 1
 				}
 				{
 					material: gold
-					count: 1.5
+					count: 1
 				}
 			]
 		}
@@ -160,24 +163,20 @@ autocrafter:
 			products:
 			[
 				{
-					material: mud
-					count: 12.75
-				}
-				{
 					material: clay
-					count: 18.75
+					count: 19
 				}
 				{
 					material: copper
-					count: 8.3
+					count: 8
 				}
 				{
 					material: sulfur
-					count: 15.38
+					count: 16
 				}
 				{
 					material: saltpeter
-					count: 11.31
+					count: 11
 				}
 			]
 		}
@@ -194,19 +193,7 @@ autocrafter:
 			[
 				{
 					material: silicon
-					count: 28.25
-				}
-				{
-					material: salt
-					count: 3.25
-				}
-				{
-					material: silver
-					count: 2.23
-				}
-				{
-					material: gold
-					count: 2.03
+					count: 28
 				}
 			]
 		}
@@ -223,108 +210,15 @@ autocrafter:
 			[
 				{
 					material: cement
-					count: 16.73
+					count: 18
 				}
 				{
 					material: sand
-					count: 20.5
+					count: 20
 				}
 				{
 					material: lime
-					count: 9.75
-				}
-			]
-		}
-		{
-			// Crude Plant Grinding
-			requirements:
-			[
-				{
-					material: plants
-					count: 20.000
-				}
-			]
-			products:
-			[
-				{
-					material: compost
-					count: 18.23
-				}
-			]
-		}
-		{
-			// Crude Meat Grinding
-			requirements:
-			[
-				{
-					material: meat
-					count: 20.000
-				}
-			]
-			products:
-			[
-				{
-					material: tallow
-					count: 15.23
-				}
-			]
-		}
-		{
-			// Crude Himl Grinding
-			requirements:
-			[
-				{
-					material: himlkarzenus
-					count: 20.000
-				}
-			]
-			products:
-			[
-				{
-					material: silicon
-					count: 16.33
-				}
-			]
-		}
-		//{
-		//	// Crude Rubble Grinding
-		//	requirements:
-		//	[
-		//		{
-		//			material: scrap.rubble
-		//			count: 8.000
-		//		}
-		//	]
-		//	products:
-		//	[
-		//		{
-		//			material: cement
-		//			count: 7
-		//		}
-		//		{
-		//			material: wood
-		//			count: 5
-		//		}
-		//	]
-		//}
-		{
-			// Crude Scrap Grinding
-			requirements:
-			[
-				{
-					material: scrap.mixed
-					count: 5.000
-				}
-			]
-			products:
-			[
-				{
-					material: niklajzner
-					count: 3
-				}
-				{
-					material: copper
-					count: 2.1
+					count: 10
 				}
 			]
 		}
@@ -334,18 +228,14 @@ autocrafter:
 			[
 				{
 					material: grain
-					count: 5.000
+					count: 10.000
 				}
 			]
 			products:
 			[
 				{
 					material: flour
-					count: 4.4
-				}
-				{
-					material: starch
-					count: 3
+					count: 13
 				}
 			]
 		}

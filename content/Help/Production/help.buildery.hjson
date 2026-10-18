@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Buildery"
+	category: "03: Production"
+	desc:
+		'''
+		Produces tools and furniture.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Buildery"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: buildery.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

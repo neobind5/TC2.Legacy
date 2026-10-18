@@ -32,7 +32,7 @@
 	]
 	
 	type: machinery
-	flags: no_amount_multiplier, no_cancel
+	flags: no_amount_multiplier, no_cancel, disabled, hidden
 	tags: complex, large, blacksmithing, assembling, metalworking, metallurgy, architecture, construction
 	hints: none
 	connotations: none

@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Tailor"
+	category: "03: Production"
+	desc:
+		'''
+		Produces cosmetic equipment.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Tailor"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: tailor.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

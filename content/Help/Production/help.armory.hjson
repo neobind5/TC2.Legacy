@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Armory"
+	category: "03: Production"
+	desc:
+		'''
+		Produces armor, backpacks, shields, and bows, and melee weaponry.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Armory"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: armory.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

@@ -15,7 +15,7 @@
 	[
 		{
 			type: resource
-			material: alcohol
+			material: cloth
 			amount: 21.000
 			snapping: 0.500
 			group: 0

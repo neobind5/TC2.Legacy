@@ -40,8 +40,8 @@
 						}
 						{
 							type: resource
-							material: leather
-							amount: 0.200
+							material: gravel
+							amount: 0.400
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

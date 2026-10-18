@@ -1,0 +1,114 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Gravel Furnace"
+	category: "02: Refinement"
+	desc:
+		'''
+		Furnaces will process valid materials inside of their storage.
+
+		This is an essential building for producing metal, karban, and glass.
+		'''
+	
+	order: 1
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Gravel Furnace"
+	sprite_scale: 3
+	sprite:
+	{
+		texture: gravelfurnace
+		size: [32, 48]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+		//{
+		//	text: "Important conversions:"
+		//	color: "0xfffff0d8"
+		//	flags: bold
+		//}
+		{
+			text: "Karban x10, Ash x4:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Wood x10"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Glass x4:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Silicon x10, Ash x3, Lime x5"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Clay Bricks x5:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Clay x15"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Copper Ingot x1:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Copper x6"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Niklajzner Ingot x1:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Niklajzner x8"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Steel Ingot x2:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Niklajzner Ingots x3, Karban x6"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Silver Ingot x1:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Silver x8"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Gold Ingot x1:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Gold x10"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

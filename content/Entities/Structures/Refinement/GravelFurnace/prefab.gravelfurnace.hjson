@@ -1,9 +1,10 @@
 $name: "Simple Furnace"
 $desc:
 	'''
-	Piece of shit furnace you cobbled together with some mortar and gravel. 
-	
-	Looks nice, and it works, I suppose, but it's held together by hopes and dreams.
+	Piece of shit furnace you cobbled together with cobble.
+	Capable of woodburning, brick and ingot creation, nikl carbonization, and soda-lime glass production from silicon.
+
+	Automatically produces products out of materials put inside.
 	'''
 $tags: []
 
@@ -98,22 +99,22 @@ autocrafter:
 			[
 				{
 					material: wood
-					count: 50.000
+					count: 10.000
 				}
 			]
 			products:
 			[
 				{
 					material: karban
-					count: 50.00
-				}
-				{
-					material: black_coal
 					count: 10.00
 				}
+				//{
+				//	material: black_coal
+				//	count: 10.00
+				//}
 				{
 					material: ash
-					count: 20
+					count: 4
 				}
 			]
 		}
@@ -123,11 +124,11 @@ autocrafter:
 			[
 				{
 					material: silicon
-					count: 20.000
+					count: 10.000
 				}
 				{
 					material: ash
-					count: 5.000
+					count: 3.000
 				}
 				{
 					material: lime
@@ -138,7 +139,7 @@ autocrafter:
 			[
 				{
 					material: glass
-					count: 5.00
+					count: 4.00
 				}
 			]
 		}
@@ -227,7 +228,7 @@ autocrafter:
 			[
 				{
 					material: steel.ingot
-					count: 1
+					count: 2
 				}
 			]
 		}

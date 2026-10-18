@@ -1,0 +1,29 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Outpost"
+	category: "01: Quarters"
+	desc:
+		'''
+		Allows faction creation and spawning. Tougher and has a larger claim radius.
+
+		Simple tools can be requested from this for free.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Outpost"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: outpost.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

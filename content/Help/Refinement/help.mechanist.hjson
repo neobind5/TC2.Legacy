@@ -1,0 +1,29 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Mechanist"
+	category: "02: Refinement"
+	desc:
+		'''
+		An essential workshop capable of producing refined materials.
+
+		Produces cloth, copper wires, machine parts, steel frames, and basic computer parts.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Mechanist"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: mechanist.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

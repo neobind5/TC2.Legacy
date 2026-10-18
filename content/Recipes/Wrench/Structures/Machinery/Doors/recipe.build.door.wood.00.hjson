@@ -13,13 +13,13 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: copper_wire
-			amount: 8.000
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: copper_wire
+		//	amount: 8.000
+		//	group: 0
+		//	flags: prerequisite
+		//}
 	]
 	
 	products:

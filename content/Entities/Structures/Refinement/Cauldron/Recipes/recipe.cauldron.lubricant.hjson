@@ -51,14 +51,14 @@
 						//	group: 0
 						//	flags: prerequisite
 						//}
-						{
-							type: resource
-							material: water
-							amount: 10.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
+						//{
+						//	type: resource
+						//	material: water
+						//	amount: 10.000
+						//	snapping: 1.000
+						//	group: 0
+						//	flags: prerequisite
+						//}
 						{
 							type: work
 							work: mixing

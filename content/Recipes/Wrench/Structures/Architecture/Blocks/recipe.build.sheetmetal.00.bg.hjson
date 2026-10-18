@@ -11,7 +11,7 @@
 	[
 		{
 			type: resource
-			material: steel.ingot
+			material: niklajzner.ingot
 			amount: 0.010
 			group: 0
 			flags: prerequisite

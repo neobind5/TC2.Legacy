@@ -29,7 +29,7 @@
 						{
 							type: resource
 							material: gunpowder
-							amount: 1.000
+							amount: 0.300
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -37,7 +37,7 @@
 						{
 							type: resource
 							material: money
-							amount: 1.000
+							amount: 0.600
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

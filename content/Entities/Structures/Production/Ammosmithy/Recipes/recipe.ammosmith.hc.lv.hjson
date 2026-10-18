@@ -29,7 +29,7 @@
 						{
 							type: resource
 							material: sulfur
-							amount: 1.000
+							amount: 0.400
 							snapping: 1.000
 							group: 0
 							flags: prerequisite
@@ -44,7 +44,7 @@
 						{
 							type: resource
 							material: money
-							amount: 2.000
+							amount: 1.400
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

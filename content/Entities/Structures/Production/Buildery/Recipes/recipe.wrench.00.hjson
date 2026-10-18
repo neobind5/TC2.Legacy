@@ -35,14 +35,14 @@
 						{
 							type: resource
 							material: niklajzner.ingot
-							amount: 2
+							amount: 12
 							group: 0
 							flags: prerequisite
 						}
 						{
 							type: resource
 							material: copper_wire
-							amount: 4
+							amount: 8
 							group: 0
 							flags: prerequisite
 						}

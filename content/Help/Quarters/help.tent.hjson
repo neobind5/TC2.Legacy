@@ -1,0 +1,29 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Tent"
+	category: "01: Quarters"
+	desc:
+		'''
+		Allows faction creation and spawning. Relatively fragile and has a small claim radius.
+
+		Simple tools can be requested from this for free.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Tent"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: tent
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

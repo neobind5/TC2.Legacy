@@ -11,18 +11,18 @@
 	[
 		{
 			type: resource
-			material: steel.ingot
+			material: niklajzner.ingot
 			amount: 8.000
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: machine_parts
-			amount: 5.000
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: machine_parts
+		//	amount: 5.000
+		//	group: 0
+		//	flags: prerequisite
+		//}
 	]
 	
 	products:

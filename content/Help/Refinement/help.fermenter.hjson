@@ -1,0 +1,48 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Fermenter"
+	category: "02: Refinement"
+	desc:
+		'''
+		Fermenters convert grain into alcohol over time.
+		Alcohol will convert into vinegar if ignored.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Fermenter"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: fermenter.00
+		size: [24, 24]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+		{
+			text: "Vinegar x0.16:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Alcohol x0.32"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Alcohol x1.6:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Grain x3.2"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

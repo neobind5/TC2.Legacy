@@ -16,13 +16,13 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: glue
-			amount: 0.03
-			group: 0
-			flags: prerequisite
-		}
+		//{
+		//	type: resource
+		//	material: glue
+		//	amount: 0.03
+		//	group: 0
+		//	flags: prerequisite
+		//}
 	]
 	
 	products:

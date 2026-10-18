@@ -1,0 +1,950 @@
+$name: "Human"
+$desc:
+	'''
+	Standard human.
+	'''
+$export: false
+$tags: 
+[
+	"male"
+	"human"
+]
+
+body:
+{
+	inventory_weight_multiplier: 0.200
+
+	fall_damage_multiplier: 1.500
+	buoyancy: 0.630
+	
+	@shape.circle:
+	{
+		mass: 25.000
+		radius: 0.575
+		friction: 0.400
+		elasticity: 0.250
+		material: flesh
+		layer: entity, solid, creature, storage, flammable, organic
+		mask: world
+		tags: small, flammable, soft
+	}
+}
+
+organic:
+{
+	h_species: human
+	tags: heart, torso, arms, hands, lungs
+	flags: none
+	pain_base: 2000.000
+	pain_modifier: 1.000
+	
+	consciousness: 1.000
+	unused_00: 0.000
+	water_ratio: 0.600
+	work_speed: 1.000
+	
+	smartness: 1.000
+	motorics: 1.000
+	strength: 1.000
+	endurance: 1.000
+	dexterity: 1.000
+	coordination: 1.000
+	absorption: 1.000
+	regeneration: 1.000
+}
+
+organic.state:
+{
+
+}
+
+faction:
+{
+
+}
+
+health:
+{
+	max: 3000.000
+}
+
+human:
+{
+
+}
+
+regen:
+{
+	amount: 75.000
+	interval: 5.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "human.male.torso.shirt"
+		mask: "human.male.torso.shirt.mask"
+		size: [16, 16]
+	}
+	z: -40.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+	intensity_b: 0.500
+}
+
+threat:
+{
+	priority: 15.000
+}
+
+climber:
+{
+	climb_force: 1200.000
+	cling_force: 4000.000
+
+	climbable_tags_mask:
+	{
+		exclude: huge
+	}
+
+	@shape.circle:
+	{
+		mass: 0.001
+		radius: 0.500
+		friction: 0.000
+		elasticity: 0.000
+		rigidity_dynamic: 0.000
+		rigidity_static: 0.000
+		layer: entity, ignore_hover, ignore_melee, ignore_bullet
+		mask: climbable
+		flags: no_mass, no_body_overrides, no_inventory_mass
+	}
+}
+
+transform:
+{
+
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+torso:
+{
+	frames_air: [5, 8]
+}
+
+headbob:
+{
+	speed: 22.000
+	multiplier: [0.000, 0.200]
+}
+
+storage:
+{
+	@inventory8:
+	{
+		type: personal
+		flags: standalone, faction, vertical
+		stack_size_multiplier: 1.000
+		
+		filter:
+		{
+			require: none
+			include: soft, malleable, granular, small, bottled
+			exclude: large, gas
+		}
+	}
+}
+
+seat.attachable:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing, disable_rotation, disable_control, full_rotate
+	radius: 0.000
+}
+
+// worker:
+// {
+
+// }
+
+// worker.state:
+// {
+
+// }
+
+facing:
+{
+	threshold: 0.750
+	flip_interval: 0.250
+	flags: rotate_on_flip
+}
+
+equipment.slot:
+{
+	type: chest
+}
+
+norotate:
+{
+	bias: 0.030
+	multiplier: 1.000
+	speed: 5.000
+	mass_multiplier: 75.000
+}
+
+speechbubble:
+{
+
+}
+
+lootable:
+{
+	items:
+	[
+		{
+			material: "meat"
+			min: 40.000
+			max: 60.000
+		}
+	]
+}
+
+ai:
+{
+	stance: defensive
+	courage: 900.000
+}
+
+ai.movement:
+{
+
+}
+
+ai.behavior:
+{
+	movement_flags: hold, open_doors
+	combat_flags: attack_visible, attack_when_hit, cover, flee, defend, form_groups, prefer_ranged
+}
+
+ai.search:
+{
+	radius: 48.000
+}
+
+ai.gunner:
+{
+	aim_min_dot: 0.992
+	aim_speed_mult: 2.300
+	aim_time_mult: 1.000
+
+	attack_distance: 30.000
+	cover_distance_offset: 4.000
+
+	attack_cooldown: 1.000
+	attack_burst_time: 1.700
+}
+
+ai.gunner.state:
+{
+
+}
+
+npc:
+{
+	pain_modifier: 1.000
+	min_consciousness: 0.250
+	avoid_distance_base: [1.000, 0.000]
+	idle_distance_base: [1.500, 1.500]
+
+	wander_interval: 7.000
+	wander_interval_extra: 16.000
+	wander_radius: 24.000
+}
+
+npc.emotions:
+{
+	hostility: 0.450
+	courage: 0.600
+	cruelty: 0.900
+	irritability: 0.700
+	apathy: 0.800
+}
+
+npc.emotions.state:
+{
+
+}
+
+pathfinding:
+{
+	flags: land, climber
+}
+
+pathfinding.state:
+{
+	
+}
+
+commandable:
+{
+	
+}
+
+interactable:
+{
+	flags: centered_inventory
+	window_size: [600, 480]
+	window_size_misc: [96, 0]
+	priority: -4.000
+}
+
+shop:
+{
+	tags_filter:
+	{
+		include: dumb, crude, agriculture, woodworking, tailoring, salvaging, gathering, forestry, messy, dangerous
+		exclude: automated, complex, advanced, medium, large, huge, blacksmithing, industrial, metallurgy, architecture, smelting, fermenting, heating
+	}
+	
+	tools: hammer, screwdriver, bucket, file, towel, knife, sandpaper, utensils
+	infrastructure: bottle, bucket, surface, hard_surface, personal
+	environment: mobile, dirty, smelly, ugly, scary, crappy, cramped, open, small
+	connotations: none
+	
+	flags: no_sorting, embed_gui, self_only
+	menu_columns: 3
+	recipe_type: workshop
+	
+	name: "Crafting"
+}
+
+workshop:
+{
+	flags: self_only
+	orders_capacity: 1
+	
+	gui_info_size_x: 216.000
+	max_order_mass: 30.000
+	
+	draw_order_flags:
+	{
+		rem: temperature, pressure
+	}
+}
+
++slot.head|instance:
+{
+	$tags: []
+	
+	joint.base:
+	{
+		offset_a: [0.125, -0.375]
+		max_force: 8000.000
+		max_torque: 12000.000
+		max_stress: 2.000
+		stress_threshold: 1.250
+		stress_damp: 0.300
+		flags: organic, control_write, force_facing, facing_reset_pos, no_sync
+		material_type: flesh
+		
+		max_displacement: 1.000
+		displacement_stress_modifier: 0.300
+		displacement_force_modifier: 1.400
+
+		z: 4.000
+
+		@animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.gore.stub"
+				size: [16, 16]
+				frame: [2, 0]
+			}
+			offset: [0.100, -0.400]
+			z: -39.000
+		}
+	}
+	
+	joint.pivot:
+	{
+		max_bias: 8.000
+		stress_mult: 0.500
+	}
+	
+	joint.rotarylimit:
+	{
+		max_torque: 10000.000
+		min: -0.500
+		max: 0.500
+		max_bias: 8.000
+		stress_mult: 0.500
+	}
+
+	joint.rotaryspring:
+	{
+		stiffness: 400.000
+		damping: 40.000
+	}
+	
+	+head|child:
+	{
+		$name: "Human (Head)"
+		$desc:
+			'''
+			Standard human head.
+			'''
+		$tags: 
+		[
+			"male"
+			"human"
+		]
+		
+		body:
+		{
+			fall_damage_multiplier: 3.300
+			buoyancy: 0.550
+
+			@shape.circle:
+			{
+				mass: 10.000
+				offset: [0.000, -0.050]
+				radius: 0.420
+				friction: 0.320
+				elasticity: 0.550
+				material: flesh
+				layer: entity, solid, creature, flammable, organic
+				mask: world
+			}
+		}
+		
+		animated.renderer|"hair":
+		{
+			sprite:
+			{
+				texture: "human.male.head.hair.gray"
+				count: 1
+				size: [24, 24]
+			}
+			z: -34.900
+		}
+		
+		animated.renderer|"beard":
+		{
+			sprite:
+			{
+				texture: "human.male.head.beard.gray"
+				count: 1
+				size: [16, 16]
+			}
+			z: -34.800
+		}
+		
+		organic:
+		{
+			h_species: human
+			tags: brain, head, eyes, mouth
+			flags: none
+			pain_base: 1000.000
+			pain_modifier: 1.000
+			
+			consciousness: 1.000
+			unused_00: 0.000
+			water_ratio: 0.600
+			work_speed: 1.000
+			
+			smartness: 1.000
+			motorics: 1.000
+			strength: 1.000
+			endurance: 1.000
+			dexterity: 1.000
+			coordination: 1.000
+			absorption: 1.000
+			regeneration: 1.000
+
+			@animated.renderer:
+			{
+				sprite:
+				{
+					texture: human.gore.stub
+					size: [16, 16]
+					frame: [2, 0]
+				}
+				offset: [-0.125, 0.125]
+				z: -33.000
+			}
+		}
+		
+		organic.state:
+		{
+		
+		}
+		
+		health:
+		{
+			max: 2600.000
+		}
+
+		regen:
+		{
+			amount: 40.000
+			interval: 5.000
+		}
+		
+		holdable:
+		{
+			offset: [0.000, 0.350]
+		}
+		
+		equipment.slot:
+		{
+			type: head
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.male.head"
+				count: 1
+				size: [16, 16]
+			}
+			z: -35.000
+			flags: has_damage
+		}
+
+		damage.effects:
+		{
+			offset: 1
+			frame_count: 4
+			threshold_wreck: 0.200
+		}
+		
+		transform:
+		{
+		
+		}
+		
+		head:
+		{
+			air_capacity: 0.620
+			air_usage: 0.040
+			
+			offset_mouth: [0.300, 0.350]
+
+			frame_pain: 1
+			frame_dead: 2
+
+			flags: displacement_rigidity
+			displacement_mult: 2.000
+			displacement_rigidity: 0.600
+		}
+		
+		human:
+		{
+		
+		}
+		
+		control:
+		{
+		
+		}
+		
+		emote:
+		{
+			voice_pitch: 0.900
+		}
+		
+		lookat:
+		{
+			head_modifier: 0.600
+			body_modifier: 0.400
+			deadzone: [1.000, 8.000]
+		}
+
+		// norotate:
+		// {
+		// 	bias: 0.070
+		// 	multiplier: 1.000
+		// 	mass_multiplier: 60.000
+		// }
+		
+		lootable:
+		{
+			items:
+			[
+				{
+					material: "meat"
+					min: 12.000
+					max: 18.000
+				}
+			]
+		}
+	}
+}
+
++slot.waist|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, 0.375]
+		offset_b: [0.000, 0.000]
+		rotation_origin: 0.000
+		rotation_offset: 0.000
+		max_force: 16000.000
+		max_torque: 8000.000
+		max_displacement: 0.400
+		displacement_stress_modifier: 0.300
+		displacement_force_modifier: 0.500
+		max_stress: 3.000
+		stress_threshold: 1.500
+		stress_damp: 0.300
+		offset_a_modifier: 1.000
+		offset_b_modifier: 1.000
+		z: -5.000
+		material_type: flesh
+		flags: organic, control_write, facing_reset_pos, force_facing
+
+		@animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.gore.stub"
+				size: [16, 16]
+				frame: [1, 0]
+			}
+			offset: [0.000, 0.500]
+			z: -38.000
+		}
+	}
+	
+	joint.pivot:
+	{
+		max_bias: 8.000
+	}
+	
+	joint.rotarylimit:
+	{
+		min: -0.300
+		max: 0.300
+		max_bias: 8.000
+		stress_mult: 0.200
+	}
+	
+	+waist|child:
+	{
+		$name: "Human (Waist)"
+		$desc:
+			'''
+			Standard human waist.
+			'''
+		$tags: 
+		[
+			"male"
+			"human"
+		]
+			
+		transform:
+		{
+		
+		}
+		
+		body:
+		{
+			fall_damage_multiplier: 1.200
+			buoyancy: 0.300
+
+			@shape.circle:
+			{
+				mass: 37.000
+				radius: 0.500
+				friction: 0.800
+				elasticity: 0.100
+				material: flesh
+				layer: entity, solid, creature, flammable, organic
+				mask: world
+			}
+		}
+		
+		animated.renderer:
+		{
+			sprite:
+			{
+				texture: "human.male.waist.pants"
+				size: [16, 8]
+			}
+			z: -50.000
+		}
+		
+		runner:
+		{
+			walk_force: 10000.000
+			jump_force: 35000.000
+		}
+
+		runner.state:
+		{
+			
+		}
+		
+		organic:
+		{
+			h_species: human
+			tags: waist, legs, butt
+			flags: none
+			pain_base: 1500.000
+			pain_modifier: 1.000
+			
+			consciousness: 1.000
+			unused_00: 0.000
+			water_ratio: 0.600
+			work_speed: 1.000
+			
+			smartness: 1.000
+			motorics: 1.000
+			strength: 1.000
+			endurance: 1.000
+			dexterity: 1.000
+			coordination: 1.000
+			absorption: 1.000
+			regeneration: 1.000
+
+			@animated.renderer:
+			{
+				sprite:
+				{
+					texture: "human.gore.stub"
+					size: [16, 16]
+				}
+				z: -49.000
+			}
+		}
+		
+		organic.state:
+		{
+		
+		}
+		
+		control:
+		{
+		
+		}
+		
+		health:
+		{
+			max: 3900.000
+		}
+
+		regen:
+		{
+			amount: 50.000
+			interval: 5.000
+		}
+		
+		equipment.slot:
+		{
+			type: legs, feet
+		}
+		
+		holdable:
+		{
+			offset: [0.000, 0.000]
+		}
+		
+		legs:
+		{
+			multiplier: 10.000
+
+			frame_sitting: [6, 0]
+			frames_jump: [5, 8]
+			frame_air: 8
+		}
+		
+		norotate:
+		{
+			bias: 0.030
+			multiplier: 1.000
+			speed: 8.000
+			mass_multiplier: 150.000
+		}
+		
+		lootable:
+		{
+			items:
+			[
+				{
+					material: "meat"
+					min: 60.000
+					max: 80.000
+				}
+			]
+		}
+	}
+}
+
++arm|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.100]
+		max_force: 4400.000
+		max_torque: 10000.000
+		max_stress: 2.000
+		stress_threshold: 1.250
+		stress_damp: 0.250
+		flags: control_write, facing_reset_pos, force_facing
+		z: 45.000
+
+		attaching_distance_max: 3.500
+	}
+	
+	arm:
+	{
+		aim_torque: 2500.000
+		spin_torque: 180.000
+		max_spin_speed: 7.000
+		max_pickup_weight: 150.000
+	}
+
+	joint.piston:
+	{
+		error_bias: 0.000
+		max_bias: 8.000
+		stiffness: 1500.000
+		damping: 140.000
+		axis_force: 10000.000
+		spring_max_bias: 4.000
+		spring_error_bias: 0.010
+		max_distance: 0.200
+		stress_mult_axis: 1.000
+		stress_mult_spring: 2.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.0005
+		min: -2.000
+		max: 2.000
+		step: 50.000
+		max_bias: 10.000
+		stress_mult: 0.300
+		damping_loose: 0.200
+	}
+	
+	interactor:
+	{
+	
+	}
+	
+	drag:
+	{
+		max_force: 7500.000
+		max_distance: 3.000
+		layer_exclude: world, bounds, essence, water, fire, gas, powder, hot, liquid, stored, static
+	}
+
+	puncher:
+	{
+		damage_base: 40.000
+		damage_bonus: 180.000
+		
+		max_distance: 1.300
+		thickness: 0.150
+		knockback: 3.000
+		stun_multiplier: 1.200
+		
+		frame: [9, 0]
+		offset: [0.250, -0.125]
+		
+		sound: swish.00
+		hit_mask: world, item, creature, vehicle, door, shield, harvestable
+		hit_exclude: background, essence, water, fire, gas, climbable, stored
+		
+		damage_flags:
+		{
+			add: no_loot_discard, allow_encumbered, force_loot_notification
+			rem: no_loot_notification
+		}
+	}
+}
+
++toolbelt|instance:
+{
+	$tags: []
+	
+	toolbelt:
+	{
+		capacity: 6
+		flags: none
+		
+		mass_max: 100.000
+		
+		filter_hints:
+		{
+			exclude: vehicle, large
+		}
+	}
+}
+
++back|instance:
+{
+	joint.base:
+	{
+		offset_a: [-0.500, -0.250]
+		max_force: 15000.000
+		max_torque: 9000.000
+		flags: no_aiming, no_wrap, attachment, control_read, control_write, facing_reset_pos, force_facing, no_sync
+		material_type: leather
+		max_stress: 2.500
+		stress_threshold: 1.250
+		z: -60.000
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.003
+		max_bias: 12.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.001
+		max_bias: 6.000
+		step: 20.000
+		min: 0.000
+		max: 0.000
+	}
+
+	attachment.slot:
+	{
+		name: "Back"
+		identifier: "back"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: locked, disabled
+
+		gui_size: [192.000, 160.000]
+
+		tags_filter:
+		{
+			require: harness
+			include: tiny, small
+			exclude: none
+		}
+	}
+}

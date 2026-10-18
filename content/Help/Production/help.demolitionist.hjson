@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Demolitionist"
+	category: "03: Production"
+	desc:
+		'''
+		Produces explosives for a high price.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Demolitionist"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: demolitionist.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

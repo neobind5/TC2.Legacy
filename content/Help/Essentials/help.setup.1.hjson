@@ -1,0 +1,57 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "02: Settling"
+	category: "00: Essentials"
+	desc:
+		'''
+		The basis of any base is a spawnpoint. Factions should start with tents, while neutrals start with taverns.
+		These buildings will supply limitless amounts of the simplest tools required for setup.
+		'''
+	
+	order: 2
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Getting Started"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: ui_icons_widget
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	entries:
+	[
+		{
+			text: "Punch with RMB with empty hands. Holding RMB allows some tools to hit objects they usually cannot."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Wood can be obtained by punching trees, or purchased for cheap at a market if you found anything to trade with."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "A basic wrench can be crafted directly from wood by interacting with yourself, use the hammer and wrench icon in your hotbar."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "In the buildings tab of your wrench, construct either a tavern or tent. These provide basic tools."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "If you create a faction at a tent, you will get a small claim radius, this prevents others from building in your land."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Doors and walls help keep things out. Just remember to lock any doors with Shift + E."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}
