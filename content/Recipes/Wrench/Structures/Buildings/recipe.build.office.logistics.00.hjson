@@ -217,14 +217,6 @@
 					[
 						{
 							type: resource
-							material: steel.frames
-							amount: 8.000
-							snapping: 0.500
-							loss: 0.075
-							group: 0
-						}
-						{
-							type: resource
 							material: steel.plate
 							amount: 25.000
 							snapping: 0.500

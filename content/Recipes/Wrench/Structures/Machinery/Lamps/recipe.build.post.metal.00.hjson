@@ -7,7 +7,7 @@
 	[
 		{
 			type: resource
-			material: steel.frames
+			material: niklajzner.ingot
 			amount: 2.000
 			group: 0
 			flags: prerequisite

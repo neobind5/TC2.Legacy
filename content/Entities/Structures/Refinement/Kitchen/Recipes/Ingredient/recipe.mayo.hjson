@@ -1,0 +1,122 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Make Mayo"
+	tips: []
+	desc:
+	'''
+	A delicacy consumed on special occasions due to reliance on eggs.
+	
+	Most attempts to farm twuk eggs end in dismemberment or holes left in whatever walls that contained them.
+	'''
+	
+	stages:
+	[
+		{
+			name: "Recipe"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Craft"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: eggs
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: oil
+							amount: 4.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: vinegar
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: salt
+							amount: 3.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 3
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: mayo
+			amount: 2
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, cooking
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.mayo
+		size: [16,16]
+		frame: [3,0]
+	}
+	icon_offset: [0.000, -2.000]
+	icon_scale: 1
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 6
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 20
+	step: 1
+	
+	version: 1
+}

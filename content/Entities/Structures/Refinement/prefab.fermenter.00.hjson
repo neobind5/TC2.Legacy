@@ -41,7 +41,7 @@ body:
 
 health:
 {
-	max: 4500.000
+	max: 1100.000
 }
 
 animated.renderer:
@@ -73,7 +73,7 @@ storage:
 	@inventory16:
 	{	
 		type: storage
-		flags: allow_ducts, ignore_mass, public, faction
+		flags: allow_ducts, ignore_mass, public, faction, no_auto_pickup
 		stack_size_multiplier: 4.000
 		
 		filter:

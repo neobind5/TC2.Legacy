@@ -12,7 +12,7 @@
 	[
 		{
 			type: resource
-			material: steel.frames
+			material: steel.ingot
 			amount: 0.03125
 			group: 0
 			flags: prerequisite

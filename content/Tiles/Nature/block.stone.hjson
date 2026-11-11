@@ -37,11 +37,23 @@
 	[
 		{
 			material: stone
-			quantity: 2.723797
+			quantity: 0.923797
 		}
+		//{
+		//	material: copper
+		//	quantity: 0.239048
+		//}
 		{
 			material: niklajzner
 			quantity: 0.323797
+		}
+		{
+			material: silver
+			quantity: 0.043958
+		}
+		{
+			material: gold
+			quantity: 0.024586
 		}
 	]
 	

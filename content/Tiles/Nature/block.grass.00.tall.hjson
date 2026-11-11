@@ -43,6 +43,10 @@
 			material: plants
 			quantity: 2.195652
 		}
+		{
+			material: sulfur
+			quantity: 0.328395
+		}
 	]
 	
 	mappings:

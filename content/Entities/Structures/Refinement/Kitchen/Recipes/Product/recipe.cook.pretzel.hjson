@@ -1,0 +1,122 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Prepare Pretzel"
+	tips: []
+	desc: 
+	'''
+	Many historians have tried to explain the shape of the humble pretzel.
+
+	The real answer lies in how much someone drank one fateful night.
+	'''
+	
+	stages:
+	[
+		{
+			name: "Recipe"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Craft"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: dough
+							amount: 11.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: lye
+							amount: 7.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: salt
+							amount: 6.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 11
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: money
+			amount: 470
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, cooking
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: kitchen_ui_icons
+		size: [16,16]
+		frame: [1,0]
+	}
+	icon_offset: [0.000, -2.000]
+	icon_scale: 1
+	
+	icon_extra:
+	{
+		texture: ui_icon_coin2
+		size: [16, 16]
+		frame: [2, 0]
+	}
+	icon_extra_offset: [2.000, -2.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 1004
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 50
+	step: 1
+	
+	version: 1
+}

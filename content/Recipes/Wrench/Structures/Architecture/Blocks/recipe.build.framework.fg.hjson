@@ -16,13 +16,6 @@
 			group: 0
 			flags: prerequisite
 		}
-		{
-			type: resource
-			material: steel.frames
-			amount: 0.010
-			group: 0
-			flags: prerequisite
-		}
 	]
 	
 	products:

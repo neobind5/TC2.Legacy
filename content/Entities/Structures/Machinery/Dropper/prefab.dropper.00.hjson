@@ -1,0 +1,101 @@
+$name: "Dropper"
+$desc: 
+	'''
+	Drops materials put into it.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+
+	@shape.box:
+	{
+		size: [3.375, 2.375]
+		radius: 0.125
+		mass: 80.000
+		friction: 0.750
+		elasticity: 0.400
+		layer: entity, solid, furniture, flammable, ignore_melee, no_overlapped_placement, background
+		mask: world, furniture, door
+		exclude: held, dynamic
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "dropper.00"
+	}
+	z: -200.000
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+health:
+{
+	max: 12000.000
+}
+
+storage:
+{
+	@inventory16:
+	{		
+		type: storage
+		flags: ignore_mass, public, no_auto_pickup, faction, allow_ducts
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			include: granular, small, solid, bottled, malleable
+			exclude: gas, long, large
+		}
+	}
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	priority: 0.750
+	window_size: [192.000, 192.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+dropperedit:
+{
+	offset: [0.000, 0.750]
+	dir: [0.000, 1.000]
+
+	@inventory8:
+	{
+		name: "Dropper"
+		stack_size_multiplier: 5.000
+		type: storage
+		flags: allow_ducts, ignore_mass, public, standalone, faction
+		offset: [0.000, 0.625]
+
+		filter:
+		{
+			exclude: gas
+		}
+	}
+}
+
+control:
+{
+	
+}

@@ -80,7 +80,7 @@
 		{
 			type: resource
 			material: lubricant
-			amount: 25.00
+			amount: 8.00
 			group: 0
 			flags: none
 		}
@@ -105,7 +105,7 @@
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"
 	button_name: "Craft"
-	rank: 2
+	rank: 1
 	frame_size: [32.000, 32.000]
 	
 	min: 1

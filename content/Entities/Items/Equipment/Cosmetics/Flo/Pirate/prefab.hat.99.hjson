@@ -1,0 +1,31 @@
+$name: "Buccaneer's Cap"
+$desc:
+	'''
+	Yarr me fractured me skull and crossbones!
+	Me got two peglegs and scurvy too!
+	'''
+$tags: []
+$prefab: "hat.00"
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 1.000
+		radius: 0.400
+		friction: 0.500
+		elasticity: 0.050
+		material: fabric
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hat.99"
+		// mask: "hat.10.mask"
+		size: [16, 16]
+		frame: [0, 0]
+	}
+}

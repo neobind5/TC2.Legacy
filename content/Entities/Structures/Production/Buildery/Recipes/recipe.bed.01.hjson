@@ -40,7 +40,7 @@
 						}
 						{
 							type: resource
-							material: steel.frames
+							material: machine_parts
 							amount: 3
 							group: 0
 							flags: prerequisite

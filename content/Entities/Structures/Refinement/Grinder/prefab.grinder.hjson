@@ -1,12 +1,69 @@
-$name: "Hand Grinder"
+$name: "Grinder"
 $desc:
 	'''
-	Grind simple materials with your hands, or grind your hands with simple materials.
-	Fit for rock grinding, milling, and powderizing just about anything your heart desires.
-	
-	Automatically produces products out of materials put inside.
+	Grinds up anything put inside of it.
 	'''
 $tags: []
+
+//shape.polygon|"idx_00":
+//{
+//	points:
+//	[
+//		[-1.875, 0.4]
+//		[-1.400, 0.4]
+//		[-1.400, -1.200]
+//		[-1.875, -1.200]
+//	]
+//	offset: [0.000, 0.875]
+//	mass: 250.000
+//	friction: 0.700
+//	elasticity: 0.500
+//	material: metal
+//	layer: entity, support, solid, building, storage
+//	mask: world, resource, solid, vehicle, wheel
+//}
+//
+//shape.polygon|"idx_01":
+//{
+//	points:
+//	[
+//		[1.875, 0.4]
+//		[1.400, 0.4]
+//		[1.400, -1.200]
+//		[1.875, -1.200]
+//	]
+//	offset: [0.000, 0.875]
+//	mass: 250.000
+//	friction: 0.700
+//	elasticity: 0.500
+//	material: metal
+//	layer: entity, support, solid, building, storage
+//	mask: world, resource, solid, vehicle, wheel
+//}
+
+//shape.box|"idx_01":
+//{
+//	size: [0.475, 1.600]
+//	offset: [-1.6250, -0.4500]
+//	mass: 750.000
+//	friction: 0.700
+//	elasticity: 0.500
+//	material: metal
+//	layer: entity, support, solid, building, storage
+//	mask: world, resource, solid, vehicle, wheel
+//}
+//
+//shape.box|"idx_02":
+//{
+//	size: [0.475, 1.600]
+//	offset: [1.6250, -0.4500]
+//	mass: 750.000
+//	friction: 0.700
+//	elasticity: 0.500
+//	material: metal
+//	layer: entity, support, solid, building, storage
+//	mask: world, resource, solid, vehicle, wheel
+//}
 
 body:
 {
@@ -14,29 +71,64 @@ body:
 	
 	@shape.box:
 	{
-		size: [2.000, 3.000]
-		offset: [0.000, 0.000]
-		friction: 0.500
+		size: [3.750, 1.000]
+		offset: [0.000, 0.875]
+		mass: 750.000
+		friction: 0.700
 		elasticity: 0.500
 		material: metal
-		layer: entity, solid, building, support, ignore_melee, background, crafter
-		mask: world, building
-		exclude: none
+		layer: entity, solid, building, storage
+		mask: world, resource, solid, vehicle, wheel
 	}
 }
 
 health:
 {
-	max: 6000.000
+	max: 1800.000
 }
 
 animated.renderer:
 {
 	sprite:
 	{
-		texture: "grinder.small"
+		texture: "grinder"
 	}
-	z: -280.000
+	z: 280.000
+}
+animated.renderer|"idx_00":
+{
+	sprite:
+	{
+		texture: "grinder_bg"
+	}
+	z: -480.000
+}
+
+renderrotatea:
+{
+	speed: -16.200
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: grinder.wheel
+		}
+		offset: [-0.900, -0.200]
+		z: -300.000
+	}
+}
+renderrotateb:
+{
+	speed: 16.200
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: grinder.wheel
+		}
+		offset: [0.900, -0.200]
+		z: -300.000
+	}
 }
 
 transform:
@@ -44,217 +136,198 @@ transform:
 
 }
 
-health:
+grinder:
 {
-	max: 40000.000
-}
+	sound_load_crush: "rocks_explode2"
+	sound_load_depot: "depot_load"
+	offset: [0.000, -0.250]
+	drop_offset: [0, -1.575]
+	box_top_right: [1.375, -0.250]
+	damage: 250
+	
+	conversions:
+		[
+			{
+				material: stone
+				products:
+				[
+					{
+						material: gravel
+						amount: 0.462546
+					}
+					{
+						material: copper
+						amount: 0.055246542
+					}
+					{
+						material: niklajzner
+						amount: 0.066542642
+					}
+					{
+						material: himlkarzenus
+						amount: 0.031654262456
+					}
+					{
+						material: smirglum
+						amount: 0.0264358349
+					}
+					{
+						material: silver
+						amount: 0.0182426524
+					}
+					{
+						material: mithril
+						amount: 0.009526246542
+					}
+					{
+						material: gold
+						amount: 0.01415246546
+					}
+				]
+				efficiency: 0.349589345
+				mult: 1
+			}
+			{
+				efficiency: 1.000
+				mult: 0.000
+				enabled: true
+			}
+			{
+				material: soil
+				products:
+				[
+					{
+						material: clay
+						amount: 0.53425345
+					}
+					{
+						material: copper
+						amount: 0.154352345
+					}
+					{
+						material: sulfur
+						amount: 0.234252345
+					}
+					{
+						material: saltpeter
+						amount: 0.093452345
+					}
+				]
+				efficiency: 0.4543924234
+				mult: 1
+			}
+			{
+				material: gravel
+				products:
+				[
+					{
+						material: cement
+						amount: 0.214352345
+					}
+					{
+						material: sand
+						amount: 0.23425345
+					}
+					{
+						material: lime
+						amount: 0.054252345
+					}
+				]
+				efficiency: 0.23948293845
+				mult: 1
+			}
+			{
+				material: sand
+				products:
+				[
+					{
+						material: silicon
+						amount: 0.265490689
+					}
+					{
+						material: salt
+						amount: 0.0943040324
+					}
+				]
+				efficiency: 0.34589548549
+				mult: 1
+			}
+			{
+				material: grain
+				products:
+				[
+					{
+						material: flour
+						amount: 1.383248234
+					}
+				]
+				efficiency: 0.123189393
+				mult: 1
+			}
+			{
+				material: karban
+				products:
+				[
+					{
+						material: graphite
+						amount: 0.79548694586
+					}
+					{
+						material: mercury
+						amount: 0.09548694586
+					}
+				]
+				efficiency: 0.0913894834
+				mult: 1
+			}
+			{
+				material: himlkarzenus
+				products:
+				[
+					{
+						material: silicon
+						amount: 1.1329482348
+					}
+					//{
+					//	material: mithril
+					//	amount: 0.293284248
+					//}
+					//{
+					//	material: arsenic
+					//	amount: 0.28453948
+					//}
+					//{
+					//	material: adamantite
+					//	amount: 0.139484834
+					//}
+				]
+				efficiency: 0.123189393
+				mult: 1
+			}
+			{
+				efficiency: 1.000
+				mult: 0.000
+				enabled: true
+			}
+		]
 
-interactable:
-{
-	flags: no_tab
-	window_size: [192, 96]
-	window_size_misc: [96, 0]
-	priority: 2.000
-}
 
-faction.colorable:
-{
-	intensity_a: 0.600
-}
-
-faction:
-{
-
-}
-
-claimable:
-{
-	flags: allow_owner_unclaim
-}
-
-transform:
-{
-
-}
-
-building:
-{
-
-}
-
-nameable:
-{
-	tags: lame, homely, industrial, tool, factory
-	type: location
-	flags: randomize
-	max_length: 16
-}
-
-storage:
-{
-	@inventory8:
-	{	
+	@inventory16:
+	{
+		name: "Grinder"
+		stack_size_multiplier: 5.000
 		type: storage
-		flags: allow_ducts, ignore_mass, public, faction
-		stack_size_multiplier: 4.000
-		
+		flags: allow_ducts, ignore_mass, public, standalone, faction, no_auto_pickup
+		offset: [0.000, 0.625]
+
 		filter:
 		{
 			exclude: gas
 		}
-		offset: [-0.625, -0.250]
 	}
 }
 
-autocrafter:
+interactable:
 {
-	flags: force_drop
-	sound_load: produce_sound
-	cooldown: 4.000
-	drop_offset: [1, -0.8750]
-	recipes:
-	[
-		{
-			// Crude Stone Grinding
-			requirements:
-			[
-				{
-					material: stone
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: gravel
-					count: 35
-				}
-				{
-					material: copper
-					count: 6
-				}
-				{
-					material: niklajzner
-					count: 19
-				}
-				{
-					material: sulfur
-					count: 9
-				}
-				{
-					material: silver
-					count: 1
-				}
-				{
-					material: gold
-					count: 1
-				}
-			]
-		}
-		{
-			// Crude Soil Grinding
-			requirements:
-			[
-				{
-					material: soil
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: clay
-					count: 19
-				}
-				{
-					material: copper
-					count: 8
-				}
-				{
-					material: sulfur
-					count: 16
-				}
-				{
-					material: saltpeter
-					count: 11
-				}
-			]
-		}
-		{
-			// Crude Sand Grinding
-			requirements:
-			[
-				{
-					material: sand
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: silicon
-					count: 28
-				}
-			]
-		}
-		{
-			// Crude Gravel Grinding
-			requirements:
-			[
-				{
-					material: gravel
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: cement
-					count: 18
-				}
-				{
-					material: sand
-					count: 20
-				}
-				{
-					material: lime
-					count: 10
-				}
-			]
-		}
-		{
-			// Crude Grain Milling
-			requirements:
-			[
-				{
-					material: grain
-					count: 10.000
-				}
-			]
-			products:
-			[
-				{
-					material: flour
-					count: 13
-				}
-			]
-		}
-		{
-			// Crude Karban Grinding
-			requirements:
-			[
-				{
-					material: karban
-					count: 50.000
-				}
-			]
-			products:
-			[
-				{
-					material: graphite
-					count: 38
-				}
-			]
-		}
-	]
+	window_size: [192.000, 192.000]
 }

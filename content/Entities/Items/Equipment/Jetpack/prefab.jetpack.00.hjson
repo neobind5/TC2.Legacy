@@ -1,0 +1,168 @@
+$name: "Jetpack"
+$desc:
+	'''
+	Jet pack for your back.
+
+	(Press RMB to activate thrust, 5 second cooldown.)
+	'''
+$tags: []
+
+body:
+{
+	fall_damage_multiplier: 0.240
+	damping: 0.958
+	//inventory_weight_multiplier: 0.200
+
+	@shape.line:
+	{
+		material: leather
+		miss_chance: 0.608
+		flags: none
+		tags: light, medium, soft
+		
+		layer: entity, solid, item, storage
+		mask: world
+		exclude: none
+		
+		mass: 4.200
+		radius: 0.625
+		friction: 0.400
+		elasticity: 0.550
+		
+		rigidity_static: 0.850
+		rigidity_dynamic: 0.750
+		cog_offset: [0.000, 0.000]
+		
+		a: [-0.125, -0.250]
+		b: [0.000, 0.250]
+		offset: [0.000, 0.000]
+	}
+}
+
+health:
+{
+	max: 4500.000
+}
+
+holdable:
+{
+	offset: [0.000, 0.000]
+	flags: disable_control
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "jetpack.00"
+		mask: "jetpack.00.mask"
+		size: [16, 16]
+		frame: [0, 0]
+	}
+	z: -50.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.700
+	intensity_b: 0.700
+}
+
+faction:
+{
+
+}
+
+transform:
+{
+
+}
+
+attachment:
+{
+	offset: [-0.250, 0.000]
+	radius: 0.000
+	flags: disable_parent_facing
+	force_multiplier: 35.500
+	tags: small, medium, fixed, propulsion, small, utility, harness
+	h_sound_attach: equip.00
+	h_sound_detach: equip.01
+}
+
+control:
+{
+
+}
+
+jetpack:
+{
+	strength: 10000
+	duration: 0.15
+	emit_cooldown: 0.03
+	cooldown: 5
+	particle_speed_boost: 0.015
+	particle_size_smoke: 0.2
+	particle_size_boost: 0.3
+	offset: [-0.100, 0.500]
+	//sound_on_cooldown: effect.sizzle.water.01
+	sound_on_boost: jetpack_offblast
+}
+
+// equipment:
+// {
+// 	type: chest
+// 	flags: copy_frames
+
+// 	offset: [-0.250, -0.500]
+// 	z: -2.000
+
+// 	frame_default: 0
+// 	frame_equipped_male: 1
+// 	frame_equipped_female: 2
+// }
+
+// armor:
+// {
+// 	toughness: 30.000
+// 	protection: 1.000
+	
+// 	knockback_modifier: 0.500
+// 	pain_modifier: 0.500
+
+// 	material_type: leather
+// }
+
+// norotate:
+// {
+
+// }
+
+// packable:
+// {
+
+// }
+
+//storage:
+//{
+//	@inventory8:
+//	{
+//		stack_size_multiplier: 2.000
+//		type: backpack
+//		flags: public, faction
+//		offset: [-0.250, -0.375]
+//
+//		filter:
+//		{
+//			require: none
+//			include: soft, malleable, granular, small, bottled
+//			exclude: gas
+//		}
+//	}
+//}
+
+//interactable:
+//{
+//	flags: none
+//	priority: -9.500
+//	window_size: [192.000, 96.000]
+//}

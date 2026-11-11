@@ -1,0 +1,98 @@
+﻿{
+	$version: "0.1.75.1"
+	name: "Sergeant's Cap"
+	
+	related_materials:
+	{
+	}
+	
+	stages:
+	[
+		{
+			name: "Object"
+			
+			type: undefined
+			flags: none
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: none
+			
+			options:
+			[
+				{
+					name: "Clothing"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					
+					requirements:
+					[
+						{
+							type: resource
+							material: cloth
+							amount: 20.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: leather
+							amount: 10.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: money
+							amount: 500.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+					
+					start_delay: 0.000
+					advance_delay: 0.000
+					complete_delay: 0.000
+				}
+			]
+		}	
+	]
+
+	products:
+	[
+		{
+			type: prefab
+			prefab: hat.53
+			amount: 1.000
+			group: 0
+			flags: primary, compact
+		}
+	]
+	
+	type: workshop
+	flags: item
+	tags: manual, crafting, basic, simple, tailoring
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: hat.53
+		size: [16, 16]
+		frame: [0, 0]
+	}
+	icon_offset: [0.000, 4.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xfffff500"
+	button_name: "Craft"
+	rank: 1003.000
+	
+	min: 1
+	max: 1
+	step: 1
+	
+	version: 1
+}

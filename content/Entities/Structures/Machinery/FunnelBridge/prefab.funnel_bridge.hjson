@@ -1,0 +1,94 @@
+$name: "Funnel"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+body:
+{
+	type: static
+
+	@shape.line:
+	{
+		radius: 0.000
+		a: [-3, 0.0]
+		b: [3, 0.0]
+		radius: 0.8
+		mass: 1000.000
+		friction: 0.05
+		elasticity: 0.000
+		material: metal
+		layer: entity, building
+		mask: world, vehicle, wheel
+	}
+}
+
+health:
+{
+	max: 5200.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "bridge_solid"
+		size: [256, 12]
+		//fps:60
+		//count:4
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	priority: 0.750
+	window_size: [192.000, 240.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+faction:
+{
+
+}
+
+//claimable:
+//{
+//	flags: allow_owner_unclaim
+//}
+
+funnel:
+{
+	search_radius: 0.5
+}
+
+resizable:
+{
+	cap_a:
+	{
+		texture: "bridge.end.a"
+		size: [16, 16]
+		//fps:60
+		//count:4
+	}
+	
+	cap_b:
+	{
+		texture: "bridge.end.b"
+		size: [16, 16]
+		//fps:60
+		//count:4
+	}
+	
+	flags: shape_cap_offset
+	
+	a: [-2.250, 0.000]
+	b: [2.250, 0.000]
+	cap_offset: 0
+}

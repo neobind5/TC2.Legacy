@@ -33,9 +33,9 @@ animated.renderer:
 	sprite:
 	{
 		texture: "conveyor_solid.anim"
-		size: [1024, 12]
+		size: [256, 12]
 		//fps:60
-		//count:4
+		count:4
 	}
 	z: -290.000
 }
@@ -45,20 +45,32 @@ transform:
 
 }
 
-conveyorsolid:
+interactable:
+{
+	window_size: [192.000, 96.000]
+}
+
+faction:
+{
+
+}
+
+//claimable:
+//{
+//	flags: allow_owner_unclaim
+//}
+
+physconveyor:
 {
 	sound_load: ""
-	strength:7.5
-	dampening:0.1
+	strength: 0
+	max_strength: 1.8
+	dampening: 0.85
 	volume: 0.6
 	pitch: 0.9
 	sound_cooldown: 1.0
 	dist_multiplier: 0.4
-}
-
-interactable:
-{
-	window_size: [192.000, 96.000]
+	fps: 60
 }
 
 resizable:
@@ -67,7 +79,7 @@ resizable:
 	{
 		texture: "conveyor.end.a"
 		size: [12, 12]
-		fps:60
+		//fps:60
 		count:4
 	}
 	
@@ -75,7 +87,7 @@ resizable:
 	{
 		texture: "conveyor.end.b"
 		size: [12, 12]
-		fps:60
+		//fps:60
 		count:4
 	}
 	

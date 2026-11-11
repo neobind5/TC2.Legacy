@@ -29,7 +29,7 @@
 			flags: bullet
 		}
 		{
-			text: "A Handgrinder can grind resources, providing ores, compounds, and cement depending on what you put into it."
+			text: "A Grinder can grind resources, providing ores, compounds, and cement depending on what you put into it."
 			color: "0xfffff0d8"
 			flags: bullet
 		}

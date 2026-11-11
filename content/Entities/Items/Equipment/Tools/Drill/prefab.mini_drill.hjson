@@ -47,6 +47,9 @@ drill:
 	max_distance: 1.800
 	speed: 3.600
 	radius: 1.200
+
+	hit_mask: world, destructible
+	hit_exclude: entity, crate, climbable
 	
 	//@inventory4:
 	//{
@@ -83,7 +86,7 @@ animated.renderer:
 {
 	sprite:
 	{
-		texture: "drill"
+		texture: "mini_drill"
 	}
 	offset: [0.400, -0.100]
 }

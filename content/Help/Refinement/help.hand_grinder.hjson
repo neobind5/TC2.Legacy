@@ -12,7 +12,7 @@
 	order: 0
 	size: [456, 0]
 	layout: a
-	flags: none
+	flags: hidden
 	
 	title: "Hand Grinder"
 	sprite_scale: 6

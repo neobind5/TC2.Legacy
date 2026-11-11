@@ -1,0 +1,291 @@
+$name: "Hornet"
+$desc: 
+	'''
+	A dangerous pest.
+	'''
+$export: false
+$tags: ["hornet"]
+
+body:
+{
+	fall_damage_multiplier: 0.250
+
+	@shape.circle:
+	{
+		mass: 3.500
+		radius: 0.590
+		friction: 0.300
+		elasticity: 0.890
+		rigidity_dynamic: 0.400
+		rigidity_static: 0.900
+		material: insect
+		layer: entity, solid, creature, flammable, organic
+		mask: world, vehicle, creature
+		exclude: plant, tree
+		cog_offset: [-0.125, 0.250]
+	}
+}
+
+health:
+{
+	max: 950.000
+}
+
+regen:
+{
+	amount: 45.000
+	interval: 5.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hornet"
+		fps: 30.000
+		count: 2
+		size: [16, 16]
+	}
+	z: -40.000
+	flags: has_damage
+}
+
+damage.effects:
+{
+	offset: 1
+	frame_count: 3
+	threshold_wreck: 0.200
+}
+
+organic:
+{
+	h_species: hornet
+	tags: brain, heart, head, torso, eyes, mouth, lungs, butt
+	flags: none
+	pain_base: 2000.000
+	pain_modifier: 0.500
+	
+	consciousness: 1.000
+	unused_00: 0.000
+	water_ratio: 0.600
+	work_speed: 1.000
+	
+	smartness: 1.000
+	motorics: 1.000
+	strength: 1.000
+	endurance: 1.000
+	dexterity: 1.000
+	coordination: 1.000
+	absorption: 1.000
+	regeneration: 1.000
+}
+
+organic.state:
+{
+
+}
+
+transform:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing, disable_rotation, disable_control, full_rotate
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.080
+	}
+}
+
+npc:
+{
+	avoid_distance_base: [0.000, 5.000]
+	idle_distance_base: [2.000, 2.000]
+	
+	wander_radius: 48.000
+	wander_interval: 1.000
+	wander_interval_extra: 2.500
+	
+	pain_modifier: 0.500
+	min_consciousness: 0.500
+}
+
+animal:
+{
+	flags: aggressive
+	attack_cooldown: 0.500
+	attack_distance_melee: 1.300
+	attack_cooldown_melee: 0.300
+	attack_distance_ranged: 10.000
+	attack_cooldown_ranged: 2.000
+	charge_distance: 8.000
+	retreat_distance: 7.000
+}
+
+animal.state:
+{
+
+}
+
+ai:
+{
+	stance: aggressive
+}
+
+ai.movement:
+{
+
+}
+
+ai.behavior:
+{
+	movement_flags: wander
+	combat_flags: attack_visible, attack_when_hit, chase, charge, flee, evade
+}
+
+ai.search:
+{
+	radius: 24.000
+}
+
+pathfinding:
+{
+	flags: air
+}
+
+pathfinding.state:
+{
+	
+}
+
+commandable:
+{
+	
+}
+
+threat:
+{
+	priority: 13.000
+}
+
+flyer:
+{
+	max_speed: 25.000
+	force: 175.000
+	brake_modifier: 0.240
+	sound_speed_modifier: 0.025
+	sound_volume: 1.400
+}
+
+head:
+{
+	voice_pitch: 2.500
+	air_capacity: 0.100
+	air_usage: 0.010
+	breath_interval: 0.900
+	offset_mouth: [0.625, 0.375]
+}
+
+hornet:
+{
+
+}
+
+facing:
+{
+
+}
+
+norotate:
+{
+	rotation: 0.000
+	bias: 0.050
+	speed: 10.000
+	multiplier: 3.000
+	mass_multiplier: 12.000
+}
+
+sound.emitter:
+{
+	file: "hornet.loop.00"
+	flags: start_muted
+	volume: 0.500
+	pitch: 1.000
+	size: 1.750
+	size_max_modifier: 0.850
+	spread: 90.000
+	priority: 0.100
+	doppler: 1.500
+}
+
+melee:
+{
+	sound_swing: swish.00
+	sound_volume: 0.300
+	sound_size: 0.500
+	sound_pitch: 1.400
+	hit_offset: [0.000, 0.750]
+	swing_offset: [1.000, 0.000]
+	swing_rotation: 2.000
+	attack_type: swing
+	damage_base: 15.000
+	damage_bonus: 30.000
+	armor_pierce: 20.000
+	primary_damage_multiplier: 0.700
+	terrain_damage_multiplier: 0.200
+	pain_multiplier: 0.350
+	stun_multiplier: 0.050
+	disarm_chance: 0.000
+	cooldown: 0.300
+	max_distance: 1.450
+	aoe: 0.350
+	thickness: 0.450
+	knockback: 500.000
+	knockback_speed: 1.000
+	yield: 0.500
+	penetration_falloff: 0.900
+	damage_type: sting
+	category: pointed
+	flags: no_handle, no_material_filter
+	damage_flags_add: no_loot_pickup, no_loot_drop, no_loot_notification
+	hit_mask: destructible
+	hit_exclude: background, tree, ignore_melee
+}
+
+melee.state:
+{
+
+}
+
+lootable:
+{
+	items:
+	[
+		{
+			material: "paper"
+			min: 12.000
+			max: 18.000
+		}
+		{
+			material: "resin"
+			min: 3.000
+			max: 14.000
+		}
+		{
+			material: "sugar"
+			min: 5.000
+			max: 15.500
+		}
+	]
+}
+
+faction:
+{
+	id: hornet
+}

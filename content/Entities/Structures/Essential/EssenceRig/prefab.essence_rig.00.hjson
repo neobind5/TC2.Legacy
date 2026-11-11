@@ -163,18 +163,6 @@ claimable:
 	flags: allow_owner_unclaim, allow_enemy_unclaim
 }
 
-minimap.marker:
-{
-	sprite:
-	{
-		texture: "ui_icons_minimap"
-		size: [16, 16]
-		frame: [3, 0]
-	}
-
-	flags: faction, spawner
-}
-
 sound.emitter:
 {
 		file: "furnace_loop"
@@ -245,7 +233,7 @@ lamp:
 resourcegenerator8:
 {
 	produce_interval: 10.000
-	efficiency:0.5
+	efficiency:0.25
 
 	items:
 	[
@@ -285,3 +273,13 @@ resourcegenerator8:
 // {
 	
 // }
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: ui_icons_minimap
+		size: [16, 16]
+		frame: [0, 3]
+	}
+}

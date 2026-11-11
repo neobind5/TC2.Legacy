@@ -14,15 +14,8 @@
 		}
 		{
 			type: resource
-			material: steel.frames
-			amount: 13.000
-			group: 0
-			flags: prerequisite
-		}
-		{
-			type: resource
-			material: smirgrafit.clay
-			amount: 30.000
+			material: smirglum.ingot
+			amount: 15.000
 			group: 0
 			flags: prerequisite
 		}
@@ -36,7 +29,7 @@
 		{
 			type: resource
 			material: computer_parts.basic
-			amount: 3.000
+			amount: 2.000
 			group: 0
 			flags: prerequisite
 		}

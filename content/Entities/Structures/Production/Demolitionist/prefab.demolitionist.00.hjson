@@ -43,7 +43,7 @@ interactable:
 
 health:
 {
-	max: 40000.000
+	max: 2000.000
 }
 
 faction.colorable:
@@ -106,7 +106,7 @@ workshop:
 	@inventory8:
 	{	
 		type: workshop
-		flags: standalone, allow_ducts, ignore_mass, public, faction, vertical
+		flags: standalone, allow_ducts, ignore_mass, public, faction, vertical, no_auto_pickup
 		stack_size_multiplier: 4.000
 		
 		filter:
@@ -128,7 +128,7 @@ crafter:
 	@inventory4:
 	{	
 		type: waste
-		flags: standalone, allow_ducts, ignore_mass
+		flags: standalone, allow_ducts, ignore_mass, public, faction, no_auto_pickup
 		stack_size_multiplier: 2.000
 		
 		filter:

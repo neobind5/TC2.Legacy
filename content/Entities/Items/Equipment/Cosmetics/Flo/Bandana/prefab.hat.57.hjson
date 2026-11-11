@@ -1,0 +1,32 @@
+$name: "Striped Bandana"
+$desc:
+	'''
+	You couldn't decide between a red or black bandana.
+
+	This will do.
+	'''
+$tags: []
+$prefab: "hat.00"
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 1.000
+		radius: 0.400
+		friction: 0.500
+		elasticity: 0.050
+		material: fabric
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hat.57"
+		// mask: "hat.10.mask"
+		size: [16, 16]
+		frame: [0, 0]
+	}
+}

@@ -43,9 +43,17 @@
 							flags: prerequisite
 						}
 						{
+							type: resource
+							material: steel.ingot
+							amount: 2.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
 							type: work
 							work: machining
-							amount: 30
+							amount: 10
 							amount_min: 0.000
 							group: 0
 							flags: conditional

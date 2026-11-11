@@ -33,6 +33,11 @@
 			flags: bullet
 		}
 		{
+			text: "No intentionally griefing your own faction. Always get permission before joining an established faction."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
 			text: "Offlining is allowed, starting fights without warning is allowed. Unbalanced fights are allowed but discouraged."
 			color: "0xfffff0d8"
 			flags: bullet
@@ -43,7 +48,7 @@
 			flags: bullet
 		}
 		{
-			text: "Avoid gamebreaking exploits. Minor exploits are fine, just don't expect them to stay forever. Report issues with the engine and core content to TFlippy, and Legacy issues to neobind."
+			text: "Avoid gamebreaking exploits. Minor exploits are fine in moderation, just don't expect them to stay forever. Report issues with the engine and core content to TFlippy, and Legacy issues to neobind."
 			color: "0xfffff0d8"
 			flags: bullet
 		}

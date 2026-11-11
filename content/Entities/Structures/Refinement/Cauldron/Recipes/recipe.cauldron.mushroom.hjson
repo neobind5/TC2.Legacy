@@ -75,20 +75,20 @@
 			group: 0
 			flags: none
 		}
-		{
-			type: resource
-			material: mushroom.juice
-			amount: 1.8
-			group: 0
-			flags: none
-		}
-		{
-			type: resource
-			material: onion.juice
-			amount: 0.4
-			group: 0
-			flags: none
-		}
+		//{
+		//	type: resource
+		//	material: mushroom.juice
+		//	amount: 1.8
+		//	group: 0
+		//	flags: none
+		//}
+		//{
+		//	type: resource
+		//	material: onion.juice
+		//	amount: 0.4
+		//	group: 0
+		//	flags: none
+		//}
 		// temp
 		{
 			type: resource
@@ -101,7 +101,7 @@
 	]
 	
 	type: workshop
-	flags: item, auto_complete
+	flags: item, auto_complete, disabled, hidden
 	tags: manual, crafting, crude, raw
 	hints: none
 	connotations: none

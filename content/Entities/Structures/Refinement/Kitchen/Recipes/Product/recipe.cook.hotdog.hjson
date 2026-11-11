@@ -1,0 +1,114 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Prepare Hotdog"
+	tips: []
+	desc: 
+	'''
+	The most mysterious of all foods. An odd shape, a peculiar flavor, and nobody really knows what meat it uses.
+
+	And most of all... is it a sandwich?
+	'''
+	
+	stages:
+	[
+		{
+			name: "Recipe"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Craft"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: chow
+							amount: 8.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: dough
+							amount: 6.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: work
+							work: mixing
+							amount: 9
+							amount_min: 0.000
+							group: 0
+							flags: conditional
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: money
+			amount: 390
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, cooking
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: kitchen_ui_icons
+		size: [16,16]
+		frame: [4,0]
+	}
+	icon_offset: [0.000, -2.000]
+	icon_scale: 1
+	
+	icon_extra:
+	{
+		texture: ui_icon_coin2
+		size: [16, 16]
+		frame: [2, 0]
+	}
+	icon_extra_offset: [2.000, -2.000]
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 1003
+	frame_size: [48.000, 48.000]
+	
+	min: 1
+	max: 50
+	step: 1
+	
+	version: 1
+}

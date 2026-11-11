@@ -29,24 +29,8 @@
 					[
 						{
 							type: resource
-							material: steel.ingot
-							amount: 3.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
 							material: machine_parts
-							amount: 14.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: wood
-							amount: 10.000
+							amount: 28.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

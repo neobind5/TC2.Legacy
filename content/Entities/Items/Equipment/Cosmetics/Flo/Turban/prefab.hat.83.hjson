@@ -1,0 +1,32 @@
+$name: "Covering Turban"
+$desc:
+	'''
+	Sand won't be getting past this!
+
+	Bullets will, though...
+	'''
+$tags: []
+$prefab: "hat.00"
+
+body:
+{
+	@shape.circle:
+	{
+		mass: 1.000
+		radius: 0.400
+		friction: 0.500
+		elasticity: 0.050
+		material: fabric
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hat.83"
+		// mask: "hat.10.mask"
+		size: [16, 16]
+		frame: [0, 0]
+	}
+}

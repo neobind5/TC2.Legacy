@@ -1,0 +1,27 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Nursery"
+	category: "03: Production"
+	desc:
+		'''
+		Allows for the buying and selling of seeds and crops.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Nursery"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: nursery.00
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

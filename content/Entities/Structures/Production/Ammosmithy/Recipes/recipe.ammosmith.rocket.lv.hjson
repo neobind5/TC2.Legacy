@@ -1,0 +1,115 @@
+﻿{
+	$version: "0.1.74.0"
+	name: "Rocket (Low Velocity)"
+	tips: []
+	
+	stages:
+	[
+		{
+			name: "Ammo"
+			
+			type: part
+			flags: wip, incomplete, auto_generated
+			tags: none
+			// Damage type used for discarding leftover resources.
+			discard_damage_type: pickaxe
+			
+			ratio: 0.833333
+			mass_base: 30.000
+			
+			options:
+			[
+				{
+					name: "Materials"
+					
+					type: undefined
+					flags: wip, incomplete, auto_generated
+					requirements:
+					[
+						{
+							type: resource
+							material: gunpowder
+							amount: 4
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: nitroglycerine
+							amount: 1
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: steel.ingot
+							amount: 1
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: money
+							amount: 90.000
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+					]
+				}
+			]
+		}
+	]
+
+	
+	
+	products:
+	[
+		{
+			type: resource
+			material: ammo.rocket.lv
+			amount: 1.000
+			group: 0
+			flags: none
+		}
+	]
+	
+	type: workshop
+	flags: item, auto_complete
+	tags: manual, crafting, munitions
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: personal
+	
+	icon:
+	{
+		texture: resource.ammo.rocket.lv
+		count: 4
+		size: [16, 16]
+		frame: [3, 0]
+	}
+	icon_offset: [0.000, 0.000]
+	
+	icon_extra:
+	{
+		texture: ui_icons_gunsmith.mini
+		size: [16, 16]
+		frame: [0, 0]
+	}
+	
+	color_frame: "0xffaeb59a"
+	color_button: "0xff9dd80f"
+	button_name: "Craft"
+	rank: 11
+	frame_size: [48.000, 48.000]
+	
+	min: 4
+	max: 20
+	step: 4
+	
+	version: 1
+}

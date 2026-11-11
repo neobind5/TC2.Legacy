@@ -40,8 +40,16 @@
 			quantity: 2.936111
 		}
 		{
-			material: sulfur
+			material: copper
 			quantity: 0.423797
+		}
+		{
+			material: sulfur
+			quantity: 0.328395
+		}
+		{
+			material: saltpeter
+			quantity: 0.194398
 		}
 	]
 	

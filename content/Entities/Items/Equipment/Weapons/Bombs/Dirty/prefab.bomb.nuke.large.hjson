@@ -59,6 +59,12 @@ holdable:
 	offset: [0.000, 0.000]
 }
 
+attachment:
+{
+	offset: [0.000, 0.000]
+	tags: small, medium, weapon
+}
+
 animated.renderer:
 {
 	sprite:
@@ -92,6 +98,17 @@ explosive:
 	damage_type: shrapnel
 	damage_type_secondary: explosion
     flags: any_damage, explode_when_primed, primed_when_destroyed
+}
+
+essence.container:
+{
+	h_essence: "life"
+	available: 9000.000
+	rate: 0.500
+	stability: 1
+	health_threshold: 0
+	emit_type: explosive
+	type: pellet_magazine
 }
 
 // harvestable:

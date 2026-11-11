@@ -1,0 +1,110 @@
+﻿{
+	$version: "0.1.70.1"
+	name: "Bridge"
+	desc:
+		'''
+		Basic funnel bridge with an adjustable item filter.
+		'''
+	tips: []
+	
+	requirements:
+	[
+		{
+			type: resource
+			material: steel.ingot
+			amount: 1.000
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: machine_parts
+			amount: 1.200
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: computer_parts.basic
+			amount: 0.450
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: rubber
+			amount: 0.250
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+	]
+	
+	products:
+	[
+		{
+			type: prefab
+			prefab: funnel_bridge
+			amount: 1.000
+			group: 0
+		}
+	]
+	
+	type: industry
+	flags: allow_mirror_x
+	tags: small, device, furniture, assembling, architecture, construction
+	hints: none
+	connotations: none
+	infrastructure: none
+	infrastructure_exclude: none
+	
+	dismantle_work: 1.000
+	dismantle_yield: 0.800
+	
+	icon:
+	{
+		texture: bridge_icon
+		size: [64, 14]
+	}
+	
+	color_frame: "0xffffff00"
+	color_button: "0xff9dd80f"
+	rank: 101
+	
+	placement:
+	{
+		type: line
+		flags: allow_placement_over_buildings, no_solid_support
+		
+		size: [0.625, 0.625]
+		
+		cooldown: 0.500
+		min_support: 0.350
+		min_clearance: 0.620
+		min_claim: 1.000
+		
+		length_min: 0.625
+		length_max: 8.875
+		length_step: 0.625
+		
+		sound: building_place
+		
+		snapping_filter:
+		{
+			exclude: building, construction, no_overlapped_placement, dynamic
+		}
+		snapping_flags: snap_to_surface, align_to_surface, use_collider_radius
+		snapping_radius: 0.250
+		snapping_depth: 0.750
+		
+		mappings_replace:
+		{
+		
+		}
+	}
+	
+	version: 1
+}

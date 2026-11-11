@@ -61,7 +61,7 @@
 	]
 	
 	type: buy
-	flags: item, production, auto_complete
+	flags: item, production, auto_complete, disabled, hidden
 	tags: manual, crafting, simple
 	hints: none
 	connotations: none

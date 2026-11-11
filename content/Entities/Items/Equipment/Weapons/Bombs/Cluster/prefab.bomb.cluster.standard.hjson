@@ -40,6 +40,12 @@ holdable:
 	offset: [0.000, 0.000]
 }
 
+attachment:
+{
+	offset: [0.000, 0.000]
+	tags: small, medium, weapon
+}
+
 animated.renderer:
 {
 	sprite:
@@ -58,8 +64,8 @@ explosive:
 {
 	radius: 4.000
 	power: 6.000
-	damage_entity: 150.000
-	damage_terrain: 150.000
+	damage_entity: 15.000
+	damage_terrain: 15.000
     primed_threshold: 0.588
 	smoke_amount: 1.200
 	sparks_amount: 2.500
@@ -99,13 +105,12 @@ cluster:
 {
 	prefab: "bomb.small"
 	spread: 3.999
-	speed: 15.000
-	count: 8
+	speed: 20.000
+	count: 12
 
-	speed_modifier_min: 0.800
-	speed_modifier_max: 1.500
+	speed_modifier_min: 0.900
+	speed_modifier_max: 2.500
 }
-
 
 packable:
 {

@@ -1,0 +1,89 @@
+using System.Globalization;
+using System.Numerics;
+
+namespace TC2.Base.Components
+{
+	public static partial class ItemPickup
+	{
+        [IComponent.Data(Net.SendType.Unreliable, IComponent.Scope.Region)]
+		public partial struct Data(): IComponent
+		{
+            [Flags]
+			public enum Flags: uint
+			{
+				None = 0,
+
+				Is_Whitelist = 1u << 0 // Won't be used ATM
+			}
+            [Save.TrimEmpty]
+			public ItemPickup.Data.Flags flags;
+            public float cooldown = 0.1f;
+
+			[Editor.Picker.Position(relative: true, mark_modified: true)]
+			public Vector2 offset = new Vector2(0f,0f);
+
+            [Editor.Picker.Radius(mark_modified: true)]
+            public float radius = 1;
+			[Asset.Ignore, Save.Ignore, Net.Ignore] public float next_time;
+        }
+
+        [ISystem.Update.A(ISystem.Mode.Single, ISystem.Scope.Region), HasTag("wrecked", false, Source.Modifier.Owned)]
+		public static void OnUpdate
+		(
+			ISystem.Info info,
+			ref Region.Data region,
+			ref XorRandom random,
+			Entity entity,
+			[Source.Owned] ref Body.Data body,
+			[Source.Owned] in Transform.Data transform,
+			[Source.Owned] ref ItemPickup.Data item_pickup,
+			[Source.Any] ref Storage.Data storage
+		)
+		{
+			float time = info.WorldTime;
+			if (time <= item_pickup.next_time)
+			{
+				return;
+			}
+			else
+			{
+				item_pickup.next_time = time + item_pickup.cooldown;
+			}
+            Vector2 pos = body.GetPosition() + item_pickup.offset;
+            if (storage.inv_storage.TryGetHandle(out Inventory.Handle h_inventory))
+            {
+                FixedArray64<OverlapResult> buffer;
+                Span<OverlapResult> hits = FixedArray.CreateSpan64NoInit(out buffer);
+                if (region.TryOverlapPointAll(pos, item_pickup.radius, ref hits, 0uL, Physics.Layer.Resource, Physics.Layer.None, Physics.Layer.None, Physics.QueryFlag.Dynamic | Physics.QueryFlag.Static, Physics.Layer.None))
+                {
+                    hits.SortByDistance();
+                    foreach (OverlapResult hit in hits)
+                    {
+                        Entity target_entity = hit.entity;
+                        if (!entity.IsValid() || !entity.IsAlive() || entity.IsNull() || target_entity == entity)
+                        {
+                            continue;
+                        }
+                        if (!target_entity.HasComponent<Resource.Data>())
+                        {
+                            continue;
+                        }
+                        Resource.Data resource = target_entity.GetComponent<Resource.Data>();
+                        if (!resource.IsNull())
+                        {
+                            //IMaterial.Handle material = resource.material;
+                            #if SERVER
+                                h_inventory.Deposit(ref resource);
+                                h_inventory.Sync();
+                                if (resource.quantity <= 0)
+                                {
+								    target_entity.Delete();
+                                }
+                            #endif
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

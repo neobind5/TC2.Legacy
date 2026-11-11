@@ -1,0 +1,132 @@
+$name: "Hextriaconta-Barrel Shotgun"
+$desc:
+	'''
+	Versatile pump-action shotgun with 36 barrels
+
+	Can use a wide range of ammunition.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.050
+
+	@shape.line:
+	{
+		a: [-0.900, 0.170]
+		b: [0.900, 0.000]
+		mass: 7.000
+		radius: 0.250
+		friction: 0.900
+		elasticity: 0.250
+		material: metal
+		layer: entity, solid, ignore_bullet, ignore_melee, item, conductive, magnetic
+		mask: world
+	}
+}
+
+gun:
+{
+	muzzle_offset: [1.000, -0.0625]
+	receiver_offset: [-0.375, 0.000]
+
+	eject_direction: [-4.800, -5.400]
+	eject_angular_velocity: 4.000
+
+	sound_shoot: "shotgun_shoot"
+	sound_cycle: "shotgun_cycle"
+	sound_reload: "shotgun_reload"
+	velocity_multiplier: 400.000
+	velocity_max: 550.000
+	jitter_multiplier: 49.500
+	damage_multiplier: 2.500
+	recoil_multiplier: 0.050
+	reload_interval: 0.030
+	cycle_interval: 0.500
+	failure_rate: 0.00
+	max_ammo: 72.000
+	ammo_per_shot: 72.00
+	barrel_count: 72.00
+	flags: none
+	ammo_filter: ammo_sg
+	action: manual
+	type: shotgun
+	feed: breech
+
+	heuristic_range: 15.000
+
+	shake_amount: 0.010
+	stability: 51500.000
+	
+	@inventory1:
+	{
+		stack_size_multiplier: 1.000
+		type: ammo
+		flags: hidden, ignore_mass, no_auto_pickup
+
+		filter:
+		{
+			require: ammo
+			exclude: gas
+		}
+	}
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 2.000]
+		offset: [1.000, -0.250]
+		scale: [28.000, 20.000]
+		intensity: 0.000
+		texture: "light.circle.00"
+	}
+}
+
+gun.state:
+{
+
+}
+
+holdable:
+{
+	offset: [-0.300, 0.000]
+	radius: 4.000
+	flags: storable
+	hints: gun, powerful, inaccurate
+
+	force_multiplier: 1.000
+	torque_multiplier: 1.500
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "hextriaconta_shotgun"
+	}
+}
+
+health:
+{
+	max: 2400.000
+}
+
+transform:
+{
+
+}
+
+packable:
+{
+
+}
+
+control:
+{
+
+}
+
+aimable:
+{
+	min: -0.800
+	max: 0.650
+}

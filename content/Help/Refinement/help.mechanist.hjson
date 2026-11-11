@@ -6,7 +6,7 @@
 		'''
 		An essential workshop capable of producing refined materials.
 
-		Produces cloth, copper wires, machine parts, steel frames, and basic computer parts.
+		Produces cloth, copper wires, machine parts, and basic computer parts.
 		'''
 	
 	order: 0

@@ -116,7 +116,7 @@ spawn:
 
 dormitory:
 {
-	flags: no_kit_selection, no_kit_requirements, repopulate_needs_faction, recruit_into_squad, region_only
+	flags: no_kit_selection, no_kit_requirements, repopulate_needs_faction, recruit_into_squad, region_only, no_hiring, no_reject
 	species: human
 	
 	characters_capacity: 10

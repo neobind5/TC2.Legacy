@@ -1,7 +1,7 @@
 $name: "Hopper"
 $desc:
 	'''
-	TODO: Desc
+	Picks up any material that falls onto it.
 	'''
 $tags: []
 
@@ -17,8 +17,8 @@ body:
 		friction: 0.700
 		elasticity: 0.500
 		material: metal
-		layer: entity, support, solid, building, storage
-		mask: world, resource, solid, vehicle, wheel
+		layer: entity, solid, furniture, flammable, ignore_melee, no_overlapped_placement, background
+		mask: world, resource
 	}
 
 	// @shape.circle:
@@ -59,7 +59,7 @@ animated.renderer:
 	{
 		texture: "hopper"
 	}
-	z: -480.000
+	z: -200.000
 }
 
 transform:

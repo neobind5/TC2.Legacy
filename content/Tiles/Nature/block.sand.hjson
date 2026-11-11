@@ -40,6 +40,10 @@
 			quantity: 3.807869
 		}
 		{
+			material: silver
+			quantity: 0.113398
+		}
+		{
 			material: gold
 			quantity: 0.093797
 		}

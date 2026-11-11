@@ -1,0 +1,194 @@
+$name: "Depot"
+$desc:
+	'''
+	TODO: Desc
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.polygon:
+	{
+		material: building_reinforced
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, building, support, workshop, ignore_melee, ignore_bullet
+		mask: world, building
+		exclude: none
+		
+		mass: 5000.000
+		radius: 0.750
+		friction: 0.500
+		elasticity: 0.500
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[-2.000, 0.250]
+			[2.000, 0.250]
+			[3.000, 4.000]
+			[-3.000, 4.000]
+		]
+	}
+
+	// @shape.line:
+	// {
+	// 	material: metal
+	// 	miss_chance: 0.000
+	// 	flags: none
+	// 	tags: none
+		
+	// 	layer: entity, ignore_hover, solid
+	// 	mask: world, solid
+	// 	exclude: none
+		
+	// 	mass: 100.000
+	// 	radius: 0.500
+	// 	friction: 0.500
+	// 	elasticity: 0.500
+		
+	// 	cog_offset: [0.000, 0.000]
+		
+	// 	a: [-2.750, -4.500]
+	// 	b: [2.750, -4.500]
+	// 	offset: [0.000, 0.000]
+	// }
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: depot.00
+		// mask: depot.00.mask
+	}
+	z: -300.000
+}
+
+interactable:
+{
+	flags: none
+	window_size: [834, 576]
+	window_size_misc: [192, 0]
+	priority: 0.700
+}
+
+health:
+{
+	max: 150000.000
+}
+
+faction.colorable:
+{
+
+}
+
+faction:
+{
+
+}
+
+company:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: tech, industrial, tool, market
+	type: building
+	flags: randomize
+	max_length: 20
+}
+
+address:
+{
+	flags: auto_generate, public
+}
+
+entrance.linkable:
+{
+	radius: 80.000
+}
+
+lamp:
+{
+	flicker: 0.000
+	blink_frequency: 1.000
+	blink_amplitude: 0.500
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.000, 2.000]
+		offset: [-2.125, -3.625]
+		scale: [64.000, 64.000]
+		texture: light.circle.00
+	}
+}
+
+heat:
+{
+	temperature_medium: 750.000
+	temperature_high: 1000.000
+	temperature_breakdown: 1750.000
+	cool_rate: 13.000
+	heat_capacity_extra: 80.000
+	heat_capacity_mult: 3.000
+	heat_damage_mult: 0.200
+	flags: exclude_body_mass, no_smoke, no_gui
+	offset: [-2.125, 0.250]
+	smoke_offset: [-2.250, -2.375]
+	size: [0.250, 0.250]
+
+	@light:
+	{
+		offset: [-2.125, 0.250]
+		scale: [3.000, 6.000]
+		intensity: 2.500
+		texture: light.box.02
+	}
+		
+	@sound.emitter:
+	{
+		file: "overheat_loop"
+		flags: start_muted
+		volume: 1.000
+		pitch: 1.000
+	}
+}
+
+minimap.marker:
+{
+	sprite:
+	{
+		texture: ui_icons_minimap
+		size: [16, 16]
+		frame: [0, 3]
+	}
+}
+
+swapprefab:
+{
+	flags: none
+	prefab: "essence_rig.00"
+}

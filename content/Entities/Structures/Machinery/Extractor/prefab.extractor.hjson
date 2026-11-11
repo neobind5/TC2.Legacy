@@ -1,0 +1,116 @@
+$name: "Extractor"
+$desc: 
+	'''
+	Wall-mounted device that pulls filtered items from nearby inventories.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [1.250, 1.100]
+		mass: 31.000
+		radius: 0.250
+		material: wood
+		layer: entity, solid, furniture, flammable, ignore_melee, no_overlapped_placement, background
+		mask: world, furniture, door
+		exclude: held, dynamic
+
+		miss_chance: 0.650
+	}
+}
+
+health:
+{
+	max: 1200.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "extractor"
+		mask: "extractor.mask"
+	}
+	offset: [0.000, 0.000]
+	z: -200.000
+}
+
+extractor:
+{
+	eject_velocity: 10.000
+	drop_offset: [0.000, 1.000]
+}
+
+faction.colorable:
+{
+
+}
+
+renderrotatea:
+{
+	speed: -8.000
+	
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: wheel_0750.steel
+		}
+		offset: [0.000, -0.875]
+		rotation: -1214.041
+		z: -200.000
+		color_mask_r: "0xffffffff"
+		color_mask_g: "0xffffffff"
+	}
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+//storage:
+//{
+//	@inventory16:
+//	{		
+//		type: storage
+//		flags: ignore_mass, public, no_auto_pickup, faction, allow_ducts
+//		stack_size_multiplier: 4.000
+//		
+//		filter:
+//		{
+//			include: granular, small, solid, bottled, malleable
+//			exclude: gas, long, large
+//		}
+//	}
+//}
+
+interactable:
+{
+	flags: no_tab, centered_inventory
+	priority: 0.750
+	window_size: [192.000, 240.000]
+	window_size_misc: [48.000, 0.000]
+}
+
+nameable:
+{
+	tags: lame, industrial, homely, food
+	flags: randomize
+	type: consumable
+	max_length: 10
+}

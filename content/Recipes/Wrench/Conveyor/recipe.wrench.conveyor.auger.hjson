@@ -47,7 +47,7 @@
 	]
 	
 	type: conveyor
-	flags: disabled, wip
+	flags: disabled, wip, hidden
 	tags: none
 	
 	icon:

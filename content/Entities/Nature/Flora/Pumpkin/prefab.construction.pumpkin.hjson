@@ -1,0 +1,66 @@
+$name: "Pumpkin"
+$desc:
+	'''
+	A plump orange gourd often associated with autumnal festivities.
+
+	Never spoils... until it does...
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.circle:
+	{
+		material: foliage
+		miss_chance: 0.869
+		flags: none
+		tags: large, flammable, soft
+		
+		layer: entity, plant, organic, flammable, ignore_melee, ignore_bullet, no_overlapped_placement
+		mask: world, building, no_overlapped_placement
+		exclude: held
+		
+		mass: 73.000
+		radius: 0.925
+		friction: 0.950
+		elasticity: 0.100
+		
+		rigidity_dynamic: 0.200
+		fall_damage_mult: 1.900
+		flammability: 0.640
+		cog_offset: [-0.1875, 0.6875]
+		offset: [0.000, 0.500]
+	}
+}
+
+health:
+{
+	max: 420.000
+}
+
+animated.renderer:
+{
+	offset: [0.000, 0.200]
+	sprite:
+	{
+		texture: resource.pumpkin
+		count: 4
+		size: [16, 16]
+	}
+	z: -300.000
+}
+
+transform:
+{
+
+}
+
+crop:
+{
+	offset: [0.000, 0.000]
+	time_seconds: 540
+	time_extra: 7
+	prefab: "pumpkin.00"
+}

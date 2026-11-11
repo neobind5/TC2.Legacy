@@ -261,7 +261,7 @@
 	frame_size: [32.000, 32.000]
 	color_frame: "0xffe3cb93"
 	color_button: "0xff88b31f"
-	rank: -10.000
+	rank: 0.000
 	
 	min: 10
 	max: 200

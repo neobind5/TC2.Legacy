@@ -37,11 +37,15 @@
 	[
 		{
 			material: stone
-			quantity: 2.138461
+			quantity: 0.838461
 		}
 		{
 			material: plants
 			quantity: 0.638461
+		}
+		{
+			material: niklajzner
+			quantity: 0.315845
 		}
 	]
 	

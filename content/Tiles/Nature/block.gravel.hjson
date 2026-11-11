@@ -43,6 +43,10 @@
 			material: soil
 			quantity: 1.739028
 		}
+		{
+			material: niklajzner
+			quantity: 0.214334
+		}
 	]
 	
 	mappings:

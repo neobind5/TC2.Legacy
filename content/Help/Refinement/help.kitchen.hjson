@@ -1,0 +1,31 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Kitchen"
+	category: "02: Refinement"
+	desc:
+		'''
+		Workshop for producing edible goods and ingredients.
+
+		Selling processed goods provides money, often at better rates than selling the ingredients themselves.
+
+		Exotic foods net the most denar.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Kitchen"
+	sprite_scale: 6
+	sprite:
+	{
+		texture: kitchen.01
+		size: [40, 40]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+	]
+}

@@ -1,0 +1,365 @@
+$name: "Balloon"
+$desc:
+	'''
+	Basic hot-air balloon.
+	'''
+$tags: []
+
+body:
+{
+	inventory_weight_multiplier: 0.750
+	fall_damage_multiplier: 0.350
+
+	@shape.polygon:
+	{
+		material: wood
+		miss_chance: 0.686
+		flags: none
+		tags: none
+		
+		//layer: entity, solid, vehicle, flammable
+		//mask: world, solid, platform
+		//exclude: item, creature, background, tree, wheel, held, stored
+		layer: entity, solid, item, storage, flammable
+		mask: world
+		exclude: none
+		
+		mass: 180.000
+		radius: 0.375
+		friction: 0.450
+		elasticity: 0.750
+		
+		cog_offset: [0.000, 0.000]
+		
+		points:
+		[
+			[0.625, 0.500]
+			[-0.625, 0.500]
+			[-1.250, -0.500]
+			[1.250, -0.500]
+		]
+	}
+}
+
+health:
+{
+	max: 8000.000
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "balloon.bottom.00"
+	}
+	z: 91.000
+}
+
+control:
+{
+	@net.synchronized:
+	{
+		interval: 0.000
+	}
+}
+
+transform:
+{
+
+}
+
+vehicle:
+{
+
+}
+
+holdable:
+{
+	flags: disable_parent_facing, disable_control
+	stress_multiplier: 0.500
+}
+
+norotate:
+{
+	rotation: 0.000
+	bias: 0.500
+	speed: 1.000
+	multiplier: 3.000
+	mass_multiplier: 4.000
+	flags: none
+}
+
+storage:
+{
+	@inventory4:
+	{
+		type: vehicle
+		flags: standalone, no_auto_pickup, faction
+		stack_size_multiplier: 4.000
+		
+		filter:
+		{
+			exclude: gas, large
+		}
+	}
+}
+
+interactable:
+{
+	flags: none
+	priority: 3.500
+	window_size: [200.000, 288.000]
+	window_size_misc: [144.000, 0.000]
+	window_offset: [-256.000, -128.000]
+}
+
++seat|instance:
+{
+	$tags: []
+	
+	seat:
+	{
+		offset: [0.000, -0.875]
+		flags: open
+		max_tilt: 2.500
+	}
+}
+
+// animated.renderer|"exhaust":
+// {
+// 	sprite:
+// 	{
+// 		texture: "burner.parts.00"
+// 		size: [16, 16]
+// 		frame: [0, 1]
+// 	}
+// 	offset: [-0.250, -1.500]
+// 	z: -285.000
+// }
+
+sound.emitter|"aux":
+{
+	file: "burner.gas.loop.02"
+	flags: start_muted
+	volume: 0.300
+	pitch: 0.500
+	size: 1.000
+	size_max_modifier: 0.500
+}
+
+air.vent|"exhaust":
+{
+	type: output
+	flags: no_gui
+	offset: [0.250, -1.750]
+	rotation: -1.571
+	cross_section: 1.500
+}
+
+air.vent|"intake":
+{
+	type: input
+	flags: no_gui
+	offset: [-0.125, 0.625]
+	rotation: 1.571
+	cross_section: 1.500
+}
+
+air.container:
+{
+	volume: 1.000
+}
+
+burner:
+{
+	flags: open_air, show_misc
+	type: gas
+	area_aux: 0.040
+	temperature_max: 2200.000
+	insulation: 0.000
+
+	@sound.emitter:
+	{
+		file: "balloon.burner.loop.00"
+		flags: start_muted
+		volume: 0.500
+		pitch: 0.550
+		size: 0.800
+	}
+
+	@animated.renderer:
+	{
+		sprite:
+		{
+			texture: "balloon.burner.00"
+		}
+		offset: [0.000, -1.875]
+		z: -50.000
+	}
+}
+
+burner.state:
+{
+	current_temperature: 300.000
+
+	@inventory1:
+	{
+		stack_size_multiplier: 1.000
+		filter_flags: fuel
+		filter_type: liquid
+		type: input
+		flags: ignore_mass, no_auto_pickup
+		offset: [-0.250, 1.125]
+	}
+}
+
++slot.side|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, -0.750]
+		max_force: 15000.000
+		max_torque: 5000.000
+		max_stress: 3.000
+		stress_threshold: 1.500
+		flags: attachment, allow_dragging, control_read, control_write, facing_reset_rot, facing_reset_pos, force_facing
+		z: 400.000
+		material_type: metal
+	}
+
+	joint.pivot:
+	{
+		error_bias: 0.010
+		max_bias: 4.000
+		stress_mult: 0.500
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.005
+		max_bias: 4.000
+		min: 0.000
+		max: 0.000
+		stress_mult: 0.200
+	}
+
+	attachment.slot:
+	{
+		name: "Mount (Side)"
+		identifier: "side"
+
+		flags: keyboard_write, mouse_write
+		flags_editable: locked, disabled, hold, invert, keyboard_write, mouse_write, loose
+
+		rank: -5.000
+		gui_size: [0.000, 72.000]
+
+		offset_bounds: [-1.000, -0.125, 1.000, 0.125]
+	}
+
+	facing:
+	{
+		flags: use_rotation
+		offset: 0.000
+		threshold: 0.050
+		flip_interval: 0.500
+	}
+}
+
++slot.bottom|instance:
+{
+	joint.base:
+	{
+		offset_a: [0.000, 0.750]
+		max_force: 150000.000
+		max_torque: 45000.000
+		max_stress: 3.000
+		stress_threshold: 1.500
+		stress_damp: 0.500
+		z: -100.000
+		material_type: metal
+		stress: 0.000
+		flags: attachment, allow_dragging, control_read, control_write, force_facing
+	}
+
+	// joint.pivot:
+	// {
+	// 	error_bias: 0.010
+	// 	max_bias: 10.000
+	// 	stress_mult: 0.500
+	// }
+
+	joint.piston:
+	{
+		error_bias: 0.000
+		max_bias: 4.000
+		stiffness: 15000.000
+		damping: 750.000
+		axis_force: 800000.000
+		spring_max_bias: 4.000
+		max_distance: 1.000
+		rotation: 1.5707
+		stress_mult_axis: 1.000
+	}
+
+	joint.gear:
+	{
+		error_bias: 0.001
+		max_bias: 5.000
+		min: 0.000
+		max: 0.000
+		stress_mult: 0.200
+	}
+
+	attachment.slot:
+	{
+		name: "Mount (Bottom)"
+		identifier: "bottom"
+
+		flags: use_center_of_gravity, keyboard_write, mouse_write
+		flags_editable: use_center_of_gravity, locked, disabled, hold, invert, keyboard_read, keyboard_write, mouse_read, mouse_write, loose, offset, rotation, brake
+
+		rank: 5.000
+		gui_size: [0.000, 128.000]
+
+		offset_bounds: [0.000, -0.750, 0.000, 0.250]
+	}
+}
+
++slot.balloon|instance:
+{
+	$tags: []
+
+	joint.base:
+	{
+		offset_a: [0.000, -0.875]
+		offset_b: [0.000, 4.250]
+		max_force: 500000.000
+		max_torque: 15000.000
+		material_type: fabric
+		flags: no_stress, allow_dragging
+	}
+	
+	joint.dualrope:
+	{
+		distance_min: 1.000
+		distance_max: 2.500
+		error_bias: 0.005
+		max_bias: 8.000
+		stress_mult: 0.700
+		gap_a: 3.000
+		gap_b: 1.500
+	}
+	
+	ropetest:
+	{
+		texture: "rope"
+		thickness: 0.175
+		scale: 4.000
+	}
+
+	+balloon|child:
+	{
+		$prefab: "balloon.envelope.00"
+	}
+}

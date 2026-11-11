@@ -1,0 +1,195 @@
+﻿{
+	$version: "0.1.71.1"
+	name: "Grinder"
+	category: "02: Refinement"
+	desc:
+		'''
+		Grinders will grind up some of the materials thrown inside of it. Only a percentage of the material will be grinded when thrown in.
+
+		This is an essential building, and the first priority once stone is acquired.
+		'''
+	
+	order: 0
+	size: [456, 0]
+	layout: a
+	flags: none
+	
+	title: "Grinder"
+	sprite_scale: 5
+	sprite:
+	{
+		texture: grinder
+		size: [32, 24]
+		frame: [0, 0]
+	}
+	
+	entries:
+	[
+		{
+			text: "PROSPECTIVE PRODUCTS:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Stone:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Gravel ~46%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Copper ~5.5%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Niklajzner ~6.7%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Himlkarzenus ~3.1%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Smirglum ~2.6%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Silver ~1.8%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Mithril ~1.4%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Gold ~1.4%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Soil:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Clay ~53%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Copper ~15%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Sulfur ~23%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Saltpeter ~9.3%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Gravel:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Cement ~21%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Sand ~23%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Lime ~5.4%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Sand:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Silicon ~27%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Sand ~9.4%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Grain:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Flour ~138%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Karban:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Graphite ~80%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Mercury ~9.5%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+
+		{
+			text: "Himlkarzenus:"
+			color: "0xfffff0d8"
+			flags: bold
+		}
+		{
+			text: "Silicon ~113%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Mithril ~29%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Arsenic ~28%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Adamantite ~14%"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+	]
+}

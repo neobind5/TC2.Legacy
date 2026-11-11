@@ -3,7 +3,7 @@
 	name: "Conveyor"
 	desc:
 		'''
-		Basic conveyor.
+		Basic conveyor with an adjustable speed. Can be modified to move items in either direction.
 		'''
 	tips: []
 	
@@ -12,6 +12,14 @@
 		{
 			type: resource
 			material: rubber
+			amount: 0.500
+			snapping: 0.500
+			group: 0
+			flags: prerequisite
+		}
+		{
+			type: resource
+			material: machine_parts
 			amount: 0.500
 			snapping: 0.500
 			group: 0
@@ -30,8 +38,8 @@
 	]
 	
 	type: industry
-	flags: allow_mirror_x, disabled, wip
-	tags: simple, woodworking, construction
+	flags: allow_mirror_x
+	tags: small, device, furniture, assembling, architecture, construction
 	hints: none
 	connotations: none
 	infrastructure: none
@@ -43,10 +51,10 @@
 	icon:
 	{
 		texture: conveyor_solid
-		size: [64, 16]
+		size: [64, 14]
 	}
 	
-	color_frame: "0xffaeb59a"
+	color_frame: "0xffffff00"
 	color_button: "0xff9dd80f"
 	rank: 100
 	

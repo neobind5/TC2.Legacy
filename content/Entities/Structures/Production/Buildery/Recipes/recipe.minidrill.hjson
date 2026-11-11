@@ -80,9 +80,9 @@
 	
 	icon:
 	{
-		texture: drill
+		texture: mini_drill
 	}
-	icon_scale: 0.9
+	icon_scale: 1
 	
 	color_frame: "0xffaeb59a"
 	color_button: "0xff9dd80f"

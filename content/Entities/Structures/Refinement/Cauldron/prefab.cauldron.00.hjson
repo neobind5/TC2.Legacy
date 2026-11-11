@@ -35,7 +35,7 @@ body:
 
 health:
 {
-	max: 37500.000
+	max: 2500.000
 }
 
 animated.renderer:
@@ -70,7 +70,7 @@ interactable:
 	priority: 1.800
 	window_size: [616.000, 616.000]
 	window_size_min: [192.000, 96.000]
-	window_size_misc: [144.000, 0.000]
+	window_size_misc: [96.000, 0.000]
 	window_offset: [-192.000, 0.000]
 }
 
@@ -106,7 +106,7 @@ crafter:
 	
 	offset: [-0.375, -0.125]
 
-	@inventory4:
+	@inventory8:
 	{		
 		type: workshop
 		flags: standalone, allow_ducts, ignore_mass, no_auto_pickup, vertical
@@ -131,10 +131,10 @@ workshop:
 	h_sound_order_complete: computer.bell.00
 }
 
-shipment:
-{
-	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting, no_body_mass
-	type: crafting
-	layout: square
-	color: "0xfff0c63e"
-}
+//shipment:
+//{
+//	flags: keep_items, allow_deposit, use_misc, no_empty_deposit, crafting, no_body_mass
+//	type: crafting
+//	layout: square
+//	color: "0xfff0c63e"
+//}

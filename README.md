@@ -23,3 +23,4 @@ See the PLANNER for more in-depth breakdowns of each goal.
 
 ## Secondary Contributors:
 - Slait: Item throw script
+- ez8: Weaponry

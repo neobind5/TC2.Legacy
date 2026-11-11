@@ -41,7 +41,7 @@
 						{
 							type: resource
 							material: money
-							amount: 1.000
+							amount: 3.200
 							group: 0
 							flags: prerequisite
 						}
@@ -87,9 +87,9 @@
 	button_name: "buy"
 	rank: 401.000
 	
-	min: 100
-	max: 1500
-	step: 100
+	min: 25
+	max: 2000
+	step: 25
 	
 	version: 1
 }

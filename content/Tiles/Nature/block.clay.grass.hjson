@@ -43,6 +43,10 @@
 			material: plants
 			quantity: 1.054348
 		}
+		{
+			material: saltpeter
+			quantity: 0.194398
+		}
 	]
 	
 	mappings:

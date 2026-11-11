@@ -14,7 +14,7 @@
 		}
 		{
 			type: resource
-			material: steel.frames
+			material: machine_parts
 			amount: 13.000
 			group: 0
 			flags: prerequisite

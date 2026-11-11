@@ -30,8 +30,8 @@
 					[
 						{
 							type: resource
-							material: smirgrafit.clay
-							amount: 15.000
+							material: smirglum.ingot
+							amount: 6.000
 							group: 0
 							flags: prerequisite
 						}

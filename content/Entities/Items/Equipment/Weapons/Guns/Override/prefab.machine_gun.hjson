@@ -1,0 +1,191 @@
+$name: "HMG"
+$desc:
+	'''
+	Advanced heavy machine gun capable of tremendous firepower.
+	Difficult to handle, usually wielded by giants or placed on mounts.
+	'''
+$tags: []
+
+body:
+{
+	buoyancy: 0.060
+
+	@shape.line:
+	{
+		material: metal_solid
+		miss_chance: 0.000
+		flags: none
+		tags: none
+		
+		layer: entity, solid, item, ignore_melee, ignore_bullet, conductive, magnetic
+		mask: world
+		exclude: none
+		
+		mass: 7.900
+		radius: 0.400
+		friction: 0.720
+		elasticity: 0.560
+		
+		cog_offset: [-0.625, 0.0625]
+		
+		a: [-1.000, 0.100]
+		b: [1.300, 0.100]
+		offset: [0.000, 0.000]
+	}
+}
+
+gun:
+{
+	muzzle_offset: [1.875, -0.1875]
+	receiver_offset: [-0.750, -0.250]
+	
+	eject_direction: [-5.600, -9.700]
+	eject_angular_velocity: 16.000
+	
+	shake_amount: 0.300
+	
+	sound_volume: 1.350
+	sound_size: 1.500
+	sound_dist_multiplier: 4.000
+	
+	sound_shoot: machine_gun_shoot
+	sound_reload: machine_gun_reload
+	
+	damage_multiplier: 2.400
+	velocity_multiplier: 580.000
+	velocity_max: 880.000
+	jitter_multiplier: 0.950
+	recoil_multiplier: 0.360
+	reload_interval: 2.500
+	cycle_interval: 0.085
+	stability: 3750.000
+	failure_rate: 0.0014
+	
+	ammo_filter: ammo_mg
+	max_ammo: 50.000
+	
+	action: gas
+	type: machinegun
+	feed: drum
+	
+	flags: automatic, full_reload, cycle_on_shoot
+	heuristic_range: 36.000
+
+	@inventory1:
+	{
+		stack_size_multiplier: 1.000
+		type: ammo
+		flags: hidden, ignore_mass, no_auto_pickup
+
+		filter:
+		{
+			require: ammo
+			exclude: gas
+		}
+	}
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 2.000]
+		offset: [2.000, -0.125]
+		scale: [30.000, 20.000]
+		intensity: 0.000
+		texture: "light.circle.00"
+	}
+}
+
+gun.state:
+{
+
+}
+
+holdable:
+{
+	offset: [-0.750, 0.000]
+	force_multiplier: 3.320
+	torque_multiplier: 0.480
+	stress_multiplier: 0.880
+	radius: 8.000
+	flags: storable, full_rotate
+	hints: weapon, dangerous, heavy, gun, long_range, advanced, powerful, usable, destructive, military, fast, ranged, clumsy, large, long
+}
+
+attachment:
+{
+	offset: [-0.625, 0.000]
+	tags: medium, weapon, rotary, long
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: "machine_gun.01"
+	}
+}
+
+health:
+{
+	max: 5500.000
+}
+
+armor:
+{
+	toughness: 230.000
+	protection: 0.900
+	
+	knockback_modifier: 1.300
+	pain_modifier: 0.000
+
+	material_type: metal
+	flags: no_damage_type_conversion
+}
+
+transform:
+{
+
+}
+
+control:
+{
+
+}
+
+aimable:
+{
+	min: -1.200
+	max: 0.570
+}
+
+packable:
+{
+
+}
+
+heat:
+{
+	heat_medium: 350.000
+	heat_high: 600.000
+	heat_critical: 850.000
+	cool_rate: 25.000
+
+	offset: [0.750, 0.000]
+	size: [0.750, 0.250]
+	
+	@light:
+	{
+		color: [1.000, 0.400, 0.100, 2.000]
+		offset: [0.875, 0.000]
+		scale: [6.000, 2.000]
+		intensity: 0.000
+		texture: "light.box.00"
+	}
+	
+	@sound.emitter:
+	{
+		file: "overheat_loop"
+		flags: start_muted
+		volume: 1.000
+		pitch: 1.000
+	}
+}

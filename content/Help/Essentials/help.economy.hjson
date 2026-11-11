@@ -5,7 +5,7 @@
 	desc:
 		'''
 		The Kordel Denar is the primary currency used in the lands of Kordel.
-		Most vendors will trade with this.
+		Many vendors and workers require this as payment.
 		'''
 	
 	order: 4
@@ -40,6 +40,11 @@
 		}
 		{
 			text: "Skilled workers may require money as compensation when performing dangerous, laborious, complicated, or artistic crafts."
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
+			text: "Nurseries and kitchens can provide some money, but require more effort to make the most use out of."
 			color: "0xfffff0d8"
 			flags: bullet
 		}

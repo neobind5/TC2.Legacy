@@ -45,6 +45,12 @@ holdable:
 	offset: [0.000, 0.000]
 }
 
+attachment:
+{
+	offset: [0.000, 0.000]
+	tags: small, medium, weapon
+}
+
 animated.renderer:
 {
 	sprite:

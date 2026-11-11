@@ -46,6 +46,11 @@
 			flags: bullet
 		}
 		{
+			text: "Glue Mixing"
+			color: "0xfffff0d8"
+			flags: bullet
+		}
+		{
 			text: "Nitrosugar Synthesis"
 			color: "0xfffff0d8"
 			flags: bullet
@@ -56,7 +61,7 @@
 			flags: bullet
 		}
 		{
-			text: "Oil Extraction"
+			text: "Lye Extraction"
 			color: "0xfffff0d8"
 			flags: bullet
 		}

@@ -1,0 +1,298 @@
+using System.Globalization;
+using System.Numerics;
+
+namespace TC2.Base.Components
+{
+	public static partial class Extractor
+	{
+        [IComponent.Data(Net.SendType.Unreliable, IComponent.Scope.Region), IComponent.With<Extractor.State>]
+		public partial struct Data(): IComponent
+		{
+            [Flags]
+			public enum Flags: uint
+			{
+				None = 0,
+
+				Is_Whitelist = 1u << 0 // Won't be used ATM
+			}
+            [Save.TrimEmpty]
+			public Extractor.Data.Flags flags;
+            public float amount_max = 150;
+            public float cooldown = 2;
+            public float eject_velocity = 5;
+
+            [Editor.Picker.Radius(mark_modified: true)]
+            public float search_radius_min = 2.5f;
+            public float search_radius_max = 10;
+
+			[Editor.Picker.Position(relative: true, mark_modified: true)]
+			public Vector2 drop_offset = new Vector2(0f,0f);
+			public Sound.Handle sound_drop;
+			public FixedArray16<IMaterial.Handle> materials;
+            public float search_radius = 10;
+        }
+
+        [IComponent.Data(Net.SendType.Unreliable, IComponent.Scope.Region)]
+		public partial struct State(): IComponent
+		{
+			[Asset.Ignore, Save.Ignore, Net.Ignore] public float next_time;
+		}
+
+        [ISystem.Update.A(ISystem.Mode.Single, ISystem.Scope.Region), HasTag("wrecked", false, Source.Modifier.Owned)]
+		public static void OnUpdate
+		(
+			ISystem.Info info,
+			ref Region.Data region,
+			ref XorRandom random,
+			Entity entity,
+			[Source.Owned] ref Body.Data body,
+			[Source.Owned] in Transform.Data transform,
+			[Source.Owned] ref Extractor.Data extractor,
+			[Source.Owned] ref Extractor.State state,
+            [Source.Owned] ref Faction.Data faction//,
+			//[Source.Any] ref Storage.Data storage
+		)
+		{
+			float time = info.WorldTime;
+			if (time <= state.next_time)
+			{
+				return;
+			}
+			else
+			{
+				state.next_time = time + extractor.cooldown;
+			}
+            Vector2 pos = body.GetPosition();
+            //if (storage.inv_storage.TryGetHandle(out Inventory.Handle h_inventory))
+            {
+                FixedArray64<OverlapResult> buffer;
+                Span<OverlapResult> hits = FixedArray.CreateSpan64NoInit(out buffer);
+                if (region.TryOverlapPointAll(pos, extractor.search_radius, ref hits, 0uL, Physics.Layer.Storage | Physics.Layer.Building | Physics.Layer.Shipment, Physics.Layer.Organic | Physics.Layer.Item, Physics.Layer.None, Physics.QueryFlag.Dynamic | Physics.QueryFlag.Static, Physics.Layer.None))
+                {
+                    hits.SortByDistance();
+                    float total = 0;
+                    foreach (OverlapResult hit in hits)
+                    {
+                        Entity target_entity = hit.entity;
+                        if (target_entity == entity)
+                        {
+                            continue;
+                        }
+                        IFaction.Handle target_faction = target_entity.GetFactionHandle();
+                        Inventory.Handle.List inventories = target_entity.GetInventories();
+                        if (target_faction == faction.id || target_faction == 0)
+                        {
+                            foreach (Inventory.Handle inventory in inventories)
+                            {
+                                foreach (IMaterial.Handle material in extractor.materials)
+                                {
+                                // App.WriteLine("Checking Mat");
+                                    float amount = inventory.GetQuantity(material);
+                                    if (amount == 0) continue;
+                                    //App.WriteLine(amount);
+                                    float allocated = extractor.amount_max - total;
+                                    float num = Math.Min(amount, allocated);
+                                    total += num;
+                                    Resource.Data resource = material.ToResource(num);
+                                    Resource.Data resource2 = material.ToResource(num);
+
+                                    #if SERVER
+                                    inventory.Withdraw(resource: ref resource, ref num);
+                                    //h_inventory.Deposit(ref resource2);
+                                    if (resource2.quantity > 0)
+                                    {
+                                        Resource.Spawn
+                                        (
+                                            region: ref region,
+                                            material: material,
+                                            world_position: pos + extractor.drop_offset.RotateByRad(transform.rotation),
+                                            amount: resource2.quantity,
+                                            max_distance: 1.5f,
+                                            flags: Resource.SpawnFlags.Merge,
+                                            velocity: body.GetVelocity() + new Vector2(0,1).RotateByRad(transform.rotation) * extractor.eject_velocity,
+                                            angular_velocity: body.GetAngularVelocity()
+                                        );
+                                    }
+                                    //h_inventory.Sync();
+                                    inventory.Sync();
+                                    #endif
+                                    if (total >= 50)
+                                    {
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public struct EditRPC: Net.IRPC<Extractor.Data>
+		{
+			public float search_radius;
+            public FixedArray16<IMaterial.Handle> materials;
+
+#if SERVER
+			public void Invoke(Net.IRPC.Context rpc, ref Extractor.Data data)
+			{
+				var sync = true;
+
+                data.search_radius = Math.Clamp(search_radius, data.search_radius_min, data.search_radius_max);
+                data.materials = materials;
+
+				if (sync)
+				{
+					data.Sync(rpc.entity);
+				}
+			}
+#endif
+		}
+
+#if CLIENT
+		public struct ExtractorGUI: IGUICommand
+		{
+            //public Interactable.Data interactable;
+			public Faction.Data faction;
+			public Entity entity;
+			public Extractor.Data extractor;
+			public Extractor.State state;
+			public Vector2 position;
+
+			public void Draw()
+			{
+				ref var region = ref entity.GetRegion();
+				float radius = extractor.search_radius;
+                float scale = region.AsCommon().GetWorldToCanvasScale();
+
+				AABB rect_canvas = GUI.GetCanvasRect().Pad(new Vec4f(16));
+
+                Vector2 c_pos = region.AsCommon().WorldToCanvas(position);
+                c_pos = rect_canvas.ClipPoint(c_pos);
+
+				GUI.DrawCircle(c_pos, radius * scale, new Color32BGRA(4294967040u));
+				GUI.DrawCircleFilled(c_pos, radius * scale, new Color32BGRA(4294967040u).WithAlphaMult(0.33f));
+
+                using (GUI.Window window = GUI.Window.Interaction("Extractor"u8, entity))
+                {
+                    this.StoreCurrentWindowTypeID();
+					if (window.show)
+                    {
+                        if (GUI.SliderFloat("Extraction Radius"u8, ref extractor.search_radius, min: extractor.search_radius_min, max: extractor.search_radius_max, size: new Vector2(GUI.RmX, 48), vertical: false))
+                        {
+                            EditRPC rpc = new Extractor.EditRPC();
+                            rpc.search_radius = extractor.search_radius;
+                            rpc.materials = extractor.materials;
+                            rpc.Send(entity);
+                        }
+                        GUI.Scrollbox scrollbox = GUI.Scrollbox.New("scroll"u8, size: new Vector2(GUI.RmX, GUI.RmY));
+                        for (int i = 0; i < this.extractor.materials.Length; i++)
+						{
+                            ref var material = ref this.extractor.materials[i];
+                            int j = i;
+                            //if (i==0 && !material.IsValid())
+                            //{
+                            //    for (int l = 1; l < this.extractor.materials.Length; l++)
+                            //    {
+                            //        if (!this.extractor.materials[l].IsValid())
+                            //        {
+                            //            j = l;
+                            //        }
+                            //    }
+                            //}
+                            Sprite icon = material.GetIcon();
+                            //if (!(material.IsValid() || i==0)) continue;
+                            //App.WriteLine(material);
+                            using (GUI.ID<Extractor.EditRPC, Keyboard.Key>.Push(j))
+                            using (GUI.Group group = GUI.Group.New(size: new Vector2(48, 48), padding: new Vector2()))
+                            {
+                                if (GUI.DrawIconButton(material.GetName(), sprite: material.IsValid()?icon: new Sprite(GUI.tex_icons_widget, 16, 16, 6, 3), scale: 2, size: new Vector2(48, 48)))
+                                {
+                                    // Get Entity
+                                    Entity controlled_entity = Client.GetControlledEntity();
+                                    if (!controlled_entity.IsAlive()) continue;
+                                    // Check faction validity
+                                    IFaction.Handle interactor_faction = controlled_entity.GetFactionHandle();
+                                    ref NPC.Data npc = ref controlled_entity.GetComponent<NPC.Data>();
+                                    if (!(npc.IsNotNull() && faction.id == interactor_faction)) continue;
+                                    // Check held item
+                                    ref Entity held = ref npc.ent_pickup_target;
+                                    if (!(held.IsNotNull() && held.IsAlive())) continue;
+                                    // Get resource
+                                    ref Resource.Data held_resource = ref held.GetComponent<Resource.Data>();
+                                    if (!held_resource.IsNotNull()) continue;
+                                    // Update Setting
+                                    extractor.materials[j] = held_resource.material;
+                                    // Sync with server
+                                    EditRPC rpc = new Extractor.EditRPC();
+                                    rpc.search_radius = extractor.search_radius;
+                                    rpc.materials = extractor.materials;
+                                    rpc.Send(entity);
+                                }
+                                //GUI.SameLine(spacing: 4);
+                                //if (GUI.DrawIconButton(
+                                //    "clone"u8,
+                                //    sprite: new Sprite(GUI.tex_icons_widget, 16, 16, 6, 3),
+                                //    scale: 2,
+                                //    size: new Vector2(48, 48),
+                                //    color_icon: Color32BGRA.Orange
+                                //))
+                                //{
+                                // // REMOVED
+                                //}
+                                if (!material.IsValid()) continue;
+                                GUI.SameLine(spacing: 0);
+                                if (GUI.DrawIconButton("clear"u8, sprite: new Sprite(GUI.tex_icons_widget, 16, 16, 3, 7), scale: 2, size: new Vector2(48, 48), color_icon: Color32BGRA.Red))
+                                {
+                                    // Get Entity
+                                    Entity controlled_entity = Client.GetControlledEntity();
+                                    if (!controlled_entity.IsAlive()) continue;
+                                    // Check faction validity
+                                    IFaction.Handle interactor_faction = controlled_entity.GetFactionHandle();
+                                    ref NPC.Data npc = ref controlled_entity.GetComponent<NPC.Data>();
+                                    if (!(npc.IsNotNull() && faction.id == interactor_faction)) continue;
+                                    extractor.materials[i] = IMaterial.Handle.Default;
+                                    EditRPC rpc = new Extractor.EditRPC();
+                                    rpc.search_radius = extractor.search_radius;
+                                    rpc.materials = extractor.materials;
+                                    rpc.Send(entity);
+                                }
+                            }
+                        }
+                        scrollbox.Dispose();
+                    }
+                }
+            }
+		}
+
+		[ISystem.GUI(ISystem.Mode.Single, ISystem.Scope.Region)]
+		public static void OnGUI
+        (
+			Entity entity,
+		    [Source.Owned] in Interactable.Data interactable,
+			[Source.Owned] ref Body.Data body,
+			[Source.Owned] in Transform.Data transform,
+			[Source.Owned] ref Extractor.Data extractor,
+			[Source.Owned] ref Extractor.State state,
+            [Source.Owned] ref Faction.Data faction//,
+			//[Source.Any] ref Storage.Data storage
+		)
+		{
+            if (interactable.IsActive())
+            {
+                ExtractorGUI gui = new ExtractorGUI()
+                {
+                    //interactable = interactable,
+                    faction = faction,
+                    entity = entity,
+                    extractor = extractor,
+                    state = state,
+                    position = body.GetPosition(),
+                };
+
+                gui.Submit();
+            }
+		}
+#endif
+    }
+}

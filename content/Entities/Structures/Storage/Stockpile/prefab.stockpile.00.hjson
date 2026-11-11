@@ -1,0 +1,99 @@
+$name: "Stockpile"
+$desc:
+	'''
+	Stockpile able to store many, many items.
+	'''
+$tags: []
+
+body:
+{
+	type: static
+	
+	@shape.box:
+	{
+		size: [3.250, 2.750]
+		offset: [0.000, -0.125]
+		
+		mass: 535.000
+		radius: 0.500
+		
+		material: building_masonry
+		
+		layer: entity, building, support, storage, ignore_melee, ignore_bullet, flammable, workshop
+		mask: world, building
+	}
+}
+
+animated.renderer:
+{
+	sprite:
+	{
+		texture: stockpile.00
+	}
+	z: -300.000
+}
+
+health:
+{
+	max: 3500.000
+}
+
+faction.colorable:
+{
+	intensity_a: 0.600
+}
+
+faction:
+{
+
+}
+
+claimable:
+{
+	flags: allow_owner_unclaim
+}
+
+transform:
+{
+
+}
+
+building:
+{
+
+}
+
+nameable:
+{
+	tags: lame, homely, industrial, tool, factory
+	type: location
+	flags: randomize
+	max_length: 16
+}
+
+storage:
+{
+	@inventory32:
+	{
+		type: storage
+		flags: allow_ducts, ignore_mass, public, faction
+		stack_size_multiplier: 20.000
+		
+		filter:
+		{
+			require: none
+			include: soft, hard, granular, large, small, bottled
+			exclude: gas
+		}
+		
+		offset: [0.500, 0.750]
+	}
+}
+
+interactable:
+{
+	flags: no_tab
+	priority: 1.000
+	window_size: [384.000, 192.000]
+	window_size_misc: [48.000, 0.000]
+}

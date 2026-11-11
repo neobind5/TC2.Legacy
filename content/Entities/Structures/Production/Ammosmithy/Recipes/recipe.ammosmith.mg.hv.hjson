@@ -36,7 +36,15 @@
 						}
 						{
 							type: resource
-							material: steel.frames
+							material: machine_parts
+							amount: 0.160
+							snapping: 1.000
+							group: 0
+							flags: prerequisite
+						}
+						{
+							type: resource
+							material: lubricant
 							amount: 0.040
 							snapping: 1.000
 							group: 0

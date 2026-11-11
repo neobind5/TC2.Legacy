@@ -1,0 +1,102 @@
+using System.Globalization;
+using System.Numerics;
+
+namespace TC2.Base.Components
+{
+	public static partial class ItemInserter
+	{
+        [IComponent.Data(Net.SendType.Unreliable, IComponent.Scope.Region)]
+		public partial struct Data(): IComponent
+		{
+            [Flags]
+			public enum Flags: uint
+			{
+				None = 0,
+
+				Is_Whitelist = 1u << 0 // Won't be used ATM
+			}
+            [Save.TrimEmpty]
+			public ItemInserter.Data.Flags flags;
+            public float amount_max = 150;
+            public float cooldown = 0.1f;
+
+			[Editor.Picker.Position(relative: true, mark_modified: true)]
+			public Vector2 offset = new Vector2(0f,0f);
+
+            [Editor.Picker.Radius(mark_modified: true)]
+            public float radius = 1;
+			[Asset.Ignore, Save.Ignore, Net.Ignore] public float next_time;
+        }
+
+        [ISystem.Update.A(ISystem.Mode.Single, ISystem.Scope.Region), HasTag("wrecked", false, Source.Modifier.Owned)]
+		public static void OnUpdate
+		(
+			ISystem.Info info,
+			ref Region.Data region,
+			ref XorRandom random,
+			Entity entity,
+			[Source.Owned] ref Body.Data body,
+			[Source.Owned] in Transform.Data transform,
+			[Source.Owned] ref ItemInserter.Data item_inserter,
+            [Source.Owned] ref Faction.Data faction,
+			[Source.Any] ref Storage.Data storage
+		)
+		{
+			float time = info.WorldTime;
+			if (time <= item_inserter.next_time)
+			{
+				return;
+			}
+			else
+			{
+				item_inserter.next_time = time + item_inserter.cooldown;
+			}
+            Vector2 pos = body.GetPosition() + item_inserter.offset;
+            if (storage.inv_storage.TryGetHandle(out Inventory.Handle h_inventory))
+            {
+                FixedArray64<OverlapResult> buffer;
+                Span<OverlapResult> hits = FixedArray.CreateSpan64NoInit(out buffer);
+                #if SERVER
+                if (region.TryOverlapPointAll(pos, item_inserter.radius, ref hits, 0uL, Physics.Layer.Storage | Physics.Layer.Building | Physics.Layer.Shipment, Physics.Layer.Organic | Physics.Layer.Item, Physics.Layer.None, Physics.QueryFlag.Dynamic | Physics.QueryFlag.Static, Physics.Layer.None))
+                {
+                    bool other_found = false;
+                    hits.SortByDistance();
+                    foreach (OverlapResult hit in hits)
+                    {
+                        Entity target_entity = hit.entity;
+                        if (!entity.IsValid() || !entity.IsAlive() || entity.IsNull() || target_entity == entity)
+                        {
+                            continue;
+                        }
+                        IFaction.Handle target_faction = target_entity.GetFactionHandle();
+                        if (!(target_faction == faction.id || target_faction == 0)) continue;
+                        Inventory.Handle.List inventories = target_entity.GetInventories();
+                        foreach (Inventory.Handle inventory in inventories)
+                        {
+                            float total = 0;
+                            Span<Resource.Data> resources = h_inventory.GetSpan();
+                            for (int i=0; i<resources.Length; i++)
+                            {
+                                Resource.Data resource = resources[i];
+                                float allocated = item_inserter.amount_max - total;
+                                float num = Math.Min(resource.quantity, allocated);
+
+                                h_inventory.Withdraw(resource: ref resource, ref resource.quantity);
+                                inventory.Deposit(resource: ref resource);
+                                h_inventory.Deposit(resource: ref resource);
+                                total += num;
+
+                                inventory.Sync();
+                                h_inventory.Sync();
+                            }
+                            other_found = true;
+                            break;
+                        }
+                        if (other_found) break;
+                    }
+                }
+                #endif
+            }
+        }
+    }
+}

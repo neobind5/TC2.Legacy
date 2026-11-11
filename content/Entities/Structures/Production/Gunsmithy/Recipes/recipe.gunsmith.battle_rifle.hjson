@@ -30,15 +30,7 @@
 						{
 							type: resource
 							material: steel.ingot
-							amount: 6.000
-							snapping: 1.000
-							group: 0
-							flags: prerequisite
-						}
-						{
-							type: resource
-							material: steel.frames
-							amount: 28.000
+							amount: 8.000
 							snapping: 1.000
 							group: 0
 							flags: prerequisite

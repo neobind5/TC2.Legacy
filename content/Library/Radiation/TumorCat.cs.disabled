@@ -1,0 +1,71 @@
+﻿
+namespace TC2.Base.Components
+{
+	public static partial class TumorCat
+	{
+		[Flags]
+		public enum Flags: uint
+		{
+			None = 0,
+		}
+
+		[IComponent.Data(Net.SendType.Reliable, region_only: true)]
+		public partial struct Data: IComponent
+		{
+			public TumorCat.Flags flags;
+		}
+
+		[ISystem.EarlyUpdate(ISystem.Mode.Single, ISystem.Scope.Region), HasTag("dead", false, Source.Modifier.Owned)]
+		public static void OnUpdate(ISystem.Info info, Entity entity,
+		[Source.Owned] in Transform.Data transform, [Source.Owned] ref Body.Data body,
+		[Source.Owned, Override] ref Organic.Data organic, [Source.Owned] ref Organic.State organic_state, [Source.Owned] ref TumorCat.Data tumor_cat)
+		{
+			var rotten_modifier = 1.00f - organic_state.rotten.Clamp01();
+
+			organic.dexterity *= Maths.Lerp01(1.00f, 0.20f, organic_state.rotten);
+			organic.motorics *= Maths.Lerp01(1.00f, 0.70f, organic_state.rotten);
+			organic.coordination *= Maths.Lerp01(1.00f, 0.50f, organic_state.rotten);
+			organic.strength *= Maths.Lerp01(1.00f, 0.10f, organic_state.rotten);
+
+			if (organic_state.consciousness_shared > 0.30f)
+			{
+				var perlin = (0.50f - Maths.Perlin(info.WorldTime * 4, (entity.GetShortID()) * 10.50f, 1)) * 2.00f;
+
+				//body.AddTorque(body.GetMass() * perlin * 25);
+
+				//organic_state.rotten = 0.99f;
+			}
+
+			organic_state.consciousness_shared = Maths.Max(organic_state.consciousness_shared, 1.00f - ((organic_state.rotten) - 0.10f).Clamp01());
+			organic.pain_modifier = 0.40f * organic_state.consciousness_shared;
+
+			organic_state.pain += 10.00f;
+			organic_state.rotten = Maths.Max(organic_state.rotten + 0.0001f, 0.20f);
+
+			//App.WriteLine($"{perlin}");
+		}
+
+#if SERVER
+		[ISystem.AddFirst(ISystem.Mode.Single, ISystem.Scope.Region), HasTag("initialized", true, Source.Modifier.Owned)]
+		public static void OnAdd(ISystem.Info info, Entity entity, ref Region.Data region,
+		[Source.Owned] in Transform.Data transform, [Source.Owned] ref Body.Data body,
+		[Source.Owned] ref TumorCat.Data tumor_cat, [Source.Owned] ref Cat.Data human)
+		{
+			if (entity.HasComponent<Head.Data>())
+			{
+				region.ApplyPrefab("drevokocur.head", entity, sync: true);
+			}
+			else if (entity.HasComponent<Torso.Data>())
+			{
+				region.ApplyPrefab("drevokocur.torso", entity, sync: true);
+			}
+			else if (entity.HasComponent<Legs.Data>())
+			{
+				region.ApplyPrefab("drevokocur.legs", entity, sync: true);
+			}
+
+			//App.WriteLine($"drevokocur on {entity}");
+		}
+#endif
+	}
+}

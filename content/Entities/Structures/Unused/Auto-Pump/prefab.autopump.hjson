@@ -122,7 +122,7 @@ harvestable:
 			chance: 0.180
 		}
 		{
-			material: steel.frames
+			material: machine_parts
 			quantity: 25.000
 			chance: 0.478
 		}

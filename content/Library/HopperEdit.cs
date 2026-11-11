@@ -1,4 +1,6 @@
 ﻿
+using System.IO;
+
 namespace TC2.Base.Components
 {
 	public static partial class HopperEdit
@@ -38,32 +40,34 @@ namespace TC2.Base.Components
 					//if (arbiter.GetState() == Body.Arbiter.State.Begin && arbiter.GetLayer().HasAny(Physics.Layer.Resource))
 					if (arbiter.GetLayer().HasAny(Physics.Layer.Resource))
 					{
-						var ent_resource = arbiter.GetEntity();
-						var normal = arbiter.GetNormal();
-						var dot = Vector2.Dot(normal, axis);
-
-						if (dot >= 0.95f || hopper_edit.flags.HasFlag(HopperEdit.Flags.Pickup_Any))
+						Entity other = arbiter.GetEntity();
+						if (other.IsValid() && other.IsAlive())
 						{
+							var normal = arbiter.GetNormal();
+							var dot = Vector2.Dot(normal, axis);
 
-							//var dot = Vector2.Dot(normal, axis);
-							//App.WriteLine(axis);
-
-							//App.WriteLine(arbiter.GetNormal());
-
-							ref var resource = ref ent_resource.GetComponent<Resource.Data>();
-							if (!resource.IsNull())
+							if (dot >= 0.95f || hopper_edit.flags.HasFlag(HopperEdit.Flags.Pickup_Any))
 							{
-								if (Resource.Insert(ref inventory, ref resource, resource.quantity, null))
-								{
-									Sound.Play(ref region, hopper_edit.sound_load, transform.position);
-									ent_resource.Delete();
-									//arbiter.SetIgnored();
-								}
 
-								break;
+								//var dot = Vector2.Dot(normal, axis);
+								//App.WriteLine(axis);
+
+								//App.WriteLine(arbiter.GetNormal());
+
+								ref var resource = ref other.GetComponent<Resource.Data>();
+								if (!resource.IsNull())
+								{
+									if (Resource.Insert(ref inventory, ref resource, resource.quantity, null))
+									{
+										Sound.Play(ref region, hopper_edit.sound_load, transform.position);
+										other.Delete();
+										//arbiter.SetIgnored();
+									}
+
+									break;
+								}
 							}
 						}
-						//App.WriteLine($"{arbiter.GetEntity()}");
 					}
 				}
 			}
